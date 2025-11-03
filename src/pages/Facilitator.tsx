@@ -11,6 +11,7 @@ import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
 import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
 import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
 import { CurbCutEffectScreen } from "@/components/screens/CurbCutEffectScreen";
+import { CurbCutExamplesScreen } from "@/components/screens/CurbCutExamplesScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
 import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
@@ -166,6 +167,13 @@ const screens = [
     hasPoll: true,
     pollQuestion: "Have you ever benefited from an accessibility feature you didn't 'need'?",
     pollOptions: ["Yes - often", "Yes - occasionally", "Not that I know of", "Not sure"],
+  },
+  {
+    id: "LD1.1",
+    title: "Learning Design Curb Cuts",
+    component: CurbCutExamplesScreen,
+    duration: 3,
+    notes: "Real examples of accessibility features that became universally preferred: captions (71% use), chunked content (30% better completion), multiple formats (80%+ prefer).",
   },
   {
     id: "LD5.5",

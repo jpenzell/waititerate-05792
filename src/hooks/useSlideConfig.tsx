@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v7'; // Updated - hide LD0.5.10 by default
+const STORAGE_KEY = 'presentation-slide-config-atdld-v8'; // Updated - added LD1.1 Curb Cut Examples
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {

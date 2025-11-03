@@ -7,6 +7,8 @@ import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
 import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
 import { ScarcityVsAbundanceScreen } from "@/components/screens/ScarcityVsAbundanceScreen";
+import { CurbCutEffectScreen } from "@/components/screens/CurbCutEffectScreen";
+import { CurbCutExamplesScreen } from "@/components/screens/CurbCutExamplesScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
 import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
@@ -82,6 +84,13 @@ const screens = [
     component: ScarcityVsAbundanceScreen,
     duration: 4,
     notes: "Theory after experience: scarcity vs abundance.",
+  },
+  {
+    id: "LD1.1",
+    title: "Learning Design Curb Cuts",
+    component: CurbCutExamplesScreen,
+    duration: 3,
+    notes: "Real examples of accessibility features becoming universally preferred.",
   },
   {
     id: "LD5.5",
