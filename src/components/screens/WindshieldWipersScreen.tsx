@@ -20,9 +20,18 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
     return (
       <div className="h-screen flex flex-col p-8 animate-fade-in">
         <div className="max-w-6xl w-full mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-12 text-center">
-            Does a self-driving vehicle need windshield wipers?
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 text-center">
+            Why Neurodiversity Matters Now
           </h1>
+          
+          <div className="space-y-6 text-center mb-12">
+            <p className="text-2xl text-muted-foreground">
+              <span className="font-bold text-primary">15-20%</span> of the global population is neurodivergent
+            </p>
+            <p className="text-2xl text-muted-foreground">
+              <span className="font-bold text-accent">30%</span> more productive in right roles (JPMorgan)
+            </p>
+          </div>
           
           {isFacilitator && sessionId && userId ? (
             <div className="grid md:grid-cols-2 gap-6 items-start">
@@ -34,13 +43,6 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
                   userId={userId}
                   isPresenter={true}
                 />
-                <Button 
-                  onClick={() => setShowExplanation(true)}
-                  size="lg"
-                  className="mt-6 w-full"
-                >
-                  Show Answer & Explanation
-                </Button>
               </div>
               
               {/* Right: Session Info */}
@@ -66,7 +68,7 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
           ) : (
             <div className="text-center">
               <p className="text-xl text-muted-foreground mb-8">
-                Vote on your screen
+                📱 Share your experience on your device
               </p>
             </div>
           )}

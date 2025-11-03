@@ -147,23 +147,23 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
       <div className="h-screen flex flex-col py-6 animate-fade-in overflow-hidden">
         <div className="text-center mb-6">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-            Capture Your Moment
+            How You Learn Best
           </h1>
           <p className="text-xl text-muted-foreground mb-4">
-            Take a photo of something around you right now
+            Everyone processes information differently
           </p>
           <Badge variant="outline" className="text-lg px-6 py-3">
-            📸 Step 1: Photo Collection
+            📸 Step 1: Learning Preferences
           </Badge>
         </div>
 
         <div className="flex-1 overflow-y-auto max-w-6xl mx-auto w-full">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-foreground mb-2">
-              Everyone: Take a photo that represents how you're feeling right now
+              Everyone: Take a photo that represents how you learn best
             </h2>
             <p className="text-lg text-muted-foreground">
-              We're near the end of this intensive. Capture your current state.
+              What environment, tool, or approach helps your brain absorb new information?
             </p>
           </div>
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -193,10 +193,10 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
         <div className="text-center mb-6">
           <Badge variant="outline" className="mb-4">Step 1 of 5</Badge>
           <h2 className="text-3xl font-bold text-foreground mb-3">
-            Capture Your Current Feeling
+            How Do You Learn Best?
           </h2>
           <p className="text-muted-foreground">
-            Take or upload a photo that represents how you're feeling right now
+            Take or upload a photo that represents your ideal learning environment or approach
           </p>
         </div>
 

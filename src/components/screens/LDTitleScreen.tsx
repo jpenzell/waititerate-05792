@@ -20,14 +20,14 @@ export const LDTitleScreen = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-6 py-3 glass-effect rounded-full mb-4 animate-scale-in border border-primary/20">
             <BarChart3 className="w-5 h-5 text-accent" />
-            <span className="text-foreground font-semibold text-lg font-mono">ATD INTENSIVE // DAY 3</span>
+            <span className="text-foreground font-semibold text-lg font-mono">AI FOR ALL MINDS</span>
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
           </div>
           
           {/* Main Title */}
           <div className="space-y-3">
             <h1 className="text-5xl md:text-7xl font-bold gradient-text leading-tight pb-2 animate-slide-in tracking-tight">
-              Don't Wait,<br/>Iterate
+              AI for<br/>All Minds
             </h1>
             
             <div className="h-1 w-24 mx-auto bg-gradient-to-r from-primary via-accent to-primary rounded-full glow-primary"></div>
@@ -35,33 +35,23 @@ export const LDTitleScreen = () => {
           
           {/* Subtitle */}
           <h2 className="text-xl md:text-3xl font-medium text-foreground/90 animate-slide-in max-w-4xl mx-auto leading-relaxed">
-            Designing Training in a World Where<br/>
-            <span className="text-accent">You Can Measure Anything</span>
+            Lessons from Neurodiversity to<br/>
+            <span className="text-accent">Transform Learning</span>
           </h2>
           
           {/* Key Message */}
           <div className="pt-4 max-w-3xl mx-auto">
             <div className="glass-effect border border-primary/10 rounded-2xl p-8 space-y-4">
-              <div className="flex items-center justify-center gap-3">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-destructive"></div>
-                <span className="text-destructive font-mono text-sm">SCARCITY ERA</span>
-                <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-destructive"></div>
-              </div>
               <p className="text-lg text-muted-foreground">
-                When measurement was scarce, we planned endlessly
+                How designing with cognitive difference unlocks innovation for everyone
               </p>
               
               <div className="py-2">
                 <Zap className="w-6 h-6 mx-auto text-accent" />
               </div>
               
-              <div className="flex items-center justify-center gap-3">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-primary"></div>
-                <span className="text-primary font-mono text-sm">ABUNDANCE ERA</span>
-                <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-primary"></div>
-              </div>
-              <p className="text-lg text-foreground">
-                When measurement is abundant, we design differently
+              <p className="text-base text-foreground/80 italic">
+                "Structured freedom" transforms learning into<br/>adaptive, inclusive, and systemic change
               </p>
             </div>
           </div>
@@ -70,7 +60,8 @@ export const LDTitleScreen = () => {
           <div className="pt-4">
             <p className="text-base text-muted-foreground font-mono">
               JOSH PENZELL<br/>
-              <span className="text-sm text-muted-foreground/70">Founder & CEO • Imagination Applied</span>
+              <span className="text-sm text-muted-foreground/70">Founder & CEO • Imagination Applied</span><br/>
+              <span className="text-xs text-muted-foreground/60">Diagnosed with autism and ADD at 39</span>
             </p>
           </div>
 
