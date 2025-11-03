@@ -575,7 +575,9 @@ export default function Facilitator() {
             currentScreen.id === "LD0.5.6" ||
             currentScreen.id === "LD0.5.6.5" ||
             currentScreen.id === "LD0.5.7" ||
-            currentScreen.id === "LD0.5.8") ? (
+            currentScreen.id === "LD0.5.8" ||
+            currentScreen.id === "LD0.5.9" ||
+            currentScreen.id === "LD0.5.10") ? (
           <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} />
         ) : (
           <CurrentComponent />
