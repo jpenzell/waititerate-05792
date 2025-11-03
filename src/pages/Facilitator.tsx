@@ -207,18 +207,18 @@ const screens = [
     pollOptions: ["Yes - often", "Yes - occasionally", "Not that I know of", "Not sure"],
   },
   {
-    id: "LD6.5",
-    title: "AI as Cognitive Prosthetic",
-    component: AICognitiveProtheticScreen,
-    duration: 6,
-    notes: "Real examples: JPMorgan Autism at Work (90%+ retention), SAP (30% faster QA), Khan Academy adaptive progression, Carnegie Learning AI tutors. AI extends cognitive capabilities like glasses extend vision.",
-  },
-  {
     id: "LD1.1",
     title: "Learning Design Curb Cuts",
     component: CurbCutExamplesScreen,
     duration: 3,
     notes: "Real examples of accessibility features that became universally preferred: captions (71% use), chunked content (30% better completion), multiple formats (80%+ prefer).",
+  },
+  {
+    id: "LD6.5",
+    title: "AI as Cognitive Prosthetic",
+    component: AICognitiveProtheticScreen,
+    duration: 6,
+    notes: "Real examples: JPMorgan Autism at Work (90%+ retention), SAP (30% faster QA), Khan Academy adaptive progression, Carnegie Learning AI tutors. AI extends cognitive capabilities like glasses extend vision.",
   },
   {
     id: "LD5.5",
