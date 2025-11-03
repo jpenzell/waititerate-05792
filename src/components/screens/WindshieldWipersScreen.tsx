@@ -90,80 +90,72 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
   }
 
   return (
-    <main className="h-screen flex items-center justify-center p-8 animate-fade-in overflow-y-auto" role="main" aria-label="Windshield wipers answer reveal">
-      <section className="max-w-5xl w-full py-8">
-        <Card className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20" role="article">
-          <div className="space-y-6">
-          <figure className="relative w-full max-w-3xl mx-auto rounded-xl overflow-hidden mb-6">
-            <img 
-              src={zooxVehicle} 
-              alt="Zoox autonomous self-driving vehicle with teal colored body, no visible windshield, bidirectional design where passengers face each other instead of forward"
-              className="w-full h-auto"
-            />
-            <figcaption className="sr-only">Zoox vehicle demonstrating first-principles design without windshields</figcaption>
-          </figure>
-          
-          <div className="space-y-4">
-            <div className="bg-primary/10 p-6 rounded-xl border-2 border-primary/30 mb-6">
-              <p className="text-2xl font-bold text-primary mb-3 text-center">
-                The Answer: It depends on your assumptions
-              </p>
-              <p className="text-xl text-center text-foreground">
-                If there's no driver... do you even need a windshield?
-              </p>
-            </div>
+    <main className="min-h-screen flex items-center justify-center p-4 md:p-8 animate-fade-in" role="main" aria-label="Windshield wipers answer reveal">
+      <section className="max-w-7xl w-full space-y-8">
+        {/* Hero Answer */}
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-primary">
+            The Answer: It depends on your assumptions
+          </h2>
+          <p className="text-xl md:text-2xl text-foreground">
+            If there's no driver... do you even need a windshield?
+          </p>
+        </div>
 
-            <p className="text-xl text-foreground">
-              <span className="font-bold text-primary">This is a Zoox vehicle</span> - running autonomously today in Las Vegas. 
-              When Zoox built this, they started with <span className="font-bold">first principles thinking</span>:
+        {/* Zoox Vehicle Image - Full width, prominent */}
+        <figure className="relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/30">
+          <img 
+            src={zooxVehicle} 
+            alt="Zoox autonomous self-driving vehicle with teal colored body, no visible windshield, bidirectional design where passengers face each other instead of forward"
+            className="w-full h-auto object-cover"
+          />
+          <figcaption className="sr-only">Zoox vehicle demonstrating first-principles design without windshields</figcaption>
+        </figure>
+
+        {/* Key Points Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Left: What Makes Zoox Different */}
+          <Card className="p-6 bg-accent/10 border-2 border-accent space-y-4">
+            <h3 className="text-2xl font-bold text-foreground">
+              First Principles: Zoox Vehicle
+            </h3>
+            <p className="text-lg text-foreground/90">
+              Running autonomously in Las Vegas today
             </p>
-            
-            <div className="bg-accent/20 p-5 rounded-xl border-2 border-accent">
-              <p className="text-xl font-bold text-foreground mb-3">They asked: "Why are we building vehicles for drivers?"</p>
-              <ul className="space-y-2 text-lg text-foreground/90">
-                <li className="flex items-start gap-2">
-                  <span className="text-accent font-bold text-xl">→</span>
-                  <span>No windshield needed—passengers face each other</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent font-bold text-xl">→</span>
-                  <span>No front or back (lights just change direction)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent font-bold text-xl">→</span>
-                  <span>Built for ridesharing, not ownership</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent font-bold text-xl">→</span>
-                  <span>Can even "crabwalk" sideways</span>
-                </li>
-              </ul>
-            </div>
+            <ul className="space-y-3 text-lg">
+              <li className="flex items-start gap-3">
+                <span className="text-accent font-bold text-2xl">→</span>
+                <span>No windshield—passengers face each other</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent font-bold text-2xl">→</span>
+                <span>No front or back</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent font-bold text-2xl">→</span>
+                <span>Built for ridesharing from scratch</span>
+              </li>
+            </ul>
+          </Card>
 
-            <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 p-6 rounded-xl border-2 border-purple-500/40">
-              <p className="text-xl font-bold text-foreground mb-3">
-                🧠 This is neurodivergent thinking in action
+          {/* Right: The L&D Connection */}
+          <Card className="p-6 bg-primary/10 border-2 border-primary/30 space-y-4">
+            <h3 className="text-2xl font-bold text-foreground">
+              🧠 Neurodivergent Thinking
+            </h3>
+            <p className="text-lg text-foreground/90">
+              Questioning assumptions others take for granted. Reimagining from scratch.
+            </p>
+            <div className="pt-4 border-t border-primary/20">
+              <p className="text-xl font-bold text-primary mb-2">
+                The L&D Challenge:
               </p>
-              <p className="text-lg text-foreground/90">
-                Questioning assumptions that seem "obvious" to everyone else. 
-                Seeing patterns others miss. Reimagining from scratch instead of iterating on what exists.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-r from-primary/20 to-accent/20 p-6 rounded-xl border-2 border-primary/40">
-              <p className="text-2xl font-bold text-foreground mb-3 text-center">
-                The Challenge for L&D Today:
-              </p>
-              <p className="text-xl text-center">
-                What if we designed learning experiences from <span className="font-bold text-primary">first principles</span>?
-              </p>
-              <p className="text-lg text-muted-foreground text-center mt-2 italic">
-                Not just "add AI to our existing courses." But ask: <span className="font-semibold text-foreground">"What if we didn't assume learners all process information the same way?"</span>
+              <p className="text-lg">
+                What if we designed learning from first principles—not assuming all learners process information the same way?
               </p>
             </div>
-          </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
       </section>
     </main>
   );
