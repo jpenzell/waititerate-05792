@@ -130,8 +130,8 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
     const actualPopulation = 20;
     
     return (
-      <div className="h-screen flex flex-col py-6 px-4 animate-fade-in overflow-y-auto">
-        <div className="text-center mb-6">
+      <main className="h-screen flex flex-col py-6 px-4 animate-fade-in overflow-y-auto" role="main" aria-label="Neurodiversity data quiz results">
+        <header className="text-center mb-6">
           <Badge className="mb-4">
             <Users className="h-4 w-4 mr-2" />
             Why Neurodiversity Matters
@@ -142,7 +142,7 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
           <p className="text-lg text-muted-foreground">
             Responses: <span className="font-bold text-primary">{responses.length}</span>
           </p>
-        </div>
+        </header>
 
         {!showResults ? (
           <>
@@ -171,12 +171,13 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
             </div>
 
             <div className="text-center">
-              <Button 
+            <Button 
                 onClick={() => setShowResults(true)}
                 size="lg"
                 className="px-12"
+                aria-label="Reveal the actual neurodiversity statistics"
               >
-                <Sparkles className="mr-2 h-5 w-5" />
+                <Sparkles className="mr-2 h-5 w-5" aria-hidden="true" />
                 Reveal The Truth
               </Button>
             </div>
@@ -312,7 +313,7 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
             </Card>
           </div>
         )}
-      </div>
+      </main>
     );
   }
 
@@ -339,7 +340,7 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
 
   // PARTICIPANT VIEW
   return (
-    <div className="max-w-2xl mx-auto py-8 px-4">
+    <main className="max-w-2xl mx-auto py-8 px-4" role="main" aria-label="Neurodiversity data quiz">
       {!hasSubmitted ? (
         <div className="space-y-6 animate-fade-in">
           <div className="text-center space-y-4">
@@ -367,7 +368,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                         What % of autistic adults with college degrees are unemployed or underemployed?
                       </h3>
                       <div className="flex items-center gap-3">
+                        <label htmlFor="unemployment-guess" className="sr-only">Unemployment percentage guess</label>
                         <Input
+                          id="unemployment-guess"
                           type="number"
                           min="0"
                           max="100"
@@ -375,8 +378,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                           onChange={(e) => setUnemploymentGuess(e.target.value)}
                           placeholder="Enter %"
                           className="text-3xl font-bold text-center h-16"
+                          aria-label="Enter your guess for unemployment percentage of autistic adults with college degrees"
                         />
-                        <span className="text-3xl font-bold text-muted-foreground">%</span>
+                        <span className="text-3xl font-bold text-muted-foreground" aria-hidden="true">%</span>
                       </div>
                     </div>
                   </div>
@@ -393,7 +397,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                         How much MORE productive are neurodivergent employees in the right roles?
                       </h3>
                       <div className="flex items-center gap-3">
+                        <label htmlFor="productivity-guess" className="sr-only">Productivity increase percentage guess</label>
                         <Input
+                          id="productivity-guess"
                           type="number"
                           min="0"
                           max="100"
@@ -401,8 +407,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                           onChange={(e) => setProductivityGuess(e.target.value)}
                           placeholder="Enter %"
                           className="text-3xl font-bold text-center h-16"
+                          aria-label="Enter your guess for how much more productive neurodivergent employees are in the right roles"
                         />
-                        <span className="text-3xl font-bold text-muted-foreground">%</span>
+                        <span className="text-3xl font-bold text-muted-foreground" aria-hidden="true">%</span>
                       </div>
                     </div>
                   </div>
@@ -422,7 +429,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                         (Including ADHD, autism, dyslexia, etc.)
                       </p>
                       <div className="flex items-center gap-3">
+                        <label htmlFor="population-guess" className="sr-only">Neurodivergent population percentage guess</label>
                         <Input
+                          id="population-guess"
                           type="number"
                           min="0"
                           max="100"
@@ -430,8 +439,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                           onChange={(e) => setPopulationGuess(e.target.value)}
                           placeholder="Enter %"
                           className="text-3xl font-bold text-center h-16"
+                          aria-label="Enter your guess for what percentage of the global population is neurodivergent"
                         />
-                        <span className="text-3xl font-bold text-muted-foreground">%</span>
+                        <span className="text-3xl font-bold text-muted-foreground" aria-hidden="true">%</span>
                       </div>
                     </div>
                   </div>
@@ -445,6 +455,7 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                     variant="outline"
                     size="lg" 
                     className="flex-1"
+                    aria-label="Go back to previous question"
                   >
                     Back
                   </Button>
@@ -456,6 +467,7 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                     size="lg" 
                     className="flex-1"
                     disabled={!canProceed()}
+                    aria-label="Proceed to next question"
                   >
                     Next Question
                   </Button>
@@ -465,6 +477,7 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
                     size="lg" 
                     className="flex-1"
                     disabled={!canProceed()}
+                    aria-label="Submit all your guesses"
                   >
                     Submit All Guesses
                   </Button>
@@ -485,6 +498,6 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
           </p>
         </Card>
       )}
-    </div>
+    </main>
   );
 };

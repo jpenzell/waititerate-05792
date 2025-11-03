@@ -90,8 +90,8 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
     const dist = getDistribution();
     
     return (
-      <div className="h-screen flex flex-col py-6 px-4 animate-fade-in">
-        <div className="text-center mb-6">
+      <main className="h-screen flex flex-col py-6 px-4 animate-fade-in" role="main" aria-label="Mental imagery test results">
+        <header className="text-center mb-6">
           <Badge className="mb-4">
             <Brain className="h-4 w-4 mr-2" />
             Mental Imagery Discovery
@@ -102,9 +102,9 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
           <p className="text-lg text-muted-foreground">
             Responses: <span className="font-bold text-primary">{responses.length}</span>
           </p>
-        </div>
+        </header>
 
-        <div className="grid md:grid-cols-4 gap-4 mb-6">
+        <section className="grid md:grid-cols-4 gap-4 mb-6" aria-label="Mental imagery distribution statistics">
           <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5">
             <div className="text-center">
               <div className="text-4xl font-bold text-primary">{((dist.aphantasia / dist.total) * 100).toFixed(0)}%</div>
@@ -133,9 +133,9 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
               <div className="text-xs text-muted-foreground">{dist.hyper} people</div>
             </div>
           </Card>
-        </div>
+        </section>
 
-        <Card className="p-8 flex-1 bg-gradient-to-br from-primary/5 to-accent/5">
+        <Card className="p-8 flex-1 bg-gradient-to-br from-primary/5 to-accent/5" role="article">
           <h3 className="text-2xl font-bold text-foreground mb-4">The Invisible Difference</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
@@ -158,13 +158,13 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
             </div>
           </div>
         </Card>
-      </div>
+      </main>
     );
   }
 
   // PARTICIPANT VIEW
   return (
-    <div className="max-w-2xl mx-auto py-8 px-4">
+    <main className="max-w-2xl mx-auto py-8 px-4" role="main" aria-label="Mental imagery test">
       {step === "intro" && (
         <div className="space-y-6 animate-fade-in">
           <div className="text-center space-y-4">
@@ -199,9 +199,10 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
                 onClick={() => setStep("test")} 
                 size="lg" 
                 className="w-full"
+                aria-label="Start the mental imagery test"
               >
                 Take the Test
-                <Sparkles className="ml-2 h-5 w-5" />
+                <Sparkles className="ml-2 h-5 w-5" aria-hidden="true" />
               </Button>
             </div>
           </Card>
@@ -237,6 +238,7 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
                 max={10}
                 step={1}
                 className="w-full"
+                aria-label="Rate the vividness of your mental image from 0 to 10"
               />
 
               <div className="text-center">
@@ -263,6 +265,7 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
                 onClick={submitResponse}
                 size="lg" 
                 className="w-full"
+                aria-label="Submit your mental imagery response"
               >
                 Submit Response
               </Button>
@@ -272,14 +275,14 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
       )}
 
       {hasSubmitted && (
-        <Card className="p-8 text-center bg-gradient-to-br from-primary/10 to-accent/10 animate-fade-in">
-          <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
+        <Card className="p-8 text-center bg-gradient-to-br from-primary/10 to-accent/10 animate-fade-in" role="status" aria-live="polite">
+          <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" aria-hidden="true" />
           <h3 className="text-2xl font-bold text-foreground mb-2">Response Submitted!</h3>
           <p className="text-muted-foreground">
             The facilitator will reveal the results shortly.
           </p>
         </Card>
       )}
-    </div>
+    </main>
   );
 };

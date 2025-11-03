@@ -144,8 +144,8 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
   // Facilitator View
   if (isFacilitator) {
     return (
-      <div className="h-screen flex flex-col py-6 animate-fade-in overflow-hidden">
-        <div className="text-center mb-6">
+      <main className="h-screen flex flex-col py-6 animate-fade-in overflow-hidden" role="main" aria-label="Photo collection display">
+        <header className="text-center mb-6">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
             How You Learn Best
           </h1>
@@ -155,9 +155,9 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
           <Badge variant="outline" className="text-lg px-6 py-3">
             📸 Step 1: Learning Preferences
           </Badge>
-        </div>
+        </header>
 
-        <div className="flex-1 overflow-y-auto max-w-6xl mx-auto w-full">
+        <section className="flex-1 overflow-y-auto max-w-6xl mx-auto w-full" aria-label="Submitted photos from participants">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-foreground mb-2">
               Everyone: Take a photo that represents how you learn best
@@ -169,28 +169,32 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {photos.map((photo: any, index) => (
               <Card key={photo.id} className="p-2 animate-fade-in">
-                <img src={photo.photo_url || photo.photo_data} alt={`Photo ${index + 1}`} className="w-full h-32 object-cover rounded mb-2" />
+                <img 
+                  src={photo.photo_url || photo.photo_data} 
+                  alt={`Learning preference photo ${index + 1} submitted by ${photo.profiles?.display_name || 'a participant'}`} 
+                  className="w-full h-32 object-cover rounded mb-2" 
+                />
                 <p className="text-xs text-center text-muted-foreground truncate">
                   {photo.profiles?.display_name || 'Anonymous'}
                 </p>
               </Card>
             ))}
             {photos.length === 0 && (
-              <div className="col-span-full text-center py-12 text-muted-foreground">
+              <div className="col-span-full text-center py-12 text-muted-foreground" role="status" aria-live="polite">
                 Waiting for photos to arrive...
               </div>
             )}
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     );
   }
 
   // Participant View
   return (
-    <div className="h-screen flex items-center justify-center p-6 animate-fade-in">
+    <main className="h-screen flex items-center justify-center p-6 animate-fade-in" role="main" aria-label="Photo submission form">
       <Card className="max-w-2xl w-full p-8 bg-background/90 backdrop-blur-xl">
-        <div className="text-center mb-6">
+        <header className="text-center mb-6">
           <Badge variant="outline" className="mb-4">Step 1 of 5</Badge>
           <h2 className="text-3xl font-bold text-foreground mb-3">
             How Do You Learn Best?
@@ -198,7 +202,7 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
           <p className="text-muted-foreground">
             Take or upload a photo that represents your ideal learning environment or approach
           </p>
-        </div>
+        </header>
 
         {!submittedPhoto ? (
           <>
@@ -225,8 +229,9 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
                   onClick={() => cameraInputRef.current?.click()}
                   size="lg"
                   className="w-full h-32 text-xl"
+                  aria-label="Take a photo using your device camera"
                 >
-                  <Camera className="mr-3 h-8 w-8" />
+                  <Camera className="mr-3 h-8 w-8" aria-hidden="true" />
                   Take Photo
                 </Button>
                 <Button
@@ -234,16 +239,17 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
                   variant="outline"
                   size="lg"
                   className="w-full h-20 text-lg"
+                  aria-label="Upload a photo from your device gallery"
                 >
-                  <Upload className="mr-3 h-6 w-6" />
+                  <Upload className="mr-3 h-6 w-6" aria-hidden="true" />
                   Upload from Gallery
                 </Button>
               </div>
             ) : (
               <div className="space-y-4">
-                <img src={selectedImage} alt="Preview" className="w-full rounded-lg" />
+                <img src={selectedImage} alt="Preview of your selected learning preference photo" className="w-full rounded-lg" />
                 {isSubmitting && uploadProgress > 0 && (
-                  <div className="space-y-2">
+                  <div className="space-y-2" role="status" aria-live="polite" aria-label={`Upload progress: ${uploadProgress}%`}>
                     <Progress value={uploadProgress} className="w-full" />
                     <p className="text-sm text-center text-muted-foreground">
                       {uploadProgress < 40 ? 'Compressing...' : uploadProgress < 80 ? 'Uploading...' : 'Finishing...'}
@@ -251,10 +257,10 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
                   </div>
                 )}
                 <div className="flex gap-3">
-                  <Button onClick={() => { setSelectedImage(null); setSelectedFile(null); }} variant="outline" className="flex-1" disabled={isSubmitting}>
+                  <Button onClick={() => { setSelectedImage(null); setSelectedFile(null); }} variant="outline" className="flex-1" disabled={isSubmitting} aria-label="Retake photo">
                     Retake
                   </Button>
-                  <Button onClick={submitPhoto} className="flex-1" disabled={isSubmitting}>
+                  <Button onClick={submitPhoto} className="flex-1" disabled={isSubmitting} aria-label="Submit your photo">
                     {isSubmitting ? 'Uploading...' : 'Submit Photo'}
                   </Button>
                 </div>
@@ -262,8 +268,8 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
             )}
           </>
         ) : (
-          <div className="text-center py-8 space-y-4">
-            <div className="text-6xl mb-4">✅</div>
+          <div className="text-center py-8 space-y-4" role="status" aria-live="polite">
+            <div className="text-6xl mb-4" aria-hidden="true">✅</div>
             <h3 className="text-2xl font-bold text-primary">Photo Submitted!</h3>
             <p className="text-muted-foreground">
               Watch the main screen to see what happens next
@@ -271,6 +277,6 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
           </div>
         )}
       </Card>
-    </div>
+    </main>
   );
 };

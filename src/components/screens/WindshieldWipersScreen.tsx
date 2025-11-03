@@ -18,8 +18,8 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
 
   if (!showExplanation) {
     return (
-      <div className="h-screen flex flex-col p-8 animate-fade-in">
-        <div className="max-w-6xl w-full mx-auto">
+      <main className="h-screen flex flex-col p-8 animate-fade-in" role="main" aria-label="Windshield wipers question">
+        <section className="max-w-6xl w-full mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 text-center">
             Thinking From First Principles
           </h1>
@@ -79,27 +79,29 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
               onClick={() => setShowExplanation(true)}
               size="lg"
               className="px-12"
+              aria-label="Reveal the answer to the windshield wipers question"
             >
               Reveal the Answer
             </Button>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     );
   }
 
   return (
-    <div className="h-screen flex items-center justify-center p-8 animate-fade-in overflow-y-auto">
-      <div className="max-w-5xl w-full py-8">
-        <Card className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20">
+    <main className="h-screen flex items-center justify-center p-8 animate-fade-in overflow-y-auto" role="main" aria-label="Windshield wipers answer reveal">
+      <section className="max-w-5xl w-full py-8">
+        <Card className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 border-2 border-primary/20" role="article">
           <div className="space-y-6">
-          <div className="relative w-full max-w-3xl mx-auto rounded-xl overflow-hidden mb-6">
+          <figure className="relative w-full max-w-3xl mx-auto rounded-xl overflow-hidden mb-6">
             <img 
               src={zooxVehicle} 
-              alt="Zoox autonomous vehicle - a teal colored bidirectional self-driving car"
+              alt="Zoox autonomous self-driving vehicle with teal colored body, no visible windshield, bidirectional design where passengers face each other instead of forward"
               className="w-full h-auto"
             />
-          </div>
+            <figcaption className="sr-only">Zoox vehicle demonstrating first-principles design without windshields</figcaption>
+          </figure>
           
           <div className="space-y-4">
             <div className="bg-primary/10 p-6 rounded-xl border-2 border-primary/30 mb-6">
@@ -160,9 +162,9 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
               </p>
             </div>
           </div>
-        </div>
+          </div>
         </Card>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };

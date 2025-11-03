@@ -5,18 +5,18 @@ export const LDTitleScreen = () => {
   const location = useLocation();
   const showNavHint = location.pathname === "/facilitator";
   return (
-    <div className="h-screen w-full relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+    <main className="h-screen w-full relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5" role="main" aria-label="Presentation title screen">
       {/* Background patterns */}
-      <div className="absolute inset-0 grid-pattern opacity-30"></div>
-      <div className="absolute inset-0 dot-pattern opacity-20"></div>
+      <div className="absolute inset-0 grid-pattern opacity-30" aria-hidden="true"></div>
+      <div className="absolute inset-0 dot-pattern opacity-20" aria-hidden="true"></div>
       
       {/* Glowing orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow" aria-hidden="true"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} aria-hidden="true"></div>
       
       {/* Content */}
       <div className="relative h-full flex items-center justify-center px-8 py-6 animate-fade-in">
-        <div className="text-center space-y-5 max-w-6xl mx-auto">
+        <section className="text-center space-y-5 max-w-6xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-6 py-3 glass-effect rounded-full mb-4 animate-scale-in border border-primary/20">
             <BarChart3 className="w-5 h-5 text-accent" />
@@ -77,8 +77,8 @@ export const LDTitleScreen = () => {
     </div>
   </div>
 )}
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 };
