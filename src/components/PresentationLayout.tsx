@@ -144,6 +144,28 @@ export const PresentationLayout = ({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex flex-col">
+      {/* Session Info Header - visible in present mode when session is active */}
+      {isPresent && sessionCode && (
+        <header className="fixed top-0 left-0 right-0 z-50 border-b bg-card/95 backdrop-blur-md px-6 py-2 flex items-center justify-center gap-4 shadow-lg">
+          <Badge variant="outline" className="text-sm">
+            <Users className="w-3 h-3 mr-1" />
+            Join Code: <span className="font-mono font-bold ml-1">{sessionCode}</span>
+          </Badge>
+          {sessionId && (
+            <>
+              <span className="text-xs text-muted-foreground hidden sm:block">
+                ai4all.joshpenzell.com/participate?code={sessionCode}
+              </span>
+              <img 
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
+                alt="Join Session QR Code"
+                className="h-14 w-14 border-2 border-border rounded"
+              />
+            </>
+          )}
+        </header>
+      )}
+
       {/* Header - hidden in present mode */}
       {!isPresent && (
         <header className="border-b bg-card/80 backdrop-blur-sm px-6 py-3 flex items-center justify-between shadow-sm">
@@ -270,7 +292,7 @@ export const PresentationLayout = ({
       )}
 
       {/* Main Content with Zoom */}
-      <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-auto" style={{ paddingTop: isPresent && sessionCode ? '70px' : '0' }}>
         <div 
           className="max-w-7xl mx-auto p-8 md:p-12 transition-transform duration-300 origin-top w-full"
           style={{ 
