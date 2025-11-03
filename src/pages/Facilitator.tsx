@@ -163,10 +163,17 @@ const screens = [
     title: "The Curb-Cut Effect",
     component: CurbCutEffectScreen,
     duration: 4,
-    notes: "Designing for neurodivergent learners improves outcomes for ALL learners. Closed captions, chunked content, multiple representations benefit everyone.",
+    notes: "Interactive quiz: participants guess statistics about accessibility features. Then reveal: 71% use captions, 30% performance boost, 80%+ prefer multiple formats.",
     hasPoll: true,
     pollQuestion: "Have you ever benefited from an accessibility feature you didn't 'need'?",
     pollOptions: ["Yes - often", "Yes - occasionally", "Not that I know of", "Not sure"],
+  },
+  {
+    id: "LD6.5",
+    title: "AI as Cognitive Prosthetic",
+    component: AICognitiveProtheticScreen,
+    duration: 6,
+    notes: "Real examples: JPMorgan Autism at Work (90%+ retention), SAP (30% faster QA), Khan Academy adaptive progression, Carnegie Learning AI tutors. AI extends cognitive capabilities like glasses extend vision.",
   },
   {
     id: "LD1.1",
@@ -191,13 +198,6 @@ const screens = [
     component: CognitiveLoadScreen,
     duration: 4,
     notes: "Working memory limits (7±2 chunks). Show dense vs. chunked content comparison. Practice structured freedom in presentation design.",
-  },
-  {
-    id: "LD6.5",
-    title: "AI as Cognitive Prosthetic",
-    component: AICognitiveProtheticScreen,
-    duration: 6,
-    notes: "Real examples: JPMorgan Autism at Work (90%+ retention), SAP (30% faster QA), Khan Academy adaptive progression, Carnegie Learning AI tutors. AI extends cognitive capabilities like glasses extend vision.",
   },
   {
     id: "LD5.0",

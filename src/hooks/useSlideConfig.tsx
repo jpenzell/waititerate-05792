@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v8'; // Updated - added LD1.1 Curb Cut Examples
+const STORAGE_KEY = 'presentation-slide-config-atdld-v9'; // Updated - moved LD6.5 after LD1.0, quiz format for Curb-Cut
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {

@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Users, Accessibility, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Users, Accessibility } from "lucide-react";
 import { PollWidget } from "@/components/PollWidget";
 
 interface CurbCutEffectScreenProps {
@@ -14,6 +16,26 @@ export const CurbCutEffectScreen = ({
   sessionId, 
   userId 
 }: CurbCutEffectScreenProps) => {
+  const [showReveal, setShowReveal] = useState(false);
+
+  const quizQuestions = [
+    {
+      question: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?",
+      answer: "71%",
+      context: "Designed for deaf/hard-of-hearing, but ESL learners, people in noisy environments, and those with auditory processing differences also benefit"
+    },
+    {
+      question: "How much does chunked content improve completion rates for everyone?",
+      answer: "30%",
+      context: "Designed for ADHD and working memory differences, but reduces cognitive load for all learners"
+    },
+    {
+      question: "What percentage of learners prefer multiple format options (text + audio + visual)?",
+      answer: "80%+",
+      context: "Designed for dyslexia and visual processing differences, but benefits all learning styles"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5 py-12 px-6">
       <div className="max-w-7xl mx-auto">
@@ -28,33 +50,6 @@ export const CurbCutEffectScreen = ({
           <p className="text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Designing for neurodivergent learners improves outcomes for <strong className="text-foreground">everyone</strong>
           </p>
-        </div>
-
-        {/* ROI Impact Stats */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <Card className="p-8 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 text-center">
-            <div className="text-5xl font-bold text-primary mb-3">80%+</div>
-            <p className="text-lg text-foreground font-semibold mb-2">Universal Adoption</p>
-            <p className="text-base text-muted-foreground">
-              Features designed for 15-20% become preferred by the majority
-            </p>
-          </Card>
-
-          <Card className="p-8 bg-gradient-to-br from-accent/10 to-primary/10 border-2 border-accent/30 text-center">
-            <div className="text-5xl font-bold text-accent mb-3">71%</div>
-            <p className="text-lg text-foreground font-semibold mb-2">Use Captions</p>
-            <p className="text-base text-muted-foreground">
-              Of all viewers use closed captions, not just deaf/hard-of-hearing
-            </p>
-          </Card>
-
-          <Card className="p-8 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 text-center">
-            <div className="text-5xl font-bold text-primary mb-3">30%</div>
-            <p className="text-lg text-foreground font-semibold mb-2">Performance Boost</p>
-            <p className="text-base text-muted-foreground">
-              Cognitive load reduction improves completion rates for all learners
-            </p>
-          </Card>
         </div>
 
         {/* Origin Story - Streamlined */}
@@ -77,6 +72,79 @@ export const CurbCutEffectScreen = ({
             </div>
           </div>
         </Card>
+
+        {/* Quiz Section */}
+        {!showReveal ? (
+          <Card className="p-10 mb-12 bg-gradient-to-br from-accent/5 to-primary/5 border-2 border-accent/20">
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-bold text-foreground mb-4">
+                Let's Test This Principle
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                On your phone: Guess the statistics about accessibility features
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {quizQuestions.map((q, idx) => (
+                <Card key={idx} className="p-8 bg-background border-2 border-border">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-primary">{idx + 1}</span>
+                    </div>
+                    <div>
+                      <p className="text-xl text-foreground font-semibold leading-relaxed">
+                        {q.question}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            {isFacilitator && (
+              <div className="text-center mt-8">
+                <Button 
+                  onClick={() => setShowReveal(true)}
+                  size="lg"
+                  className="text-xl px-12 py-6"
+                >
+                  Reveal Answers
+                </Button>
+              </div>
+            )}
+          </Card>
+        ) : (
+          <div className="space-y-8 mb-12 animate-fade-in">
+            <h2 className="text-4xl font-bold text-center text-foreground mb-8">
+              The Reality: Designed for 15-20%, Used by 80%+
+            </h2>
+            
+            {quizQuestions.map((q, idx) => (
+              <Card key={idx} className="p-10 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                        <span className="text-3xl font-bold text-primary">{idx + 1}</span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground">{q.question}</h3>
+                    </div>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      {q.context}
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-7xl font-bold text-primary mb-4">{q.answer}</div>
+                    <Badge className="bg-accent/20 text-accent border-accent/30 text-lg px-4 py-2">
+                      Actual Data
+                    </Badge>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        )}
 
         {/* Key Principle */}
         <Card className="p-12 mb-12 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30">
