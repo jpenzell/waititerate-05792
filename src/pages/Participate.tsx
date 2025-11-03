@@ -28,6 +28,7 @@ import { ActOnDataScreen } from "@/components/screens/ActOnDataScreen";
 import LiveRehearsalExerciseScreen from "@/components/screens/LiveRehearsalExerciseScreen";
 import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
 import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
+import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -125,6 +126,12 @@ const screens = [
     title: "The Freedom to Try Anything",
     component: FreedomToTryScreen,
     duration: 6,
+  },
+  {
+    id: "LD5.6",
+    title: "AI Student: You're the Teacher",
+    component: AIStudentScreen,
+    duration: 8,
   },
   {
     id: "LD5.0",
@@ -292,7 +299,8 @@ export default function Participate() {
             currentScreen.id === "LD0.5.4" ||
             currentScreen.id === "LD0.5.6" ||
             currentScreen.id === "LD0.5.7" ||
-            currentScreen.id === "LD0.5.8"
+            currentScreen.id === "LD0.5.8" ||
+            currentScreen.id === "LD5.6"
           }
         />
       )}
@@ -340,8 +348,9 @@ export default function Participate() {
             currentScreen.id === "LD0.5.5" ||
             currentScreen.id === "LD0.5.6" ||
             currentScreen.id === "LD0.5.7" ||
-            currentScreen.id === "LD0.5.8") ? (
-            <CurrentComponent isFacilitator={false} sessionId={sessionId || undefined} />
+            currentScreen.id === "LD0.5.8" ||
+            currentScreen.id === "LD5.6") ? (
+            <CurrentComponent isFacilitator={false} sessionId={sessionId || undefined} userId={user?.id} />
           ) : currentScreen.id === "LD1.0" ? (
             // Show ScarcityVsAbundanceScreen with sessionId
             <div className="max-w-2xl mx-auto space-y-6">

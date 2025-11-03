@@ -24,6 +24,7 @@ import { CognitiveTransitionScreen } from "@/components/screens/CognitiveTransit
 import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerformanceScreen";
 import { CognitiveLoadScreen } from "@/components/screens/CognitiveLoadScreen";
 import { StructuredFreedomScreen } from "@/components/screens/StructuredFreedomScreen";
+import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
 import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
@@ -239,6 +240,13 @@ const screens = [
     hasPoll: true,
     pollQuestion: "Which design approach best describes your current training?",
     pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"],
+  },
+  {
+    id: "LD5.6",
+    title: "AI Student: You're the Teacher",
+    component: AIStudentScreen,
+    duration: 8,
+    notes: "Flip the script: learners teach an AI student and see if it passes the quiz. Demonstrates learning-by-teaching and the Feynman Technique in a low-stakes environment.",
   },
   {
     id: "LD4.0",
@@ -635,6 +643,8 @@ export default function Facilitator() {
         ) : currentScreen.id === "LD1.0" ? (
           <CurrentComponent sessionId={sessionId || undefined} />
         ) : (currentScreen.id === "LD1.0-Quiz-1" || currentScreen.id === "LD1.0-Quiz-2" || currentScreen.id === "LD1.0-Quiz-3") ? (
+          <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} userId={user?.id} />
+        ) : currentScreen.id === "LD5.6" ? (
           <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} userId={user?.id} />
         ) : (currentScreen.id === "LD0.5.1" ||
             currentScreen.id === "LD0.5.2" || 

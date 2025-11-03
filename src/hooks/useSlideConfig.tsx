@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v14'; // Updated - swapped LD5.0 and LD0.1 positions
+const STORAGE_KEY = 'presentation-slide-config-atdld-v15'; // Updated - added LD5.6 AI Student slide
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
