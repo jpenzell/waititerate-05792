@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v6'; // Updated - removed LD4.5 and LD6.7
+const STORAGE_KEY = 'presentation-slide-config-atdld-v7'; // Updated - hide LD0.5.10 by default
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
@@ -40,10 +40,10 @@ export const useSlideConfig = (initialSlides: { id: string }[]) => {
       }
     }
     
-    // Initialize with all slides visible in original order
+    // Initialize with all slides visible in original order, except LD0.5.10
     return initialSlides.map((slide, index) => ({
       id: slide.id,
-      visible: true,
+      visible: slide.id !== 'LD0.5.10', // Hide sensory processing screen by default
       order: index,
     }));
   });
@@ -51,9 +51,9 @@ export const useSlideConfig = (initialSlides: { id: string }[]) => {
   // Save to localStorage whenever config changes
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
-    // Don't show toast on initial load
+    // Don't show toast on initial load (check against default state)
     const isInitialLoad = config.every((c, i) => 
-      c.visible && c.order === i
+      c.visible === (c.id !== 'LD0.5.10') && c.order === i
     );
     if (!isInitialLoad) {
       toast.success('Slide configuration saved', {
@@ -99,7 +99,7 @@ export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const resetToDefaults = () => {
     const defaultConfig = initialSlides.map((slide, index) => ({
       id: slide.id,
-      visible: true,
+      visible: slide.id !== 'LD0.5.10', // Keep sensory processing screen hidden by default
       order: index,
     }));
     setConfig(defaultConfig);
