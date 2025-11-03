@@ -18,6 +18,8 @@ import { AIDatapointsScreen } from "@/components/screens/AIDatapointsScreen";
 import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerformanceScreen";
 import { CognitiveLoadScreen } from "@/components/screens/CognitiveLoadScreen";
 import { StructuredFreedomScreen } from "@/components/screens/StructuredFreedomScreen";
+import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
+import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
 import { AICognitiveProtheticScreen } from "@/components/screens/AICognitiveProtheticScreen";
 import { UDLInActionScreen } from "@/components/screens/UDLInActionScreen";
@@ -64,6 +66,20 @@ const screens = [
   },
   {
     id: "LD0.5.3",
+    title: "Mental Imagery Discovery",
+    component: MentalImageryScreen,
+    duration: 7,
+    notes: "Aphantasia reveal - not everyone sees mental pictures. Visceral wow moment.",
+  },
+  {
+    id: "LD0.5.4",
+    title: "Inner Voice Discovery", 
+    component: InnerVoiceScreen,
+    duration: 6,
+    notes: "Reading voice differences - some hear narration, others read in silence.",
+  },
+  {
+    id: "LD0.5.5",
     title: "Step 3: What Patterns Does AI See?",
     component: AIPatternsScreen,
     duration: 2,
