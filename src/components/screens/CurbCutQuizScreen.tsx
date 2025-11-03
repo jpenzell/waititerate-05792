@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { RevealCard } from "@/components/blocks/RevealCard";
 import { PollWidget } from "@/components/PollWidget";
 
 interface CurbCutQuizScreenProps {
@@ -16,37 +15,19 @@ export const CurbCutQuizScreen = ({
 }: CurbCutQuizScreenProps) => {
   const quizQuestions = [
     {
+      id: "captions",
       question: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?",
-      answer: (
-        <div className="space-y-4">
-          <div className="text-7xl font-bold text-primary text-center mb-4">71%</div>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Designed for deaf/hard-of-hearing, but ESL learners, people in noisy environments, and those with auditory processing differences also benefit
-          </p>
-        </div>
-      )
+      options: ["20%", "45%", "71%", "85%"]
     },
     {
+      id: "chunked",
       question: "How much does chunked content improve completion rates for everyone?",
-      answer: (
-        <div className="space-y-4">
-          <div className="text-7xl font-bold text-primary text-center mb-4">30%</div>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Designed for ADHD and working memory differences, but reduces cognitive load for all learners
-          </p>
-        </div>
-      )
+      options: ["10%", "30%", "50%", "75%"]
     },
     {
+      id: "formats",
       question: "What percentage of learners prefer multiple format options (text + audio + visual)?",
-      answer: (
-        <div className="space-y-4">
-          <div className="text-7xl font-bold text-primary text-center mb-4">80%+</div>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Designed for dyslexia and visual processing differences, but benefits all learning styles
-          </p>
-        </div>
-      )
+      options: ["40%", "60%", "80%+", "95%"]
     }
   ];
 
@@ -58,35 +39,48 @@ export const CurbCutQuizScreen = ({
             Test the Principle
           </Badge>
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-            Let's Test This Principle
+            Guess the Statistics
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {isFacilitator ? "Click to reveal each answer" : "Guess the statistics about accessibility features"}
+            {isFacilitator ? "Participants are answering on their phones" : "Answer each question on your phone"}
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-12">
           {quizQuestions.map((q, idx) => (
-            <div key={idx} className="animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-              <RevealCard
-                question={q.question}
-                answer={q.answer}
-              />
-            </div>
+            <Card key={q.id} className="p-10 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20 animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-primary">{idx + 1}</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground leading-relaxed flex-1">
+                    {q.question}
+                  </h3>
+                </div>
+
+                {sessionId && userId && (
+                  <PollWidget
+                    sessionId={sessionId}
+                    slideId={`LD1.0-Quiz-${q.id}`}
+                    userId={userId}
+                    isPresenter={isFacilitator}
+                  />
+                )}
+
+                {!sessionId && (
+                  <div className="grid grid-cols-2 gap-4">
+                    {q.options.map((option) => (
+                      <Card key={option} className="p-6 bg-background border-2 border-border hover:border-primary/40 transition-all cursor-pointer">
+                        <p className="text-xl font-semibold text-foreground text-center">{option}</p>
+                      </Card>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </Card>
           ))}
         </div>
-
-        {/* Poll for participants to answer on phones */}
-        {isFacilitator && sessionId && userId && (
-          <div className="mt-12">
-            <PollWidget
-              sessionId={sessionId}
-              slideId="LD1.0-Quiz"
-              userId={userId}
-              isPresenter={true}
-            />
-          </div>
-        )}
       </div>
     </div>
   );
