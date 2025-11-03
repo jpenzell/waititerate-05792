@@ -316,6 +316,27 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
     );
   }
 
+  const [currentQuestion, setCurrentQuestion] = useState(1);
+
+  const canProceed = () => {
+    if (currentQuestion === 1) return unemploymentGuess !== "";
+    if (currentQuestion === 2) return productivityGuess !== "";
+    if (currentQuestion === 3) return populationGuess !== "";
+    return false;
+  };
+
+  const handleNext = () => {
+    if (currentQuestion < 3) {
+      setCurrentQuestion(currentQuestion + 1);
+    }
+  };
+
+  const handleBack = () => {
+    if (currentQuestion > 1) {
+      setCurrentQuestion(currentQuestion - 1);
+    }
+  };
+
   // PARTICIPANT VIEW
   return (
     <div className="max-w-2xl mx-auto py-8 px-4">
@@ -326,99 +347,129 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
               <Users className="h-4 w-4 mr-2" />
               Neurodiversity Data Quiz
             </Badge>
-            <h1 className="text-4xl font-bold text-foreground">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground">
               What Do You Think?
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Guess these neurodiversity statistics
+            <p className="text-sm text-muted-foreground">
+              Question {currentQuestion} of 3
             </p>
           </div>
 
           <Card className="p-6 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20">
             <div className="space-y-6">
               {/* Question 1 */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Briefcase className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-foreground mb-2">
-                      What % of autistic adults with college degrees are unemployed or underemployed?
-                    </h3>
-                    <div className="flex items-center gap-3">
-                      <Input
-                        type="number"
-                        min="0"
-                        max="100"
-                        value={unemploymentGuess}
-                        onChange={(e) => setUnemploymentGuess(e.target.value)}
-                        placeholder="Enter %"
-                        className="text-2xl font-bold text-center"
-                      />
-                      <span className="text-2xl font-bold text-muted-foreground">%</span>
+              {currentQuestion === 1 && (
+                <div className="space-y-4 animate-fade-in">
+                  <div className="flex items-start gap-3">
+                    <Briefcase className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-foreground mb-4">
+                        What % of autistic adults with college degrees are unemployed or underemployed?
+                      </h3>
+                      <div className="flex items-center gap-3">
+                        <Input
+                          type="number"
+                          min="0"
+                          max="100"
+                          value={unemploymentGuess}
+                          onChange={(e) => setUnemploymentGuess(e.target.value)}
+                          placeholder="Enter %"
+                          className="text-3xl font-bold text-center h-16"
+                        />
+                        <span className="text-3xl font-bold text-muted-foreground">%</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               {/* Question 2 */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <TrendingUp className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-foreground mb-2">
-                      How much MORE productive are neurodivergent employees in the right roles?
-                    </h3>
-                    <div className="flex items-center gap-3">
-                      <Input
-                        type="number"
-                        min="0"
-                        max="100"
-                        value={productivityGuess}
-                        onChange={(e) => setProductivityGuess(e.target.value)}
-                        placeholder="Enter %"
-                        className="text-2xl font-bold text-center"
-                      />
-                      <span className="text-2xl font-bold text-muted-foreground">%</span>
+              {currentQuestion === 2 && (
+                <div className="space-y-4 animate-fade-in">
+                  <div className="flex items-start gap-3">
+                    <TrendingUp className="h-8 w-8 text-accent mt-1 flex-shrink-0" />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-foreground mb-4">
+                        How much MORE productive are neurodivergent employees in the right roles?
+                      </h3>
+                      <div className="flex items-center gap-3">
+                        <Input
+                          type="number"
+                          min="0"
+                          max="100"
+                          value={productivityGuess}
+                          onChange={(e) => setProductivityGuess(e.target.value)}
+                          placeholder="Enter %"
+                          className="text-3xl font-bold text-center h-16"
+                        />
+                        <span className="text-3xl font-bold text-muted-foreground">%</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               {/* Question 3 */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Users className="h-6 w-6 text-foreground mt-1 flex-shrink-0" />
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-foreground mb-2">
-                      What % of the global population is neurodivergent?
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      (Including ADHD, autism, dyslexia, etc.)
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <Input
-                        type="number"
-                        min="0"
-                        max="100"
-                        value={populationGuess}
-                        onChange={(e) => setPopulationGuess(e.target.value)}
-                        placeholder="Enter %"
-                        className="text-2xl font-bold text-center"
-                      />
-                      <span className="text-2xl font-bold text-muted-foreground">%</span>
+              {currentQuestion === 3 && (
+                <div className="space-y-4 animate-fade-in">
+                  <div className="flex items-start gap-3">
+                    <Users className="h-8 w-8 text-foreground mt-1 flex-shrink-0" />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        What % of the global population is neurodivergent?
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        (Including ADHD, autism, dyslexia, etc.)
+                      </p>
+                      <div className="flex items-center gap-3">
+                        <Input
+                          type="number"
+                          min="0"
+                          max="100"
+                          value={populationGuess}
+                          onChange={(e) => setPopulationGuess(e.target.value)}
+                          placeholder="Enter %"
+                          className="text-3xl font-bold text-center h-16"
+                        />
+                        <span className="text-3xl font-bold text-muted-foreground">%</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
 
-              <Button 
-                onClick={submitResponse}
-                size="lg" 
-                className="w-full"
-                disabled={!unemploymentGuess || !productivityGuess || !populationGuess}
-              >
-                Submit My Guesses
-              </Button>
+              <div className="flex gap-3">
+                {currentQuestion > 1 && (
+                  <Button 
+                    onClick={handleBack}
+                    variant="outline"
+                    size="lg" 
+                    className="flex-1"
+                  >
+                    Back
+                  </Button>
+                )}
+                
+                {currentQuestion < 3 ? (
+                  <Button 
+                    onClick={handleNext}
+                    size="lg" 
+                    className="flex-1"
+                    disabled={!canProceed()}
+                  >
+                    Next Question
+                  </Button>
+                ) : (
+                  <Button 
+                    onClick={submitResponse}
+                    size="lg" 
+                    className="flex-1"
+                    disabled={!canProceed()}
+                  >
+                    Submit All Guesses
+                  </Button>
+                )}
+              </div>
             </div>
           </Card>
         </div>
