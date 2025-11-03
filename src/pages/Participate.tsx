@@ -8,7 +8,7 @@ import { useSlideConfig } from "@/hooks/useSlideConfig";
 import { useAuth } from "@/hooks/useAuth";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
-import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
+import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
 import { ScarcityVsAbundanceScreen } from "@/components/screens/ScarcityVsAbundanceScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
@@ -42,10 +42,9 @@ const screens = [
   },
   {
     id: "LD0.1",
-    title: "Windshield Wipers Question",
-    component: WindshieldWipersScreen,
-    duration: 2,
-    hasPoll: true,
+    title: "Why Neurodiversity Matters: The Data",
+    component: NeurodiversityDataQuizScreen,
+    duration: 8,
   },
   {
     id: "LD0.5.1",
@@ -253,6 +252,7 @@ export default function Participate() {
       <ParticipantInstructions 
         slideId={currentScreen.id}
         isInteractive={
+          currentScreen.id === "LD0.1" ||
           currentScreen.id === "LD0.5.1" || 
           currentScreen.id === "LD0.5.2" || 
           currentScreen.id === "LD0.5.3" || 
@@ -295,7 +295,8 @@ export default function Participate() {
       >
         <div className="space-y-6">
           {/* Interactive screens - participants engage here */}
-          {(currentScreen.id === "LD0.5.1" || 
+          {(currentScreen.id === "LD0.1" ||
+            currentScreen.id === "LD0.5.1" || 
             currentScreen.id === "LD0.5.2" || 
             currentScreen.id === "LD0.5.3" || 
             currentScreen.id === "LD0.5.4" || 

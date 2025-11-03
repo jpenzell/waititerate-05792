@@ -13,6 +13,10 @@ interface ParticipantInstructionsProps {
 }
 
 const slideInstructions: Record<string, { text: string; type: "info" | "action" | "success" }> = {
+  "LD0.1": {
+    text: "Guess three shocking statistics about neurodiversity in the workplace. Most people are way off—prepare to be surprised by reality.",
+    type: "action"
+  },
   "LD0.5.1": {
     text: "Take a photo of something that represents how YOU learn best. It can be anything—your workspace, a tool, a place, a object. There's no wrong answer.",
     type: "action"

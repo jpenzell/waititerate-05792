@@ -102,6 +102,44 @@ export type Database = {
           },
         ]
       }
+      neurodiversity_quiz_responses: {
+        Row: {
+          created_at: string
+          id: string
+          population_guess: number
+          productivity_guess: number
+          session_id: string
+          unemployment_guess: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          population_guess: number
+          productivity_guess: number
+          session_id: string
+          unemployment_guess: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          population_guess?: number
+          productivity_guess?: number
+          session_id?: string
+          unemployment_guess?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "neurodiversity_quiz_responses_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "presentation_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       numeric_estimates: {
         Row: {
           created_at: string

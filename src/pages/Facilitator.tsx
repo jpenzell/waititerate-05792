@@ -8,7 +8,7 @@ import { useSlideConfig } from "@/hooks/useSlideConfig";
 import { useAuth } from "@/hooks/useAuth";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
-import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
+import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
 import { CurbCutEffectScreen } from "@/components/screens/CurbCutEffectScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
@@ -48,13 +48,10 @@ const screens = [
   },
   {
     id: "LD0.1",
-    title: "Why Neurodiversity Matters Now",
-    component: WindshieldWipersScreen,
-    duration: 2,
-    notes: "Establish relevance and normalize neurodiversity in the room.",
-    hasPoll: true,
-    pollQuestion: "Do you personally identify as neurodivergent, or do you work closely with someone who does?",
-    pollOptions: ["Yes - I identify as ND", "Yes - I work with ND colleagues", "Both", "Not sure/Prefer not to say"],
+    title: "Why Neurodiversity Matters: The Data",
+    component: NeurodiversityDataQuizScreen,
+    duration: 8,
+    notes: "Interactive data quiz - participants guess shocking neurodiversity employment/productivity stats, then see reality. Creates visceral 'wow!' moment.",
   },
   {
     id: "LD0.5.1",
@@ -540,7 +537,7 @@ export default function Facilitator() {
         }
       >
         {currentScreen.id === "LD0.1" ? (
-          <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} userId={user?.id} sessionCode={sessionCode || undefined} />
+          <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} />
         ) : currentScreen.id === "LD1.0" ? (
           <CurrentComponent sessionId={sessionId || undefined} />
         ) : (currentScreen.id === "LD0.5.1" || 
