@@ -1,11 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Eye, Zap, Hand, CheckCircle2 } from "lucide-react";
+import { SlideHeader } from "@/components/SlideHeader";
 
 export const UDLInActionScreen = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5 py-12 px-6">
       <div className="max-w-7xl mx-auto">
+        <SlideHeader slideNumber={12} totalSlides={14} estimatedMinutes={6} title="Universal Design for Learning in Action" />
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <Badge variant="secondary" className="mb-4">
