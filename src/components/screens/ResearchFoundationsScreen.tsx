@@ -99,21 +99,21 @@ export const ResearchFoundationsScreen = () => {
             {researchAreas.map((area) => {
               const Icon = area.icon;
               return (
-                <Card key={area.title} className="p-6 bg-gradient-to-br from-background to-accent/5 border-2 border-primary/10 hover:border-primary/30 transition-all">
-                  <div className="space-y-4">
+                <Card key={area.title} className="p-8 bg-gradient-to-br from-background to-accent/5 border-2 border-primary/10 hover:border-primary/30 transition-all">
+                  <div className="space-y-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <Icon className="h-7 w-7 text-primary flex-shrink-0" />
-                      <h3 className="text-xl font-bold text-foreground">{area.title}</h3>
+                      <Icon className="h-8 w-8 text-primary flex-shrink-0" />
+                      <h3 className="text-2xl font-bold text-foreground">{area.title}</h3>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                       {area.studies.map((study, idx) => (
-                        <div key={idx} className="space-y-2 pb-4 border-b border-border last:border-0 last:pb-0">
-                          <p className="text-xs text-muted-foreground font-mono bg-background/50 p-2 rounded">
+                        <div key={idx} className="space-y-3 pb-6 border-b border-border last:border-0 last:pb-0">
+                          <p className="text-sm text-muted-foreground font-mono bg-background/50 p-3 rounded leading-relaxed">
                             {study.citation}
                           </p>
-                          <p className="text-sm text-foreground">
-                            <strong>Key Finding:</strong> {study.finding}
+                          <p className="text-base text-foreground leading-relaxed">
+                            <strong className="text-lg">Key Finding:</strong> {study.finding}
                           </p>
                         </div>
                       ))}

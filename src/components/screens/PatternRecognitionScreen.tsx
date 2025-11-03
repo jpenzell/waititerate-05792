@@ -127,43 +127,43 @@ export const PatternRecognitionScreen = ({
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-bold text-primary mb-4 flex items-center gap-2">
-                    <Brain className="h-6 w-6" />
+                  <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+                    <Brain className="h-7 w-7" />
                     Why Different Brains See Differently
                   </h3>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
-                      <span><strong>Perceptual processing:</strong> Some brains prioritize local features (duck's bill), others global shapes (rabbit ears)</span>
+                  <ul className="space-y-4 text-base text-muted-foreground leading-relaxed">
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary text-2xl">•</span>
+                      <span><strong className="text-foreground">Perceptual processing:</strong> Some brains prioritize local features, others global shapes</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
-                      <span><strong>Prior experience:</strong> If you grew up around ducks, you see a duck first. Rabbits? You see a rabbit.</span>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary text-2xl">•</span>
+                      <span><strong className="text-foreground">Prior experience:</strong> Context shapes what you see first</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
-                      <span><strong>Cognitive flexibility:</strong> Switching perspectives requires mental effort—easier for some than others</span>
+                    <li className="flex items-start gap-3">
+                      <span className="text-primary text-2xl">•</span>
+                      <span><strong className="text-foreground">Cognitive flexibility:</strong> Switching perspectives takes effort</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-accent mb-4 flex items-center gap-2">
-                    <TrendingUp className="h-6 w-6" />
+                  <h3 className="text-2xl font-bold text-accent mb-6 flex items-center gap-2">
+                    <TrendingUp className="h-7 w-7" />
                     Why This Matters for Teams
                   </h3>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent">•</span>
-                      <span><strong>QA Testing:</strong> Detail-focused testers catch edge cases neurotypical testers miss</span>
+                  <ul className="space-y-4 text-base text-muted-foreground leading-relaxed">
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent text-2xl">•</span>
+                      <span><strong className="text-foreground">QA Testing:</strong> Detail-focused testers catch edge cases</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent">•</span>
-                      <span><strong>Innovation:</strong> Different perspectives = more creative solutions to problems</span>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent text-2xl">•</span>
+                      <span><strong className="text-foreground">Innovation:</strong> Different perspectives = more creative solutions</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-accent">•</span>
-                      <span><strong>Risk Management:</strong> Diverse viewpoints identify blind spots in strategy</span>
+                    <li className="flex items-start gap-3">
+                      <span className="text-accent text-2xl">•</span>
+                      <span><strong className="text-foreground">Risk Management:</strong> Diverse viewpoints identify blind spots</span>
                     </li>
                   </ul>
                 </div>
@@ -173,35 +173,33 @@ export const PatternRecognitionScreen = ({
         )}
 
         {/* Case Study Callback */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          <Card className="p-6 hover:shadow-lg transition-all">
-            <div className="flex items-center gap-3 mb-4">
-              <Users className="h-6 w-6 text-primary" />
-              <h4 className="text-lg font-bold text-foreground">SAP: 30% Faster QA</h4>
-            </div>
-            <p className="text-sm text-muted-foreground mb-3">
-              Autistic QA testers complete repetitive testing tasks 30% faster with higher accuracy. 
-              Why? Their brains excel at systematic pattern detection.
-            </p>
-            <Badge className="bg-primary/10 text-primary border-primary/20">
-              Detail-Oriented Advantage
-            </Badge>
-          </Card>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <div className="flex items-center gap-3 mb-6">
+                <Users className="h-8 w-8 text-primary" />
+                <h4 className="text-2xl font-bold text-foreground">SAP: 30% Faster QA</h4>
+              </div>
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                Autistic QA testers complete repetitive testing tasks 30% faster with higher accuracy
+              </p>
+              <Badge className="bg-primary/10 text-primary border-primary/20 text-base px-3 py-1">
+                Detail-Oriented Advantage
+              </Badge>
+            </Card>
 
-          <Card className="p-6 hover:shadow-lg transition-all">
-            <div className="flex items-center gap-3 mb-4">
-              <Brain className="h-6 w-6 text-accent" />
-              <h4 className="text-lg font-bold text-foreground">Microsoft: 92% Performance Success</h4>
-            </div>
-            <p className="text-sm text-muted-foreground mb-3">
-              When hiring processes accommodate different cognitive styles (skills-based vs. 
-              interview-only), neurodivergent hires meet/exceed expectations at 92%.
-            </p>
-            <Badge className="bg-accent/10 text-accent border-accent/20">
-              Process Redesign Impact
-            </Badge>
-          </Card>
-        </div>
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <div className="flex items-center gap-3 mb-6">
+                <Brain className="h-8 w-8 text-accent" />
+                <h4 className="text-2xl font-bold text-foreground">Microsoft: 92% Success</h4>
+              </div>
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                Skills-based hiring accommodates different cognitive styles
+              </p>
+              <Badge className="bg-accent/10 text-accent border-accent/20 text-base px-3 py-1">
+                Process Redesign Impact
+              </Badge>
+            </Card>
+          </div>
 
         {/* Key Takeaway */}
         <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30">

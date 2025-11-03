@@ -40,23 +40,23 @@ export const UDLInActionScreen = () => {
                 Present information in different formats so all learners can access it.
               </p>
               
-              <div className="space-y-3">
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Text + Audio</p>
-                  <p className="text-xs text-muted-foreground">
+              <div className="space-y-4">
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Text + Audio</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     Provide transcripts AND narration
                   </p>
                 </div>
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Visual + Verbal</p>
-                  <p className="text-xs text-muted-foreground">
-                    Diagrams, infographics, videos alongside written explanations
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Visual + Verbal</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Diagrams alongside written explanations
                   </p>
                 </div>
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Adjustable Display</p>
-                  <p className="text-xs text-muted-foreground">
-                    Font size, contrast, playback speed controls
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Adjustable Display</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Font size, contrast controls
                   </p>
                 </div>
               </div>
@@ -82,23 +82,23 @@ export const UDLInActionScreen = () => {
                 Offer different ways to motivate and sustain learner interest.
               </p>
               
-              <div className="space-y-3">
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Choice & Autonomy</p>
-                  <p className="text-xs text-muted-foreground">
-                    "Pick 3 of 5 case studies to analyze"
+              <div className="space-y-4">
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Choice & Autonomy</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    "Pick 3 of 5 case studies"
                   </p>
                 </div>
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Relevance</p>
-                  <p className="text-xs text-muted-foreground">
-                    Connect to learners' real-world context
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Relevance</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Connect to real-world context
                   </p>
                 </div>
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Gamification</p>
-                  <p className="text-xs text-muted-foreground">
-                    Progress tracking, achievements, immediate feedback
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Gamification</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Progress tracking, feedback
                   </p>
                 </div>
               </div>
@@ -124,23 +124,23 @@ export const UDLInActionScreen = () => {
                 Allow learners to demonstrate understanding in different ways.
               </p>
               
-              <div className="space-y-3">
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Format Choice</p>
-                  <p className="text-xs text-muted-foreground">
-                    Written report, video, presentation, or prototype
+              <div className="space-y-4">
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Format Choice</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Written, video, presentation
                   </p>
                 </div>
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Tool Options</p>
-                  <p className="text-xs text-muted-foreground">
-                    Speech-to-text, mind mapping, collaborative docs
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Tool Options</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Speech-to-text, mind mapping
                   </p>
                 </div>
-                <div className="p-3 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-1">Scaffolded Support</p>
-                  <p className="text-xs text-muted-foreground">
-                    Templates, checklists, worked examples available
+                <div className="p-4 bg-background rounded border border-border">
+                  <p className="font-semibold text-foreground mb-2 text-lg">Scaffolded Support</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Templates, checklists, examples
                   </p>
                 </div>
               </div>
@@ -197,26 +197,26 @@ export const UDLInActionScreen = () => {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Pick one course module you've designed. Ask yourself:
             </p>
-            <div className="grid md:grid-cols-3 gap-4 mt-6">
-              <div className="p-4 bg-background rounded border border-border">
-                <Eye className="h-6 w-6 text-primary mb-2 mx-auto" />
-                <p className="font-semibold text-foreground mb-2">Representation</p>
-                <p className="text-sm text-muted-foreground">
-                  Do I offer at least 2 formats? (Text + audio? Visual + verbal?)
+            <div className="grid md:grid-cols-3 gap-6 mt-6">
+              <div className="p-6 bg-background rounded border-2 border-border">
+                <Eye className="h-8 w-8 text-primary mb-3 mx-auto" />
+                <p className="font-semibold text-foreground mb-3 text-lg">Representation</p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Do I offer at least 2 formats?
                 </p>
               </div>
-              <div className="p-4 bg-background rounded border border-border">
-                <Zap className="h-6 w-6 text-accent mb-2 mx-auto" />
-                <p className="font-semibold text-foreground mb-2">Engagement</p>
-                <p className="text-sm text-muted-foreground">
-                  Do learners have any choices in how they engage with this content?
+              <div className="p-6 bg-background rounded border-2 border-border">
+                <Zap className="h-8 w-8 text-accent mb-3 mx-auto" />
+                <p className="font-semibold text-foreground mb-3 text-lg">Engagement</p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Do learners have choices?
                 </p>
               </div>
-              <div className="p-4 bg-background rounded border border-border">
-                <Hand className="h-6 w-6 text-primary mb-2 mx-auto" />
-                <p className="font-semibold text-foreground mb-2">Expression</p>
-                <p className="text-sm text-muted-foreground">
-                  Can learners demonstrate understanding in different ways?
+              <div className="p-6 bg-background rounded border-2 border-border">
+                <Hand className="h-8 w-8 text-primary mb-3 mx-auto" />
+                <p className="font-semibold text-foreground mb-3 text-lg">Expression</p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Can learners show understanding differently?
                 </p>
               </div>
             </div>

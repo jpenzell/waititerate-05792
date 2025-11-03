@@ -25,34 +25,34 @@ export const CognitiveLoadScreen = () => {
         </div>
 
         {/* Key Principles */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <Card className="p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <Brain className="h-6 w-6 text-primary" />
-              <h3 className="font-bold text-foreground">Progressive Disclosure</h3>
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <Card className="p-8 border-2 border-primary/20">
+            <div className="flex items-center gap-3 mb-4">
+              <Brain className="h-8 w-8 text-primary" />
+              <h3 className="font-bold text-foreground text-xl">Progressive Disclosure</h3>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-base text-muted-foreground leading-relaxed">
               Don't show everything at once—reveal information as needed
             </p>
           </Card>
 
-          <Card className="p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <Brain className="h-6 w-6 text-primary" />
-              <h3 className="font-bold text-foreground">Chunking</h3>
+          <Card className="p-8 border-2 border-primary/20">
+            <div className="flex items-center gap-3 mb-4">
+              <Brain className="h-8 w-8 text-primary" />
+              <h3 className="font-bold text-foreground text-xl">Chunking</h3>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-base text-muted-foreground leading-relaxed">
               Break complex information into digestible pieces
             </p>
           </Card>
 
-          <Card className="p-6">
-            <div className="flex items-center gap-3 mb-3">
-              <Brain className="h-6 w-6 text-primary" />
-              <h3 className="font-bold text-foreground">Reduce Extraneous Load</h3>
+          <Card className="p-8 border-2 border-primary/20">
+            <div className="flex items-center gap-3 mb-4">
+              <Brain className="h-8 w-8 text-primary" />
+              <h3 className="font-bold text-foreground text-xl">Reduce Extraneous Load</h3>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Minimize visual clutter, unnecessary animations, and distractions
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Minimize visual clutter and distractions
             </p>
           </Card>
         </div>
@@ -96,13 +96,12 @@ export const CognitiveLoadScreen = () => {
               </div>
 
               <div className="mt-6 p-4 bg-muted rounded">
-                <p className="text-xs font-semibold text-destructive mb-2">Problems:</p>
-                <ul className="text-xs space-y-1 text-muted-foreground">
+                <p className="text-base font-semibold text-destructive mb-3">Problems:</p>
+                <ul className="text-base space-y-2 text-muted-foreground leading-relaxed">
                   <li>• Dense paragraph (hard to scan)</li>
                   <li>• Multiple fonts and animations</li>
                   <li>• Unclear priority or focus</li>
                   <li>• Overwhelming amount of info at once</li>
-                  <li>• Distracting visual elements</li>
                 </ul>
               </div>
             </Card>
@@ -141,13 +140,12 @@ export const CognitiveLoadScreen = () => {
               </div>
 
               <div className="mt-6 p-4 bg-muted rounded">
-                <p className="text-xs font-semibold text-primary mb-2">Improvements:</p>
-                <ul className="text-xs space-y-1 text-muted-foreground">
-                  <li>• Clear hierarchy (title → description → action)</li>
+                <p className="text-base font-semibold text-primary mb-3">Improvements:</p>
+                <ul className="text-base space-y-2 text-muted-foreground leading-relaxed">
+                  <li>• Clear hierarchy (title → action)</li>
                   <li>• Chunked into 3 modules</li>
                   <li>• Single font, minimal animation</li>
                   <li>• Scannable structure</li>
-                  <li>• Clear next step</li>
                 </ul>
               </div>
             </Card>

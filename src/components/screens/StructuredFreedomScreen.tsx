@@ -80,111 +80,111 @@ export const StructuredFreedomScreen = ({
           </div>
         </Card>
 
-        {/* Framework Table */}
-        <Card className="p-8 mb-12 bg-background border-2 border-border">
-          <h2 className="text-3xl font-bold text-foreground mb-6 text-center">The Four Dimensions</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b-2 border-border">
-                  <th className="text-left p-4 text-foreground font-semibold">Dimension</th>
-                  <th className="text-left p-4 text-primary font-semibold">Structure (The Trellis)</th>
-                  <th className="text-left p-4 text-accent font-semibold">Freedom (The Vine)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                <tr className="hover:bg-primary/5 transition-colors">
-                  <td className="p-4">
-                    <div className="flex items-center gap-2">
-                      <Target className="h-5 w-5 text-muted-foreground" />
-                      <span className="font-semibold text-foreground">Cognitive</span>
-                    </div>
-                  </td>
-                  <td className="p-4 text-muted-foreground">
-                    <ul className="space-y-1 text-sm">
-                      <li>• Clear learning objectives</li>
-                      <li>• Scaffolding & chunking</li>
-                      <li>• Predictable pacing</li>
-                    </ul>
-                  </td>
-                  <td className="p-4 text-muted-foreground">
-                    <ul className="space-y-1 text-sm">
-                      <li>• Self-directed exploration</li>
-                      <li>• Multiple learning paths</li>
-                      <li>• Choice in assessment format</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr className="hover:bg-primary/5 transition-colors">
-                  <td className="p-4">
-                    <div className="flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-muted-foreground" />
-                      <span className="font-semibold text-foreground">Emotional</span>
-                    </div>
-                  </td>
-                  <td className="p-4 text-muted-foreground">
-                    <ul className="space-y-1 text-sm">
-                      <li>• Predictable rhythm</li>
-                      <li>• Clear norms & expectations</li>
-                      <li>• Safe-to-fail environment</li>
-                    </ul>
-                  </td>
-                  <td className="p-4 text-muted-foreground">
-                    <ul className="space-y-1 text-sm">
-                      <li>• Space for divergence</li>
-                      <li>• Celebrate unique perspectives</li>
-                      <li>• Psychological safety</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr className="hover:bg-primary/5 transition-colors">
-                  <td className="p-4">
-                    <div className="flex items-center gap-2">
-                      <Unlock className="h-5 w-5 text-muted-foreground" />
-                      <span className="font-semibold text-foreground">Environmental</span>
-                    </div>
-                  </td>
-                  <td className="p-4 text-muted-foreground">
-                    <ul className="space-y-1 text-sm">
-                      <li>• Sensory-safe defaults</li>
-                      <li>• Accessible platforms (WCAG)</li>
-                      <li>• Consistent navigation</li>
-                    </ul>
-                  </td>
-                  <td className="p-4 text-muted-foreground">
-                    <ul className="space-y-1 text-sm">
-                      <li>• Flexible modes (visual, audio, text)</li>
-                      <li>• Control over environment (pace, breaks)</li>
-                      <li>• Multiple participation options</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr className="hover:bg-primary/5 transition-colors">
-                  <td className="p-4">
-                    <div className="flex items-center gap-2">
-                      <Zap className="h-5 w-5 text-muted-foreground" />
-                      <span className="font-semibold text-foreground">AI Collaboration</span>
-                    </div>
-                  </td>
-                  <td className="p-4 text-muted-foreground">
-                    <ul className="space-y-1 text-sm">
-                      <li>• Guardrails (context, constraints)</li>
-                      <li>• Prompt templates</li>
-                      <li>• Quality criteria</li>
-                    </ul>
-                  </td>
-                  <td className="p-4 text-muted-foreground">
-                    <ul className="space-y-1 text-sm">
-                      <li>• Adaptive co-creation</li>
-                      <li>• Personalized pathways</li>
-                      <li>• Learner-driven iteration</li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        {/* Framework Grid - Optimized for Screenshare */}
+        <div className="mb-12">
+          <h2 className="text-4xl font-bold text-foreground mb-8 text-center">The Four Dimensions</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="p-6 bg-primary/5 border-2 border-primary/20">
+              <div className="flex items-center gap-3 mb-4">
+                <Target className="h-7 w-7 text-primary" />
+                <h3 className="text-2xl font-bold text-primary">Cognitive</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Structure:</p>
+                  <ul className="space-y-2 text-base text-muted-foreground">
+                    <li>• Clear learning objectives</li>
+                    <li>• Scaffolding & chunking</li>
+                    <li>• Predictable pacing</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-bold text-lg text-accent mb-2">Freedom:</p>
+                  <ul className="space-y-2 text-base text-muted-foreground">
+                    <li>• Self-directed exploration</li>
+                    <li>• Multiple learning paths</li>
+                    <li>• Choice in format</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-accent/5 border-2 border-accent/20">
+              <div className="flex items-center gap-3 mb-4">
+                <Shield className="h-7 w-7 text-accent" />
+                <h3 className="text-2xl font-bold text-accent">Emotional</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Structure:</p>
+                  <ul className="space-y-2 text-base text-muted-foreground">
+                    <li>• Predictable rhythm</li>
+                    <li>• Clear expectations</li>
+                    <li>• Safe-to-fail environment</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-bold text-lg text-accent mb-2">Freedom:</p>
+                  <ul className="space-y-2 text-base text-muted-foreground">
+                    <li>• Space for divergence</li>
+                    <li>• Celebrate perspectives</li>
+                    <li>• Psychological safety</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-primary/5 border-2 border-primary/20">
+              <div className="flex items-center gap-3 mb-4">
+                <Unlock className="h-7 w-7 text-primary" />
+                <h3 className="text-2xl font-bold text-primary">Environmental</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Structure:</p>
+                  <ul className="space-y-2 text-base text-muted-foreground">
+                    <li>• Sensory-safe defaults</li>
+                    <li>• Accessible platforms</li>
+                    <li>• Consistent navigation</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-bold text-lg text-accent mb-2">Freedom:</p>
+                  <ul className="space-y-2 text-base text-muted-foreground">
+                    <li>• Flexible modes (visual/audio)</li>
+                    <li>• Control over pace</li>
+                    <li>• Multiple participation options</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-accent/5 border-2 border-accent/20">
+              <div className="flex items-center gap-3 mb-4">
+                <Zap className="h-7 w-7 text-accent" />
+                <h3 className="text-2xl font-bold text-accent">AI Collaboration</h3>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-bold text-lg text-foreground mb-2">Structure:</p>
+                  <ul className="space-y-2 text-base text-muted-foreground">
+                    <li>• Guardrails & constraints</li>
+                    <li>• Prompt templates</li>
+                    <li>• Quality criteria</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-bold text-lg text-accent mb-2">Freedom:</p>
+                  <ul className="space-y-2 text-base text-muted-foreground">
+                    <li>• Adaptive co-creation</li>
+                    <li>• Personalized pathways</li>
+                    <li>• Learner-driven iteration</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
           </div>
-        </Card>
+        </div>
 
         {/* Real-World Examples */}
         <div className="mb-12">
@@ -192,33 +192,33 @@ export const StructuredFreedomScreen = ({
             Structured Freedom in Action
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <h4 className="text-lg font-bold text-primary mb-2">LEGO</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                <strong className="text-foreground">Structure:</strong> Step-by-step instructions
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <h4 className="text-2xl font-bold text-primary mb-4">LEGO</h4>
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                <strong className="text-foreground text-lg">Structure:</strong> Step-by-step instructions
               </p>
-              <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Freedom:</strong> Free play after completion
-              </p>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <h4 className="text-lg font-bold text-primary mb-2">Khan Academy</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                <strong className="text-foreground">Structure:</strong> Mastery-based progression (80% to advance)
-              </p>
-              <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Freedom:</strong> Self-paced, can skip or repeat
+              <p className="text-base text-muted-foreground leading-relaxed">
+                <strong className="text-foreground text-lg">Freedom:</strong> Free play after completion
               </p>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <h4 className="text-lg font-bold text-primary mb-2">Duolingo</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                <strong className="text-foreground">Structure:</strong> Gamified daily goals
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <h4 className="text-2xl font-bold text-primary mb-4">Khan Academy</h4>
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                <strong className="text-foreground text-lg">Structure:</strong> Mastery-based progression (80%)
               </p>
-              <p className="text-sm text-muted-foreground">
-                <strong className="text-foreground">Freedom:</strong> Adaptive placement test, pick topics
+              <p className="text-base text-muted-foreground leading-relaxed">
+                <strong className="text-foreground text-lg">Freedom:</strong> Self-paced learning
+              </p>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <h4 className="text-2xl font-bold text-primary mb-4">Duolingo</h4>
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                <strong className="text-foreground text-lg">Structure:</strong> Gamified daily goals
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                <strong className="text-foreground text-lg">Freedom:</strong> Pick your own topics
               </p>
             </Card>
           </div>

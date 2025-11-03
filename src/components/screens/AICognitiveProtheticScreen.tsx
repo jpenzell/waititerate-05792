@@ -34,18 +34,18 @@ export const AICognitiveProtheticScreen = () => {
                 A tool that augments human cognitive abilities. Just as a wheelchair enables mobility 
                 or glasses enable clear vision, AI can enable personalized learning at scale.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 mt-6">
-                <div className="p-3 bg-background rounded border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">ADHD</p>
-                  <p className="text-sm text-muted-foreground">Gamification + immediate feedback (dopamine regulation)</p>
+              <div className="grid md:grid-cols-3 gap-6 mt-6">
+                <div className="p-4 bg-background rounded border border-primary/20">
+                  <p className="font-semibold text-primary text-lg mb-2">ADHD</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">Gamification + immediate feedback</p>
                 </div>
-                <div className="p-3 bg-background rounded border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">Autism</p>
-                  <p className="text-sm text-muted-foreground">Predictable structure + clear rules</p>
+                <div className="p-4 bg-background rounded border border-primary/20">
+                  <p className="font-semibold text-primary text-lg mb-2">Autism</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">Predictable structure + clear rules</p>
                 </div>
-                <div className="p-3 bg-background rounded border border-primary/20">
-                  <p className="font-semibold text-primary mb-1">Dyslexia</p>
-                  <p className="text-sm text-muted-foreground">Text-to-speech + font adjustments</p>
+                <div className="p-4 bg-background rounded border border-primary/20">
+                  <p className="font-semibold text-primary text-lg mb-2">Dyslexia</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">Text-to-speech + font adjustments</p>
                 </div>
               </div>
             </div>
@@ -57,42 +57,42 @@ export const AICognitiveProtheticScreen = () => {
           <h2 className="text-3xl font-bold text-center text-foreground mb-8">
             AI-Powered Learning in Practice
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <div className="flex items-center gap-3 mb-4">
-                <Sparkles className="h-6 w-6 text-primary" />
-                <h4 className="text-lg font-bold text-foreground">Khan Academy</h4>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <div className="flex items-center gap-3 mb-6">
+                <Sparkles className="h-8 w-8 text-primary" />
+                <h4 className="text-2xl font-bold text-foreground">Khan Academy</h4>
               </div>
-              <p className="text-sm text-muted-foreground mb-3">
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
                 AI-driven mastery-based progression: won't advance until 80% proficiency
               </p>
-              <Badge className="bg-primary/10 text-primary border-primary/20">
+              <Badge className="bg-primary/10 text-primary border-primary/20 text-base px-3 py-1">
                 Adaptive Pacing
               </Badge>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <div className="flex items-center gap-3 mb-4">
-                <TrendingUp className="h-6 w-6 text-primary" />
-                <h4 className="text-lg font-bold text-foreground">Carnegie Learning</h4>
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <div className="flex items-center gap-3 mb-6">
+                <TrendingUp className="h-8 w-8 text-primary" />
+                <h4 className="text-2xl font-bold text-foreground">Carnegie Learning</h4>
               </div>
-              <p className="text-sm text-muted-foreground mb-3">
-                AI tutors provide scaffolded hints and adaptive feedback based on learner errors
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                AI tutors provide scaffolded hints and adaptive feedback
               </p>
-              <Badge className="bg-primary/10 text-primary border-primary/20">
+              <Badge className="bg-primary/10 text-primary border-primary/20 text-base px-3 py-1">
                 Personalized Support
               </Badge>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <div className="flex items-center gap-3 mb-4">
-                <Users className="h-6 w-6 text-primary" />
-                <h4 className="text-lg font-bold text-foreground">Duolingo</h4>
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <div className="flex items-center gap-3 mb-6">
+                <Users className="h-8 w-8 text-primary" />
+                <h4 className="text-2xl font-bold text-foreground">Duolingo</h4>
               </div>
-              <p className="text-sm text-muted-foreground mb-3">
-                Adaptive difficulty + spaced repetition algorithms adjust to individual retention patterns
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                Adaptive difficulty + spaced repetition algorithms
               </p>
-              <Badge className="bg-primary/10 text-primary border-primary/20">
+              <Badge className="bg-primary/10 text-primary border-primary/20 text-base px-3 py-1">
                 Memory Optimization
               </Badge>
             </Card>

@@ -33,18 +33,18 @@ export const LDTakeawaysScreen = () => {
                 <p className="text-muted-foreground mb-4">
                   Review one training module and identify where you can reduce extraneous load.
                 </p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-primary" />
-                    <span>Remove unnecessary animations</span>
+                <div className="space-y-3 text-base leading-relaxed">
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-foreground">Remove unnecessary animations</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-primary" />
-                    <span>Chunk dense text into bullets</span>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-foreground">Chunk dense text into bullets</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-primary" />
-                    <span>Simplify visual clutter</span>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-foreground">Simplify visual clutter</span>
                   </div>
                 </div>
               </div>
@@ -63,18 +63,18 @@ export const LDTakeawaysScreen = () => {
                 <p className="text-muted-foreground mb-4">
                   Pick one text-only lesson and add an alternative format.
                 </p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-accent" />
-                    <span>Add audio narration or text-to-speech</span>
+                <div className="space-y-3 text-base leading-relaxed">
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground">Add audio narration or text-to-speech</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-accent" />
-                    <span>Include visual diagrams or infographics</span>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground">Include visual diagrams or infographics</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-accent" />
-                    <span>Create an interactive demo or simulation</span>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground">Create an interactive demo or simulation</span>
                   </div>
                 </div>
               </div>
@@ -93,18 +93,18 @@ export const LDTakeawaysScreen = () => {
                 <p className="text-muted-foreground mb-4">
                   Design one activity with clear boundaries AND meaningful choices.
                 </p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-primary" />
-                    <span>"Pick 3 of 5 case studies to analyze"</span>
+                <div className="space-y-3 text-base leading-relaxed">
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-foreground">"Pick 3 of 5 case studies to analyze"</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-primary" />
-                    <span>"Choose your own learning path to mastery"</span>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-foreground">"Choose your own learning path to mastery"</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-primary" />
-                    <span>"Demonstrate understanding in any format"</span>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-foreground">"Demonstrate understanding in any format"</span>
                   </div>
                 </div>
               </div>
@@ -123,18 +123,18 @@ export const LDTakeawaysScreen = () => {
                 <p className="text-muted-foreground mb-4">
                   Recruit 2-3 neurodivergent beta testers for your next pilot.
                 </p>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-accent" />
-                    <span>Ask: "What barriers did you encounter?"</span>
+                <div className="space-y-3 text-base leading-relaxed">
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground">Ask: "What barriers did you encounter?"</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-accent" />
-                    <span>Observe where they struggle or disengage</span>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground">Observe where they struggle or disengage</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Target className="h-4 w-4 text-accent" />
-                    <span>Fix one barrier, test again</span>
+                  <div className="flex items-center gap-3">
+                    <Target className="h-5 w-5 text-accent flex-shrink-0" />
+                    <span className="text-foreground">Fix one barrier, test again</span>
                   </div>
                 </div>
               </div>

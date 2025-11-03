@@ -59,26 +59,26 @@ export const CurbCutEffectScreen = ({
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {/* Closed Captions */}
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <div className="mb-4">
-                <Badge className="bg-primary/10 text-primary border-primary/20">
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <div className="mb-6">
+                <Badge className="bg-primary/10 text-primary border-primary/20 text-base px-4 py-2">
                   Closed Captions
                 </Badge>
               </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground">Designed for:</p>
-                    <p className="text-sm text-muted-foreground">Deaf/hard-of-hearing learners</p>
+                    <p className="font-semibold text-foreground text-lg mb-1">Designed for:</p>
+                    <p className="text-base text-muted-foreground">Deaf/hard-of-hearing learners</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-2">
-                  <Users className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3">
+                  <Users className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground">Also helps:</p>
-                    <p className="text-sm text-muted-foreground">
-                      ESL learners, noisy environments, auditory processing differences, reading comprehension
+                    <p className="font-semibold text-foreground text-lg mb-1">Also helps:</p>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      ESL learners, noisy environments, auditory processing differences
                     </p>
                   </div>
                 </div>
@@ -86,26 +86,26 @@ export const CurbCutEffectScreen = ({
             </Card>
 
             {/* Chunked Content */}
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <div className="mb-4">
-                <Badge className="bg-primary/10 text-primary border-primary/20">
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <div className="mb-6">
+                <Badge className="bg-primary/10 text-primary border-primary/20 text-base px-4 py-2">
                   Chunked Content
                 </Badge>
               </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground">Designed for:</p>
-                    <p className="text-sm text-muted-foreground">ADHD, working memory differences</p>
+                    <p className="font-semibold text-foreground text-lg mb-1">Designed for:</p>
+                    <p className="text-base text-muted-foreground">ADHD, working memory differences</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-2">
-                  <Users className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3">
+                  <Users className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground">Also helps:</p>
-                    <p className="text-sm text-muted-foreground">
-                      Everyone's cognitive load, mobile learners, scanning for key info
+                    <p className="font-semibold text-foreground text-lg mb-1">Also helps:</p>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      Everyone's cognitive load, mobile learners
                     </p>
                   </div>
                 </div>
@@ -113,26 +113,26 @@ export const CurbCutEffectScreen = ({
             </Card>
 
             {/* Multiple Representations */}
-            <Card className="p-6 hover:shadow-lg transition-all">
-              <div className="mb-4">
-                <Badge className="bg-primary/10 text-primary border-primary/20">
+            <Card className="p-8 hover:shadow-lg transition-all border-2 border-primary/20">
+              <div className="mb-6">
+                <Badge className="bg-primary/10 text-primary border-primary/20 text-base px-4 py-2">
                   Multiple Formats
                 </Badge>
               </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground">Designed for:</p>
-                    <p className="text-sm text-muted-foreground">Dyslexia, visual processing differences</p>
+                    <p className="font-semibold text-foreground text-lg mb-1">Designed for:</p>
+                    <p className="text-base text-muted-foreground">Dyslexia, visual processing</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-2">
-                  <Users className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3">
+                  <Users className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground">Also helps:</p>
-                    <p className="text-sm text-muted-foreground">
-                      All learning styles, reinforcement, accessibility
+                    <p className="font-semibold text-foreground text-lg mb-1">Also helps:</p>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      All learning styles, reinforcement
                     </p>
                   </div>
                 </div>
