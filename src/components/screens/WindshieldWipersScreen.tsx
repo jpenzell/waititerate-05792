@@ -21,15 +21,16 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
       <div className="h-screen flex flex-col p-8 animate-fade-in">
         <div className="max-w-6xl w-full mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 text-center">
-            Why Neurodiversity Matters Now
+            Thinking From First Principles
           </h1>
           
-          <div className="space-y-6 text-center mb-12">
-            <p className="text-2xl text-muted-foreground">
-              <span className="font-bold text-primary">15-20%</span> of the global population is neurodivergent
+          <div className="space-y-4 text-center mb-12">
+            <p className="text-3xl font-bold text-primary">
+              Does a self-driving car need windshield wipers?
             </p>
-            <p className="text-2xl text-muted-foreground">
-              <span className="font-bold text-accent">30%</span> more productive in right roles (JPMorgan)
+            <p className="text-xl text-muted-foreground italic">
+              This is how neurodivergent minds often think differently—<br/>
+              questioning assumptions others take for granted
             </p>
           </div>
           
@@ -39,7 +40,7 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
               <div>
                 <PollWidget
                   sessionId={sessionId}
-                  slideId="LD0.1"
+                  slideId="windshield-wipers"
                   userId={userId}
                   isPresenter={true}
                 />
@@ -68,10 +69,20 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
           ) : (
             <div className="text-center">
               <p className="text-xl text-muted-foreground mb-8">
-                📱 Share your experience on your device
+                📱 Answer on your device
               </p>
             </div>
           )}
+          
+          <div className="text-center mt-8">
+            <Button 
+              onClick={() => setShowExplanation(true)}
+              size="lg"
+              className="px-12"
+            >
+              Reveal the Answer
+            </Button>
+          </div>
         </div>
       </div>
     );
@@ -91,9 +102,18 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
           </div>
           
           <div className="space-y-4">
+            <div className="bg-primary/10 p-6 rounded-xl border-2 border-primary/30 mb-6">
+              <p className="text-2xl font-bold text-primary mb-3 text-center">
+                The Answer: It depends on your assumptions
+              </p>
+              <p className="text-xl text-center text-foreground">
+                If there's no driver... do you even need a windshield?
+              </p>
+            </div>
+
             <p className="text-xl text-foreground">
-              <span className="font-bold text-primary">Yes!</span> This is a <span className="font-bold text-primary">Zoox vehicle</span> - running autonomously today in Las Vegas. 
-              When Zoox built this, they started with <span className="font-bold">first principles</span>:
+              <span className="font-bold text-primary">This is a Zoox vehicle</span> - running autonomously today in Las Vegas. 
+              When Zoox built this, they started with <span className="font-bold">first principles thinking</span>:
             </p>
             
             <div className="bg-accent/20 p-5 rounded-xl border-2 border-accent">
@@ -101,11 +121,11 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
               <ul className="space-y-2 text-lg text-foreground/90">
                 <li className="flex items-start gap-2">
                   <span className="text-accent font-bold text-xl">→</span>
-                  <span>No front or back needed (lights just change direction)</span>
+                  <span>No windshield needed—passengers face each other</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent font-bold text-xl">→</span>
-                  <span>Passengers face each other instead of forward</span>
+                  <span>No front or back (lights just change direction)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent font-bold text-xl">→</span>
@@ -118,13 +138,13 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
               </ul>
             </div>
 
-            <div className="bg-primary/10 p-5 rounded-xl border border-primary/30">
-              <p className="text-xl font-bold text-primary mb-3">
-                They didn't just put AI into an existing car—they reimagined everything
+            <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 p-6 rounded-xl border-2 border-purple-500/40">
+              <p className="text-xl font-bold text-foreground mb-3">
+                🧠 This is neurodivergent thinking in action
               </p>
-              <p className="text-lg text-foreground/80">
-                New problems emerged: <span className="italic">Who does a pedestrian look at when crossing?</span> 
-                (They experimented with directional sound.)
+              <p className="text-lg text-foreground/90">
+                Questioning assumptions that seem "obvious" to everyone else. 
+                Seeing patterns others miss. Reimagining from scratch instead of iterating on what exists.
               </p>
             </div>
 
@@ -133,11 +153,10 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
                 The Challenge for L&D Today:
               </p>
               <p className="text-xl text-center">
-                How can we <span className="font-bold text-primary">reimagine</span> the value we bring to learners?
+                What if we designed learning experiences from <span className="font-bold text-primary">first principles</span>?
               </p>
               <p className="text-lg text-muted-foreground text-center mt-2 italic">
-                Not just take AI and put it into existing work. Not just to make things quicker. 
-                But to <span className="font-semibold text-foreground">fundamentally rethink</span> how we design learning.
+                Not just "add AI to our existing courses." But ask: <span className="font-semibold text-foreground">"What if we didn't assume learners all process information the same way?"</span>
               </p>
             </div>
           </div>
