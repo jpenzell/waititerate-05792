@@ -547,10 +547,12 @@ export default function Facilitator() {
         totalScreens={visibleScreens.length}
         currentIndex={currentIndex}
         onNavigate={handleNavigation}
-        title="Neurodiversity, Data Abundance & UDL"
+        title="AI for All Minds"
         duration={240}
         notes=""
         mode="presenter"
+        sessionCode={sessionCode || undefined}
+        sessionId={sessionId || undefined}
         slideManager={
           <SlideManager
             slides={screens}

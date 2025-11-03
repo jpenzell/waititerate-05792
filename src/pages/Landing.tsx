@@ -255,7 +255,7 @@ export default function Landing() {
         totalScreens={visibleScreens.length}
         currentIndex={currentIndex}
         onNavigate={() => {}} // Disabled for public viewers
-        title="Don't Wait, Iterate"
+        title="AI for All Minds"
         duration={240}
         notes=""
         mode="present"

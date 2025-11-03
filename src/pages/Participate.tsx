@@ -309,10 +309,12 @@ export default function Participate() {
         totalScreens={visibleScreens.length}
         currentIndex={currentIndex}
         onNavigate={() => {}} // Controlled by presenter
-        title="Don't Wait, Iterate"
+        title="AI for All Minds"
         duration={240}
         notes=""
         mode="participant"
+        sessionCode={sessionCode || undefined}
+        sessionId={sessionId || undefined}
       >
         <div className="space-y-6">
           {/* Interactive screens - participants engage here */}

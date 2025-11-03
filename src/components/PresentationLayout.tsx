@@ -23,6 +23,8 @@ interface PresentationLayoutProps {
   notes?: string;
   mode?: "presenter" | "participant" | "present";
   slideManager?: ReactNode;
+  sessionCode?: string;
+  sessionId?: string;
 }
 
 export const PresentationLayout = ({
@@ -36,6 +38,8 @@ export const PresentationLayout = ({
   notes,
   mode = "presenter",
   slideManager,
+  sessionCode,
+  sessionId,
 }: PresentationLayoutProps) => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
@@ -145,6 +149,25 @@ export const PresentationLayout = ({
         <header className="border-b bg-card/80 backdrop-blur-sm px-6 py-3 flex items-center justify-between shadow-sm">
           <div className="flex items-center gap-4 flex-1">
             <h1 className="text-lg font-semibold text-foreground">{title}</h1>
+            {sessionCode && (
+              <div className="flex items-center gap-3">
+                <Badge variant="outline" className="text-sm">
+                  Code: <span className="font-mono font-bold ml-1">{sessionCode}</span>
+                </Badge>
+                {sessionId && (
+                  <>
+                    <span className="text-xs text-muted-foreground">
+                      lovable.app/participate/{sessionCode}
+                    </span>
+                    <img 
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=${encodeURIComponent(`https://lovable.app/participate/${sessionCode}`)}`}
+                      alt="QR Code"
+                      className="h-12 w-12 border border-border rounded"
+                    />
+                  </>
+                )}
+              </div>
+            )}
             <span className="text-sm text-muted-foreground">
               Screen {currentIndex + 1} of {totalScreens}
             </span>
