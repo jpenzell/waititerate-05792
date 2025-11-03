@@ -87,10 +87,17 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
       .eq('session_id', sessionId)
       .limit(1);
 
-    // If no analysis exists, trigger it automatically
+    // If no analysis exists, check if there are photos to analyze
     if (!existingAnalysis || existingAnalysis.length === 0) {
-      console.log('No blind spot analysis found, triggering now...');
-      analyzeBlindSpots();
+      const { data: photos } = await supabase
+        .from('photo_submissions')
+        .select('*')
+        .eq('session_id', sessionId);
+
+      if (photos && photos.length > 0) {
+        console.log('No blind spot analysis found, triggering now...');
+        analyzeBlindSpots();
+      }
     }
   };
 
