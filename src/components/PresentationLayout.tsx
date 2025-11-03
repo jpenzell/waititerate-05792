@@ -157,11 +157,11 @@ export const PresentationLayout = ({
                 {sessionId && (
                   <>
                     <span className="text-xs text-muted-foreground">
-                      lovable.app/participate/{sessionCode}
+                      ai4all.joshpenzell.com/participate?code={sessionCode}
                     </span>
                     <img 
-                      src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=${encodeURIComponent(`https://lovable.app/participate/${sessionCode}`)}`}
-                      alt="QR Code"
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
+                      alt="Join Session QR Code"
                       className="h-12 w-12 border border-border rounded"
                     />
                   </>
