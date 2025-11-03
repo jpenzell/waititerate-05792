@@ -132,7 +132,7 @@ export const ResearchFoundationsScreen = () => {
               </p>
               <div className="flex items-center justify-center gap-2 text-sm text-accent pt-4">
                 <ExternalLink className="h-4 w-4" />
-                <span>Full bibliography available in post-session resource packet</span>
+                <span>Visit this website anytime to access all research studies</span>
               </div>
             </div>
           </Card>
@@ -141,7 +141,7 @@ export const ResearchFoundationsScreen = () => {
             <div className="space-y-2">
               <p className="text-sm font-semibold text-foreground">For NDLW 2025 Participants</p>
               <p className="text-sm text-muted-foreground">
-                All research citations are compiled in your <strong>post-session resource packet</strong>, including links to full texts (where open access) and recommended reading lists for each domain.
+                All research citations shown here will remain <strong>available on this website</strong> for future reference, including links to full texts (where open access) and recommended reading lists for each domain.
               </p>
             </div>
           </Card>
