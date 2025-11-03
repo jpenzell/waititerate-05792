@@ -13,6 +13,10 @@ interface ParticipantInstructionsProps {
 }
 
 const slideInstructions: Record<string, { text: string; type: "info" | "action" | "success" }> = {
+  "LD0.05": {
+    text: "Does a self-driving car need windshield wipers? Vote on your device. This is about questioning assumptions—how neurodivergent minds think differently.",
+    type: "action"
+  },
   "LD0.1": {
     text: "Guess three shocking statistics about neurodiversity in the workplace. Most people are way off—prepare to be surprised by reality.",
     type: "action"

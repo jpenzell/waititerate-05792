@@ -8,6 +8,7 @@ import { useSlideConfig } from "@/hooks/useSlideConfig";
 import { useAuth } from "@/hooks/useAuth";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
+import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
 import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
 import { CurbCutEffectScreen } from "@/components/screens/CurbCutEffectScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
@@ -45,6 +46,13 @@ const screens = [
     component: LDTitleScreen,
     duration: 2,
     notes: "Set the stage for neurodiversity-focused learning design. Opening energy.",
+  },
+  {
+    id: "LD0.05",
+    title: "First Principles: Windshield Wipers",
+    component: WindshieldWipersScreen,
+    duration: 5,
+    notes: "Does a self-driving car need windshield wipers? Interactive poll revealing first-principles thinking—how neurodivergent minds question assumptions.",
   },
   {
     id: "LD0.1",

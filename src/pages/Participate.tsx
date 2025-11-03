@@ -8,6 +8,7 @@ import { useSlideConfig } from "@/hooks/useSlideConfig";
 import { useAuth } from "@/hooks/useAuth";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
+import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
 import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
 import { ScarcityVsAbundanceScreen } from "@/components/screens/ScarcityVsAbundanceScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
@@ -39,6 +40,12 @@ const screens = [
     title: "Title - Don't Wait, Iterate",
     component: LDTitleScreen,
     duration: 2,
+  },
+  {
+    id: "LD0.05",
+    title: "First Principles: Windshield Wipers",
+    component: WindshieldWipersScreen,
+    duration: 5,
   },
   {
     id: "LD0.1",
