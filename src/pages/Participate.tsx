@@ -280,7 +280,6 @@ export default function Participate() {
           currentScreen.id === "LD0.5.4" ||
           currentScreen.id === "LD0.5.6" ||
           currentScreen.id === "LD0.5.7" ||
-          currentScreen.id === "LD0.5.7" ||
           currentScreen.id === "LD0.5.8"
         }
       />
@@ -324,7 +323,6 @@ export default function Participate() {
             currentScreen.id === "LD0.5.4" || 
             currentScreen.id === "LD0.5.5" ||
             currentScreen.id === "LD0.5.6" ||
-            currentScreen.id === "LD0.5.7" ||
             currentScreen.id === "LD0.5.7" ||
             currentScreen.id === "LD0.5.8") ? (
             <CurrentComponent isFacilitator={false} sessionId={sessionId || undefined} />
