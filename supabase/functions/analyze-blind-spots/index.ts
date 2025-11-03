@@ -49,36 +49,45 @@ serve(async (req) => {
     const humanPatterns = patterns?.map(p => p.pattern_text).join(', ') || 'None identified';
     const photoCount = photos?.length || 0;
 
-    const systemPrompt = `You are an expert in cognitive diversity, neurodiversity, Universal Design for Learning (UDL), and learning sciences. Your task is to analyze learning preference data and identify BLIND SPOTS—cognitive differences, learning styles, and perspectives that are MISSING or underrepresented.
+    const systemPrompt = `You are an expert in learning sciences, Universal Design for Learning (UDL), and pattern analysis. Your task is to identify BLIND SPOTS—patterns, themes, insights, and perspectives that humans MISSED or overlooked in their analysis.
 
 Context:
 - ${photoCount} participants submitted photos representing "how they learn best"
 - Humans identified these patterns: ${humanPatterns}
 
 Your job:
-1. Identify 5-6 MAJOR blind spots—cognitive differences that CAN'T be captured by photos or weren't represented
-2. Focus on invisible neurocognitive differences (ADHD, autism, dyslexia, aphantasia, etc.)
-3. Consider modalities beyond visual (auditory, kinesthetic, abstract thinking)
-4. Think about processing speed, sensory preferences, social context, motivation styles
-5. Each blind spot should reveal something humans systematically overlook
+1. Identify 5-7 MAJOR blind spots—patterns, themes, or insights that humans didn't notice
+2. Look for: invisible learning preferences, contradictions, underrepresented modalities, hidden themes, environmental factors, social/emotional aspects, temporal patterns, etc.
+3. Consider what CAN'T be easily seen in photos but might still be important
+4. Identify patterns that may exist ACROSS the photos that humans didn't connect
+5. Surface counter-intuitive insights or less obvious connections
+6. Each blind spot should reveal something genuinely useful that was overlooked
 
 Return a JSON array of blind spots with this exact structure:
 [
   {
-    "category": "Short category name",
-    "missed": "One-sentence question about what's missing",
-    "detail": "2-3 sentence explanation of why this matters for UDL",
+    "category": "Short category name (2-4 words)",
+    "missed": "One-sentence description of what was overlooked",
+    "detail": "2-3 sentences explaining why this matters and what to do about it",
     "icon": "single emoji that represents this category"
   }
 ]
 
-Be specific, evidence-based, and focused on actionable UDL insights.`;
+Be specific, insightful, and focused on actionable learning design principles.`;
 
-    const userPrompt = `Based on ${photoCount} photos representing visual learning preferences and these human-identified patterns: "${humanPatterns}"
+    const userPrompt = `Based on ${photoCount} photos representing learning preferences and these human-identified patterns: "${humanPatterns}"
 
-What major cognitive differences and learning perspectives are we MISSING? What can't be photographed? What did humans not notice?
+What patterns, themes, insights, and perspectives did humans MISS in their analysis? What connections did they not make? What's hidden in the data?
 
-Remember: Focus on INVISIBLE neurocognitive differences that photos can't capture.`;
+Look for:
+- Patterns that exist ACROSS photos that weren't connected
+- Learning preferences that can't be captured visually
+- Contradictions or tensions in the data
+- Environmental, social, or temporal factors that weren't mentioned
+- Counter-intuitive insights
+- Underrepresented or overlooked themes
+
+Focus on genuinely useful blind spots that will help improve learning design.`;
 
     // Call Lovable AI for analysis
     console.log('Calling Lovable AI for blind spot analysis...');

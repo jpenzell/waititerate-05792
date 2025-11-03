@@ -125,7 +125,7 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
             What Are We Missing?
           </h1>
           <p className="text-xl text-muted-foreground mb-4">
-            AI is analyzing what cognitive differences we're not capturing
+            AI is analyzing what patterns and insights we overlooked
           </p>
           <Badge variant="outline" className="text-lg px-6 py-3">
             🧠 Step 4: Blind Spot Detection
@@ -145,10 +145,10 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
             <div className="space-y-4 animate-fade-in">
               <div className="text-center mb-6">
                 <h2 className="text-3xl font-bold text-foreground mb-2">
-                  Cognitive Differences We're Not Capturing
+                  What Did We Miss?
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Most neurocognitive differences are <span className="font-bold text-amber-500">invisible</span>
+                  AI uncovered patterns and insights humans <span className="font-bold text-amber-500">overlooked</span>
                 </p>
               </div>
 
@@ -177,14 +177,12 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
                 <div className="flex items-start gap-4">
                   <Lightbulb className="h-12 w-12 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-3">The UDL Lesson</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-3">The Key Insight</h3>
                     <p className="text-lg text-foreground/90 mb-3">
-                      If we design learning experiences based only on what we can <span className="font-bold">see</span> or what's <span className="font-bold">loudest</span>, 
-                      we'll miss the majority of cognitive diversity.
+                      Human pattern recognition is powerful, but we naturally focus on what's <span className="font-bold">visible</span>, <span className="font-bold">familiar</span>, and <span className="font-bold">obvious</span>.
                     </p>
                     <p className="text-lg text-primary font-semibold">
-                      Universal Design for Learning doesn't ask "What disabilities do learners have?" 
-                      It asks: "What barriers might EXIST that we can't even see yet?"
+                      AI helps us see what we're missing—the overlooked patterns, hidden connections, and less obvious insights that improve learning design.
                     </p>
                   </div>
                 </div>
@@ -209,7 +207,7 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
             What Are We Missing?
           </h1>
           <p className="text-lg text-muted-foreground">
-            Watch the main screen for important insights
+            AI is finding patterns and insights that we missed
           </p>
         </header>
 
@@ -218,27 +216,26 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
             <div className="flex items-start gap-3">
               <Brain className="h-8 w-8 text-primary mt-1 flex-shrink-0" aria-hidden="true" />
               <div>
-                <h3 className="text-xl font-bold text-foreground mb-2">Think About This:</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2">What Might We Be Missing?</h3>
                 <p className="text-muted-foreground mb-3">
-                  We just collected visual learning preferences through photos. 
-                  But what about all the learning differences that <span className="font-semibold text-foreground">can't be photographed</span>?
+                  We identified patterns in the photos. But humans naturally overlook certain things...
                 </p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500">→</span>
-                    <span>How do auditory learners process differently?</span>
+                    <span>Patterns that exist ACROSS multiple photos</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500">→</span>
-                    <span>What about processing speed differences?</span>
+                    <span>Learning preferences that aren't visible</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500">→</span>
-                    <span>How do abstract thinkers learn without concrete examples?</span>
+                    <span>Counter-intuitive or unexpected insights</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500">→</span>
-                    <span>What environmental factors affect different brains?</span>
+                    <span>Environmental, social, or temporal factors</span>
                   </li>
                 </ul>
               </div>
@@ -248,9 +245,9 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
 
         <Card className="p-6 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/30">
           <p className="text-center text-lg text-foreground">
-            <span className="font-bold text-amber-500">Most cognitive differences are invisible.</span><br/>
+            <span className="font-bold text-amber-500">AI can help us see beyond our natural blind spots.</span><br/>
             <span className="text-sm text-muted-foreground italic">
-              That's why designing for diversity requires intentional, systematic approaches—not assumptions.
+              Watch the main screen to discover what patterns and insights we overlooked.
             </span>
           </p>
         </Card>
