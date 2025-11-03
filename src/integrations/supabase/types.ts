@@ -44,6 +44,36 @@ export type Database = {
         }
         Relationships: []
       }
+      cognitive_reflection_responses: {
+        Row: {
+          ai_support_response: string | null
+          created_at: string
+          designing_response: string | null
+          id: string
+          session_id: string
+          surprise_response: string | null
+          user_id: string
+        }
+        Insert: {
+          ai_support_response?: string | null
+          created_at?: string
+          designing_response?: string | null
+          id?: string
+          session_id: string
+          surprise_response?: string | null
+          user_id: string
+        }
+        Update: {
+          ai_support_response?: string | null
+          created_at?: string
+          designing_response?: string | null
+          id?: string
+          session_id?: string
+          surprise_response?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       datapoint_submissions: {
         Row: {
           created_at: string

@@ -1,21 +1,61 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Brain, Sparkles, Lightbulb, Users, CheckCircle2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 interface CognitiveReflectionScreenProps {
   isFacilitator?: boolean;
+  sessionId?: string;
 }
 
-export const CognitiveReflectionScreen = ({ isFacilitator = false }: CognitiveReflectionScreenProps) => {
+export const CognitiveReflectionScreen = ({ isFacilitator = false, sessionId }: CognitiveReflectionScreenProps) => {
   const [responses, setResponses] = useState({
     surprise: "",
     designing: "",
     aiSupport: ""
   });
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [allResponses, setAllResponses] = useState<any[]>([]);
+
+  useEffect(() => {
+    if (!sessionId) return;
+
+    loadResponses();
+
+    const channel = supabase
+      .channel(`cognitive-reflection:${sessionId}`)
+      .on('postgres_changes', { 
+        event: '*', 
+        schema: 'public', 
+        table: 'cognitive_reflection_responses',
+        filter: `session_id=eq.${sessionId}`
+      }, () => {
+        loadResponses();
+      })
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [sessionId]);
+
+  const loadResponses = async () => {
+    if (!sessionId) return;
+    
+    const { data } = await supabase
+      .from('cognitive_reflection_responses')
+      .select('*')
+      .eq('session_id', sessionId)
+      .order('created_at', { ascending: false });
+    
+    if (data) {
+      setAllResponses(data);
+    }
+  };
 
   const prompts = [
     {
@@ -38,10 +78,113 @@ export const CognitiveReflectionScreen = ({ isFacilitator = false }: CognitiveRe
     }
   ];
 
-  const handleSubmit = () => {
-    setHasSubmitted(true);
+  const handleSubmit = async () => {
+    if (!sessionId) {
+      toast.error('No session found');
+      return;
+    }
+
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) throw new Error('Not authenticated');
+
+      const { error } = await supabase.from('cognitive_reflection_responses').insert({
+        session_id: sessionId,
+        user_id: user.id,
+        surprise_response: responses.surprise,
+        designing_response: responses.designing,
+        ai_support_response: responses.aiSupport,
+      });
+
+      if (error) throw error;
+      setHasSubmitted(true);
+      toast.success('Reflections submitted!');
+    } catch (error) {
+      console.error('Error submitting reflections:', error);
+      toast.error('Failed to submit reflections');
+    }
   };
 
+  // FACILITATOR VIEW
+  if (isFacilitator) {
+    return (
+      <div className="h-screen flex flex-col py-6 px-4 animate-fade-in overflow-y-auto">
+        <div className="text-center mb-6">
+          <Badge className="mb-4">
+            <Users className="h-4 w-4 mr-2" />
+            Cognitive Reflection Responses
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+            Making It Personal
+          </h1>
+          <p className="text-lg text-muted-foreground">
+            Responses: <span className="font-bold text-primary">{allResponses.length}</span>
+          </p>
+        </div>
+
+        {allResponses.length === 0 ? (
+          <Card className="p-8 text-center">
+            <p className="text-muted-foreground">Waiting for participant reflections...</p>
+          </Card>
+        ) : (
+          <div className="space-y-6 max-w-4xl mx-auto">
+            {allResponses.map((response, idx) => (
+              <Card key={response.id} className="p-6 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20 animate-fade-in">
+                <div className="flex items-center gap-2 mb-4">
+                  <Badge variant="secondary">Response {idx + 1}</Badge>
+                </div>
+                <div className="space-y-6">
+                  {response.surprise_response && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Brain className="h-5 w-5 text-primary" />
+                        <p className="text-sm font-semibold text-foreground">What surprised you about how others think differently?</p>
+                      </div>
+                      <div className="pl-7">
+                        <p className="text-muted-foreground italic bg-background/50 p-4 rounded-lg">
+                          "{response.surprise_response}"
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {response.designing_response && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Lightbulb className="h-5 w-5 text-primary" />
+                        <p className="text-sm font-semibold text-foreground">Where might you be unintentionally designing for your own brain?</p>
+                      </div>
+                      <div className="pl-7">
+                        <p className="text-muted-foreground italic bg-background/50 p-4 rounded-lg">
+                          "{response.designing_response}"
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {response.ai_support_response && (
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="h-5 w-5 text-primary" />
+                        <p className="text-sm font-semibold text-foreground">How could AI help balance or complement your cognitive strengths?</p>
+                      </div>
+                      <div className="pl-7">
+                        <p className="text-muted-foreground italic bg-background/50 p-4 rounded-lg">
+                          "{response.ai_support_response}"
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </Card>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // PARTICIPANT VIEW
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/5 to-primary/10 py-12 px-6">
       <div className="max-w-5xl mx-auto">
