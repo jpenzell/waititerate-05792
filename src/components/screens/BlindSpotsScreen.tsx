@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, Eye, EyeOff, Brain, Lightbulb } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 interface BlindSpotsScreenProps {
   isFacilitator?: boolean;
@@ -11,145 +12,99 @@ interface BlindSpotsScreenProps {
 }
 
 export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpotsScreenProps) => {
-  const [photos, setPhotos] = useState<any[]>([]);
   const [patterns, setPatterns] = useState<any[]>([]);
+  const [photos, setPhotos] = useState<any[]>([]);
+  const [blindSpots, setBlindSpots] = useState<any[]>([]);
   const [showBlindSpots, setShowBlindSpots] = useState(false);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   useEffect(() => {
     if (!sessionId) return;
 
-    loadPhotos();
-    loadPatterns();
+    loadData();
   }, [sessionId]);
 
-  const loadPhotos = async () => {
+  const loadData = async () => {
     if (!sessionId) return;
-    
-    const { data } = await supabase
+
+    // Load photos
+    const { data: photoData } = await supabase
       .from('photo_submissions')
       .select('*')
       .eq('session_id', sessionId);
     
-    if (data) {
-      setPhotos(data);
-    }
-  };
+    if (photoData) setPhotos(photoData);
 
-  const loadPatterns = async () => {
-    if (!sessionId) return;
-    
-    const { data } = await supabase
+    // Load patterns
+    const { data: patternData } = await supabase
       .from('pattern_submissions')
       .select('*')
       .eq('session_id', sessionId);
     
-    if (data) {
-      setPatterns(data);
+    if (patternData) setPatterns(patternData);
+
+    // Load existing blind spot analysis
+    const { data: blindSpotData } = await supabase
+      .from('blind_spot_analysis')
+      .select('*')
+      .eq('session_id', sessionId)
+      .order('created_at', { ascending: true });
+    
+    if (blindSpotData && blindSpotData.length > 0) {
+      setBlindSpots(blindSpotData);
+      setShowBlindSpots(true);
+    }
+  };
+
+  const analyzeBlindSpots = async () => {
+    if (!sessionId || isAnalyzing) return;
+
+    setIsAnalyzing(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('analyze-blind-spots', {
+        body: { sessionId }
+      });
+
+      if (error) throw error;
+
+      console.log('Blind spots analysis complete:', data);
+      await loadData(); // Reload to get the new blind spots
+      setShowBlindSpots(true);
+    } catch (error) {
+      console.error('Error analyzing blind spots:', error);
+      toast.error('Failed to analyze blind spots. Please try again.');
+    } finally {
+      setIsAnalyzing(false);
     }
   };
 
   // FACILITATOR VIEW
   if (isFacilitator) {
-    const blindSpots = [
-      {
-        category: "Sensory Preferences",
-        missed: "How do auditory learners process this content?",
-        icon: "🎧",
-        detail: "We focused on visual learning but didn't capture how people who learn best through listening or verbal processing might approach this differently."
-      },
-      {
-        category: "Processing Speed",
-        missed: "What about those who need more time to absorb information?",
-        icon: "⏱️",
-        detail: "Fast pattern recognition doesn't mean better learning. Some of the deepest insights come from slower, more deliberate processing."
-      },
-      {
-        category: "Context Dependence",
-        missed: "How does environment affect different cognitive styles?",
-        icon: "🌍",
-        detail: "Some brains thrive in chaotic environments, others need complete quiet. We didn't capture environmental preferences."
-      },
-      {
-        category: "Abstract vs. Concrete",
-        missed: "Where are the abstract thinkers?",
-        icon: "🔮",
-        detail: "Photos are concrete. But some learners think in pure concepts, relationships, and systems that can't be photographed."
-      },
-      {
-        category: "Social Context",
-        missed: "What about collaborative vs. solo learning preferences?",
-        icon: "👥",
-        detail: "Learning doesn't happen in isolation for everyone. Some need social interaction to process, others need solitude."
-      },
-      {
-        category: "Motivation & Engagement",
-        missed: "What drives different learners to engage?",
-        icon: "⚡",
-        detail: "Intrinsic vs. extrinsic motivation, curiosity-driven vs. goal-oriented, playful vs. serious approaches—all invisible in our data."
-      }
-    ];
+    // Show AI-generated blind spots
+    if (showBlindSpots && blindSpots.length > 0) {
+      return (
+        <main className="h-screen flex flex-col py-6 px-4 animate-fade-in overflow-y-auto" role="main" aria-label="AI-identified blind spots">
+          <header className="text-center mb-6">
+            <Badge className="mb-4">
+              <Brain className="h-4 w-4 mr-2" aria-hidden="true" />
+              Step 4: AI Blind Spot Analysis
+            </Badge>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+              What Are We Missing?
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              AI analyzed {photos.length} photos and {patterns.length} patterns
+            </p>
+          </header>
 
-    return (
-      <main className="h-screen flex flex-col py-6 px-4 animate-fade-in overflow-y-auto" role="main" aria-label="Blind spots and missing perspectives">
-        <header className="text-center mb-6">
-          <Badge className="mb-4">
-            <EyeOff className="h-4 w-4 mr-2" aria-hidden="true" />
-            Step 4: What Are We Missing?
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            The Invisible Differences
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            What patterns did we <span className="font-bold text-primary">NOT</span> capture?
-          </p>
-        </header>
-
-        {!showBlindSpots ? (
-          <div className="max-w-4xl mx-auto space-y-6">
-            <Card className="p-8 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-2 border-amber-500/30">
-              <div className="flex items-start gap-4">
-                <AlertTriangle className="h-12 w-12 text-amber-500 flex-shrink-0 mt-1" aria-hidden="true" />
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-3">Here's What We Collected</h3>
-                  <div className="grid md:grid-cols-2 gap-4 text-lg">
-                    <div className="p-4 bg-background rounded-lg border border-border">
-                      <p className="font-semibold text-primary">{photos.length} Photos</p>
-                      <p className="text-sm text-muted-foreground">Visual learning preferences</p>
-                    </div>
-                    <div className="p-4 bg-background rounded-lg border border-border">
-                      <p className="font-semibold text-accent">{patterns.length} Patterns</p>
-                      <p className="text-sm text-muted-foreground">Human-identified themes</p>
-                    </div>
-                  </div>
-                  <p className="text-lg text-muted-foreground mt-4">
-                    But photos only capture <span className="font-bold text-amber-500">visible, visual preferences</span>. 
-                    What about the cognitive differences we <span className="italic">can't photograph</span>?
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <div className="text-center">
-              <Button 
-                onClick={() => setShowBlindSpots(true)}
-                size="lg"
-                className="px-12"
-                aria-label="Reveal the blind spots and missing perspectives"
-              >
-                <Eye className="mr-2 h-5 w-5" aria-hidden="true" />
-                Reveal What We're Missing
-              </Button>
-            </div>
-          </div>
-        ) : (
           <div className="space-y-4 animate-fade-in">
             <Card className="p-6 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <Brain className="h-8 w-8 text-primary" aria-hidden="true" />
-                <h2 className="text-2xl font-bold text-foreground">The Blind Spots</h2>
+                <h2 className="text-2xl font-bold text-foreground">AI-Identified Blind Spots</h2>
               </div>
               <p className="text-lg text-muted-foreground mb-2">
-                This is why designing for cognitive diversity is so hard—and so important:
+                These cognitive differences couldn't be captured in photos:
               </p>
               <p className="text-base text-foreground italic">
                 Most neurocognitive differences are <span className="font-bold text-primary">invisible</span>. 
@@ -160,14 +115,14 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
             <div className="grid md:grid-cols-2 gap-4">
               {blindSpots.map((spot, index) => (
                 <Card 
-                  key={index} 
+                  key={spot.id} 
                   className="p-6 bg-gradient-to-br from-background to-muted/20 border border-border hover:border-primary/40 transition-all"
                 >
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-4xl" role="img" aria-label={spot.category}>{spot.icon}</span>
                     <div>
                       <h3 className="text-lg font-bold text-foreground mb-1">{spot.category}</h3>
-                      <p className="text-sm text-muted-foreground italic mb-2">{spot.missed}</p>
+                      <p className="text-sm text-muted-foreground italic mb-2">{spot.missed_perspective}</p>
                     </div>
                   </div>
                   <p className="text-sm text-foreground/80">{spot.detail}</p>
@@ -191,8 +146,114 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
                 </div>
               </div>
             </Card>
+
+            <div className="text-center">
+              <Button 
+                onClick={() => { setShowBlindSpots(false); setBlindSpots([]); }}
+                variant="outline"
+                size="lg"
+                aria-label="Analyze again"
+              >
+                Analyze Again
+              </Button>
+            </div>
           </div>
-        )}
+        </main>
+      );
+    }
+
+    // Show setup screen before analysis
+    return (
+      <main className="h-screen flex flex-col py-6 px-4 animate-fade-in overflow-y-auto" role="main" aria-label="Blind spots analysis setup">
+        <header className="text-center mb-6">
+          <Badge className="mb-4">
+            <EyeOff className="h-4 w-4 mr-2" aria-hidden="true" />
+            Step 4: What Are We Missing?
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
+            AI-Powered Blind Spot Detection
+          </h1>
+          <p className="text-lg text-muted-foreground">
+            Let AI analyze what cognitive differences we're not capturing
+          </p>
+        </header>
+
+        <div className="max-w-4xl mx-auto space-y-6">
+          <Card className="p-8 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-2 border-amber-500/30">
+            <div className="flex items-start gap-4">
+              <AlertTriangle className="h-12 w-12 text-amber-500 flex-shrink-0 mt-1" aria-hidden="true" />
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Here's What We Collected</h3>
+                <div className="grid md:grid-cols-2 gap-4 text-lg mb-4">
+                  <div className="p-4 bg-background rounded-lg border border-border">
+                    <p className="font-semibold text-primary">{photos.length} Photos</p>
+                    <p className="text-sm text-muted-foreground">Visual learning preferences</p>
+                  </div>
+                  <div className="p-4 bg-background rounded-lg border border-border">
+                    <p className="font-semibold text-accent">{patterns.length} Patterns</p>
+                    <p className="text-sm text-muted-foreground">Human-identified themes</p>
+                  </div>
+                </div>
+                <p className="text-lg text-muted-foreground">
+                  But photos only capture <span className="font-bold text-amber-500">visible, visual preferences</span>. 
+                  Let AI analyze what cognitive differences we're <span className="italic">missing</span>.
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-8 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30">
+            <div className="flex items-start gap-4 mb-6">
+              <Brain className="h-12 w-12 text-primary flex-shrink-0 mt-1" aria-hidden="true" />
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">How AI Will Help</h3>
+                <p className="text-muted-foreground mb-4">
+                  AI will analyze the photos and patterns to identify:
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">→</span>
+                    <span>Cognitive differences that can't be photographed</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">→</span>
+                    <span>Learning modalities beyond the visual</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">→</span>
+                    <span>Patterns humans systematically overlook</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">→</span>
+                    <span>Invisible neurodivergent perspectives</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Button 
+                onClick={analyzeBlindSpots}
+                size="lg"
+                className="px-12"
+                disabled={isAnalyzing}
+                aria-label="Start AI blind spot analysis"
+              >
+                {isAnalyzing ? (
+                  <>
+                    <Brain className="mr-2 h-5 w-5 animate-pulse" aria-hidden="true" />
+                    AI Analyzing...
+                  </>
+                ) : (
+                  <>
+                    <Eye className="mr-2 h-5 w-5" aria-hidden="true" />
+                    Analyze with AI
+                  </>
+                )}
+              </Button>
+            </div>
+          </Card>
+        </div>
       </main>
     );
   }

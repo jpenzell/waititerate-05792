@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      blind_spot_analysis: {
+        Row: {
+          category: string
+          created_at: string | null
+          detail: string
+          icon: string | null
+          id: string
+          missed_perspective: string
+          session_id: string
+        }
+        Insert: {
+          category: string
+          created_at?: string | null
+          detail: string
+          icon?: string | null
+          id?: string
+          missed_perspective: string
+          session_id: string
+        }
+        Update: {
+          category?: string
+          created_at?: string | null
+          detail?: string
+          icon?: string | null
+          id?: string
+          missed_perspective?: string
+          session_id?: string
+        }
+        Relationships: []
+      }
       datapoint_submissions: {
         Row: {
           created_at: string

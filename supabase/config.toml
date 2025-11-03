@@ -1,1 +1,4 @@
 project_id = "whebuafsxfznbzgmwmsm"
+
+[functions.analyze-blind-spots]
+verify_jwt = true
