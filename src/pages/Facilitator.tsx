@@ -172,7 +172,7 @@ const screens = [
     title: "The Curb-Cut Effect: Quiz",
     component: CurbCutQuizScreen,
     duration: 120,
-    notes: "Display three quiz questions about accessibility statistics. Participants guess on their phones before reveal."
+    notes: "Display three quiz questions about accessibility statistics. Click to reveal each answer with the actual data: 71% use captions, 30% improvement with chunked content, 80%+ prefer multiple formats."
   },
   {
     id: "LD1.0-Results",
