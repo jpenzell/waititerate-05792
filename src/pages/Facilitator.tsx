@@ -20,6 +20,10 @@ import { CognitiveLoadScreen } from "@/components/screens/CognitiveLoadScreen";
 import { StructuredFreedomScreen } from "@/components/screens/StructuredFreedomScreen";
 import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
+import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
+import { SensoryProcessingScreen } from "@/components/screens/SensoryProcessingScreen";
+import { CognitiveReflectionScreen } from "@/components/screens/CognitiveReflectionScreen";
+import { ResearchFoundationsScreen } from "@/components/screens/ResearchFoundationsScreen";
 import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
 import { AICognitiveProtheticScreen } from "@/components/screens/AICognitiveProtheticScreen";
 import { UDLInActionScreen } from "@/components/screens/UDLInActionScreen";
@@ -77,6 +81,34 @@ const screens = [
     component: InnerVoiceScreen,
     duration: 6,
     notes: "Reading voice differences - some hear narration, others read in silence.",
+  },
+  {
+    id: "LD0.5.6",
+    title: "Time Perception Challenge",
+    component: TimePerceptionScreen,
+    duration: 5,
+    notes: "Time blindness reveal - ADHD time perception differences. Interactive 10-second challenge.",
+  },
+  {
+    id: "LD0.5.7",
+    title: "Sensory Processing Simulator",
+    component: SensoryProcessingScreen,
+    duration: 6,
+    notes: "Experience sensory overload - adjust visual, audio, brightness to find threshold.",
+  },
+  {
+    id: "LD0.5.8",
+    title: "Cognitive Reflection",
+    component: CognitiveReflectionScreen,
+    duration: 8,
+    notes: "Personal reflection prompts after experiencing cognitive diversity firsthand.",
+  },
+  {
+    id: "LD0.5.9",
+    title: "Research Foundations",
+    component: ResearchFoundationsScreen,
+    duration: 5,
+    notes: "Academic grounding - peer-reviewed research supporting all interactive exercises.",
   },
   {
     id: "LD0.5.5",
