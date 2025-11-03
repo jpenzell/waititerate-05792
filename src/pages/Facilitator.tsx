@@ -71,6 +71,13 @@ const screens = [
     notes: "Interactive data quiz - participants guess shocking neurodiversity employment/productivity stats, then see reality. Creates visceral 'wow!' moment.",
   },
   {
+    id: "LD5.0",
+    title: "Pattern Recognition & Perspective",
+    component: PatternRecognitionScreen,
+    duration: 6,
+    notes: "Autistic detail focus vs neurotypical gestalt processing. Interactive demo with ambiguous image. Cognitive diversity catches more errors, spots more opportunities.",
+  },
+  {
     id: "LD0.5.1",
     title: "Step 1: How You Learn Best",
     component: PhotoCollectionScreen,
@@ -236,13 +243,6 @@ const screens = [
     component: CognitiveLoadScreen,
     duration: 4,
     notes: "Working memory limits (7±2 chunks). Show dense vs. chunked content comparison. Practice structured freedom in presentation design.",
-  },
-  {
-    id: "LD5.0",
-    title: "Pattern Recognition & Perspective",
-    component: PatternRecognitionScreen,
-    duration: 6,
-    notes: "Autistic detail focus vs neurotypical gestalt processing. Interactive demo with ambiguous image. Cognitive diversity catches more errors, spots more opportunities.",
   },
   {
     id: "LD6.0",
