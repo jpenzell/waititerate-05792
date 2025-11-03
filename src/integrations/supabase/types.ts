@@ -14,16 +14,300 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      datapoint_submissions: {
+        Row: {
+          created_at: string
+          datapoint_text: string
+          id: string
+          session_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          datapoint_text: string
+          id?: string
+          session_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          datapoint_text?: string
+          id?: string
+          session_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      numeric_estimates: {
+        Row: {
+          created_at: string
+          estimate: number
+          id: string
+          session_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          estimate: number
+          id?: string
+          session_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          estimate?: number
+          id?: string
+          session_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      pattern_submissions: {
+        Row: {
+          created_at: string
+          id: string
+          pattern_text: string
+          session_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          pattern_text: string
+          session_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          pattern_text?: string
+          session_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      photo_exercise_phase: {
+        Row: {
+          ai_datapoint_count: number | null
+          ai_datapoint_details: string | null
+          ai_patterns: string | null
+          current_phase: string
+          id: string
+          session_id: string
+          updated_at: string
+        }
+        Insert: {
+          ai_datapoint_count?: number | null
+          ai_datapoint_details?: string | null
+          ai_patterns?: string | null
+          current_phase?: string
+          id?: string
+          session_id: string
+          updated_at?: string
+        }
+        Update: {
+          ai_datapoint_count?: number | null
+          ai_datapoint_details?: string | null
+          ai_patterns?: string | null
+          current_phase?: string
+          id?: string
+          session_id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      photo_submissions: {
+        Row: {
+          created_at: string
+          id: string
+          photo_data: string | null
+          photo_url: string | null
+          session_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          photo_data?: string | null
+          photo_url?: string | null
+          session_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          photo_data?: string | null
+          photo_url?: string | null
+          session_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "photo_submissions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      poll_responses: {
+        Row: {
+          answer: string
+          created_at: string
+          id: string
+          poll_id: string
+          user_id: string
+        }
+        Insert: {
+          answer: string
+          created_at?: string
+          id?: string
+          poll_id: string
+          user_id: string
+        }
+        Update: {
+          answer?: string
+          created_at?: string
+          id?: string
+          poll_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "poll_responses_poll_id_fkey"
+            columns: ["poll_id"]
+            isOneToOne: false
+            referencedRelation: "polls"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      polls: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean | null
+          options: Json
+          question: string
+          session_id: string
+          slide_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          options: Json
+          question: string
+          session_id: string
+          slide_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean | null
+          options?: Json
+          question?: string
+          session_id?: string
+          slide_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "polls_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "presentation_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      presentation_sessions: {
+        Row: {
+          created_at: string
+          current_slide_id: string
+          id: string
+          is_active: boolean | null
+          presenter_id: string
+          session_code: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          current_slide_id: string
+          id?: string
+          is_active?: boolean | null
+          presenter_id: string
+          session_code: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          current_slide_id?: string
+          id?: string
+          is_active?: boolean | null
+          presenter_id?: string
+          session_code?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "presenter" | "participant"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +434,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["presenter", "participant"],
+    },
   },
 } as const
