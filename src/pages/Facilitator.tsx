@@ -10,7 +10,9 @@ import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
 import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
 import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
-import { CurbCutEffectScreen } from "@/components/screens/CurbCutEffectScreen";
+import { CurbCutIntroScreen } from "@/components/screens/CurbCutIntroScreen";
+import { CurbCutQuizScreen } from "@/components/screens/CurbCutQuizScreen";
+import { CurbCutResultsScreen } from "@/components/screens/CurbCutResultsScreen";
 import { CurbCutExamplesScreen } from "@/components/screens/CurbCutExamplesScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
@@ -160,12 +162,24 @@ const screens = [
   },
   {
     id: "LD1.0",
-    title: "The Curb-Cut Effect",
-    component: CurbCutEffectScreen,
-    duration: 4,
-    notes: "Interactive quiz: participants guess statistics about accessibility features. Then reveal: 71% use captions, 30% performance boost, 80%+ prefer multiple formats.",
-    hasPoll: true,
-    pollQuestion: "Have you ever benefited from an accessibility feature you didn't 'need'?",
+    title: "The Curb-Cut Effect: Introduction",
+    component: CurbCutIntroScreen,
+    duration: 180,
+    notes: "Introduce the curb-cut effect concept with the original 1970s accessibility story and how it benefited everyone."
+  },
+  {
+    id: "LD1.0-Quiz",
+    title: "The Curb-Cut Effect: Quiz",
+    component: CurbCutQuizScreen,
+    duration: 120,
+    notes: "Display three quiz questions about accessibility statistics. Participants guess on their phones before reveal."
+  },
+  {
+    id: "LD1.0-Results",
+    title: "The Curb-Cut Effect: Results",
+    component: CurbCutResultsScreen,
+    duration: 300,
+    notes: "Reveal the actual statistics showing how accessibility features designed for 15-20% are used by 80%+. Emphasize the principle: Design for the Margins → Improve the Center.",
     pollOptions: ["Yes - often", "Yes - occasionally", "Not that I know of", "Not sure"],
   },
   {
