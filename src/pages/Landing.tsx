@@ -77,18 +77,18 @@ const screens = [
     notes: "AI reveals actual data point count.",
   },
   {
-    id: "LD5.5",
-    title: "From Scarcity to Abundance: The Technology Shift",
-    component: MeasureTheMessScreen,
-    duration: 7,
-    notes: "Showcase real AI measurement tools: xAPI/LRS (Watershed, Learning Locker), AI tutors (Khanmigo, ChatGPT feedback), adaptive systems (Carnegie Learning). Key stat: xAPI increases data points from 5-10 to 50-100+ per learner. Show Duolingo's 750+ A/B tests per quarter as exemplar.",
-  },
-  {
     id: "LD1.0",
     title: "The Paradigm Shift",
     component: ScarcityVsAbundanceScreen,
     duration: 4,
     notes: "Theory after experience: scarcity vs abundance.",
+  },
+  {
+    id: "LD5.5",
+    title: "From Scarcity to Abundance: The Technology Shift",
+    component: MeasureTheMessScreen,
+    duration: 7,
+    notes: "Showcase real AI measurement tools: xAPI/LRS (Watershed, Learning Locker), AI tutors (Khanmigo, ChatGPT feedback), adaptive systems (Carnegie Learning). Key stat: xAPI increases data points from 5-10 to 50-100+ per learner. Show Duolingo's 750+ A/B tests per quarter as exemplar.",
   },
   {
     id: "LD4.0",
