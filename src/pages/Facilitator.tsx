@@ -64,13 +64,6 @@ const screens = [
     pollOptions: ["Yes - rain/dirt still exists", "No - no driver to see through them", "Maybe - depends on design", "Not sure"],
   },
   {
-    id: "LD0.1",
-    title: "Why Neurodiversity Matters: The Data",
-    component: NeurodiversityDataQuizScreen,
-    duration: 8,
-    notes: "Interactive data quiz - participants guess shocking neurodiversity employment/productivity stats, then see reality. Creates visceral 'wow!' moment.",
-  },
-  {
     id: "LD5.0",
     title: "Pattern Recognition & Perspective",
     component: PatternRecognitionScreen,
@@ -79,6 +72,13 @@ const screens = [
     hasPoll: true,
     pollQuestion: "What did you see first?",
     pollOptions: ["Duck (facing right)", "Rabbit (facing left)", "Both at the same time", "Neither/Unsure"],
+  },
+  {
+    id: "LD0.1",
+    title: "Why Neurodiversity Matters: The Data",
+    component: NeurodiversityDataQuizScreen,
+    duration: 8,
+    notes: "Interactive data quiz - participants guess shocking neurodiversity employment/productivity stats, then see reality. Creates visceral 'wow!' moment.",
   },
   {
     id: "LD0.5.1",
