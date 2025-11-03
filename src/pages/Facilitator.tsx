@@ -158,16 +158,6 @@ const screens = [
     notes: "Academic grounding - peer-reviewed research supporting all interactive exercises.",
   },
   {
-    id: "LD5.5",
-    title: "Structured Freedom Framework",
-    component: StructuredFreedomScreen,
-    duration: 7,
-    notes: "Balance between guidance and autonomy. Examples: LEGO instructions + free play, Khan Academy mastery paths, Duolingo adaptive placement. Reduces cognitive load while respecting learner agency.",
-    hasPoll: true,
-    pollQuestion: "Which design approach best describes your current training?",
-    pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"],
-  },
-  {
     id: "LD1.0",
     title: "The Curb-Cut Effect",
     component: CurbCutEffectScreen,
@@ -176,6 +166,16 @@ const screens = [
     hasPoll: true,
     pollQuestion: "Have you ever benefited from an accessibility feature you didn't 'need'?",
     pollOptions: ["Yes - often", "Yes - occasionally", "Not that I know of", "Not sure"],
+  },
+  {
+    id: "LD5.5",
+    title: "Structured Freedom Framework",
+    component: StructuredFreedomScreen,
+    duration: 7,
+    notes: "Balance between guidance and autonomy. Examples: LEGO instructions + free play, Khan Academy mastery paths, Duolingo adaptive placement. Reduces cognitive load while respecting learner agency.",
+    hasPoll: true,
+    pollQuestion: "Which design approach best describes your current training?",
+    pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"],
   },
   {
     id: "LD4.0",
