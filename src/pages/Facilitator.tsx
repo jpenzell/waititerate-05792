@@ -76,6 +76,9 @@ const screens = [
     component: PatternRecognitionScreen,
     duration: 6,
     notes: "Autistic detail focus vs neurotypical gestalt processing. Interactive demo with ambiguous image. Cognitive diversity catches more errors, spots more opportunities.",
+    hasPoll: true,
+    pollQuestion: "What did you see first?",
+    pollOptions: ["Duck (facing right)", "Rabbit (facing left)", "Both at the same time", "Neither/Unsure"],
   },
   {
     id: "LD0.5.1",
