@@ -28,6 +28,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { LogOut } from "lucide-react";
 import { AIAssistant } from "@/components/AIAssistant";
+import { AccessibilityControls } from "@/components/AccessibilityControls";
+import { KeyboardShortcuts } from "@/components/KeyboardShortcuts";
+import { ProgressIndicator } from "@/components/ProgressIndicator";
+import { ParticipantInstructions } from "@/components/ParticipantInstructions";
 
 const screens = [
   {
@@ -126,6 +130,8 @@ export default function Participate() {
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [sessionCode, setSessionCode] = useState<string | null>(null);
   const [searchParams] = useSearchParams();
+  const [keyboardHintsVisible, setKeyboardHintsVisible] = useState(true);
+  const [hideParticles, setHideParticles] = useState(false);
   
   // Support both 'code' (from QR codes) and 'session' parameters
   const urlSessionCode = searchParams.get("code") || searchParams.get("session");
@@ -217,7 +223,45 @@ export default function Participate() {
 
   return (
     <>
-      <ParticleBackground />
+      {!hideParticles && <ParticleBackground />}
+      
+      {/* Accessibility Controls */}
+      <AccessibilityControls 
+        onSettingsChange={(settings) => {
+          setKeyboardHintsVisible(settings.keyboardHintsVisible);
+          setHideParticles(settings.hideParticles);
+        }}
+      />
+      
+      {/* Keyboard Shortcuts */}
+      <KeyboardShortcuts 
+        visible={keyboardHintsVisible}
+        onNavigate={() => {}} // Participant can't navigate manually
+      />
+      
+      {/* Progress Indicator */}
+      <ProgressIndicator 
+        currentIndex={currentIndex}
+        totalSlides={visibleScreens.length}
+        currentTitle={currentScreen.title}
+        estimatedTimeRemaining={
+          visibleScreens.slice(currentIndex).reduce((sum, s) => sum + (s.duration || 0), 0)
+        }
+      />
+      
+      {/* Participant Instructions for Interactive Slides */}
+      <ParticipantInstructions 
+        slideId={currentScreen.id}
+        isInteractive={
+          currentScreen.id === "LD0.5.1" || 
+          currentScreen.id === "LD0.5.2" || 
+          currentScreen.id === "LD0.5.3" || 
+          currentScreen.id === "LD0.5.4" ||
+          currentScreen.id === "LD0.5.6" ||
+          currentScreen.id === "LD0.5.7" ||
+          currentScreen.id === "LD0.5.8"
+        }
+      />
       
       {/* Participant Info - Top Right */}
       <div className="fixed top-4 right-4 z-50 space-y-2">

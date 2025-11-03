@@ -31,6 +31,8 @@ import LiveRehearsalExerciseScreen from "@/components/screens/LiveRehearsalExerc
 import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
 import { AIAssistant } from "@/components/AIAssistant";
 import { ParticleBackground } from "@/components/ParticleBackground";
+import { AccessibilityControls } from "@/components/AccessibilityControls";
+import { KeyboardShortcuts } from "@/components/KeyboardShortcuts";
 import { Button } from "@/components/ui/button";
 import { PresentationModeToggle } from "@/components/PresentationModeToggle";
 import { ExternalLink, Users } from "lucide-react";
@@ -196,6 +198,8 @@ export default function Facilitator() {
   const [sessionCode, setSessionCode] = useState<string | null>(null);
   const [showControls, setShowControls] = useState(true);
   const [backgroundAnalysisTriggered, setBackgroundAnalysisTriggered] = useState(false);
+  const [keyboardHintsVisible, setKeyboardHintsVisible] = useState(true);
+  const [hideParticles, setHideParticles] = useState(false);
 
   const { updateSlide } = useRealtimeSession(sessionCode || undefined);
 
@@ -447,7 +451,34 @@ export default function Facilitator() {
 
   return (
     <>
-      <ParticleBackground />
+      {!hideParticles && <ParticleBackground />}
+      
+      {/* Accessibility Controls */}
+      <AccessibilityControls 
+        onSettingsChange={(settings) => {
+          setKeyboardHintsVisible(settings.keyboardHintsVisible);
+          setHideParticles(settings.hideParticles);
+        }}
+      />
+      
+      {/* Keyboard Shortcuts */}
+      <KeyboardShortcuts 
+        visible={keyboardHintsVisible}
+        onNavigate={(direction) => {
+          if (direction === "next" && currentIndex < visibleScreens.length - 1) {
+            handleNavigation(currentIndex + 1);
+          } else if (direction === "prev" && currentIndex > 0) {
+            handleNavigation(currentIndex - 1);
+          }
+        }}
+        onToggleFullscreen={() => {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+          } else {
+            document.exitFullscreen();
+          }
+        }}
+      />
       
       {/* Always-visible control toggle button */}
       {!showControls && (
