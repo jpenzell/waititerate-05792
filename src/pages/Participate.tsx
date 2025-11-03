@@ -27,6 +27,7 @@ import FreedomToTryScreen from "@/components/screens/FreedomToTryScreen";
 import { ActOnDataScreen } from "@/components/screens/ActOnDataScreen";
 import LiveRehearsalExerciseScreen from "@/components/screens/LiveRehearsalExerciseScreen";
 import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
+import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -36,6 +37,7 @@ import { AccessibilityControls } from "@/components/AccessibilityControls";
 import { KeyboardShortcuts } from "@/components/KeyboardShortcuts";
 import { ProgressIndicator } from "@/components/ProgressIndicator";
 import { ParticipantInstructions } from "@/components/ParticipantInstructions";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const screens = [
   {
@@ -49,6 +51,7 @@ const screens = [
     title: "First Principles: Windshield Wipers",
     component: WindshieldWipersScreen,
     duration: 5,
+    hasPoll: true,
   },
   {
     id: "LD0.1",
@@ -125,9 +128,10 @@ const screens = [
   },
   {
     id: "LD5.0",
-    title: "Interactive Cycle Demo",
-    component: InteractiveCycleScreen,
+    title: "Pattern Recognition & Perspective",
+    component: PatternRecognitionScreen,
     duration: 6,
+    hasPoll: true,
   },
   {
     id: "LD6.0",
@@ -152,6 +156,7 @@ export default function Participate() {
   const [searchParams] = useSearchParams();
   const [keyboardHintsVisible, setKeyboardHintsVisible] = useState(true);
   const [hideParticles, setHideParticles] = useState(false);
+  const isMobile = useIsMobile();
   
   // Support both 'code' (from QR codes) and 'session' parameters
   const urlSessionCode = searchParams.get("code") || searchParams.get("session");
@@ -243,50 +248,58 @@ export default function Participate() {
 
   return (
     <>
-      {!hideParticles && <ParticleBackground />}
+      {!hideParticles && !isMobile && <ParticleBackground />}
       
-      {/* Accessibility Controls */}
-      <AccessibilityControls 
-        onSettingsChange={(settings) => {
-          setKeyboardHintsVisible(settings.keyboardHintsVisible);
-          setHideParticles(settings.hideParticles);
-        }}
-      />
+      {/* Accessibility Controls - Hidden on mobile */}
+      {!isMobile && (
+        <AccessibilityControls 
+          onSettingsChange={(settings) => {
+            setKeyboardHintsVisible(settings.keyboardHintsVisible);
+            setHideParticles(settings.hideParticles);
+          }}
+        />
+      )}
       
-      {/* Keyboard Shortcuts */}
-      <KeyboardShortcuts 
-        visible={keyboardHintsVisible}
-        onNavigate={() => {}} // Participant can't navigate manually
-      />
+      {/* Keyboard Shortcuts - Hidden on mobile */}
+      {!isMobile && (
+        <KeyboardShortcuts 
+          visible={keyboardHintsVisible}
+          onNavigate={() => {}} // Participant can't navigate manually
+        />
+      )}
       
-      {/* Progress Indicator */}
-      <ProgressIndicator 
-        currentIndex={currentIndex}
-        totalSlides={visibleScreens.length}
-        currentTitle={currentScreen.title}
-        estimatedTimeRemaining={
-          visibleScreens.slice(currentIndex).reduce((sum, s) => sum + (s.duration || 0), 0)
-        }
-      />
+      {/* Progress Indicator - Simplified on mobile */}
+      {!isMobile && (
+        <ProgressIndicator 
+          currentIndex={currentIndex}
+          totalSlides={visibleScreens.length}
+          currentTitle={currentScreen.title}
+          estimatedTimeRemaining={
+            visibleScreens.slice(currentIndex).reduce((sum, s) => sum + (s.duration || 0), 0)
+          }
+        />
+      )}
       
-      {/* Participant Instructions for Interactive Slides */}
-      <ParticipantInstructions 
-        slideId={currentScreen.id}
-        isInteractive={
-          currentScreen.id === "LD0.1" ||
-          currentScreen.id === "LD0.5.1" || 
-          currentScreen.id === "LD0.5.2" || 
-          currentScreen.id === "LD0.5.3" || 
-          currentScreen.id === "LD0.5.4" ||
-          currentScreen.id === "LD0.5.6" ||
-          currentScreen.id === "LD0.5.7" ||
-          currentScreen.id === "LD0.5.8"
-        }
-      />
+      {/* Participant Instructions for Interactive Slides - Hidden on mobile */}
+      {!isMobile && (
+        <ParticipantInstructions 
+          slideId={currentScreen.id}
+          isInteractive={
+            currentScreen.id === "LD0.1" ||
+            currentScreen.id === "LD0.5.1" || 
+            currentScreen.id === "LD0.5.2" || 
+            currentScreen.id === "LD0.5.3" || 
+            currentScreen.id === "LD0.5.4" ||
+            currentScreen.id === "LD0.5.6" ||
+            currentScreen.id === "LD0.5.7" ||
+            currentScreen.id === "LD0.5.8"
+          }
+        />
+      )}
       
-      {/* Participant Info - Top Right */}
-      <div className="fixed top-4 right-4 z-50 space-y-2">
-        {displayName && (
+      {/* Participant Info - Simplified on mobile */}
+      <div className={`fixed ${isMobile ? 'top-2 right-2' : 'top-4 right-4'} z-50 space-y-2`}>
+        {displayName && !isMobile && (
           <Card className="p-3 bg-background/80 backdrop-blur-xl border-primary/20">
             <p className="text-sm text-muted-foreground">Participating as</p>
             <p className="font-display font-bold text-primary">{displayName}</p>
@@ -296,11 +309,12 @@ export default function Participate() {
         <Button
           onClick={handleSignOut}
           variant="outline"
-          size="sm"
-          className="w-full border-primary/20"
+          size={isMobile ? "icon" : "sm"}
+          className={`border-primary/20 ${isMobile ? '' : 'w-full'}`}
+          title="Leave Session"
         >
-          <LogOut className="w-4 h-4 mr-2" />
-          Leave Session
+          <LogOut className="w-4 h-4 mr-0" />
+          {!isMobile && <span className="ml-2">Leave Session</span>}
         </Button>
       </div>
 
@@ -344,23 +358,18 @@ export default function Participate() {
           ) : currentScreen.id === "LD6.7" ? (
             <LiveRehearsalExerciseScreen isFacilitator={false} />
           ) : currentScreen.hasPoll && sessionId ? (
-            // For poll slides, show waiting message + poll widget
-            <div className="max-w-2xl mx-auto space-y-6">
-              <Card className="p-8 bg-background/80 backdrop-blur-xl border-primary/20 text-center">
-                <div className="animate-pulse mb-4">
-                  <div className="w-3 h-3 bg-primary rounded-full mx-auto mb-2"></div>
-                </div>
-                <h3 className="text-xl font-display font-bold mb-2">
-                  Follow along on screen
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  The facilitator is presenting: <span className="text-primary font-semibold">{currentScreen.title}</span>
-                </p>
-                <div className="mt-6 p-4 bg-primary/10 rounded-lg">
-                  <p className="text-sm font-semibold text-primary mb-2">📊 Poll Active Below</p>
-                  <p className="text-xs text-muted-foreground">Share your response</p>
-                </div>
-              </Card>
+            // For poll slides, show poll widget prominently
+            <div className="max-w-2xl mx-auto space-y-4">
+              {!isMobile && (
+                <Card className="p-6 bg-background/80 backdrop-blur-xl border-primary/20 text-center">
+                  <h3 className="text-lg font-display font-bold mb-2">
+                    {currentScreen.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    📊 Share your response below
+                  </p>
+                </Card>
+              )}
               
               <PollWidget
                 sessionId={sessionId}
