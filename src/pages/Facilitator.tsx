@@ -9,17 +9,17 @@ import { useAuth } from "@/hooks/useAuth";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
 import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
-import { ScarcityVsAbundanceScreen } from "@/components/screens/ScarcityVsAbundanceScreen";
+import { CurbCutEffectScreen } from "@/components/screens/CurbCutEffectScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
 import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
 import { NumericEstimateScreen } from "@/components/screens/NumericEstimateScreen";
 import { AIDatapointsScreen } from "@/components/screens/AIDatapointsScreen";
 import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerformanceScreen";
-import { MakeAMessScreen } from "@/components/screens/MakeAMessScreen";
-import MeasureTheMessScreen from "@/components/screens/MeasureTheMessScreen";
+import { CognitiveLoadScreen } from "@/components/screens/CognitiveLoadScreen";
+import { StructuredFreedomScreen } from "@/components/screens/StructuredFreedomScreen";
 import { InteractiveCycleScreen } from "@/components/screens/InteractiveCycleScreen";
-import FreedomToTryScreen from "@/components/screens/FreedomToTryScreen";
+import { AICognitiveProtheticScreen } from "@/components/screens/AICognitiveProtheticScreen";
 import { ActOnDataScreen } from "@/components/screens/ActOnDataScreen";
 import LiveRehearsalExerciseScreen from "@/components/screens/LiveRehearsalExerciseScreen";
 import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
@@ -86,7 +86,7 @@ const screens = [
   {
     id: "LD5.5",
     title: "Structured Freedom Framework",
-    component: MeasureTheMessScreen,
+    component: StructuredFreedomScreen,
     duration: 7,
     notes: "Balance between guidance and autonomy. Examples: LEGO instructions + free play, Khan Academy mastery paths, Duolingo adaptive placement. Reduces cognitive load while respecting learner agency.",
     hasPoll: true,
@@ -96,7 +96,7 @@ const screens = [
   {
     id: "LD1.0",
     title: "The Curb-Cut Effect",
-    component: ScarcityVsAbundanceScreen,
+    component: CurbCutEffectScreen,
     duration: 4,
     notes: "Designing for neurodivergent learners improves outcomes for ALL learners. Closed captions, chunked content, multiple representations benefit everyone.",
     hasPoll: true,
@@ -106,14 +106,14 @@ const screens = [
   {
     id: "LD4.0",
     title: "Cognitive Load in Action",
-    component: MakeAMessScreen,
+    component: CognitiveLoadScreen,
     duration: 4,
     notes: "Working memory limits (7±2 chunks). Show dense vs. chunked content comparison. Practice structured freedom in presentation design.",
   },
   {
     id: "LD6.5",
     title: "AI as Cognitive Prosthetic",
-    component: FreedomToTryScreen,
+    component: AICognitiveProtheticScreen,
     duration: 6,
     notes: "Real examples: JPMorgan Autism at Work (90%+ retention), SAP (30% faster QA), Khan Academy adaptive progression, Carnegie Learning AI tutors. AI extends cognitive capabilities like glasses extend vision.",
   },
