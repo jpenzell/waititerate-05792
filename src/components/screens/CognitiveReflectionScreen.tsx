@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Brain, Sparkles, Lightbulb, Users, CheckCircle2 } from "lucide-react";
-import { SlideHeader } from "@/components/SlideHeader";
 
 interface CognitiveReflectionScreenProps {
   isFacilitator?: boolean;
@@ -46,8 +45,6 @@ export const CognitiveReflectionScreen = ({ isFacilitator = false }: CognitiveRe
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/5 to-primary/10 py-12 px-6">
       <div className="max-w-5xl mx-auto">
-        <SlideHeader slideNumber={6} totalSlides={14} estimatedMinutes={8} title="Cognitive Reflection" />
-
         {!hasSubmitted ? (
           <div className="space-y-8 animate-fade-in">
             <div className="text-center space-y-4">

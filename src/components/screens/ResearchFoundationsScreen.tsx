@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Users, Brain, Sparkles, ExternalLink } from "lucide-react";
-import { SlideHeader } from "@/components/SlideHeader";
 
 export const ResearchFoundationsScreen = () => {
   const researchAreas = [
@@ -82,8 +81,6 @@ export const ResearchFoundationsScreen = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-accent/10 py-12 px-6">
       <div className="max-w-6xl mx-auto">
-        <SlideHeader slideNumber={7} totalSlides={14} estimatedMinutes={5} title="Research Foundations" />
-
         <div className="space-y-8 animate-fade-in">
           <div className="text-center space-y-4">
             <Badge variant="secondary" className="mb-2">

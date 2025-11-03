@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Target, Unlock, Shield, Zap } from "lucide-react";
-import { SlideHeader } from "@/components/SlideHeader";
 import { PollWidget } from "@/components/PollWidget";
 
 interface StructuredFreedomScreenProps {
@@ -18,8 +17,6 @@ export const StructuredFreedomScreen = ({
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-accent/10 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <SlideHeader slideNumber={5} totalSlides={14} estimatedMinutes={5} title="Structured Freedom Framework" />
-
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <Badge variant="secondary" className="mb-4">

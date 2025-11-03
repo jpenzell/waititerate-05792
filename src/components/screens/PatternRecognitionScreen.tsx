@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Users, Brain, TrendingUp } from "lucide-react";
 import { PollWidget } from "@/components/PollWidget";
-import { SlideHeader } from "@/components/SlideHeader";
 
 interface PatternRecognitionScreenProps {
   isFacilitator?: boolean;
@@ -22,7 +21,6 @@ export const PatternRecognitionScreen = ({
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <SlideHeader slideNumber={13} totalSlides={14} estimatedMinutes={8} title="Pattern Recognition & Cognitive Diversity" />
         {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <Badge variant="secondary" className="mb-4">

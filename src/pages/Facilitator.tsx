@@ -547,7 +547,7 @@ export default function Facilitator() {
         totalScreens={visibleScreens.length}
         currentIndex={currentIndex}
         onNavigate={handleNavigation}
-        title="Don't Wait, Iterate"
+        title="Neurodiversity, Data Abundance & UDL"
         duration={240}
         notes=""
         mode="presenter"
