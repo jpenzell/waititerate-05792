@@ -168,14 +168,34 @@ const screens = [
     notes: "Introduce the curb-cut effect concept with the original 1970s accessibility story and how it benefited everyone."
   },
   {
-    id: "LD1.0-Quiz",
-    title: "The Curb-Cut Effect: Quiz",
+    id: "LD1.0-Quiz-1",
+    title: "Quiz Q1: Closed Captions",
     component: CurbCutQuizScreen,
-    duration: 120,
-    notes: "Display three quiz questions about accessibility statistics. Click to reveal each answer with the actual data: 71% use captions, 30% improvement with chunked content, 80%+ prefer multiple formats.",
+    duration: 60,
+    notes: "Question 1: What percentage of ALL viewers use closed captions?",
     hasPoll: true,
-    pollQuestion: "Which accessibility feature surprised you most?",
-    pollOptions: ["Closed Captions (71%)", "Chunked Content (30% boost)", "Multiple Formats (80%+)", "All equally surprising"]
+    pollQuestion: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?",
+    pollOptions: ["20%", "45%", "71%", "85%"]
+  },
+  {
+    id: "LD1.0-Quiz-2",
+    title: "Quiz Q2: Chunked Content",
+    component: CurbCutQuizScreen,
+    duration: 60,
+    notes: "Question 2: How much does chunked content improve completion rates?",
+    hasPoll: true,
+    pollQuestion: "How much does chunked content improve completion rates for everyone?",
+    pollOptions: ["10%", "30%", "50%", "75%"]
+  },
+  {
+    id: "LD1.0-Quiz-3",
+    title: "Quiz Q3: Multiple Formats",
+    component: CurbCutQuizScreen,
+    duration: 60,
+    notes: "Question 3: What percentage of learners prefer multiple format options?",
+    hasPoll: true,
+    pollQuestion: "What percentage of learners prefer multiple format options (text + audio + visual)?",
+    pollOptions: ["40%", "60%", "80%+", "95%"]
   },
   {
     id: "LD1.0-Results",
@@ -594,9 +614,9 @@ export default function Facilitator() {
           <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} />
         ) : currentScreen.id === "LD1.0" ? (
           <CurrentComponent sessionId={sessionId || undefined} />
-        ) : currentScreen.id === "LD1.0-Quiz" ? (
+        ) : (currentScreen.id === "LD1.0-Quiz-1" || currentScreen.id === "LD1.0-Quiz-2" || currentScreen.id === "LD1.0-Quiz-3") ? (
           <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} userId={user?.id} />
-        ) : (currentScreen.id === "LD0.5.1" || 
+        ) : (currentScreen.id === "LD0.5.1" ||
             currentScreen.id === "LD0.5.2" || 
             currentScreen.id === "LD0.5.3" || 
             currentScreen.id === "LD0.5.4" || 
