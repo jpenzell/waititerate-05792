@@ -140,7 +140,15 @@ export const BlindSpotsScreen = ({ isFacilitator = false, sessionId }: BlindSpot
         </div>
 
         <div className="flex-1 overflow-y-auto max-w-6xl mx-auto w-full px-4">
-          {blindSpots.length === 0 ? (
+          {photos.length === 0 ? (
+            <div className="text-center py-12">
+              <AlertTriangle className="h-16 w-16 mx-auto mb-4 text-amber-500" />
+              <h3 className="text-xl font-semibold mb-2">No Photos Yet</h3>
+              <p className="text-muted-foreground">
+                Participants need to submit photos before AI can analyze blind spots
+              </p>
+            </div>
+          ) : blindSpots.length === 0 ? (
             <div className="text-center py-12">
               <Brain className="h-16 w-16 mx-auto mb-4 text-primary animate-pulse" />
               <h3 className="text-xl font-semibold mb-2">AI is Analyzing Blind Spots...</h3>
