@@ -232,51 +232,65 @@ export const AIDatapointsScreen = ({ isFacilitator = false, sessionId }: AIDatap
           </div>
           
           {aiDatapointCounts.length > 0 && (
-            <Card className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10">
-              <h3 className="text-2xl font-bold text-center mb-6">The Abundance Shift</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Target className="h-6 w-6 text-destructive shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-foreground mb-1">Old World (Scarcity)</h4>
-                      <p className="text-sm text-muted-foreground">
-                        5-10 data points per survey. Each data point required planning, cost, and time.
-                      </p>
+            <>
+              <Card className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 mb-6">
+                <h3 className="text-2xl font-bold text-center mb-6">The Abundance Shift</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Target className="h-6 w-6 text-destructive shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-foreground mb-1">Old World (Scarcity)</h4>
+                        <p className="text-sm text-muted-foreground">
+                          5-10 data points per survey. Each data point required planning, cost, and time.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Lightbulb className="h-6 w-6 text-yellow-500 shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-foreground mb-1">Scarcity Mindset</h4>
+                        <p className="text-sm text-muted-foreground">
+                          "We can't measure that." "Too expensive." "Takes too long."
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Lightbulb className="h-6 w-6 text-yellow-500 shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-foreground mb-1">Scarcity Mindset</h4>
-                      <p className="text-sm text-muted-foreground">
-                        "We can't measure that." "Too expensive." "Takes too long."
-                      </p>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Zap className="h-6 w-6 text-primary shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-foreground mb-1">New World (Abundance)</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {Math.max(...aiDatapointCounts)}+ data points from one photo. Instant. Automatic. Free.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Sparkles className="h-6 w-6 text-accent shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-foreground mb-1">Abundance Mindset</h4>
+                        <p className="text-sm text-muted-foreground">
+                          "What else can we measure?" "Let's try it." "We'll know tomorrow."
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Zap className="h-6 w-6 text-primary shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-foreground mb-1">New World (Abundance)</h4>
-                      <p className="text-sm text-muted-foreground">
-                        {Math.max(...aiDatapointCounts)}+ data points from one photo. Instant. Automatic. Free.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Sparkles className="h-6 w-6 text-accent shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold text-foreground mb-1">Abundance Mindset</h4>
-                      <p className="text-sm text-muted-foreground">
-                        "What else can we measure?" "Let's try it." "We'll know tomorrow."
-                      </p>
-                    </div>
-                  </div>
+              </Card>
+
+              <Card className="max-w-4xl mx-auto p-8 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-2 border-amber-500/30">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">But Here's the Question...</h3>
+                  <p className="text-lg text-muted-foreground mb-3">
+                    AI can help us see patterns and extract hundreds of data points. That's powerful.
+                  </p>
+                  <p className="text-xl text-foreground font-semibold">
+                    But what if the humans receiving that data process information in fundamentally <span className="text-amber-500">different</span> ways?
+                  </p>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </>
           )}
         </div>
       </div>

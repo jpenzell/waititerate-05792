@@ -185,12 +185,15 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
               <div className="flex items-start gap-4">
                 <Eye className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">The Test</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-3">From Measurement to Meaning</h3>
                   <p className="text-muted-foreground mb-3">
-                    Close your eyes. Picture a red apple sitting on a white plate.
+                    We just saw how AI can extract hundreds of data points from a photo. That's measurement abundance.
                   </p>
-                  <p className="text-muted-foreground text-sm">
-                    Try to "see" it: the shine, the shadow, maybe a stem.
+                  <p className="text-muted-foreground mb-3">
+                    <span className="font-semibold text-foreground">But here's what matters even more:</span> The humans receiving that data don't all process information the same way.
+                  </p>
+                  <p className="text-sm text-amber-500 font-semibold">
+                    Let's discover just how different our minds actually are...
                   </p>
                 </div>
               </div>
