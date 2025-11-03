@@ -38,6 +38,70 @@ export type Database = {
         }
         Relationships: []
       }
+      inner_voice_responses: {
+        Row: {
+          created_at: string
+          has_inner_voice: boolean
+          id: string
+          session_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          has_inner_voice: boolean
+          id?: string
+          session_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          has_inner_voice?: boolean
+          id?: string
+          session_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "inner_voice_responses_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "presentation_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      mental_imagery_responses: {
+        Row: {
+          created_at: string
+          id: string
+          session_id: string
+          user_id: string
+          vividness_score: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          session_id: string
+          user_id: string
+          vividness_score: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          session_id?: string
+          user_id?: string
+          vividness_score?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mental_imagery_responses_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "presentation_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       numeric_estimates: {
         Row: {
           created_at: string
@@ -271,6 +335,82 @@ export type Database = {
           id?: string
         }
         Relationships: []
+      }
+      sensory_processing_responses: {
+        Row: {
+          brightness: number
+          created_at: string
+          felt_overwhelming: boolean
+          id: string
+          session_id: string
+          sound_level: number
+          user_id: string
+          visual_intensity: number
+        }
+        Insert: {
+          brightness: number
+          created_at?: string
+          felt_overwhelming: boolean
+          id?: string
+          session_id: string
+          sound_level: number
+          user_id: string
+          visual_intensity: number
+        }
+        Update: {
+          brightness?: number
+          created_at?: string
+          felt_overwhelming?: boolean
+          id?: string
+          session_id?: string
+          sound_level?: number
+          user_id?: string
+          visual_intensity?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sensory_processing_responses_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "presentation_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      time_perception_responses: {
+        Row: {
+          actual_seconds: number
+          created_at: string
+          id: string
+          session_id: string
+          target_seconds: number
+          user_id: string
+        }
+        Insert: {
+          actual_seconds: number
+          created_at?: string
+          id?: string
+          session_id: string
+          target_seconds?: number
+          user_id: string
+        }
+        Update: {
+          actual_seconds?: number
+          created_at?: string
+          id?: string
+          session_id?: string
+          target_seconds?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "time_perception_responses_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "presentation_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       user_roles: {
         Row: {
