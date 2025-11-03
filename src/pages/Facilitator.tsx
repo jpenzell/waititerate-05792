@@ -172,7 +172,10 @@ const screens = [
     title: "The Curb-Cut Effect: Quiz",
     component: CurbCutQuizScreen,
     duration: 120,
-    notes: "Display three quiz questions about accessibility statistics. Click to reveal each answer with the actual data: 71% use captions, 30% improvement with chunked content, 80%+ prefer multiple formats."
+    notes: "Display three quiz questions about accessibility statistics. Click to reveal each answer with the actual data: 71% use captions, 30% improvement with chunked content, 80%+ prefer multiple formats.",
+    hasPoll: true,
+    pollQuestion: "Which accessibility feature surprised you most?",
+    pollOptions: ["Closed Captions (71%)", "Chunked Content (30% boost)", "Multiple Formats (80%+)", "All equally surprising"]
   },
   {
     id: "LD1.0-Results",
@@ -591,6 +594,8 @@ export default function Facilitator() {
           <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} />
         ) : currentScreen.id === "LD1.0" ? (
           <CurrentComponent sessionId={sessionId || undefined} />
+        ) : currentScreen.id === "LD1.0-Quiz" ? (
+          <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} userId={user?.id} />
         ) : (currentScreen.id === "LD0.5.1" || 
             currentScreen.id === "LD0.5.2" || 
             currentScreen.id === "LD0.5.3" || 

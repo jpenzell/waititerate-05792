@@ -1,12 +1,19 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { RevealCard } from "@/components/blocks/RevealCard";
+import { PollWidget } from "@/components/PollWidget";
 
 interface CurbCutQuizScreenProps {
   isFacilitator?: boolean;
+  sessionId?: string;
+  userId?: string;
 }
 
-export const CurbCutQuizScreen = ({ isFacilitator = false }: CurbCutQuizScreenProps) => {
+export const CurbCutQuizScreen = ({ 
+  isFacilitator = false,
+  sessionId,
+  userId 
+}: CurbCutQuizScreenProps) => {
   const quizQuestions = [
     {
       question: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?",
@@ -68,6 +75,18 @@ export const CurbCutQuizScreen = ({ isFacilitator = false }: CurbCutQuizScreenPr
             </div>
           ))}
         </div>
+
+        {/* Poll for participants to answer on phones */}
+        {isFacilitator && sessionId && userId && (
+          <div className="mt-12">
+            <PollWidget
+              sessionId={sessionId}
+              slideId="LD1.0-Quiz"
+              userId={userId}
+              isPresenter={true}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
