@@ -53,6 +53,9 @@ const screens = [
     component: WindshieldWipersScreen,
     duration: 5,
     notes: "Does a self-driving car need windshield wipers? Interactive poll revealing first-principles thinking—how neurodivergent minds question assumptions.",
+    hasPoll: true,
+    pollQuestion: "Does a self-driving car need windshield wipers?",
+    pollOptions: ["Yes - rain/dirt still exists", "No - no driver to see through them", "Maybe - depends on design", "Not sure"],
   },
   {
     id: "LD0.1",
