@@ -17,6 +17,7 @@ import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
 import { BlindSpotsScreen } from "@/components/screens/BlindSpotsScreen";
 import { NumericEstimateScreen } from "@/components/screens/NumericEstimateScreen";
 import { AIDatapointsScreen } from "@/components/screens/AIDatapointsScreen";
+import { CognitiveTransitionScreen } from "@/components/screens/CognitiveTransitionScreen";
 import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerformanceScreen";
 import { CognitiveLoadScreen } from "@/components/screens/CognitiveLoadScreen";
 import { StructuredFreedomScreen } from "@/components/screens/StructuredFreedomScreen";
@@ -106,6 +107,13 @@ const screens = [
     component: AIDatapointsScreen,
     duration: 2,
     notes: "AI reveals hundreds of datapoints it extracted. Scarcity → abundance mindset shift.",
+  },
+  {
+    id: "LD0.5.6.5",
+    title: "Transition: From AI to Human Cognition",
+    component: CognitiveTransitionScreen,
+    duration: 1,
+    notes: "Bridge slide: AI helps us measure more, but what if humans process information differently?",
   },
   {
     id: "LD0.5.7",

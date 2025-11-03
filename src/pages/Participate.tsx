@@ -17,6 +17,8 @@ import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
 import { BlindSpotsScreen } from "@/components/screens/BlindSpotsScreen";
 import { NumericEstimateScreen } from "@/components/screens/NumericEstimateScreen";
 import { AIDatapointsScreen } from "@/components/screens/AIDatapointsScreen";
+import { CognitiveTransitionScreen } from "@/components/screens/CognitiveTransitionScreen";
+import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerformanceScreen";
 import { MakeAMessScreen } from "@/components/screens/MakeAMessScreen";
 import MeasureTheMessScreen from "@/components/screens/MeasureTheMessScreen";
@@ -91,11 +93,16 @@ const screens = [
     duration: 2,
   },
   {
-    id: "LD5.5",
-    title: "From Scarcity to Abundance: The Technology Shift",
-    component: MeasureTheMessScreen,
+    id: "LD0.5.6.5",
+    title: "Transition: From AI to Human Cognition",
+    component: CognitiveTransitionScreen,
+    duration: 1,
+  },
+  {
+    id: "LD0.5.7",
+    title: "Mental Imagery Discovery",
+    component: MentalImageryScreen,
     duration: 7,
-    hasPoll: true,
   },
   {
     id: "LD1.0",
@@ -273,6 +280,7 @@ export default function Participate() {
           currentScreen.id === "LD0.5.4" ||
           currentScreen.id === "LD0.5.6" ||
           currentScreen.id === "LD0.5.7" ||
+          currentScreen.id === "LD0.5.7" ||
           currentScreen.id === "LD0.5.8"
         }
       />
@@ -316,6 +324,7 @@ export default function Participate() {
             currentScreen.id === "LD0.5.4" || 
             currentScreen.id === "LD0.5.5" ||
             currentScreen.id === "LD0.5.6" ||
+            currentScreen.id === "LD0.5.7" ||
             currentScreen.id === "LD0.5.7" ||
             currentScreen.id === "LD0.5.8") ? (
             <CurrentComponent isFacilitator={false} sessionId={sessionId || undefined} />
