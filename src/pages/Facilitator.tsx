@@ -43,6 +43,7 @@ import { Button } from "@/components/ui/button";
 import { PresentationModeToggle } from "@/components/PresentationModeToggle";
 import { ExternalLink, Users } from "lucide-react";
 import { toast } from "sonner";
+import { seedPollsForSession } from "@/utils/pollSeeder";
 
 const screens = [
   {
@@ -269,6 +270,7 @@ export default function Facilitator() {
   const [backgroundAnalysisTriggered, setBackgroundAnalysisTriggered] = useState(false);
   const [keyboardHintsVisible, setKeyboardHintsVisible] = useState(true);
   const [hideParticles, setHideParticles] = useState(false);
+  const [pollsSeededSessionId, setPollsSeededSessionId] = useState<string | null>(null);
 
   const { updateSlide } = useRealtimeSession(sessionCode || undefined);
 
@@ -354,6 +356,21 @@ export default function Facilitator() {
     }
   }, [currentIndex, visibleScreens]);
 
+  // Ensure polls exist for active sessions (handles restored/previous sessions)
+  useEffect(() => {
+    const runSeeding = async () => {
+      if (!sessionId) return;
+      if (pollsSeededSessionId === sessionId) return; // seed once per session
+      try {
+        await seedPollsForSession(sessionId, visibleScreens);
+      } catch (e) {
+        console.error('Error seeding polls for existing session:', e);
+      } finally {
+        setPollsSeededSessionId(sessionId);
+      }
+    };
+    runSeeding();
+  }, [sessionId, visibleScreens, pollsSeededSessionId]);
   const handleSessionChange = (newSessionId: string | null, newSessionCode: string | null, isPresenter: boolean) => {
     setSessionId(newSessionId);
     setSessionCode(newSessionCode);
