@@ -18,9 +18,9 @@ import { AIDatapointsScreen } from "@/components/screens/AIDatapointsScreen";
 import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerformanceScreen";
 import { CognitiveLoadScreen } from "@/components/screens/CognitiveLoadScreen";
 import { StructuredFreedomScreen } from "@/components/screens/StructuredFreedomScreen";
-import { InteractiveCycleScreen } from "@/components/screens/InteractiveCycleScreen";
+import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
 import { AICognitiveProtheticScreen } from "@/components/screens/AICognitiveProtheticScreen";
-import { ActOnDataScreen } from "@/components/screens/ActOnDataScreen";
+import { UDLInActionScreen } from "@/components/screens/UDLInActionScreen";
 import LiveRehearsalExerciseScreen from "@/components/screens/LiveRehearsalExerciseScreen";
 import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
 import { AIAssistant } from "@/components/AIAssistant";
@@ -120,14 +120,14 @@ const screens = [
   {
     id: "LD5.0",
     title: "Pattern Recognition & Perspective",
-    component: InteractiveCycleScreen,
+    component: PatternRecognitionScreen,
     duration: 6,
     notes: "Autistic detail focus vs neurotypical gestalt processing. Interactive demo with ambiguous image. Cognitive diversity catches more errors, spots more opportunities.",
   },
   {
     id: "LD6.0",
     title: "UDL in Action",
-    component: ActOnDataScreen,
+    component: UDLInActionScreen,
     duration: 4,
     notes: "Universal Design for Learning: multiple representations, engagement methods, expression options. Removes barriers without lowering standards.",
   },
