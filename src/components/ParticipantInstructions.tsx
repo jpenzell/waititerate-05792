@@ -29,23 +29,27 @@ const slideInstructions: Record<string, { text: string; type: "info" | "action" 
     text: "Look at everyone's photos. What patterns do YOU notice? What themes emerge? Everyone will see something different.",
     type: "info"
   },
-  "LD0.5.3": {
+  "LD0.5.4": {
+    text: "Reflect: What learning differences can't be photographed? Think about invisible cognitive variations like processing speed, auditory learning, abstract thinking.",
+    type: "info"
+  },
+  "LD0.5.7": {
     text: "Close your eyes and picture a red apple on a white plate. Try to 'see' it clearly. How vivid is your mental image?",
     type: "action"
   },
-  "LD0.5.4": {
+  "LD0.5.8": {
     text: "Read the sentence on screen SILENTLY. Do you hear a voice reading it to you? Or is it just... meaning without sound?",
     type: "action"
   },
-  "LD0.5.6": {
+  "LD0.5.9": {
     text: "You'll press START, then—without counting or looking at a clock—press STOP when you think 10 seconds have passed.",
     type: "action"
   },
-  "LD0.5.7": {
+  "LD0.5.10": {
     text: "Adjust the sensory sliders until it feels OVERWHELMING. This is your cognitive load threshold. Everyone's is different.",
     type: "action"
   },
-  "LD0.5.8": {
+  "LD0.5.11": {
     text: "Reflect on what surprised you. What did you learn about cognitive diversity? How might this change your design practice?",
     type: "action"
   },

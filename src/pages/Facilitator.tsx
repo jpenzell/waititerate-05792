@@ -14,6 +14,7 @@ import { CurbCutEffectScreen } from "@/components/screens/CurbCutEffectScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
 import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
+import { BlindSpotsScreen } from "@/components/screens/BlindSpotsScreen";
 import { NumericEstimateScreen } from "@/components/screens/NumericEstimateScreen";
 import { AIDatapointsScreen } from "@/components/screens/AIDatapointsScreen";
 import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerformanceScreen";
@@ -87,55 +88,62 @@ const screens = [
   },
   {
     id: "LD0.5.4",
-    title: "Step 4: How Many Interpretations?",
+    title: "Step 4: What Are We Missing?",
+    component: BlindSpotsScreen,
+    duration: 4,
+    notes: "Reveal the blind spots - what cognitive differences can't be photographed? Auditory learning, processing speed, abstract thinking, social context. Most neurodiversity is invisible.",
+  },
+  {
+    id: "LD0.5.5",
+    title: "Step 5: How Many Interpretations?",
     component: NumericEstimateScreen,
     duration: 2,
     notes: "Human estimates: how many ways could someone interpret ONE photo? Perspective-taking exercise.",
   },
   {
-    id: "LD0.5.5",
-    title: "Step 5: Abundance Reveal",
+    id: "LD0.5.6",
+    title: "Step 6: Abundance Reveal",
     component: AIDatapointsScreen,
     duration: 2,
     notes: "AI reveals hundreds of datapoints it extracted. Scarcity → abundance mindset shift.",
   },
   {
-    id: "LD0.5.6",
+    id: "LD0.5.7",
     title: "Mental Imagery Discovery",
     component: MentalImageryScreen,
     duration: 7,
     notes: "Aphantasia reveal - not everyone sees mental pictures. Visceral wow moment.",
   },
   {
-    id: "LD0.5.7",
+    id: "LD0.5.8",
     title: "Inner Voice Discovery",
     component: InnerVoiceScreen,
     duration: 6,
     notes: "Reading voice differences - some hear narration, others read in silence.",
   },
   {
-    id: "LD0.5.8",
+    id: "LD0.5.9",
     title: "Time Perception Challenge",
     component: TimePerceptionScreen,
     duration: 5,
     notes: "Time blindness reveal - ADHD time perception differences. Interactive 10-second challenge.",
   },
   {
-    id: "LD0.5.9",
+    id: "LD0.5.10",
     title: "Sensory Processing Simulator",
     component: SensoryProcessingScreen,
     duration: 6,
     notes: "Experience sensory overload - adjust visual, audio, brightness to find threshold.",
   },
   {
-    id: "LD0.5.10",
+    id: "LD0.5.11",
     title: "Cognitive Reflection",
     component: CognitiveReflectionScreen,
     duration: 8,
     notes: "Personal reflection prompts after experiencing cognitive diversity firsthand.",
   },
   {
-    id: "LD0.5.11",
+    id: "LD0.5.12",
     title: "Research Foundations",
     component: ResearchFoundationsScreen,
     duration: 5,

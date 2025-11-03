@@ -14,6 +14,7 @@ import { ScarcityVsAbundanceScreen } from "@/components/screens/ScarcityVsAbunda
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
 import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
+import { BlindSpotsScreen } from "@/components/screens/BlindSpotsScreen";
 import { NumericEstimateScreen } from "@/components/screens/NumericEstimateScreen";
 import { AIDatapointsScreen } from "@/components/screens/AIDatapointsScreen";
 import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerformanceScreen";
@@ -73,13 +74,19 @@ const screens = [
   },
   {
     id: "LD0.5.4",
-    title: "Step 4: Data Point Estimates",
+    title: "Step 4: What Are We Missing?",
+    component: BlindSpotsScreen,
+    duration: 4,
+  },
+  {
+    id: "LD0.5.5",
+    title: "Step 5: Data Point Estimates",
     component: NumericEstimateScreen,
     duration: 2,
   },
   {
-    id: "LD0.5.5",
-    title: "Step 5: Abundance Reveal",
+    id: "LD0.5.6",
+    title: "Step 6: Abundance Reveal",
     component: AIDatapointsScreen,
     duration: 2,
   },
