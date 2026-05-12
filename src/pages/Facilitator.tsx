@@ -25,6 +25,10 @@ import RehearsalNotPerformanceScreen from "@/components/screens/RehearsalNotPerf
 import { CognitiveLoadScreen } from "@/components/screens/CognitiveLoadScreen";
 import { StructuredFreedomScreen } from "@/components/screens/StructuredFreedomScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
+import { ZooxReframeScreen } from "@/components/screens/ZooxReframeScreen";
+import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
+import { AIParadoxRevealScreen } from "@/components/screens/AIParadoxRevealScreen";
+import { AnthropicIterationScreen } from "@/components/screens/AnthropicIterationScreen";
 import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
@@ -65,6 +69,13 @@ const screens = [
     pollOptions: ["Yes", "No", "Who knows anymore?"],
   },
   {
+    id: "LD0.06",
+    title: "My Own Reframe",
+    component: ZooxReframeScreen,
+    duration: 2,
+    notes: "Personal proof of the Zoox reframe — this isn't a deck, it's a live website built by talking to AI.",
+  },
+  {
     id: "LD5.0",
     title: "Pattern Recognition & Perspective",
     component: PatternRecognitionScreen,
@@ -80,6 +91,13 @@ const screens = [
     component: NeurodiversityDataQuizScreen,
     duration: 8,
     notes: "Interactive data quiz - participants guess shocking neurodiversity employment/productivity stats, then see reality. Creates visceral 'wow!' moment.",
+  },
+  {
+    id: "LD0.15",
+    title: "Same Words, Different Meanings",
+    component: AnnieDukeStudyScreen,
+    duration: 5,
+    notes: "Annie Duke / Sherman Kent. 'Serious possibility' = 30%–80% to different humans. Language is imprecise — and AI inherits that imprecision.",
   },
   {
     id: "LD0.5.1",
@@ -242,6 +260,13 @@ const screens = [
     pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"],
   },
   {
+    id: "LD5.55",
+    title: "Doctor + AI Paradox",
+    component: AIParadoxRevealScreen,
+    duration: 5,
+    notes: "JAMA 2024. Doctors+AI didn't beat doctors with textbooks. AI alone won. The variable wasn't access — it was mindset. Sets up AI Student.",
+  },
+  {
     id: "LD5.6",
     title: "AI Student: You're the Teacher",
     component: AIStudentScreen,
@@ -261,6 +286,13 @@ const screens = [
     component: UDLInActionScreen,
     duration: 4,
     notes: "Universal Design for Learning: multiple representations, engagement methods, expression options. Removes barriers without lowering standards.",
+  },
+  {
+    id: "LD6.9",
+    title: "Iteration Doubles Quality",
+    component: AnthropicIterationScreen,
+    duration: 3,
+    notes: "Anthropic AI Fluency Index 2026 (n=9,830). Iteration ~2× quality. The skill isn't the prompt — it's the rehearsal. Hard data for 'Don't Wait, Iterate.'",
   },
   {
     id: "LD7.0",

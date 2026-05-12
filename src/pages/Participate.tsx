@@ -29,6 +29,10 @@ import LiveRehearsalExerciseScreen from "@/components/screens/LiveRehearsalExerc
 import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
 import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
+import { ZooxReframeScreen } from "@/components/screens/ZooxReframeScreen";
+import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
+import { AIParadoxRevealScreen } from "@/components/screens/AIParadoxRevealScreen";
+import { AnthropicIterationScreen } from "@/components/screens/AnthropicIterationScreen";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -55,10 +59,22 @@ const screens = [
     hasPoll: true,
   },
   {
+    id: "LD0.06",
+    title: "My Own Reframe",
+    component: ZooxReframeScreen,
+    duration: 2,
+  },
+  {
     id: "LD0.1",
     title: "Why Neurodiversity Matters: The Data",
     component: NeurodiversityDataQuizScreen,
     duration: 8,
+  },
+  {
+    id: "LD0.15",
+    title: "Same Words, Different Meanings",
+    component: AnnieDukeStudyScreen,
+    duration: 5,
   },
   {
     id: "LD0.5.1",
