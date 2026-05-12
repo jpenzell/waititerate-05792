@@ -292,7 +292,6 @@ export default function Facilitator() {
 
   if (!user || !userRole) return null;
 
-  const CurrentComponent = visibleScreens[currentIndex]?.component;
   const currentScreen = visibleScreens[currentIndex];
 
   return (
