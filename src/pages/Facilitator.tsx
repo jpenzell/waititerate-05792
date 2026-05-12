@@ -7,7 +7,7 @@ import { SessionControl } from "@/components/SessionControl";
 import { useSlideConfig } from "@/hooks/useSlideConfig";
 import { useAuth } from "@/hooks/useAuth";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
-import { screens, INTERACTIVE_SLIDE_IDS } from "@/config/screens";
+import { screens } from "@/config/screens";
 import { AIAssistant } from "@/components/AIAssistant";
 import { SlideRenderer } from "@/components/SlideRenderer";
 import { ParticleBackground } from "@/components/ParticleBackground";
