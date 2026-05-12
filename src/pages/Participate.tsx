@@ -144,6 +144,12 @@ const screens = [
     duration: 6,
   },
   {
+    id: "LD5.55",
+    title: "Doctor + AI Paradox",
+    component: AIParadoxRevealScreen,
+    duration: 5,
+  },
+  {
     id: "LD5.6",
     title: "AI Student: You're the Teacher",
     component: AIStudentScreen,
@@ -161,6 +167,12 @@ const screens = [
     title: "The Trick: Acting On Data",
     component: ActOnDataScreen,
     duration: 4,
+  },
+  {
+    id: "LD6.9",
+    title: "Iteration Doubles Quality",
+    component: AnthropicIterationScreen,
+    duration: 3,
   },
   {
     id: "LD7.0",
