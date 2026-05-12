@@ -98,6 +98,30 @@ export type Database = {
         }
         Relationships: []
       }
+      discovery_wall_responses: {
+        Row: {
+          created_at: string
+          id: string
+          response: string
+          session_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          response: string
+          session_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          response?: string
+          session_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       inner_voice_responses: {
         Row: {
           created_at: string
@@ -219,6 +243,33 @@ export type Database = {
           created_at?: string
           estimate?: number
           id?: string
+          session_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      parking_lot_questions: {
+        Row: {
+          answered: boolean
+          created_at: string
+          id: string
+          question: string
+          session_id: string
+          user_id: string
+        }
+        Insert: {
+          answered?: boolean
+          created_at?: string
+          id?: string
+          question: string
+          session_id: string
+          user_id: string
+        }
+        Update: {
+          answered?: boolean
+          created_at?: string
+          id?: string
+          question?: string
           session_id?: string
           user_id?: string
         }
