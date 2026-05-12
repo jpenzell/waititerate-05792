@@ -40,6 +40,9 @@ import { AICognitiveProtheticScreen } from "@/components/screens/AICognitiveProt
 import { UDLInActionScreen } from "@/components/screens/UDLInActionScreen";
 import LiveRehearsalExerciseScreen from "@/components/screens/LiveRehearsalExerciseScreen";
 import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
+import { RCCCContextScreen } from "@/components/screens/RCCCContextScreen";
+import { AcademicIntegrityScreen } from "@/components/screens/AcademicIntegrityScreen";
+import { MondayPromptsScreen } from "@/components/screens/MondayPromptsScreen";
 import { AIAssistant } from "@/components/AIAssistant";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { AccessibilityControls } from "@/components/AccessibilityControls";
@@ -74,6 +77,13 @@ const screens = [
     component: ZooxReframeScreen,
     duration: 2,
     notes: "Personal proof of the Zoox reframe — this isn't a deck, it's a live website built by talking to AI.",
+  },
+  {
+    id: "LD0.07",
+    title: "Who's in Your RCCC Classroom",
+    component: RCCCContextScreen,
+    duration: 4,
+    notes: "Audience grounding for Rowan-Cabarrus Summer Institute: dual-enrolled, returning adults, first-gen, working students, neurodivergent learners. Sets stakes for why cognitive variation matters HERE.",
   },
   {
     id: "LD5.0",
@@ -267,6 +277,13 @@ const screens = [
     notes: "JAMA 2024. Doctors+AI didn't beat doctors with textbooks. AI alone won. The variable wasn't access — it was mindset. Sets up AI Student.",
   },
   {
+    id: "LD5.57",
+    title: "But Isn't This Just Cheating?",
+    component: AcademicIntegrityScreen,
+    duration: 5,
+    notes: "Name the elephant. Reframe academic integrity fears before the AI Student exercise. Calculator analogy + redesign-the-assignment angle. Critical for faculty audiences.",
+  },
+  {
     id: "LD5.6",
     title: "AI Student: You're the Teacher",
     component: AIStudentScreen,
@@ -300,6 +317,13 @@ const screens = [
     component: LDTakeawaysScreen,
     duration: 4,
     notes: "Four actionable shifts: Audit cognitive load, add one representation, experiment with structured freedom, test with diverse learners.",
+  },
+  {
+    id: "LD7.5",
+    title: "Monday-Morning Prompts",
+    component: MondayPromptsScreen,
+    duration: 5,
+    notes: "Four copy-paste prompts faculty can use THIS week. Closes the gap from inspiration to action. Each prompt is targeted at a specific community-college teaching moment.",
   },
 ];
 
