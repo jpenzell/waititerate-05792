@@ -23,7 +23,7 @@ export const useRealtimeSession = (sessionCode?: string) => {
         .select("*")
         .eq("session_code", sessionCode)
         .eq("is_active", true)
-        .single();
+        .maybeSingle();
 
       if (data && !error) {
         setSession(data);
