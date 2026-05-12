@@ -23,6 +23,11 @@ export const LDTitleScreen = () => {
             <span className="text-foreground font-semibold text-lg font-mono">AI FOR ALL MINDS</span>
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
           </div>
+
+          {/* Event co-branding */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-xs font-mono uppercase tracking-widest text-accent">
+            Rowan-Cabarrus Summer Institute · 2026
+          </div>
           
           {/* Main Title */}
           <div className="space-y-3">
