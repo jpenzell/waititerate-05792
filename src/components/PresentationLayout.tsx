@@ -51,7 +51,7 @@ export const PresentationLayout = ({
   const isParticipant = mode === "participant";
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval>;
     if (isRunning) {
       interval = setInterval(() => {
         setElapsedTime((prev) => prev + 1);

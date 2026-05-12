@@ -21,7 +21,7 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
   const targetTime = 10;
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval>;
     if (isRunning && startTime) {
       interval = setInterval(() => {
         setElapsedTime(Date.now() - startTime);
