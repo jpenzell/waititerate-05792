@@ -4,12 +4,16 @@ import { Users, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface Props {
-  prompt: string;
+  prompt?: string;
   subPrompt?: string;
   seconds?: number;
 }
 
-export const PeerTalkScreen = ({ prompt, subPrompt, seconds = 90 }: Props) => {
+export const PeerTalkScreen = ({
+  prompt = "Turn to your neighbor.",
+  subPrompt,
+  seconds = 90,
+}: Props) => {
   const [remaining, setRemaining] = useState(seconds);
   const [running, setRunning] = useState(false);
 
