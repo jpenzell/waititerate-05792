@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v16'; // Added Zoox Reframe, Annie Duke, AI Paradox, Anthropic Iteration slides
+const STORAGE_KEY = 'presentation-slide-config-atdld-v17'; // Added RCCC context, Academic Integrity, Monday Prompts slides
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {

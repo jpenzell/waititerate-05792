@@ -33,6 +33,9 @@ import { ZooxReframeScreen } from "@/components/screens/ZooxReframeScreen";
 import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
 import { AIParadoxRevealScreen } from "@/components/screens/AIParadoxRevealScreen";
 import { AnthropicIterationScreen } from "@/components/screens/AnthropicIterationScreen";
+import { RCCCContextScreen } from "@/components/screens/RCCCContextScreen";
+import { AcademicIntegrityScreen } from "@/components/screens/AcademicIntegrityScreen";
+import { MondayPromptsScreen } from "@/components/screens/MondayPromptsScreen";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -63,6 +66,12 @@ const screens = [
     title: "My Own Reframe",
     component: ZooxReframeScreen,
     duration: 2,
+  },
+  {
+    id: "LD0.07",
+    title: "Who's in Your RCCC Classroom",
+    component: RCCCContextScreen,
+    duration: 4,
   },
   {
     id: "LD0.1",
@@ -150,6 +159,12 @@ const screens = [
     duration: 5,
   },
   {
+    id: "LD5.57",
+    title: "But Isn't This Just Cheating?",
+    component: AcademicIntegrityScreen,
+    duration: 5,
+  },
+  {
     id: "LD5.6",
     title: "AI Student: You're the Teacher",
     component: AIStudentScreen,
@@ -179,6 +194,12 @@ const screens = [
     title: "Your New Design Process",
     component: LDTakeawaysScreen,
     duration: 4,
+  },
+  {
+    id: "LD7.5",
+    title: "Monday-Morning Prompts",
+    component: MondayPromptsScreen,
+    duration: 5,
   },
 ];
 
