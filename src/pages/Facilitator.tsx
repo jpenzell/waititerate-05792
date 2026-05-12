@@ -9,6 +9,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { screens, INTERACTIVE_SLIDE_IDS } from "@/config/screens";
 import { AIAssistant } from "@/components/AIAssistant";
+import { SlideRenderer } from "@/components/SlideRenderer";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { AccessibilityControls } from "@/components/AccessibilityControls";
 import { KeyboardShortcuts } from "@/components/KeyboardShortcuts";
@@ -386,30 +387,13 @@ export default function Facilitator() {
           />
         }
       >
-        {currentScreen.id === "LD0.1" ? (
-          <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} />
-        ) : currentScreen.id === "LD1.0" ? (
-          <CurrentComponent sessionId={sessionId || undefined} />
-        ) : (currentScreen.id === "LD1.0-Quiz-1" || currentScreen.id === "LD1.0-Quiz-2" || currentScreen.id === "LD1.0-Quiz-3") ? (
-          <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} userId={user?.id} />
-        ) : currentScreen.id === "LD5.6" ? (
-          <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} userId={user?.id} />
-        ) : (currentScreen.id === "LD0.5.1" ||
-            currentScreen.id === "LD0.5.2" || 
-            currentScreen.id === "LD0.5.3" || 
-            currentScreen.id === "LD0.5.4" || 
-            currentScreen.id === "LD0.5.5" ||
-            currentScreen.id === "LD0.5.6" ||
-            currentScreen.id === "LD0.5.6.5" ||
-            currentScreen.id === "LD0.5.7" ||
-            currentScreen.id === "LD0.5.8" ||
-            currentScreen.id === "LD0.5.9" ||
-            currentScreen.id === "LD0.5.10" ||
-            currentScreen.id === "LD0.5.11") ? (
-          <CurrentComponent isFacilitator={true} sessionId={sessionId || undefined} />
-        ) : (
-          <CurrentComponent />
-        )}
+        <SlideRenderer
+          screen={currentScreen}
+          isFacilitator={true}
+          sessionId={sessionId || undefined}
+          userId={user?.id}
+          showPollWidget={true}
+        />
       </PresentationLayout>
     </>
   );
