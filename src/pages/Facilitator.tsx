@@ -43,6 +43,17 @@ import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
 import { RCCCContextScreen } from "@/components/screens/RCCCContextScreen";
 import { AcademicIntegrityScreen } from "@/components/screens/AcademicIntegrityScreen";
 import { MondayPromptsScreen } from "@/components/screens/MondayPromptsScreen";
+import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
+import { FacultyTranslationScreen } from "@/components/screens/FacultyTranslationScreen";
+import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
+import { PeerTalkScreen } from "@/components/screens/PeerTalkScreen";
+import { AIAccommodationScreen } from "@/components/screens/AIAccommodationScreen";
+import { ParkingLotIntroScreen } from "@/components/screens/ParkingLotIntroScreen";
+import { ParkingLotDisplayScreen } from "@/components/screens/ParkingLotDisplayScreen";
+import { FacultyAreNeurodivergentScreen } from "@/components/screens/FacultyAreNeurodivergentScreen";
+import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
+import { WhatThisIsNotScreen } from "@/components/screens/WhatThisIsNotScreen";
+import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScreen";
 import { AIAssistant } from "@/components/AIAssistant";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { AccessibilityControls } from "@/components/AccessibilityControls";
@@ -84,6 +95,20 @@ const screens = [
     component: RCCCContextScreen,
     duration: 4,
     notes: "Audience grounding for Rowan-Cabarrus Summer Institute: dual-enrolled, returning adults, first-gen, working students, neurodivergent learners. Sets stakes for why cognitive variation matters HERE.",
+  },
+  {
+    id: "LD0.08",
+    title: "What This Is NOT",
+    component: WhatThisIsNotScreen,
+    duration: 3,
+    notes: "Disarm faculty skepticism early. Name what we're NOT doing (tech tutorial, lecture on inclusion, just-use-AI pitch) and what we ARE doing.",
+  },
+  {
+    id: "LD0.09",
+    title: "Parking Lot: Your Questions",
+    component: ParkingLotIntroScreen,
+    duration: 3,
+    notes: "Capture each participant's biggest AI question. Builds buy-in and gives you ammo for the closing parking-lot display slide.",
   },
   {
     id: "LD5.0",
@@ -201,6 +226,35 @@ const screens = [
     notes: "Academic grounding - peer-reviewed research supporting all interactive exercises.",
   },
   {
+    id: "LD0.5.13",
+    title: "Discovery Wall",
+    component: DiscoveryWallScreen,
+    duration: 5,
+    notes: "Live shared wall: 'Until today, I assumed everyone…' Captures the emotional payoff of the cognitive experiments. The single biggest 'wow' moment in the room — don't skip.",
+  },
+  {
+    id: "LD0.5.14",
+    title: "What This Means For Your Students",
+    component: FacultyTranslationScreen,
+    duration: 5,
+    notes: "Bridge cognitive findings to actual teaching practice. Aphantasia → pair visuals. Time perception → interim checkpoints. Sensory → written-response options.",
+  },
+  {
+    id: "LD0.5.15",
+    title: "You Are Not Alone (Faculty)",
+    component: FacultyAreNeurodivergentScreen,
+    duration: 3,
+    notes: "This room contains neurodivergent faculty too. Permission slide. Connects Josh's late diagnosis to colleagues in the room.",
+  },
+  {
+    id: "LD0.5.16",
+    title: "Peer Talk: Discovery",
+    component: PeerTalkScreen,
+    duration: 3,
+    props: { prompt: "What did you just discover that you'd never noticed before?", subPrompt: "Pick one thing. 90 seconds with the person next to you.", seconds: 90 },
+    notes: "Structured peer talk. Faculty workshops live or die on this — DON'T skip.",
+  },
+  {
     id: "LD1.0",
     title: "The Curb-Cut Effect: Introduction",
     component: CurbCutIntroScreen,
@@ -284,6 +338,35 @@ const screens = [
     notes: "Name the elephant. Reframe academic integrity fears before the AI Student exercise. Calculator analogy + redesign-the-assignment angle. Critical for faculty audiences.",
   },
   {
+    id: "LD5.58",
+    title: "AI as Cognitive Accommodation",
+    component: AIAccommodationScreen,
+    duration: 5,
+    notes: "Reframe AI from 'productivity tool' to 'prosthetic'. Six concrete student archetypes with example prompts. Faculty recognize their actual students here.",
+  },
+  {
+    id: "LD6.1",
+    title: "Workshop: Redesign Your Slide",
+    component: RedesignWorkshopScreen,
+    duration: 12,
+    notes: "Hands-on. Faculty paste their own content, AI rewrites three ways. The workshop moment that earns the 'workshop' label. Allow 10-12 minutes.",
+  },
+  {
+    id: "LD6.2",
+    title: "Peer Talk: Redesign",
+    component: PeerTalkScreen,
+    duration: 3,
+    props: { prompt: "Show your neighbor what you redesigned.", subPrompt: "What changed? What did the AI catch that you wouldn't have? 90 seconds each way.", seconds: 180 },
+    notes: "Pair share after the redesign workshop. Builds peer accountability.",
+  },
+  {
+    id: "LD6.3",
+    title: "This Is Retention Strategy",
+    component: RetentionEquityScreen,
+    duration: 4,
+    notes: "Equity / Title III / SACSCOC hook. Gives faculty ammo for their dean. Critical for community college audience.",
+  },
+  {
     id: "LD5.6",
     title: "AI Student: You're the Teacher",
     component: AIStudentScreen,
@@ -324,6 +407,20 @@ const screens = [
     component: MondayPromptsScreen,
     duration: 5,
     notes: "Four copy-paste prompts faculty can use THIS week. Closes the gap from inspiration to action. Each prompt is targeted at a specific community-college teaching moment.",
+  },
+  {
+    id: "LD7.7",
+    title: "Parking Lot: Answers",
+    component: ParkingLotDisplayScreen,
+    duration: 8,
+    notes: "Display all questions captured at start. Tackle 3-5 live. The promise-kept moment.",
+  },
+  {
+    id: "LD7.9",
+    title: "Take It With You",
+    component: OnePagerDownloadScreen,
+    duration: 3,
+    notes: "Download faculty one-pager + share QR for absent colleagues. Final slide — closes the loop from inspiration to artifact.",
   },
 ];
 

@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v17'; // Added RCCC context, Academic Integrity, Monday Prompts slides
+const STORAGE_KEY = 'presentation-slide-config-atdld-v18'; // Added Discovery Wall, Faculty Translation, Redesign Workshop, Peer Talk, AI Accommodation, Parking Lot, Faculty Are Neurodivergent, Retention Equity, What This Is NOT, One-Pager Download
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
