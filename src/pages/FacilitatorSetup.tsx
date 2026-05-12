@@ -65,13 +65,6 @@ export default function FacilitatorSetup() {
     setLoading(true);
 
     try {
-      // Validate password
-      if (password !== FACILITATOR_PASSWORD) {
-        setErrors({ password: "Incorrect facilitator password" });
-        setLoading(false);
-        return;
-      }
-
       // Validate name
       const validation = nameSchema.safeParse({ displayName });
       if (!validation.success) {
@@ -108,20 +101,17 @@ export default function FacilitatorSetup() {
         });
       }
 
-      // Try to update role; if no row exists, insert presenter role
-      const { data: updated, error: roleError } = await supabase
-        .from("user_roles")
-        .update({ role: "presenter" })
-        .eq("user_id", userId)
-        .select();
+      // Server-side password check + secure role elevation
+      const { data: granted, error: rpcError } = await supabase.rpc(
+        "claim_presenter_role",
+        { _password: password }
+      );
 
-      if (roleError) throw roleError;
-
-      if (!updated || updated.length === 0) {
-        const { error: insertError } = await supabase
-          .from("user_roles")
-          .insert({ user_id: userId, role: "presenter" });
-        if (insertError) throw insertError;
+      if (rpcError) throw rpcError;
+      if (!granted) {
+        setErrors({ password: "Incorrect facilitator password" });
+        setLoading(false);
+        return;
       }
 
       toast.success(`Welcome, Facilitator ${validation.data.displayName}!`);
