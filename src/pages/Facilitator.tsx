@@ -8,7 +8,6 @@ import { useSlideConfig } from "@/hooks/useSlideConfig";
 import { useAuth } from "@/hooks/useAuth";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
 import { screens } from "@/config/screens";
-import { AIAssistant } from "@/components/AIAssistant";
 import { SlideRenderer } from "@/components/SlideRenderer";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { AccessibilityControls } from "@/components/AccessibilityControls";
@@ -370,7 +369,7 @@ export default function Facilitator() {
         onNavigate={handleNavigation}
         title="AI for All Minds"
         duration={240}
-        notes=""
+        notes={currentScreen.notes || ""}
         mode="presenter"
         sessionCode={sessionCode || undefined}
         sessionId={sessionId || undefined}
