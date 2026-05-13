@@ -48,6 +48,7 @@ export const PresentationLayout = ({
   const [zoom, setZoom] = useState(100);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [cleanView, setCleanView] = useState(false);
+  const [blankScreen, setBlankScreen] = useState<null | "black" | "white">(null);
   
   const isPresenter = mode === "presenter";
   const isPresent = mode === "present";
@@ -117,6 +118,21 @@ export const PresentationLayout = ({
       if (!isTyping) {
         e.preventDefault();
         setCleanView((v) => !v);
+      }
+    } else if (e.key === "b" || e.key === "B") {
+      if (!isTyping) {
+        e.preventDefault();
+        setBlankScreen((v) => (v === "black" ? null : "black"));
+      }
+    } else if (e.key === "w" || e.key === "W") {
+      if (!isTyping) {
+        e.preventDefault();
+        setBlankScreen((v) => (v === "white" ? null : "white"));
+      }
+    } else if (e.key === "Escape") {
+      if (blankScreen) {
+        e.preventDefault();
+        setBlankScreen(null);
       }
     }
   };
@@ -416,6 +432,17 @@ export const PresentationLayout = ({
         >
           <EyeOff className="h-3 w-3" /> Exit
         </button>
+      )}
+
+      {/* Blank screen overlay (B = black, W = white, like PowerPoint) */}
+      {blankScreen && (
+        <div
+          className="fixed inset-0 z-[100] cursor-pointer"
+          style={{ background: blankScreen === "black" ? "#000" : "#fff" }}
+          onClick={() => setBlankScreen(null)}
+          role="presentation"
+          aria-label="Blank screen — press any key or click to resume"
+        />
       )}
     </div>
   );
