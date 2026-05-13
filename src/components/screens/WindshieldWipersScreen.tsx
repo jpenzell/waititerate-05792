@@ -40,7 +40,7 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
               <div>
                 <PollWidget
                   sessionId={sessionId}
-                  slideId="LD0.05"
+                  slideId="LD1.1"
                   userId={userId}
                   isPresenter={true}
                 />
