@@ -1,5 +1,5 @@
 import { ReactNode, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Clock, Info, ZoomIn, ZoomOut, Maximize2, Users } from "lucide-react";
+import { ChevronLeft, ChevronRight, Clock, Info, ZoomIn, ZoomOut, Maximize2, Users, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
@@ -47,12 +47,14 @@ export const PresentationLayout = ({
   const [isRunning, setIsRunning] = useState(false);
   const [zoom, setZoom] = useState(100);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [cleanView, setCleanView] = useState(false);
   
   const isPresenter = mode === "presenter";
   const isPresent = mode === "present";
   const isParticipant = mode === "participant";
   const isInteractiveSlide = INTERACTIVE_SLIDE_IDS.has(currentScreen);
-  const showJoinOverlay = (isPresenter || isPresent) && isInteractiveSlide && !!sessionCode;
+  const showJoinOverlay = (isPresenter || isPresent) && isInteractiveSlide && !!sessionCode && !cleanView;
+  const showChrome = !cleanView;
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -111,6 +113,11 @@ export const PresentationLayout = ({
     } else if (e.key === "0") {
       e.preventDefault();
       setZoom(100);
+    } else if (e.key === "m" || e.key === "M") {
+      if (!isTyping) {
+        e.preventDefault();
+        setCleanView((v) => !v);
+      }
     }
   };
   
@@ -151,7 +158,7 @@ export const PresentationLayout = ({
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex flex-col">
       {/* Session Info Header - visible in present mode when session is active */}
-      {isPresent && sessionCode && (
+      {isPresent && sessionCode && showChrome && (
         <header className="fixed top-0 left-0 right-0 z-50 border-b bg-card/95 backdrop-blur-md px-6 py-2 flex items-center justify-center gap-4 shadow-lg">
           <Badge variant="outline" className="text-sm">
             <Users className="w-3 h-3 mr-1" />
@@ -173,7 +180,7 @@ export const PresentationLayout = ({
       )}
 
       {/* Header - hidden in present mode */}
-      {!isPresent && (
+      {!isPresent && showChrome && (
         <header className="border-b bg-card/80 backdrop-blur-sm px-6 py-3 flex items-center justify-between shadow-sm">
           <div className="flex items-center gap-4 flex-1">
             <h1 className="text-lg font-semibold text-foreground">{title}</h1>
@@ -205,6 +212,18 @@ export const PresentationLayout = ({
             {/* Slide Manager - presenter only */}
             {slideManager && isPresenter && slideManager}
             
+            {/* Clean / Mirror View toggle - presenter only */}
+            {isPresenter && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setCleanView(true)}
+                title="Clean Mirror View (M to toggle)"
+              >
+                <Eye className="h-4 w-4 mr-1" /> Clean View
+              </Button>
+            )}
+
             {/* Zoom Controls */}
             <div className="flex items-center gap-1 border rounded-md px-2 py-1">
               <Button
@@ -293,14 +312,14 @@ export const PresentationLayout = ({
       )}
 
       {/* Time Progress Bar - presenter only */}
-      {isPresenter && !isPresent && (
+      {isPresenter && !isPresent && showChrome && (
         <Progress value={timeProgress} className="h-1 rounded-none" />
       )}
 
       {/* Main Content with Zoom — locked to viewport, no scroll */}
       <main
         className="flex-1 min-h-0 overflow-hidden relative"
-        style={{ paddingTop: isPresent && sessionCode ? '70px' : '0' }}
+        style={{ paddingTop: isPresent && sessionCode && showChrome ? '70px' : '0' }}
       >
         {/* Persistent Join overlay on interactive slides — visible when facilitator is mirroring */}
         {showJoinOverlay && (
@@ -332,7 +351,7 @@ export const PresentationLayout = ({
       </main>
 
       {/* Footer Navigation - presenter only */}
-      {isPresenter && !isPresent && (
+      {isPresenter && !isPresent && showChrome && (
         <footer className="border-t bg-card/80 backdrop-blur-sm px-6 py-4 flex items-center justify-between shadow-sm">
           <Button
             variant="outline"
@@ -362,7 +381,7 @@ export const PresentationLayout = ({
       )}
       
       {/* Minimal controls in present mode - floating bottom right */}
-      {isPresent && (
+      {isPresent && showChrome && (
         <div className="fixed bottom-4 right-4 flex items-center gap-2 bg-card/90 backdrop-blur-sm border rounded-lg px-3 py-2 shadow-lg">
           <Button
             variant="ghost"
@@ -386,6 +405,17 @@ export const PresentationLayout = ({
             <ZoomIn className="h-4 w-4" />
           </Button>
         </div>
+      )}
+
+      {/* Clean View exit affordance */}
+      {cleanView && isPresenter && (
+        <button
+          onClick={() => setCleanView(false)}
+          className="fixed bottom-3 right-3 z-50 inline-flex items-center gap-1 rounded-md bg-card/80 hover:bg-card border px-2 py-1 text-xs text-muted-foreground shadow opacity-30 hover:opacity-100 transition"
+          title="Exit Clean View (M)"
+        >
+          <EyeOff className="h-3 w-3" /> Exit
+        </button>
       )}
     </div>
   );

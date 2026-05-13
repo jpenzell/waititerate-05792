@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import zooxVehicle from "@/assets/zoox-vehicle.jpg";
 import { PollWidget } from "@/components/PollWidget";
 import { QRCodeSVG } from "qrcode.react";
+import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 interface WindshieldWipersScreenProps {
   isFacilitator?: boolean;
@@ -13,7 +12,9 @@ interface WindshieldWipersScreenProps {
 }
 
 export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userId, sessionCode }: WindshieldWipersScreenProps) => {
-  const [showExplanation, setShowExplanation] = useState(false);
+  useRegisterReveals(1);
+  const { step } = useReveal();
+  const showExplanation = step >= 1;
   const joinUrl = sessionCode ? `${window.location.origin}/participate?code=${sessionCode}` : "";
 
   if (!showExplanation) {
@@ -73,17 +74,8 @@ export const WindshieldWipersScreen = ({ isFacilitator = false, sessionId, userI
               </p>
             </div>
           )}
-          
-          <div className="text-center mt-8">
-            <Button 
-              onClick={() => setShowExplanation(true)}
-              size="lg"
-              className="px-12"
-              aria-label="Reveal the answer to the windshield wipers question"
-            >
-              Reveal the Answer
-            </Button>
-          </div>
+
+          <p className="text-center mt-8 text-sm text-muted-foreground">Press → to reveal the answer</p>
         </section>
       </main>
     );
