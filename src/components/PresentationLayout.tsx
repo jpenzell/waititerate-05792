@@ -248,7 +248,7 @@ export const PresentationLayout = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => onNavigate(currentIndex - 1)}
+                  onClick={() => { if (!tryRevealPrev()) onNavigate(currentIndex - 1); }}
                   disabled={currentIndex === 0}
                 >
                   <ChevronLeft className="h-4 w-4" />
@@ -256,7 +256,7 @@ export const PresentationLayout = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => onNavigate(currentIndex + 1)}
+                  onClick={() => { if (!tryRevealNext()) onNavigate(currentIndex + 1); }}
                   disabled={currentIndex === totalScreens - 1}
                 >
                   <ChevronRight className="h-4 w-4" />
@@ -315,7 +315,7 @@ export const PresentationLayout = ({
           <Button
             variant="outline"
             size="lg"
-            onClick={() => onNavigate(currentIndex - 1)}
+            onClick={() => { if (!tryRevealPrev()) onNavigate(currentIndex - 1); }}
             disabled={currentIndex === 0}
             className="font-semibold"
           >
@@ -329,7 +329,7 @@ export const PresentationLayout = ({
 
           <Button
             size="lg"
-            onClick={() => onNavigate(currentIndex + 1)}
+            onClick={() => { if (!tryRevealNext()) onNavigate(currentIndex + 1); }}
             disabled={currentIndex === totalScreens - 1}
             className="font-semibold"
           >
