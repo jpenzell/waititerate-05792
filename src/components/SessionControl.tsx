@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import { Users, Copy, Check, Play, StopCircle, QrCode } from "lucide-react";
+import { Users, Copy, Check, Play, StopCircle, QrCode, Trash2 } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { seedPollsForSession } from "@/utils/pollSeeder";
 import {
@@ -15,6 +15,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 interface SessionControlProps {
   onSessionChange: (sessionId: string | null, sessionCode: string | null, isPresenter: boolean) => void;
@@ -121,6 +132,68 @@ export const SessionControl = ({ onSessionChange, userId, userRole, slides }: Se
     }
   };
 
+  const resetSessionData = async () => {
+    if (!activeSession) return;
+    const sid = activeSession.id;
+    const sidText = sid as unknown as string;
+    try {
+      // Tables keyed by session_id (uuid)
+      const uuidTables = [
+        "polls",
+        "cognitive_reflection_responses",
+        "inner_voice_responses",
+        "mental_imagery_responses",
+        "neurodiversity_quiz_responses",
+        "sensory_processing_responses",
+        "time_perception_responses",
+      ] as const;
+      // Tables keyed by session_id (text)
+      const textTables = [
+        "blind_spot_analysis",
+        "datapoint_submissions",
+        "discovery_wall_responses",
+        "numeric_estimates",
+        "parking_lot_questions",
+        "pattern_submissions",
+        "photo_exercise_phase",
+        "photo_submissions",
+      ] as const;
+
+      // Delete poll_responses first via poll lookup
+      const { data: pollRows } = await supabase
+        .from("polls")
+        .select("id")
+        .eq("session_id", sid);
+      if (pollRows && pollRows.length) {
+        await supabase
+          .from("poll_responses")
+          .delete()
+          .in("poll_id", pollRows.map((p) => p.id));
+      }
+
+      await Promise.all([
+        ...uuidTables.map((t) =>
+          supabase.from(t as any).delete().eq("session_id", sid)
+        ),
+        ...textTables.map((t) =>
+          supabase.from(t as any).delete().eq("session_id", sidText)
+        ),
+      ]);
+
+      // Re-seed polls so the session is ready to go
+      try {
+        await seedPollsForSession(sid, slides);
+      } catch (e) {
+        console.error("Re-seed polls after reset failed:", e);
+      }
+
+      toast.success("Session data reset. Polls re-seeded.");
+    } catch (e) {
+      console.error("Reset session data failed:", e);
+      toast.error("Failed to reset session data");
+    }
+  };
+
   const getJoinUrl = () => {
     if (!activeSession?.session_code) return "";
     return `${window.location.origin}/auth?session=${activeSession.session_code}`;
@@ -196,6 +269,36 @@ export const SessionControl = ({ onSessionChange, userId, userRole, slides }: Se
               <StopCircle className="w-4 h-4 mr-2" />
               End Session
             </Button>
+
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full border-destructive/30 text-destructive hover:bg-destructive/10"
+                >
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  Reset Session Data
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Reset all interactive data?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This clears every poll vote, photo, parking-lot question, discovery-wall
+                    response, and AI analysis tied to session{" "}
+                    <strong>{activeSession.session_code}</strong>. The session itself stays
+                    active and polls are re-seeded. Use between rehearsal and live runs.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={resetSessionData}>
+                    Yes, reset everything
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
           </div>
         ) : (
           <Button
