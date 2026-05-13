@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Clock, Info, ZoomIn, ZoomOut, Maximize2, Use
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import { RevealProvider, tryRevealNext, tryRevealPrev } from "@/contexts/RevealContext";
 import {
   Sheet,
   SheetContent,
@@ -85,6 +86,7 @@ export const PresentationLayout = ({
     if (e.key === "ArrowRight" || e.key === " ") {
       if (!isTyping) {
         e.preventDefault();
+        if (tryRevealNext()) return;
         if (currentIndex < totalScreens - 1) {
           onNavigate(currentIndex + 1);
         }
@@ -92,6 +94,7 @@ export const PresentationLayout = ({
     } else if (e.key === "ArrowLeft") {
       if (!isTyping) {
         e.preventDefault();
+        if (tryRevealPrev()) return;
         if (currentIndex > 0) {
           onNavigate(currentIndex - 1);
         }
@@ -245,7 +248,7 @@ export const PresentationLayout = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => onNavigate(currentIndex - 1)}
+                  onClick={() => { if (!tryRevealPrev()) onNavigate(currentIndex - 1); }}
                   disabled={currentIndex === 0}
                 >
                   <ChevronLeft className="h-4 w-4" />
@@ -253,7 +256,7 @@ export const PresentationLayout = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => onNavigate(currentIndex + 1)}
+                  onClick={() => { if (!tryRevealNext()) onNavigate(currentIndex + 1); }}
                   disabled={currentIndex === totalScreens - 1}
                 >
                   <ChevronRight className="h-4 w-4" />
@@ -301,7 +304,7 @@ export const PresentationLayout = ({
           }}
         >
           <div className="w-full overflow-x-hidden">
-            {children}
+            <RevealProvider slideId={currentScreen}>{children}</RevealProvider>
           </div>
         </div>
       </main>
@@ -312,7 +315,7 @@ export const PresentationLayout = ({
           <Button
             variant="outline"
             size="lg"
-            onClick={() => onNavigate(currentIndex - 1)}
+            onClick={() => { if (!tryRevealPrev()) onNavigate(currentIndex - 1); }}
             disabled={currentIndex === 0}
             className="font-semibold"
           >
@@ -326,7 +329,7 @@ export const PresentationLayout = ({
 
           <Button
             size="lg"
-            onClick={() => onNavigate(currentIndex + 1)}
+            onClick={() => { if (!tryRevealNext()) onNavigate(currentIndex + 1); }}
             disabled={currentIndex === totalScreens - 1}
             className="font-semibold"
           >
