@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Users, Brain, Sparkles, ChevronDown, ChevronUp } from "lucide-react";
 
@@ -91,15 +90,11 @@ export const ResearchFoundationsScreen = () => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="space-y-12 animate-fade-in">
           <div className="text-center space-y-6">
-            <Badge variant="secondary" className="text-lg px-6 py-3">
-              <BookOpen className="h-5 w-5 mr-2" />
-              Academic Grounding
-            </Badge>
-            <h1 className="text-6xl md:text-7xl font-bold text-foreground">
-              Research-Backed Design
+            <h1 className="text-6xl md:text-8xl font-bold text-foreground">
+              The science is settled.
             </h1>
-            <p className="text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Every exercise you experienced is built on <strong className="text-foreground">decades of peer-reviewed research</strong>
+            <p className="text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto">
+              Every exercise tonight rests on decades of peer-reviewed research.
             </p>
           </div>
 
@@ -109,12 +104,12 @@ export const ResearchFoundationsScreen = () => {
               const isExpanded = expandedArea === area.title;
               return (
                 <Card key={area.title} className="p-10 bg-gradient-to-br from-background to-primary/10 border-2 border-primary/20 hover:border-primary/40 transition-all">
-                  <div className="space-y-6">
+                  <div className="space-y-5">
                     <div className="flex items-center gap-4">
                       <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                        <Icon className="h-8 w-8 text-primary" />
+                        <Icon className="h-9 w-9 text-primary" />
                       </div>
-                      <h3 className="text-3xl font-bold text-foreground flex-1">{area.title}</h3>
+                      <h3 className="text-2xl md:text-3xl font-bold text-foreground flex-1">{area.title}</h3>
                       <Button
                         variant="ghost"
                         size="sm"
@@ -124,7 +119,7 @@ export const ResearchFoundationsScreen = () => {
                         {isExpanded ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
                       </Button>
                     </div>
-                    <p className="text-xl text-muted-foreground leading-relaxed">
+                    <p className="text-xl md:text-2xl text-foreground/85 leading-snug">
                       {area.finding}
                     </p>
                     
@@ -148,12 +143,11 @@ export const ResearchFoundationsScreen = () => {
             })}
           </div>
 
-          <Card className="p-10 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30">
-            <div className="text-center space-y-4">
-              <p className="text-2xl text-foreground max-w-5xl mx-auto leading-relaxed">
-                This isn't speculation—it's <strong>validated science</strong> that demands we design for <strong className="text-primary">cognitive diversity, not cognitive uniformity</strong>
-              </p>
-            </div>
+          <Card className="p-10 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30 text-center">
+            <p className="text-3xl md:text-4xl font-semibold text-foreground leading-snug">
+              Design for cognitive <span className="text-primary">diversity</span>,<br />
+              not cognitive uniformity.
+            </p>
           </Card>
         </div>
       </div>

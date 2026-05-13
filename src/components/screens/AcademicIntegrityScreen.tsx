@@ -1,64 +1,46 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ShieldAlert, Lightbulb, ArrowRight } from "lucide-react";
+import { ShieldAlert, Lightbulb } from "lucide-react";
+
+const fears = [
+  "Students skip the thinking",
+  "I can't tell what's theirs",
+  "Detectors punish ESL students",
+];
+const reframes = [
+  "Calculators raised math's floor",
+  "Design what AI can't shortcut",
+  "Teach WITH AI, not against it",
+];
 
 export const AcademicIntegrityScreen = () => {
   return (
-    <main className="min-h-screen px-8 py-10 animate-fade-in">
-      <section className="max-w-6xl mx-auto space-y-8">
-        <div className="text-center space-y-3">
-          <Badge variant="secondary" className="text-sm">Let's name the elephant</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-            "But isn't this just cheating?"
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Every faculty AI conversation eventually lands here. Let's reframe before we go further.
-          </p>
-        </div>
+    <main className="min-h-screen flex items-center px-8 py-10 animate-fade-in">
+      <section className="max-w-7xl mx-auto w-full space-y-10">
+        <h1 className="text-5xl md:text-7xl font-bold text-foreground text-center">
+          "Isn't this just cheating?"
+        </h1>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="p-8 border-l-4 border-l-destructive/60 space-y-4">
-            <div className="flex items-center gap-3">
-              <ShieldAlert className="h-7 w-7 text-destructive" />
-              <h3 className="text-2xl font-bold">The fear</h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="p-10 border-l-8 border-l-destructive/60 space-y-6">
+            <div className="flex items-center gap-4">
+              <ShieldAlert className="h-12 w-12 text-destructive" />
+              <h3 className="text-3xl md:text-4xl font-bold">The fear</h3>
             </div>
-            <ul className="space-y-3 text-base text-foreground/90">
-              <li>• Students will use AI to skip the thinking</li>
-              <li>• I can't tell what's theirs anymore</li>
-              <li>• Detectors don't work — and punish ESL students</li>
-              <li>• My assignments feel obsolete overnight</li>
+            <ul className="space-y-4 text-2xl md:text-3xl text-foreground/90 leading-snug">
+              {fears.map((f, i) => <li key={i}>• {f}</li>)}
             </ul>
           </Card>
 
-          <Card className="p-8 border-l-4 border-l-primary space-y-4">
-            <div className="flex items-center gap-3">
-              <Lightbulb className="h-7 w-7 text-primary" />
-              <h3 className="text-2xl font-bold">The reframe</h3>
+          <Card className="p-10 border-l-8 border-l-primary space-y-6">
+            <div className="flex items-center gap-4">
+              <Lightbulb className="h-12 w-12 text-primary" />
+              <h3 className="text-3xl md:text-4xl font-bold">The reframe</h3>
             </div>
-            <ul className="space-y-3 text-base text-foreground/90">
-              <li>• Calculators didn't end math — they raised the floor</li>
-              <li>• Design assignments AI <em>can't</em> shortcut: process, defense, in-class</li>
-              <li>• Teach <strong>with</strong> AI, not against it — make thinking visible</li>
-              <li>• Use AI yourself for the boring 80% so you can teach the human 20%</li>
+            <ul className="space-y-4 text-2xl md:text-3xl text-foreground/90 leading-snug">
+              {reframes.map((r, i) => <li key={i}>• {r}</li>)}
             </ul>
           </Card>
         </div>
-
-        <Card className="p-8 bg-gradient-to-br from-primary/10 to-accent/5 border-2 border-primary/30">
-          <div className="flex items-start gap-4">
-            <ArrowRight className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-            <div>
-              <p className="text-xl md:text-2xl font-semibold text-foreground leading-relaxed">
-                The next exercise flips the usual question.
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground mt-2 leading-relaxed">
-                Instead of asking "did the student use AI?" — we'll ask <em>the student to teach the AI</em>.
-                If they can teach it well enough to pass the quiz, they understand the material.
-                That's the Feynman Technique, with a 21st-century partner.
-              </p>
-            </div>
-          </div>
-        </Card>
       </section>
     </main>
   );

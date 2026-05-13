@@ -18,14 +18,14 @@ export const ZooxReframeScreen = () => {
           </span>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           {lines.map((line, i) => (
             <p
               key={i}
               className={`leading-tight ${
                 i === lines.length - 1
-                  ? "text-3xl md:text-5xl font-bold text-primary"
-                  : "text-2xl md:text-4xl text-foreground/90"
+                  ? "text-5xl md:text-7xl font-bold text-primary"
+                  : "text-4xl md:text-6xl text-foreground/90"
               }`}
             >
               {line}
@@ -33,9 +33,8 @@ export const ZooxReframeScreen = () => {
           ))}
         </div>
 
-        <p className="text-base md:text-lg text-muted-foreground italic pt-6">
-          If a self-driving car doesn't need windshield wipers,
-          maybe a presentation doesn't need slides.
+        <p className="text-2xl md:text-3xl text-muted-foreground italic pt-8">
+          No deck. No slides. Just a conversation.
         </p>
       </section>
     </main>

@@ -135,28 +135,10 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
           </Card>
         </section>
 
-        <Card className="p-8 flex-1 bg-gradient-to-br from-primary/5 to-accent/5" role="article">
-          <h3 className="text-2xl font-bold text-foreground mb-4">The Invisible Difference</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <p className="text-muted-foreground mb-4">
-                Until Adam Zeman's 2015 research, most people with <strong>aphantasia didn't know other people could actually SEE mental images.</strong> They assumed "picture this" was just a figure of speech.
-              </p>
-              <p className="text-muted-foreground">
-                This reveals why Universal Design for Learning matters: <strong>we can't see inside each other's minds.</strong>
-              </p>
-            </div>
-            <div className="space-y-3">
-              <div className="p-4 bg-background rounded-lg border border-border">
-                <p className="text-sm font-semibold text-foreground mb-2">Aphantasia (No Imagery)</p>
-                <p className="text-xs text-muted-foreground">Need: Diagrams, written steps, spatial descriptions. "Visualize this" instructions fail.</p>
-              </div>
-              <div className="p-4 bg-background rounded-lg border border-border">
-                <p className="text-sm font-semibold text-foreground mb-2">Hyperphantasia (Vivid Imagery)</p>
-                <p className="text-xs text-muted-foreground">Need: Rich visual descriptions, videos. Dry text feels boring.</p>
-              </div>
-            </div>
-          </div>
+        <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center" role="article">
+          <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+            We can't see inside each other's minds.
+          </p>
         </Card>
       </main>
     );

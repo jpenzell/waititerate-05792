@@ -119,28 +119,10 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
           </Card>
         </div>
 
-        <Card className="p-8 flex-1 bg-gradient-to-br from-primary/5 to-accent/5">
-          <h3 className="text-2xl font-bold text-foreground mb-4">The Surprise</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <p className="text-muted-foreground mb-4">
-                Many people go their entire lives not realizing others read differently. Someone with inner speech might think <strong>everyone</strong> hears a voice. Someone without it might think "inner voice" is just a metaphor.
-              </p>
-              <p className="text-muted-foreground">
-                This is why asking "Did you talk yourself through it?" can fail—<strong>not everyone's brain works that way.</strong>
-              </p>
-            </div>
-            <div className="space-y-3">
-              <div className="p-4 bg-background rounded-lg border border-border">
-                <p className="text-sm font-semibold text-foreground mb-2">With Inner Voice</p>
-                <p className="text-xs text-muted-foreground">Benefit from: Read-aloud, podcasts, verbal explanations. Use auditory memory.</p>
-              </div>
-              <div className="p-4 bg-background rounded-lg border border-border">
-                <p className="text-sm font-semibold text-foreground mb-2">Silent Readers</p>
-                <p className="text-xs text-muted-foreground">Benefit from: Diagrams, outlines, bullet points. Process meaning directly.</p>
-              </div>
-            </div>
-          </div>
+        <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center">
+          <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+            Same words. Different brains.
+          </p>
         </Card>
       </div>
     );

@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Copy, Coffee } from "lucide-react";
 import { toast } from "sonner";
@@ -35,51 +34,47 @@ export const MondayPromptsScreen = () => {
 
   return (
     <main className="min-h-screen px-8 py-10 animate-fade-in">
-      <section className="max-w-6xl mx-auto space-y-8">
-        <div className="text-center space-y-3">
-          <Badge variant="secondary" className="text-sm">Bring this back Monday</Badge>
-          <div className="flex items-center justify-center gap-3">
-            <Coffee className="h-9 w-9 text-accent" />
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-              Monday-Morning Prompts
+      <section className="max-w-7xl mx-auto space-y-10">
+        <div className="text-center space-y-4">
+          <div className="flex items-center justify-center gap-4">
+            <Coffee className="h-14 w-14 text-accent" />
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground">
+              Monday-morning prompts
             </h1>
           </div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Four copy-paste prompts you can use this week. No new tools required —
-            works in any AI chat (ChatGPT, Claude, Copilot, Gemini).
+          <p className="text-2xl md:text-3xl text-muted-foreground">
+            Four prompts. Copy. Paste. Done.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {prompts.map((p, i) => (
-            <Card key={i} className="p-6 flex flex-col gap-4 border-l-4 border-l-primary/60">
-              <div className="flex items-start justify-between gap-3">
+            <Card key={i} className="p-8 flex flex-col gap-4 border-l-8 border-l-primary/60">
+              <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="text-xl font-bold text-foreground">{i + 1}. {p.title}</h3>
-                  <p className="text-xs uppercase tracking-wider text-accent font-mono mt-1">
+                  <p className="text-6xl font-bold text-primary/30 leading-none">{i + 1}</p>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mt-2 leading-tight">{p.title}</h3>
+                  <p className="text-base uppercase tracking-wider text-accent font-mono mt-2">
                     {p.use}
                   </p>
                 </div>
                 <Button
-                  size="sm"
+                  size="lg"
                   variant="outline"
                   onClick={() => copy(p.body)}
                   aria-label={`Copy prompt: ${p.title}`}
+                  className="text-lg"
                 >
-                  <Copy className="h-4 w-4 mr-2" /> Copy
+                  <Copy className="h-5 w-5 mr-2" /> Copy
                 </Button>
               </div>
-              <pre className="text-xs md:text-sm bg-muted/40 rounded-md p-4 whitespace-pre-wrap font-mono text-foreground/85 leading-relaxed max-h-56 overflow-y-auto">
-                {p.body}
-              </pre>
             </Card>
           ))}
         </div>
 
-        <Card className="p-6 bg-gradient-to-br from-accent/5 to-primary/5 border border-primary/20 text-center">
-          <p className="text-base md:text-lg text-foreground/90">
-            Pick <strong>one</strong>. Try it before our next session.
-            Bring back what worked — and what didn't.
+        <Card className="p-8 bg-gradient-to-br from-accent/5 to-primary/5 border-2 border-primary/20 text-center">
+          <p className="text-3xl md:text-4xl font-bold text-foreground">
+            Pick <span className="text-primary">one</span>. Try it Monday.
           </p>
         </Card>
       </section>

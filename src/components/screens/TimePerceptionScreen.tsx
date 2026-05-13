@@ -171,29 +171,12 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
           </div>
         </Card>
 
-        <Card className="p-8 flex-1 bg-gradient-to-br from-primary/5 to-accent/5">
-          <h3 className="text-2xl font-bold text-foreground mb-4">Time Blindness & Learning Design</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <p className="text-muted-foreground mb-4">
-                "Time blindness" affects up to 80% of people with ADHD. They genuinely cannot estimate whether they're on track.
-              </p>
-              <p className="text-muted-foreground">
-                If your course says "this should take 15 minutes," some students have <strong>no idea</strong> if that's accurate.
-              </p>
-            </div>
-            <div className="space-y-3">
-              <div className="p-4 bg-background rounded-lg border border-border">
-                <p className="text-sm font-semibold text-foreground mb-2">UDL Solutions</p>
-                <ul className="text-xs text-muted-foreground space-y-1">
-                  <li>✓ Visual progress bars</li>
-                  <li>✓ "X minutes remaining" indicators</li>
-                  <li>✓ Checkpoint notifications</li>
-                  <li>✓ Chunked 5-10 min segments</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center">
+          <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+            Up to 80% of ADHD = time blindness.
+            <br />
+            <span className="text-primary">Build checkpoints, not just deadlines.</span>
+          </p>
         </Card>
       </div>
     );
