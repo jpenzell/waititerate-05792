@@ -20,7 +20,7 @@ export const SlideRenderer = ({ screen, isFacilitator, sessionId, userId, showPo
   const isInteractive = INTERACTIVE_SLIDE_IDS.has(screen.id);
 
   // Curb-cut intro takes a sessionId
-  const passSessionOnly = screen.id === "LD1.0";
+  const passSessionOnly = screen.id === "LD5.0";
 
   let body: JSX.Element;
   if (isInteractive) {
@@ -46,7 +46,7 @@ export const SlideRenderer = ({ screen, isFacilitator, sessionId, userId, showPo
     !!sessionId &&
     !!userId &&
     !INTERACTIVE_SLIDE_IDS.has(screen.id) &&
-    screen.id !== "LD1.0";
+    screen.id !== "LD5.0";
 
   if (needsExternalPoll) {
     return (
