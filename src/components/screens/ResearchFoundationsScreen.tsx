@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Users, Brain, Sparkles, ChevronDown, ChevronUp } from "lucide-react";
+import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 export const ResearchFoundationsScreen = () => {
   const [expandedArea, setExpandedArea] = useState<string | null>(null);
+  useRegisterReveals(5);
 
   const researchAreas = [
     {
@@ -102,8 +104,10 @@ export const ResearchFoundationsScreen = () => {
             {researchAreas.map((area) => {
               const Icon = area.icon;
               const isExpanded = expandedArea === area.title;
+              const idx = researchAreas.indexOf(area);
               return (
-                <Card key={area.title} className="p-10 bg-gradient-to-br from-background to-primary/10 border-2 border-primary/20 hover:border-primary/40 transition-all">
+                <Reveal key={area.title} step={idx + 1}>
+                <Card className="p-10 bg-gradient-to-br from-background to-primary/10 border-2 border-primary/20 hover:border-primary/40 transition-all h-full">
                   <div className="space-y-5">
                     <div className="flex items-center gap-4">
                       <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
@@ -139,16 +143,19 @@ export const ResearchFoundationsScreen = () => {
                     )}
                   </div>
                 </Card>
+                </Reveal>
               );
             })}
           </div>
 
-          <Card className="p-10 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30 text-center">
-            <p className="text-3xl md:text-4xl font-semibold text-foreground leading-snug">
-              Design for cognitive <span className="text-primary">diversity</span>,<br />
-              not cognitive uniformity.
-            </p>
-          </Card>
+          <Reveal step={5}>
+            <Card className="p-10 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30 text-center">
+              <p className="text-3xl md:text-4xl font-semibold text-foreground leading-snug">
+                Design for cognitive <span className="text-primary">diversity</span>,<br />
+                not cognitive uniformity.
+              </p>
+            </Card>
+          </Reveal>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { X, Check } from "lucide-react";
+import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 const isNot = [
   "A tech tutorial",
@@ -14,6 +15,7 @@ const is = [
 ];
 
 export const WhatThisIsNotScreen = () => {
+  useRegisterReveals(2);
   return (
     <main className="min-h-screen flex items-center justify-center px-8 py-10 animate-fade-in">
       <section className="max-w-7xl w-full space-y-12">
@@ -22,7 +24,8 @@ export const WhatThisIsNotScreen = () => {
         </h1>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-10 space-y-6 border-l-8 border-l-destructive/60">
+          <Reveal step={1}>
+          <Card className="p-10 space-y-6 border-l-8 border-l-destructive/60 h-full">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground flex items-center gap-3">
               <X className="h-9 w-9 text-destructive" /> NOT this
             </h2>
@@ -35,8 +38,10 @@ export const WhatThisIsNotScreen = () => {
               ))}
             </ul>
           </Card>
+          </Reveal>
 
-          <Card className="p-10 space-y-6 border-l-8 border-l-primary">
+          <Reveal step={2}>
+          <Card className="p-10 space-y-6 border-l-8 border-l-primary h-full">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground flex items-center gap-3">
               <Check className="h-9 w-9 text-primary" /> THIS
             </h2>
@@ -49,6 +54,7 @@ export const WhatThisIsNotScreen = () => {
               ))}
             </ul>
           </Card>
+          </Reveal>
         </div>
       </section>
     </main>

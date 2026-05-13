@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { RevealProvider, tryRevealNext, tryRevealPrev } from "@/contexts/RevealContext";
+import { INTERACTIVE_SLIDE_IDS } from "@/config/screens";
 import {
   Sheet,
   SheetContent,
@@ -50,6 +51,8 @@ export const PresentationLayout = ({
   const isPresenter = mode === "presenter";
   const isPresent = mode === "present";
   const isParticipant = mode === "participant";
+  const isInteractiveSlide = INTERACTIVE_SLIDE_IDS.has(currentScreen);
+  const showJoinOverlay = (isPresenter || isPresent) && isInteractiveSlide && !!sessionCode;
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -296,6 +299,25 @@ export const PresentationLayout = ({
 
       {/* Main Content with Zoom */}
       <main className="flex-1 overflow-auto" style={{ paddingTop: isPresent && sessionCode ? '70px' : '0' }}>
+        {/* Persistent Join overlay on interactive slides — visible when facilitator is mirroring */}
+        {showJoinOverlay && (
+          <div className="sticky top-0 z-40 mx-auto max-w-7xl px-8 pt-4 pointer-events-none">
+            <div className="pointer-events-auto inline-flex items-center gap-4 rounded-2xl border-2 border-primary/30 bg-card/95 backdrop-blur-md px-5 py-3 shadow-xl">
+              <div className="flex flex-col">
+                <span className="text-xs uppercase tracking-wider text-muted-foreground">Join Now</span>
+                <span className="font-mono text-3xl font-bold text-primary leading-tight">{sessionCode}</span>
+                <span className="text-xs text-muted-foreground">ai4all.joshpenzell.com/participate</span>
+              </div>
+              {sessionId && (
+                <img
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
+                  alt="Join Session QR Code"
+                  className="h-20 w-20 rounded border-2 border-border"
+                />
+              )}
+            </div>
+          </div>
+        )}
         <div 
           className="max-w-7xl mx-auto p-8 md:p-12 transition-transform duration-300 origin-top w-full"
           style={{ 

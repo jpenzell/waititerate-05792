@@ -1,7 +1,9 @@
 import { Users, BookOpen, Briefcase, Heart } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 export const RCCCContextScreen = () => {
+  useRegisterReveals(5);
   const stats = [
     { icon: Users, label: "First-generation students", value: "~45%", note: "First in their family to attend college" },
     { icon: Briefcase, label: "Working while enrolled", value: "70%+", note: "Balancing jobs, childcare, caregiving" },
@@ -20,21 +22,25 @@ export const RCCCContextScreen = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s, i) => (
-            <Card key={i} className="p-8 text-center border-l-8 border-l-accent/60">
-              <s.icon className="h-12 w-12 mx-auto text-accent mb-4" />
-              <div className="text-6xl font-bold text-foreground">{s.value}</div>
-              <div className="text-xl font-semibold text-foreground/90 mt-3">{s.label}</div>
-            </Card>
+            <Reveal key={i} step={i + 1}>
+              <Card className="p-8 text-center border-l-8 border-l-accent/60">
+                <s.icon className="h-12 w-12 mx-auto text-accent mb-4" />
+                <div className="text-6xl font-bold text-foreground">{s.value}</div>
+                <div className="text-xl font-semibold text-foreground/90 mt-3">{s.label}</div>
+              </Card>
+            </Reveal>
           ))}
         </div>
 
-        <Card className="p-10 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20 text-center">
-          <p className="text-3xl md:text-4xl text-foreground leading-snug">
-            Designing for cognitive variation isn't optional here.
-            <br />
-            <span className="text-primary font-bold">It's the job.</span>
-          </p>
-        </Card>
+        <Reveal step={5}>
+          <Card className="p-10 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20 text-center">
+            <p className="text-3xl md:text-4xl text-foreground leading-snug">
+              Designing for cognitive variation isn't optional here.
+              <br />
+              <span className="text-primary font-bold">It's the job.</span>
+            </p>
+          </Card>
+        </Reveal>
       </section>
     </main>
   );
