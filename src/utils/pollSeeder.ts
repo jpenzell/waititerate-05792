@@ -9,7 +9,7 @@ interface SlideWithPoll {
 
 export const seedPollsForSession = async (sessionId: string, slides: SlideWithPoll[]) => {
   const pollsToUpsert = slides
-    .filter((slide) => slide.hasPoll && slide.pollQuestion && slide.pollOptions)
+    .filter((slide) => slide.pollQuestion && slide.pollOptions && slide.pollOptions.length > 0)
     .map((slide) => ({
       session_id: sessionId,
       slide_id: slide.id,
