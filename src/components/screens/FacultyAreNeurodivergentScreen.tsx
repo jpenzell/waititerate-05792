@@ -1,7 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { HeartHandshake } from "lucide-react";
+import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 export const FacultyAreNeurodivergentScreen = () => {
+  useRegisterReveals(3);
   return (
     <main className="min-h-screen flex items-center justify-center px-8 animate-fade-in">
       <section className="max-w-6xl w-full text-center space-y-10">
