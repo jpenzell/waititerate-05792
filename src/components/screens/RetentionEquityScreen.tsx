@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { TrendingUp, GraduationCap, DollarSign, Award } from "lucide-react";
+import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 const stats = [
   { icon: TrendingUp, value: "+30%", label: "Completion" },
@@ -9,6 +10,7 @@ const stats = [
 ];
 
 export const RetentionEquityScreen = () => {
+  useRegisterReveals(stats.length + 1);
   return (
     <main className="min-h-screen flex items-center px-8 py-10 animate-fade-in">
       <section className="max-w-7xl mx-auto w-full space-y-12">
@@ -18,19 +20,23 @@ export const RetentionEquityScreen = () => {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((s, i) => (
-            <Card key={i} className="p-8 text-center space-y-3 border-l-8 border-l-accent">
-              <s.icon className="h-12 w-12 mx-auto text-accent" />
-              <p className="text-5xl font-bold text-foreground">{s.value}</p>
-              <p className="text-xl text-foreground/85">{s.label}</p>
-            </Card>
+            <Reveal key={i} step={i + 1}>
+              <Card className="p-8 text-center space-y-3 border-l-8 border-l-accent h-full">
+                <s.icon className="h-12 w-12 mx-auto text-accent" />
+                <p className="text-5xl font-bold text-foreground">{s.value}</p>
+                <p className="text-xl text-foreground/85">{s.label}</p>
+              </Card>
+            </Reveal>
           ))}
         </div>
 
+        <Reveal step={stats.length + 1}>
         <Card className="p-10 bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20 text-center">
           <p className="text-3xl md:text-4xl text-foreground leading-snug font-semibold">
             "Redesign one course. Track DFW. Best case: a <span className="text-primary">SACSCOC story</span>."
           </p>
         </Card>
+        </Reveal>
       </section>
     </main>
   );

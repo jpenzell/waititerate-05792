@@ -1,88 +1,53 @@
-import { Zap, BarChart3 } from "lucide-react";
-import { useLocation } from "react-router-dom";
-
 export const LDTitleScreen = () => {
-  const location = useLocation();
-  const showNavHint = location.pathname === "/facilitator";
   return (
-    <main className="h-screen w-full relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5" role="main" aria-label="Presentation title screen">
-      {/* Background patterns */}
-      <div className="absolute inset-0 grid-pattern opacity-30" aria-hidden="true"></div>
-      <div className="absolute inset-0 dot-pattern opacity-20" aria-hidden="true"></div>
-      
-      {/* Glowing orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow" aria-hidden="true"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1s' }} aria-hidden="true"></div>
-      
-      {/* Content */}
-      <div className="relative h-full flex items-center justify-center px-8 py-6 animate-fade-in">
-        <section className="text-center space-y-5 max-w-6xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-6 py-3 glass-effect rounded-full mb-4 animate-scale-in border border-primary/20">
-            <BarChart3 className="w-5 h-5 text-accent" />
-            <span className="text-foreground font-semibold text-lg font-mono">AI FOR ALL MINDS</span>
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-          </div>
+    <main
+      className="h-full w-full relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/10"
+      role="main"
+      aria-label="Presentation title screen"
+    >
+      {/* Atmospheric background */}
+      <div className="absolute inset-0 grid-pattern opacity-20" aria-hidden="true" />
+      <div
+        className="absolute -top-32 -left-32 w-[36rem] h-[36rem] bg-primary/30 rounded-full blur-3xl animate-pulse-glow"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute -bottom-32 -right-32 w-[36rem] h-[36rem] bg-accent/25 rounded-full blur-3xl animate-pulse-glow"
+        style={{ animationDelay: "1.2s" }}
+        aria-hidden="true"
+      />
 
-          {/* Event co-branding */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-xs font-mono uppercase tracking-widest text-accent">
-            Rowan-Cabarrus Summer Institute · 2026
-          </div>
-          
-          {/* Main Title */}
-          <div className="space-y-3">
-            <h1 className="text-5xl md:text-7xl font-bold gradient-text leading-tight pb-2 animate-slide-in tracking-tight">
-              AI for<br/>All Minds
-            </h1>
-            
-            <div className="h-1 w-24 mx-auto bg-gradient-to-r from-primary via-accent to-primary rounded-full glow-primary"></div>
-          </div>
-          
-          {/* Subtitle */}
-          <h2 className="text-xl md:text-3xl font-medium text-foreground/90 animate-slide-in max-w-4xl mx-auto leading-relaxed">
-            Lessons from Neurodiversity to<br/>
-            <span className="text-accent">Transform Learning</span>
-          </h2>
-          
-          {/* Key Message */}
-          <div className="pt-4 max-w-3xl mx-auto">
-            <div className="glass-effect border border-primary/10 rounded-2xl p-8 space-y-4">
-              <p className="text-lg text-muted-foreground">
-                How designing with cognitive difference unlocks innovation for everyone
-              </p>
-              
-              <div className="py-2">
-                <Zap className="w-6 h-6 mx-auto text-accent" />
-              </div>
-              
-              <p className="text-base text-foreground/80 italic">
-                "Structured freedom" transforms learning into<br/>adaptive, inclusive, and systemic change
-              </p>
-            </div>
-          </div>
+      {/* Top tag */}
+      <div className="absolute top-10 left-0 right-0 flex justify-center animate-fade-in">
+        <span className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-accent/90">
+          Rowan-Cabarrus Summer Institute · 2026
+        </span>
+      </div>
 
-          {/* Speaker Info */}
-          <div className="pt-4">
-            <p className="text-base text-muted-foreground font-mono">
-              JOSH PENZELL<br/>
-              <span className="text-sm text-muted-foreground/70">Founder & CEO • Imagination Applied</span><br/>
-              <span className="text-xs text-muted-foreground/60">Diagnosed with autism and ADD at 39</span>
-            </p>
-          </div>
+      {/* Cinematic title */}
+      <div className="relative h-full flex flex-col items-center justify-center px-8 text-center animate-fade-in">
+        <h1 className="gradient-text font-bold tracking-tight leading-[0.9] text-[clamp(4rem,14vw,12rem)]">
+          AI for<br />All Minds
+        </h1>
 
-          {/* Navigation hint (facilitator only) */}
-          {showNavHint && (
-            <div className="pt-6 space-y-3">
-    <div className="flex items-center justify-center gap-3 text-muted-foreground">
-      <kbd className="px-3 py-1.5 text-sm font-mono bg-secondary rounded-lg border border-border glow-primary">←</kbd>
-      <kbd className="px-3 py-1.5 text-sm font-mono bg-secondary rounded-lg border border-border glow-primary">→</kbd>
-      <span className="text-sm font-mono">or</span>
-      <kbd className="px-4 py-1.5 text-sm font-mono bg-secondary rounded-lg border border-border glow-primary">SPACE</kbd>
-      <span className="text-sm font-mono">to navigate</span>
-    </div>
-  </div>
-)}
-        </section>
+        <div className="mt-8 h-[3px] w-32 bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
+
+        <h2 className="mt-8 text-2xl md:text-4xl font-light text-foreground/80 max-w-4xl leading-snug">
+          Lessons from neurodiversity to{" "}
+          <span className="text-accent font-medium">transform learning</span>
+        </h2>
+      </div>
+
+      {/* Speaker — bottom corner, minimal */}
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center text-center animate-fade-in">
+        <div className="font-mono">
+          <p className="text-base md:text-lg font-semibold tracking-wider text-foreground">
+            JOSH PENZELL
+          </p>
+          <p className="text-xs md:text-sm text-muted-foreground/80 tracking-wide">
+            Founder & CEO · Imagination Applied
+          </p>
+        </div>
       </div>
     </main>
   );

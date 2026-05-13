@@ -297,35 +297,35 @@ export const PresentationLayout = ({
         <Progress value={timeProgress} className="h-1 rounded-none" />
       )}
 
-      {/* Main Content with Zoom */}
-      <main className="flex-1 overflow-auto" style={{ paddingTop: isPresent && sessionCode ? '70px' : '0' }}>
+      {/* Main Content with Zoom — locked to viewport, no scroll */}
+      <main
+        className="flex-1 min-h-0 overflow-hidden relative"
+        style={{ paddingTop: isPresent && sessionCode ? '70px' : '0' }}
+      >
         {/* Persistent Join overlay on interactive slides — visible when facilitator is mirroring */}
         {showJoinOverlay && (
-          <div className="sticky top-0 z-40 mx-auto max-w-7xl px-8 pt-4 pointer-events-none">
+          <div className="absolute top-3 left-1/2 -translate-x-1/2 z-40 pointer-events-none">
             <div className="pointer-events-auto inline-flex items-center gap-4 rounded-2xl border-2 border-primary/30 bg-card/95 backdrop-blur-md px-5 py-3 shadow-xl">
               <div className="flex flex-col">
                 <span className="text-xs uppercase tracking-wider text-muted-foreground">Join Now</span>
-                <span className="font-mono text-3xl font-bold text-primary leading-tight">{sessionCode}</span>
+                <span className="font-mono text-2xl font-bold text-primary leading-tight">{sessionCode}</span>
                 <span className="text-xs text-muted-foreground">ai4all.joshpenzell.com/participate</span>
               </div>
               {sessionId && (
                 <img
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=96x96&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
                   alt="Join Session QR Code"
-                  className="h-20 w-20 rounded border-2 border-border"
+                  className="h-14 w-14 rounded border-2 border-border"
                 />
               )}
             </div>
           </div>
         )}
-        <div 
-          className="max-w-7xl mx-auto p-8 md:p-12 transition-transform duration-300 origin-top w-full"
-          style={{ 
-            transform: `scale(${zoom / 100})`,
-            minHeight: isPresent ? '100vh' : 'auto'
-          }}
+        <div
+          className="absolute inset-0 transition-transform duration-300 origin-center"
+          style={{ transform: `scale(${zoom / 100})` }}
         >
-          <div className="w-full overflow-x-hidden">
+          <div className="w-full h-full overflow-hidden [&>main]:!min-h-0 [&>main]:h-full [&>div]:h-full">
             <RevealProvider slideId={currentScreen}>{children}</RevealProvider>
           </div>
         </div>

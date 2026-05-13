@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { ShieldAlert, Lightbulb } from "lucide-react";
+import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 const fears = [
   "Students skip the thinking",
@@ -13,6 +14,7 @@ const reframes = [
 ];
 
 export const AcademicIntegrityScreen = () => {
+  useRegisterReveals(2);
   return (
     <main className="min-h-screen flex items-center px-8 py-10 animate-fade-in">
       <section className="max-w-7xl mx-auto w-full space-y-10">
@@ -21,7 +23,8 @@ export const AcademicIntegrityScreen = () => {
         </h1>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-10 border-l-8 border-l-destructive/60 space-y-6">
+          <Reveal step={1}>
+          <Card className="p-10 border-l-8 border-l-destructive/60 space-y-6 h-full">
             <div className="flex items-center gap-4">
               <ShieldAlert className="h-12 w-12 text-destructive" />
               <h3 className="text-3xl md:text-4xl font-bold">The fear</h3>
@@ -30,8 +33,10 @@ export const AcademicIntegrityScreen = () => {
               {fears.map((f, i) => <li key={i}>• {f}</li>)}
             </ul>
           </Card>
+          </Reveal>
 
-          <Card className="p-10 border-l-8 border-l-primary space-y-6">
+          <Reveal step={2}>
+          <Card className="p-10 border-l-8 border-l-primary space-y-6 h-full">
             <div className="flex items-center gap-4">
               <Lightbulb className="h-12 w-12 text-primary" />
               <h3 className="text-3xl md:text-4xl font-bold">The reframe</h3>
@@ -40,6 +45,7 @@ export const AcademicIntegrityScreen = () => {
               {reframes.map((r, i) => <li key={i}>• {r}</li>)}
             </ul>
           </Card>
+          </Reveal>
         </div>
       </section>
     </main>
