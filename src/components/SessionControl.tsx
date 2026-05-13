@@ -71,7 +71,7 @@ export const SessionControl = ({ onSessionChange, userId, userRole, slides }: Se
       .insert({
         presenter_id: userId,
         session_code: code,
-        current_slide_id: "LD0.0",
+        current_slide_id: "LD1.0",
       })
       .select()
       .single();

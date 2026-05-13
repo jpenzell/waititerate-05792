@@ -46,7 +46,7 @@ export const PatternRecognitionScreen = ({
             <div className="max-w-2xl mx-auto">
               <PollWidget
                 sessionId={sessionId}
-                slideId="LD5.0"
+                slideId="LD2.0"
                 userId={userId}
                 isPresenter={true}
               />

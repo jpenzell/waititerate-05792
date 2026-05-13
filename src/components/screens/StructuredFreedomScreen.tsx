@@ -229,7 +229,7 @@ export const StructuredFreedomScreen = ({
           <div className="max-w-4xl mx-auto">
             <PollWidget
               sessionId={sessionId}
-              slideId="LD5.5"
+              slideId="LD6.1"
               userId={userId}
               isPresenter={true}
             />

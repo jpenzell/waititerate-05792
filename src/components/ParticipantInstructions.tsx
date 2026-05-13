@@ -13,46 +13,27 @@ interface ParticipantInstructionsProps {
 }
 
 const slideInstructions: Record<string, { text: string; type: "info" | "action" | "success" }> = {
-  "LD0.05": {
-    text: "Does a self-driving car need windshield wipers? Vote on your device. This is about questioning assumptions—how neurodivergent minds think differently.",
-    type: "action"
-  },
-  "LD0.1": {
-    text: "Guess three shocking statistics about neurodiversity in the workplace. Most people are way off—prepare to be surprised by reality.",
-    type: "action"
-  },
-  "LD0.5.1": {
-    text: "Take a photo of something that represents how YOU learn best. It can be anything—your workspace, a tool, a place, a object. There's no wrong answer.",
-    type: "action"
-  },
-  "LD0.5.2": {
-    text: "Look at everyone's photos. What patterns do YOU notice? What themes emerge? Everyone will see something different.",
-    type: "info"
-  },
-  "LD0.5.4": {
-    text: "Reflect: What learning differences can't be photographed? Think about invisible cognitive variations like processing speed, auditory learning, abstract thinking.",
-    type: "info"
-  },
-  "LD0.5.7": {
-    text: "Close your eyes and picture a red apple on a white plate. Try to 'see' it clearly. How vivid is your mental image?",
-    type: "action"
-  },
-  "LD0.5.8": {
-    text: "Read the sentence on screen SILENTLY. Do you hear a voice reading it to you? Or is it just... meaning without sound?",
-    type: "action"
-  },
-  "LD0.5.9": {
-    text: "You'll press START, then—without counting or looking at a clock—press STOP when you think 10 seconds have passed.",
-    type: "action"
-  },
-  "LD0.5.10": {
-    text: "Adjust the sensory sliders until it feels OVERWHELMING. This is your cognitive load threshold. Everyone's is different.",
-    type: "action"
-  },
-  "LD0.5.11": {
-    text: "Reflect on what surprised you. What did you learn about cognitive diversity? How might this change your design practice?",
-    type: "action"
-  },
+  "LD1.1": { text: "Does a self-driving car need windshield wipers? Vote on your device—this is about questioning assumptions.", type: "action" },
+  "LD1.5": { text: "Submit your biggest question about AI in the classroom. We'll come back to these at the end.", type: "action" },
+  "LD2.0": { text: "What did you see first—duck or rabbit? Vote on your device.", type: "action" },
+  "LD2.1": { text: "Guess three statistics about neurodiversity. Most people are way off—prepare to be surprised.", type: "action" },
+  "LD3.0": { text: "Take a photo of something that represents how YOU learn best. There's no wrong answer.", type: "action" },
+  "LD3.1": { text: "Look at everyone's photos. What patterns do YOU notice? What themes emerge?", type: "info" },
+  "LD3.3": { text: "Reflect: what learning differences can't be photographed? Think about invisible cognitive variations.", type: "info" },
+  "LD3.4": { text: "How many distinct interpretations do you think AI could draw from these photos? Submit your estimate.", type: "action" },
+  "LD4.0": { text: "Close your eyes and picture a red apple on a white plate. How vivid is your mental image?", type: "action" },
+  "LD4.1": { text: "Read the sentence on screen SILENTLY. Do you hear a voice reading it to you?", type: "action" },
+  "LD4.2": { text: "Press START, then—without counting—press STOP when you think 10 seconds have passed.", type: "action" },
+  "LD4.3": { text: "Adjust the sensory sliders until it feels OVERWHELMING. Everyone's threshold is different.", type: "action" },
+  "LD4.4": { text: "Reflect on what surprised you. What did you learn about cognitive diversity?", type: "action" },
+  "LD4.6": { text: "Add your discovery to the wall. What did you notice about your own mind today?", type: "action" },
+  "LD5.1": { text: "Closed-caption usage: what percentage of ALL viewers use them? Vote on your device.", type: "action" },
+  "LD5.2": { text: "How much does chunking improve completion for everyone? Vote on your device.", type: "action" },
+  "LD5.3": { text: "What percentage of learners prefer multiple formats? Vote on your device.", type: "action" },
+  "LD6.1": { text: "Which best describes your current training design—rigid, chaotic, or balanced? Vote on your device.", type: "action" },
+  "LD7.0": { text: "Pick one of your own slides and redesign it for cognitive accessibility. AI will help.", type: "action" },
+  "LD7.3": { text: "You're the teacher. Explain neurodiversity to the AI student—learning by teaching.", type: "action" },
+  "LD8.2": { text: "Your parking-lot questions are now displayed. Upvote any you'd like answered.", type: "info" },
 };
 
 export const ParticipantInstructions = ({ 
