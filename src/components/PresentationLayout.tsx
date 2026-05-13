@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Clock, Info, ZoomIn, ZoomOut, Maximize2, Use
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import { RevealProvider, tryRevealNext, tryRevealPrev } from "@/contexts/RevealContext";
 import {
   Sheet,
   SheetContent,
@@ -85,6 +86,7 @@ export const PresentationLayout = ({
     if (e.key === "ArrowRight" || e.key === " ") {
       if (!isTyping) {
         e.preventDefault();
+        if (tryRevealNext()) return;
         if (currentIndex < totalScreens - 1) {
           onNavigate(currentIndex + 1);
         }
@@ -92,6 +94,7 @@ export const PresentationLayout = ({
     } else if (e.key === "ArrowLeft") {
       if (!isTyping) {
         e.preventDefault();
+        if (tryRevealPrev()) return;
         if (currentIndex > 0) {
           onNavigate(currentIndex - 1);
         }
@@ -301,7 +304,7 @@ export const PresentationLayout = ({
           }}
         >
           <div className="w-full overflow-x-hidden">
-            {children}
+            <RevealProvider slideId={currentScreen}>{children}</RevealProvider>
           </div>
         </div>
       </main>
