@@ -130,16 +130,12 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
     const actualPopulation = 20;
     
     return (
-      <main className="h-screen flex flex-col py-6 px-4 animate-fade-in overflow-y-auto" role="main" aria-label="Neurodiversity data quiz results">
-        <header className="text-center mb-6">
-          <Badge className="mb-4">
-            <Users className="h-4 w-4 mr-2" />
-            Why Neurodiversity Matters
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            The Data Might Surprise You
+      <main className="min-h-screen flex flex-col justify-center py-4 px-4 animate-fade-in" role="main" aria-label="Neurodiversity data quiz results">
+        <header className="text-center mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-foreground">
+            The data might surprise you
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm text-muted-foreground mt-1">
             Responses: <span className="font-bold text-primary">{responses.length}</span>
           </p>
         </header>
@@ -147,26 +143,20 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
         {!showResults ? (
           <>
             <div className="grid md:grid-cols-3 gap-4 mb-6">
-              <Card className="p-6 bg-gradient-to-br from-primary/10 to-accent/5">
-                <div className="text-center">
-                  <Briefcase className="h-12 w-12 text-primary mx-auto mb-3" />
-                  <p className="text-sm text-muted-foreground mb-2">Avg. Guess: Unemployment Rate</p>
-                  <div className="text-5xl font-bold text-primary">{averages.unemployment}%</div>
-                </div>
+              <Card className="p-5 bg-gradient-to-br from-primary/10 to-accent/5 text-center">
+                <Briefcase className="h-10 w-10 text-primary mx-auto mb-2" />
+                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · Unemployment</p>
+                <div className="text-5xl font-bold text-primary">{averages.unemployment}%</div>
               </Card>
-              <Card className="p-6 bg-gradient-to-br from-accent/10 to-primary/5">
-                <div className="text-center">
-                  <TrendingUp className="h-12 w-12 text-accent mx-auto mb-3" />
-                  <p className="text-sm text-muted-foreground mb-2">Avg. Guess: Productivity Boost</p>
-                  <div className="text-5xl font-bold text-accent">{averages.productivity}%</div>
-                </div>
+              <Card className="p-5 bg-gradient-to-br from-accent/10 to-primary/5 text-center">
+                <TrendingUp className="h-10 w-10 text-accent mx-auto mb-2" />
+                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · Productivity</p>
+                <div className="text-5xl font-bold text-accent">{averages.productivity}%</div>
               </Card>
-              <Card className="p-6 bg-gradient-to-br from-foreground/10 to-foreground/5">
-                <div className="text-center">
-                  <Users className="h-12 w-12 text-foreground mx-auto mb-3" />
-                  <p className="text-sm text-muted-foreground mb-2">Avg. Guess: Population %</p>
-                  <div className="text-5xl font-bold text-foreground">{averages.population}%</div>
-                </div>
+              <Card className="p-5 bg-gradient-to-br from-foreground/10 to-foreground/5 text-center">
+                <Users className="h-10 w-10 text-foreground mx-auto mb-2" />
+                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · Population %</p>
+                <div className="text-5xl font-bold text-foreground">{averages.population}%</div>
               </Card>
             </div>
 
@@ -183,133 +173,44 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
             </div>
           </>
         ) : (
-          <div className="space-y-6 animate-fade-in">
-            {/* Unemployment Rate */}
-            <Card className="p-8 bg-gradient-to-br from-red-500/10 to-orange-500/10 border-2 border-red-500/30">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <Briefcase className="h-16 w-16 text-red-500 mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Unemployment & Underemployment</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Among autistic adults with college degrees:
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-sm text-muted-foreground">Your guess:</span>
-                      <span className="text-3xl font-bold text-muted-foreground line-through">{averages.unemployment}%</span>
-                    </div>
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-sm text-foreground font-semibold">Reality:</span>
-                      <span className="text-6xl font-bold text-red-500">{actualUnemployment}%</span>
-                    </div>
-                  </div>
+          <div className="space-y-4 animate-fade-in max-w-7xl mx-auto w-full">
+            <div className="grid md:grid-cols-3 gap-4">
+              {/* Unemployment */}
+              <Card className="p-6 bg-gradient-to-br from-red-500/10 to-orange-500/10 border-2 border-red-500/30 text-center space-y-2">
+                <Briefcase className="h-10 w-10 text-red-500 mx-auto" />
+                <p className="text-xs text-muted-foreground">Unemployed despite degrees</p>
+                <div className="text-xs text-muted-foreground">
+                  guess <span className="line-through">{averages.unemployment}%</span>
                 </div>
-                <div className="space-y-3">
-                  <div className="p-4 bg-background rounded-lg border border-border">
-                    <p className="text-sm text-muted-foreground">
-                      <strong>85% of autistic adults</strong> with college degrees are unemployed or significantly underemployed—not because they lack skills, but because traditional hiring processes, interviews, and workplace environments exclude them.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-red-500/5 rounded-lg border border-red-500/20">
-                    <p className="text-xs text-muted-foreground italic">
-                      Source: National Autistic Society, 2016; Autism Speaks Employment Study
-                    </p>
-                  </div>
+                <div className="text-6xl font-bold text-red-500">{actualUnemployment}%</div>
+                <p className="text-xs text-muted-foreground italic">Autistic adults w/ degrees</p>
+              </Card>
+              {/* Productivity */}
+              <Card className="p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-2 border-green-500/30 text-center space-y-2">
+                <TrendingUp className="h-10 w-10 text-green-500 mx-auto" />
+                <p className="text-xs text-muted-foreground">More productive, right role</p>
+                <div className="text-xs text-muted-foreground">
+                  guess <span className="line-through">{averages.productivity}%</span>
                 </div>
-              </div>
-            </Card>
+                <div className="text-6xl font-bold text-green-500">{actualProductivity}%+</div>
+                <p className="text-xs text-muted-foreground italic">JPMorgan Autism at Work</p>
+              </Card>
+              {/* Population */}
+              <Card className="p-6 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 text-center space-y-2">
+                <Users className="h-10 w-10 text-primary mx-auto" />
+                <p className="text-xs text-muted-foreground">Are neurodivergent</p>
+                <div className="text-xs text-muted-foreground">
+                  guess <span className="line-through">{averages.population}%</span>
+                </div>
+                <div className="text-6xl font-bold text-primary">{actualPopulation}%</div>
+                <p className="text-xs text-muted-foreground italic">1 in 5 people</p>
+              </Card>
+            </div>
 
-            {/* Productivity Boost */}
-            <Card className="p-8 bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-2 border-green-500/30">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <TrendingUp className="h-16 w-16 text-green-500 mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Productivity in the Right Role</h3>
-                  <p className="text-muted-foreground mb-4">
-                    When accommodations are made:
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-sm text-muted-foreground">Your guess:</span>
-                      <span className="text-3xl font-bold text-muted-foreground line-through">{averages.productivity}%</span>
-                    </div>
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-sm text-foreground font-semibold">Reality:</span>
-                      <span className="text-6xl font-bold text-green-500">{actualProductivity}%+</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="p-4 bg-background rounded-lg border border-border">
-                    <p className="text-sm text-muted-foreground">
-                      <strong>JPMorgan Chase reports</strong> neurodivergent employees in their Autism at Work program are <strong>30% more productive</strong> than neurotypical peers in roles that match their strengths (data analysis, quality assurance, software testing).
-                    </p>
-                  </div>
-                  <div className="p-4 bg-green-500/5 rounded-lg border border-green-500/20">
-                    <p className="text-xs text-muted-foreground italic">
-                      Source: JPMorgan Chase Autism at Work Program, Harvard Business Review 2017
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Population Percentage */}
-            <Card className="p-8 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <Users className="h-16 w-16 text-primary mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Global Neurodivergent Population</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Including ADHD, autism, dyslexia, etc.:
-                  </p>
-                  <div className="space-y-2">
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-sm text-muted-foreground">Your guess:</span>
-                      <span className="text-3xl font-bold text-muted-foreground line-through">{averages.population}%</span>
-                    </div>
-                    <div className="flex items-baseline gap-3">
-                      <span className="text-sm text-foreground font-semibold">Reality:</span>
-                      <span className="text-6xl font-bold text-primary">{actualPopulation}%</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="p-4 bg-background rounded-lg border border-border">
-                    <p className="text-sm text-muted-foreground">
-                      <strong>1 in 5 people</strong> are neurodivergent. That means <strong>in every meeting, every classroom, every course you design</strong>—at least 20% of your audience processes information fundamentally differently.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
-                    <p className="text-xs text-muted-foreground italic">
-                      Source: CDC, ADHD Institute, British Dyslexia Association (combined estimates)
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* The Punchline */}
-            <Card className="p-12 bg-gradient-to-r from-accent/20 to-primary/20 border-2 border-accent/40">
-              <div className="text-center space-y-6">
-                <h2 className="text-4xl font-bold text-foreground">The Disconnect</h2>
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                  <div className="p-6 bg-red-500/10 rounded-xl border-2 border-red-500/30">
-                    <p className="text-2xl font-bold text-red-500 mb-3">85%</p>
-                    <p className="text-foreground">Unemployed despite degrees</p>
-                  </div>
-                  <div className="p-6 bg-green-500/10 rounded-xl border-2 border-green-500/30">
-                    <p className="text-2xl font-bold text-green-500 mb-3">30%+</p>
-                    <p className="text-foreground">More productive in right roles</p>
-                  </div>
-                </div>
-                <p className="text-2xl text-foreground max-w-3xl mx-auto">
-                  The problem isn't talent. <span className="font-bold text-primary">The problem is our systems.</span>
-                </p>
-                <p className="text-lg text-muted-foreground italic max-w-2xl mx-auto">
-                  If we design learning experiences for the "average" brain, we're excluding 1 in 5 people—and wasting extraordinary potential.
-                </p>
-              </div>
+            <Card className="p-6 bg-gradient-to-r from-accent/20 to-primary/20 border-2 border-accent/40 text-center">
+              <p className="text-2xl md:text-3xl font-bold text-foreground">
+                The problem isn't talent. <span className="text-primary">The problem is our systems.</span>
+              </p>
             </Card>
           </div>
         )}
