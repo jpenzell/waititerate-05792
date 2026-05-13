@@ -1,10 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, Share2 } from "lucide-react";
+import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 interface Props { sessionCode?: string }
 
 export const OnePagerDownloadScreen = ({ sessionCode }: Props) => {
+  useRegisterReveals(2);
   const shareUrl = typeof window !== "undefined"
     ? `${window.location.origin}${sessionCode ? `/participate?code=${sessionCode}` : "/"}`
     : "https://ai4all.joshpenzell.com";
@@ -18,7 +20,8 @@ export const OnePagerDownloadScreen = ({ sessionCode }: Props) => {
         </h1>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <Card className="p-10 space-y-5 border-l-8 border-l-primary text-center">
+          <Reveal step={1}>
+          <Card className="p-10 space-y-5 border-l-8 border-l-primary text-center h-full">
             <Download className="h-20 w-20 mx-auto text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Faculty One-Pager</h2>
             <Button asChild size="lg" className="w-full text-xl py-8">
@@ -27,14 +30,17 @@ export const OnePagerDownloadScreen = ({ sessionCode }: Props) => {
               </a>
             </Button>
           </Card>
+          </Reveal>
 
-          <Card className="p-10 space-y-5 border-l-8 border-l-accent text-center">
+          <Reveal step={2}>
+          <Card className="p-10 space-y-5 border-l-8 border-l-accent text-center h-full">
             <Share2 className="h-20 w-20 mx-auto text-accent" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Share the session</h2>
             <div className="flex flex-col items-center gap-3">
               <img src={qrSrc} alt="QR code to share session" className="rounded-md bg-white p-2" width={200} height={200} />
             </div>
           </Card>
+          </Reveal>
         </div>
 
         <Card className="p-8 bg-gradient-to-br from-primary/10 to-accent/5 border-2 border-primary/30 text-center">

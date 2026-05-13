@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Copy, Coffee } from "lucide-react";
 import { toast } from "sonner";
+import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 const prompts = [
   {
@@ -27,6 +28,7 @@ const prompts = [
 ];
 
 export const MondayPromptsScreen = () => {
+  useRegisterReveals(prompts.length);
   const copy = (text: string) => {
     navigator.clipboard.writeText(text);
     toast.success("Prompt copied — paste into ChatGPT, Claude, or Copilot");
@@ -49,7 +51,8 @@ export const MondayPromptsScreen = () => {
 
         <div className="grid md:grid-cols-2 gap-6">
           {prompts.map((p, i) => (
-            <Card key={i} className="p-8 flex flex-col gap-4 border-l-8 border-l-primary/60">
+            <Reveal key={i} step={i + 1}>
+            <Card className="p-8 flex flex-col gap-4 border-l-8 border-l-primary/60 h-full">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-6xl font-bold text-primary/30 leading-none">{i + 1}</p>
@@ -69,6 +72,7 @@ export const MondayPromptsScreen = () => {
                 </Button>
               </div>
             </Card>
+            </Reveal>
           ))}
         </div>
 
