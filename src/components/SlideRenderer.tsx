@@ -29,6 +29,7 @@ export const SlideRenderer = ({ screen, isFacilitator, sessionId, userId, showPo
         isFacilitator={isFacilitator}
         sessionId={sessionId}
         userId={userId}
+        slideId={screen.id}
         {...extraProps}
       />
     );
