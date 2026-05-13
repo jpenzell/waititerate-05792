@@ -6,12 +6,14 @@ interface CurbCutQuizScreenProps {
   isFacilitator?: boolean;
   sessionId?: string;
   userId?: string;
+  slideId?: string;
 }
 
 export const CurbCutQuizScreen = ({ 
   isFacilitator = false,
   sessionId,
-  userId 
+  userId,
+  slideId,
 }: CurbCutQuizScreenProps) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5 py-12 px-6 flex items-center">
@@ -32,7 +34,7 @@ export const CurbCutQuizScreen = ({
           <Card className="p-12 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20 animate-scale-in">
             <PollWidget
               sessionId={sessionId}
-              slideId={window.location.hash.replace('#', '')}
+              slideId={slideId || window.location.hash.replace('#', '')}
               userId={userId}
               isPresenter={isFacilitator}
             />
