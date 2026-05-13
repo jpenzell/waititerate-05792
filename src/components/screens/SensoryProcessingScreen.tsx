@@ -138,29 +138,12 @@ export const SensoryProcessingScreen = ({ isFacilitator = false, sessionId }: Se
           </div>
         </Card>
 
-        <Card className="p-8 flex-1 bg-gradient-to-br from-primary/5 to-accent/5">
-          <h3 className="text-2xl font-bold text-foreground mb-4">Sensory Processing & Learning</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <p className="text-muted-foreground mb-4">
-                About <strong>1 in 6 people</strong> experience sensory input as overwhelming. Up to 90% of autistic individuals have sensory sensitivities.
-              </p>
-              <p className="text-muted-foreground">
-                When overwhelmed, the brain can't process new information—it's in <strong>survival mode</strong>, not learning mode.
-              </p>
-            </div>
-            <div className="space-y-3">
-              <div className="p-4 bg-background rounded-lg border border-border">
-                <p className="text-sm font-semibold text-foreground mb-2">UDL Design Principles</p>
-                <ul className="text-xs text-muted-foreground space-y-1">
-                  <li>✓ Minimize visual clutter</li>
-                  <li>✓ User control over brightness/sound</li>
-                  <li>✓ Provide quiet alternative formats</li>
-                  <li>✓ Warn before loud/bright content</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center">
+          <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+            Overwhelmed brains can't learn.
+            <br />
+            <span className="text-primary">Reduce clutter. Give control.</span>
+          </p>
         </Card>
       </div>
     );
