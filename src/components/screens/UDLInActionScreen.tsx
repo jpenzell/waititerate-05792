@@ -1,231 +1,37 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Eye, Zap, Hand, CheckCircle2 } from "lucide-react";
+import { Eye, Zap, Hand } from "lucide-react";
+
+const pillars = [
+  { icon: Eye, title: "Representation", q: "WHAT", ask: "≥ 2 formats?" },
+  { icon: Zap, title: "Engagement", q: "WHY", ask: "Real choices?" },
+  { icon: Hand, title: "Expression", q: "HOW", ask: "Multiple ways to show it?" },
+];
 
 export const UDLInActionScreen = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5 py-12 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
-          <Badge variant="secondary" className="mb-4">
-            Universal Design for Learning
-          </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-            UDL in Action
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Remove barriers without lowering standards—three principles for inclusive design
+    <main className="min-h-screen flex items-center px-8 py-10 animate-fade-in">
+      <section className="max-w-7xl mx-auto w-full space-y-12">
+        <h1 className="text-5xl md:text-7xl font-bold text-foreground text-center leading-tight">
+          UDL in action
+        </h1>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {pillars.map((p) => (
+            <Card key={p.title} className="p-10 text-center border-2 border-primary/20 space-y-4">
+              <p.icon className="h-16 w-16 mx-auto text-primary" />
+              <p className="text-sm font-mono uppercase tracking-widest text-accent">{p.q}</p>
+              <h3 className="text-3xl md:text-4xl font-bold text-foreground">{p.title}</h3>
+              <p className="text-2xl text-foreground/85">{p.ask}</p>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="p-10 bg-gradient-to-r from-accent/10 to-primary/10 border-2 border-accent/30 text-center">
+          <p className="text-3xl md:text-4xl font-bold text-foreground leading-snug">
+            Add <span className="text-primary">one</span> option this week.
           </p>
-        </div>
-
-        {/* Three UDL Principles */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {/* Multiple Means of Representation */}
-          <Card className="p-8 hover:shadow-xl transition-all border-2 border-primary/20">
-            <div className="flex flex-col items-center text-center mb-6">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Eye className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                Multiple Representations
-              </h3>
-              <p className="text-sm text-muted-foreground italic">
-                The "What" of Learning
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <p className="text-foreground mb-4">
-                Present information in different formats so all learners can access it.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Text + Audio</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Provide transcripts AND narration
-                  </p>
-                </div>
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Visual + Verbal</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Diagrams alongside written explanations
-                  </p>
-                </div>
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Adjustable Display</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Font size, contrast controls
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Card>
-
-          {/* Multiple Means of Engagement */}
-          <Card className="p-8 hover:shadow-xl transition-all border-2 border-accent/20">
-            <div className="flex flex-col items-center text-center mb-6">
-              <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                <Zap className="h-8 w-8 text-accent" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                Multiple Engagement Methods
-              </h3>
-              <p className="text-sm text-muted-foreground italic">
-                The "Why" of Learning
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <p className="text-foreground mb-4">
-                Offer different ways to motivate and sustain learner interest.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Choice & Autonomy</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    "Pick 3 of 5 case studies"
-                  </p>
-                </div>
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Relevance</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Connect to real-world context
-                  </p>
-                </div>
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Gamification</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Progress tracking, feedback
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Card>
-
-          {/* Multiple Means of Action & Expression */}
-          <Card className="p-8 hover:shadow-xl transition-all border-2 border-primary/20">
-            <div className="flex flex-col items-center text-center mb-6">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Hand className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                Multiple Expression Options
-              </h3>
-              <p className="text-sm text-muted-foreground italic">
-                The "How" of Learning
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <p className="text-foreground mb-4">
-                Allow learners to demonstrate understanding in different ways.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Format Choice</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Written, video, presentation
-                  </p>
-                </div>
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Tool Options</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Speech-to-text, mind mapping
-                  </p>
-                </div>
-                <div className="p-4 bg-background rounded border border-border">
-                  <p className="font-semibold text-foreground mb-2 text-lg">Scaffolded Support</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Templates, checklists, examples
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Card>
-        </div>
-
-        {/* Real Example: Sesame Workshop */}
-        <Card className="p-8 mb-12 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-                Representation Matters
-              </Badge>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Sesame Workshop: Julia the Muppet
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                In 2017, Sesame Workshop introduced Julia—an autistic Muppet character—to help 
-                children understand autism and reduce stigma.
-              </p>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <p>Julia demonstrates stimming behaviors (flapping hands when excited)</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <p>She sometimes doesn't respond to her name immediately (common in autism)</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <p>Her friends model patience and understanding—showing how to be inclusive</p>
-                </div>
-              </div>
-            </div>
-            <div className="p-6 bg-background rounded-lg border border-border">
-              <p className="text-sm text-muted-foreground mb-3 italic">
-                "It's amazing how this little Muppet has created such a shift in culture. 
-                Parents tell us Julia helped their child get diagnosed earlier, or helped 
-                neurotypical kids understand their autistic classmates."
-              </p>
-              <p className="text-xs text-muted-foreground">
-                — Sesame Workshop Research Team
-              </p>
-            </div>
-          </div>
         </Card>
-
-        {/* Facilitator Activity */}
-        <Card className="p-8 bg-gradient-to-r from-accent/10 to-primary/10 border-2 border-accent/30">
-          <div className="text-center space-y-4">
-            <h3 className="text-3xl font-bold text-foreground">Your Turn: UDL Audit</h3>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Pick one course module you've designed. Ask yourself:
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 mt-6">
-              <div className="p-6 bg-background rounded border-2 border-border">
-                <Eye className="h-8 w-8 text-primary mb-3 mx-auto" />
-                <p className="font-semibold text-foreground mb-3 text-lg">Representation</p>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Do I offer at least 2 formats?
-                </p>
-              </div>
-              <div className="p-6 bg-background rounded border-2 border-border">
-                <Zap className="h-8 w-8 text-accent mb-3 mx-auto" />
-                <p className="font-semibold text-foreground mb-3 text-lg">Engagement</p>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Do learners have choices?
-                </p>
-              </div>
-              <div className="p-6 bg-background rounded border-2 border-border">
-                <Hand className="h-8 w-8 text-primary mb-3 mx-auto" />
-                <p className="font-semibold text-foreground mb-3 text-lg">Expression</p>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Can learners show understanding differently?
-                </p>
-              </div>
-            </div>
-            <p className="text-base text-foreground pt-4">
-              <strong>Challenge:</strong> Add ONE more option in any of these categories this week.
-            </p>
-          </div>
-        </Card>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
