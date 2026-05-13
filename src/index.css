@@ -128,7 +128,7 @@
 
   /* Focus styles for keyboard navigation - Accessibility */
   :focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+    @apply outline-none ring-[3px] ring-primary ring-offset-2 ring-offset-background;
   }
 
   /* Skip to content link for screen readers */
@@ -139,6 +139,16 @@
   /* Keyboard shortcut badge styling */
   kbd {
     @apply inline-block px-2 py-1 text-xs font-semibold bg-muted border border-border rounded shadow-sm;
+  }
+}
+
+/* Respect OS-level reduced motion (neurodiversity / vestibular safety) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
