@@ -1,57 +1,49 @@
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { X, Check } from "lucide-react";
 
 const isNot = [
-  "A tech-tool tutorial — no software to install",
-  "A lecture on being more inclusive",
-  "A \"just use ChatGPT\" pitch",
-  "A replacement for your professional judgment",
-  "A claim that AI can teach better than you",
+  "A tech tutorial",
+  "A \"use ChatGPT\" pitch",
+  "A replacement for you",
 ];
 
 const is = [
   "A live experiment in cognitive diversity",
-  "A reframe on what your students actually experience",
-  "A practical design principle (curb-cut effect)",
-  "Permission to redesign one thing — not everything",
-  "Tools that respect your expertise and amplify it",
+  "Permission to redesign one thing",
+  "Tools that amplify your expertise",
 ];
 
 export const WhatThisIsNotScreen = () => {
   return (
     <main className="min-h-screen flex items-center justify-center px-8 py-10 animate-fade-in">
-      <section className="max-w-6xl w-full space-y-8">
-        <div className="text-center space-y-3">
-          <Badge variant="secondary" className="mx-auto">Setting expectations</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-            Before we go further
-          </h1>
-        </div>
+      <section className="max-w-7xl w-full space-y-12">
+        <h1 className="text-5xl md:text-7xl font-bold text-foreground text-center">
+          Before we go further
+        </h1>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="p-6 space-y-4 border-l-4 border-l-destructive/60">
-            <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-              <X className="h-6 w-6 text-destructive" /> What this is NOT
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="p-10 space-y-6 border-l-8 border-l-destructive/60">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground flex items-center gap-3">
+              <X className="h-9 w-9 text-destructive" /> NOT this
             </h2>
-            <ul className="space-y-3">
+            <ul className="space-y-5">
               {isNot.map((t, i) => (
-                <li key={i} className="flex gap-3 items-start text-base text-foreground/90">
-                  <X className="h-5 w-5 text-destructive/70 flex-shrink-0 mt-0.5" />
+                <li key={i} className="flex gap-4 items-start text-2xl md:text-3xl text-foreground/90 leading-snug">
+                  <X className="h-7 w-7 text-destructive/70 flex-shrink-0 mt-1" />
                   <span>{t}</span>
                 </li>
               ))}
             </ul>
           </Card>
 
-          <Card className="p-6 space-y-4 border-l-4 border-l-primary">
-            <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
-              <Check className="h-6 w-6 text-primary" /> What this IS
+          <Card className="p-10 space-y-6 border-l-8 border-l-primary">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground flex items-center gap-3">
+              <Check className="h-9 w-9 text-primary" /> THIS
             </h2>
-            <ul className="space-y-3">
+            <ul className="space-y-5">
               {is.map((t, i) => (
-                <li key={i} className="flex gap-3 items-start text-base text-foreground/90">
-                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                <li key={i} className="flex gap-4 items-start text-2xl md:text-3xl text-foreground/90 leading-snug">
+                  <Check className="h-7 w-7 text-primary flex-shrink-0 mt-1" />
                   <span>{t}</span>
                 </li>
               ))}

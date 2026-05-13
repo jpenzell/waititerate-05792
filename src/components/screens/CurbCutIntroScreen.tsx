@@ -1,45 +1,22 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Accessibility } from "lucide-react";
 
 export const CurbCutIntroScreen = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5 py-12 px-6 flex items-center">
-      <div className="max-w-7xl mx-auto w-full">
-        {/* Header */}
-        <div className="text-center mb-12 animate-fade-in">
-          <Badge variant="secondary" className="mb-4 text-base px-4 py-2">
-            Universal Design Principle
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
-            The Curb-Cut Effect
-          </h1>
-          <p className="text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Designing for neurodivergent learners improves outcomes for <strong className="text-foreground">everyone</strong>
-          </p>
-        </div>
-
-        {/* Origin Story */}
-        <Card className="p-10 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20 animate-scale-in">
-          <div className="flex items-start gap-8">
-            <div className="flex-shrink-0">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                <Accessibility className="h-10 w-10 text-primary" />
-              </div>
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">The Original Curb Cut (1970s)</h2>
-              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-                Activists fought for sloped curbs to help wheelchair users. City planners called it a "special accommodation."
-              </p>
-              <p className="text-xl text-foreground leading-relaxed">
-                <strong className="text-2xl">What happened?</strong> Everyone benefited: parents with strollers, travelers with luggage, 
-                delivery workers, cyclists, elderly pedestrians—and yes, wheelchair users.
-              </p>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </div>
+    <main className="min-h-screen flex items-center justify-center px-8 py-10 animate-fade-in">
+      <section className="max-w-6xl text-center space-y-10">
+        <Accessibility className="h-20 w-20 mx-auto text-primary" />
+        <h1 className="text-6xl md:text-8xl font-bold text-foreground leading-tight">
+          The Curb-Cut Effect
+        </h1>
+        <p className="text-3xl md:text-4xl text-foreground/90 leading-snug max-w-5xl mx-auto">
+          Built for wheelchairs.
+          <br />
+          Used by <span className="text-primary font-bold">everyone</span>.
+        </p>
+        <p className="text-2xl md:text-3xl text-muted-foreground italic">
+          Strollers · luggage · cyclists · delivery · the elderly
+        </p>
+      </section>
+    </main>
   );
 };
