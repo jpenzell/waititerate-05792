@@ -318,8 +318,7 @@ export const PresentationLayout = ({
         >
           <div
             className="w-full h-full overflow-y-auto
-              [&_main]:!min-h-0 [&_main]:!h-auto
-              [&_.min-h-screen]:!min-h-0 [&_.h-screen]:!h-auto"
+              [&_.min-h-screen]:!min-h-full [&_.h-screen]:!h-full"
           >
             <RevealProvider slideId={currentScreen}>{children}</RevealProvider>
           </div>
