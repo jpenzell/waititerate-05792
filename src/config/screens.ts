@@ -20,9 +20,6 @@ import { ProbabilisticExplainerScreen } from "@/components/screens/Probabilistic
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
 
-import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
-import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
-import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
 import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
@@ -181,9 +178,6 @@ export const screens: ScreenDef[] = [
 export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD1.1",   // Windshield wipers poll
   "LD2.3",   // (was disclosure gap — kept here in case poll-style props passed)
-  "LD3.1",   // Photo collection
-  "LD3.2",   // Human patterns
-  "LD3.3",   // AI patterns
   "LD3.4",   // Mental imagery
   "LD3.5",   // Inner voice
   "LD3.6",   // Time perception
