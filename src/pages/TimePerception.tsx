@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import { RevealProvider, tryRevealNext, tryRevealPrev } from "@/contexts/RevealContext";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
 
@@ -10,6 +9,18 @@ import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen"
  */
 const TimePerception = () => {
   useEffect(() => {
+    document.title = "How Long Is 10 Seconds? — AI for All Minds";
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute(
+      "content",
+      "Take the time perception exercise from AI for All Minds. Close your eyes, count 10 seconds in your head, and see how close you got.",
+    );
+
     const onKey = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA") return;
@@ -24,21 +35,11 @@ const TimePerception = () => {
   }, []);
 
   return (
-    <>
-      <Helmet>
-        <title>How Long Is 10 Seconds? — AI for All Minds</title>
-        <meta
-          name="description"
-          content="Take the time perception exercise from AI for All Minds. Close your eyes, count 10 seconds in your head, and see how close you got."
-        />
-        <link rel="canonical" href="https://ai4all.joshpenzell.com/time-perception" />
-      </Helmet>
-      <main>
-        <RevealProvider slideId="LD3.6-public">
-          <TimePerceptionScreen />
-        </RevealProvider>
-      </main>
-    </>
+    <main>
+      <RevealProvider slideId="LD3.6-public">
+        <TimePerceptionScreen />
+      </RevealProvider>
+    </main>
   );
 };
 
