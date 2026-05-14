@@ -89,6 +89,17 @@ export const AboutMeScreen = () => (
             <p className="text-base text-muted-foreground/80 italic mt-2 max-w-sm">
               Aphantasic, autistic, ADHD — and an AI advisor who thinks the next decade belongs to ND minds.
             </p>
+            <div className="mt-4 max-w-sm space-y-2 text-left">
+              <p className="text-sm md:text-base text-foreground/80 italic leading-snug border-l-2 border-primary/40 pl-3">
+                "…you over-index on big thinking…"
+              </p>
+              <p className="text-sm md:text-base text-foreground/80 italic leading-snug border-l-2 border-accent/40 pl-3">
+                "…you're on a jet ski and the rest of the team is on a barge…"
+              </p>
+              <p className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground/70 pl-3">
+                — actual feedback I've gotten
+              </p>
+            </div>
           </div>
         </div>
 
