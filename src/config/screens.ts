@@ -18,6 +18,9 @@ import { LLMExplainerScreen } from "@/components/screens/LLMExplainerScreen";
 import { ProbabilisticExplainerScreen } from "@/components/screens/ProbabilisticExplainerScreen";
 import { HallucinationScreen } from "@/components/screens/HallucinationScreen";
 import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
+import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
+import { LanguageShapesThoughtScreen } from "@/components/screens/LanguageShapesThoughtScreen";
+import { RussianBluesDemoScreen } from "@/components/screens/RussianBluesDemoScreen";
 
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
@@ -116,6 +119,9 @@ export const screens: ScreenDef[] = [
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD3.61", title: "Duck or Rabbit?", component: PatternRecognitionScreen, duration: 4, notes: "Same image, two interpretations. Pattern recognition is subjective — what you see depends on what your brain expects." },
+  { id: "LD3.62", title: "Annie Duke — Same Words, Different Meanings", component: AnnieDukeStudyScreen, duration: 5, notes: "Probability words like 'serious possibility' or 'rarely' mean wildly different things to different people — and to different AI models. Words are not numbers.", requiresSession: true },
+  { id: "LD3.63", title: "Language Shapes Thought", component: LanguageShapesThoughtScreen, duration: 2, notes: "Sapir-Whorf in one breath. Language doesn't just describe what you think — it shapes how you think." },
+  { id: "LD3.64", title: "Russian Blues — Demo", component: RussianBluesDemoScreen, duration: 3, notes: "Winawer/Boroditsky 2007. Two basic words for blue → 124ms faster discrimination. Measurable proof language conditions perception." },
   { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
