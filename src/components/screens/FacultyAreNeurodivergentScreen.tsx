@@ -1,48 +1,35 @@
-import { Card } from "@/components/ui/card";
-import { HeartHandshake } from "lucide-react";
 import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
+import { SlideShell, SlideTitle, StatBlock, PullQuote } from "@/components/slide";
+
+const stats = [
+  { value: "5–10%",  label: "ADHD" },
+  { value: "10–15%", label: "Dyslexia" },
+  { value: "2–4%",   label: "Autism spectrum" },
+];
 
 export const FacultyAreNeurodivergentScreen = () => {
   useRegisterReveals(4);
   return (
-    <main className="min-h-screen flex items-center justify-center px-8 animate-fade-in">
-      <section className="max-w-6xl w-full text-center space-y-10">
-        <HeartHandshake className="h-20 w-20 mx-auto text-accent" />
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
-          This room contains
-        </h1>
-
+    <SlideShell tone="indigo" ariaLabel="Faculty are neurodivergent too">
+      <div className="space-y-12">
+        <SlideTitle kicker="This room — right now">
+          The colleague next to you.
+        </SlideTitle>
         <div className="grid sm:grid-cols-3 gap-6">
-          <Reveal step={1}>
-            <Card className="p-8 border-l-8 border-l-primary/60 space-y-2 h-full">
-              <p className="text-6xl md:text-7xl font-bold text-primary">5–10%</p>
-              <p className="text-xl md:text-2xl text-foreground/90">ADHD</p>
-            </Card>
-          </Reveal>
-          <Reveal step={2}>
-            <Card className="p-8 border-l-8 border-l-primary/60 space-y-2 h-full">
-              <p className="text-6xl md:text-7xl font-bold text-primary">10–15%</p>
-              <p className="text-xl md:text-2xl text-foreground/90">Dyslexia</p>
-            </Card>
-          </Reveal>
-          <Reveal step={3}>
-            <Card className="p-8 border-l-8 border-l-primary/60 space-y-2 h-full">
-              <p className="text-6xl md:text-7xl font-bold text-primary">2–4%</p>
-              <p className="text-xl md:text-2xl text-foreground/90">Autism spectrum</p>
-            </Card>
-          </Reveal>
+          {stats.map((s, i) => (
+            <Reveal key={i} step={i + 1}>
+              <StatBlock value={s.value} label={s.label} accent="primary" />
+            </Reveal>
+          ))}
         </div>
-
         <Reveal step={4}>
-          <Card className="p-10 bg-gradient-to-br from-accent/5 to-primary/5 border border-primary/20">
-            <p className="text-3xl md:text-4xl text-foreground leading-snug font-semibold">
-              The students you teach differently
-              <br />
-              include the colleague next to you.
-            </p>
-          </Card>
+          <PullQuote>
+            The students you teach differently
+            <br />
+            include <span className="text-primary">the colleague next to you</span>.
+          </PullQuote>
         </Reveal>
-      </section>
-    </main>
+      </div>
+    </SlideShell>
   );
 };
