@@ -86,38 +86,9 @@ export const WindshieldWipersScreen = ({
           Does a self-driving car need windshield wipers?
         </h1>
 
-        {isFacilitator && sessionId && userId ? (
-          <div className="grid md:grid-cols-[3fr_2fr] gap-8 items-center">
-            <PollWidget
-              sessionId={sessionId}
-              slideId="LD1.1"
-              userId={userId}
-              isPresenter={true}
-            />
-
-            {sessionCode && (
-              <Card className="p-6 bg-card/60 backdrop-blur flex flex-col items-center gap-2">
-                <p className="text-base uppercase tracking-wider text-muted-foreground">
-                  Join code
-                </p>
-                <p className="text-4xl font-mono font-bold text-primary">
-                  {sessionCode}
-                </p>
-                <p className="text-base text-muted-foreground">
-                  ai4all.joshpenzell.com/participate
-                </p>
-              </Card>
-            )}
-          </div>
-        ) : sessionCode ? (
-          <p className="text-xl text-muted-foreground text-center">
-            Answer on your device
-          </p>
-        ) : (
-          <p className="text-xl text-muted-foreground text-center italic">
-            Take a guess — show of hands.
-          </p>
-        )}
+        <p className="text-2xl text-muted-foreground text-center italic">
+          Take a moment. Think about it. Press → for the reveal.
+        </p>
       </section>
     </main>
   );
