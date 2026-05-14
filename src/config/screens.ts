@@ -111,13 +111,6 @@ export const screens: ScreenDef[] = [
   { id: "LD2.4", title: "The Cost of Masking", component: CostOfMaskingScreen, duration: 4, notes: "What the system has been taking. Cage 2018, Cassidy 2018, Huang 2020." },
   { id: "LD2.5", title: "The Thesis Named", component: ThesisNamedScreen, duration: 2, notes: "ND minds aren't behind. They've been ahead, waiting for systems that could meet them." },
 
-  { id: "LD1.6", title: "Warm-up — Cast Call", component: OneWordStoryIntroScreen, duration: 2, notes: "Improv warm-up. Ask for 3 volunteers; demo animation explains the one-word story format." },
-  { id: "LD1.7", title: "Warm-up — One-Word Story", component: OneWordStoryLiveScreen, duration: 4, notes: "Live-type one-word story. Type each word as the volunteers shout it. Enter locks. Backspace on empty undoes." },
-  { id: "LD1.92", title: "How AI Predicts — Word by Word", component: LLMExplainerScreen, duration: 3, notes: "Auto-playing visualization: 'The sun set over the vineyard…' Top-4 candidates per step with probabilities. Press P to pause." },
-  { id: "LD1.8", title: "Warm-up — Answer Together", component: ElephantQuestionScreen, duration: 4, notes: "Same mechanic, real question: how many elephants fit in the Charlotte Convention Center? Sets up the AI estimation thread later." },
-  { id: "LD1.85", title: "Live Estimate — Audience + AI", component: ElephantEstimateScreen, duration: 5, notes: "Type guesses from the room as people shout numbers. AI models (Gemini Flash/Pro, GPT-5 Mini/Nano) stream their estimates in parallel. Number-line shows the spread; big numbers land on the wall in audience teal vs AI primary." },
-  { id: "LD1.95", title: "LLMs Predict, They Don't Know — Anthropic", component: ProbabilisticExplainerScreen, duration: 4, notes: "Anthropic's explainer video on probabilistic AI. Embedded YouTube. Closes with: treat outputs as drafts to coach, not finished truth." },
-
   // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
@@ -128,7 +121,15 @@ export const screens: ScreenDef[] = [
   { id: "LD3.8", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared cognitive reflection.", requiresSession: true },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
-  // ═══ ACT 4 — The Accommodation That Already Happened (9 slides · ~30 min) ═══
+  // ═══ ACT 4 — How AI Thinks (warm-ups + AI explainer) ═══
+  { id: "LD1.6", title: "Warm-up — Cast Call", component: OneWordStoryIntroScreen, duration: 2, notes: "Improv warm-up. Ask for 3 volunteers; demo animation explains the one-word story format." },
+  { id: "LD1.7", title: "Warm-up — One-Word Story", component: OneWordStoryLiveScreen, duration: 4, notes: "Live-type one-word story. Type each word as the volunteers shout it. Enter locks. Backspace on empty undoes." },
+  { id: "LD1.92", title: "How AI Predicts — Word by Word", component: LLMExplainerScreen, duration: 3, notes: "Auto-playing visualization: 'The sun set over the vineyard…' Top-4 candidates per step with probabilities. Press P to pause." },
+  { id: "LD1.8", title: "Warm-up — Answer Together", component: ElephantQuestionScreen, duration: 4, notes: "Same mechanic, real question: how many elephants fit in the Charlotte Convention Center? Sets up the AI estimation thread later." },
+  { id: "LD1.85", title: "Live Estimate — Audience + AI", component: ElephantEstimateScreen, duration: 5, notes: "Type guesses from the room as people shout numbers. AI models (Gemini Flash/Pro, GPT-5 Mini/Nano) stream their estimates in parallel. Number-line shows the spread; big numbers land on the wall in audience teal vs AI primary." },
+  { id: "LD1.95", title: "LLMs Predict, They Don't Know — Anthropic", component: ProbabilisticExplainerScreen, duration: 4, notes: "Anthropic's explainer video on probabilistic AI. Embedded YouTube. Closes with: treat outputs as drafts to coach, not finished truth." },
+
+  // ═══ ACT 5 — The Accommodation That Already Happened (9 slides · ~30 min) ═══
   { id: "LD4.0", title: "Chapter — The Accommodation That Already Happened", component: AccommodationChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD4.1", title: "Students Already Use AI", component: StudentsAlreadyUsingAIScreen, duration: 3, notes: "HEPI 2025 — 92% of UK undergrads use GenAI." },
   { id: "LD4.2", title: "You Probably Do Too", component: YouProbablyDoTooScreen, duration: 3, notes: "Faculty already use AI for the same accommodations students want." },
@@ -141,7 +142,7 @@ export const screens: ScreenDef[] = [
   { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
   { id: "LD4.8", title: "AI Clears Friction So Thinking Can Happen", component: AIClarificationScreen, duration: 3, notes: "AI isn't replacing thinking. It clears friction so ND minds can do the thinking the future needs." },
 
-  // ═══ ACT 5 — Design for the Vanguard, Win for Everyone (8 slides · ~25 min) ═══
+  // ═══ ACT 6 — Design for the Vanguard, Win for Everyone (8 slides · ~25 min) ═══
   { id: "LD5.0", title: "Chapter — Design for the Vanguard", component: DesignForVanguardChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD5.1", title: "The Curb-Cut Effect — Introduction", component: CurbCutIntroScreen, duration: 3, notes: "Curb-cut effect intro." },
   { id: "LD5.2", title: "Quiz Q1: Closed Captions", component: CurbCutQuizScreen, duration: 3, notes: "Q1 with reveal-on-arrow.", pollQuestion: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?", pollOptions: ["20%", "45%", "71%", "85%"] },
