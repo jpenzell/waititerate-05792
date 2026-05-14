@@ -33,9 +33,9 @@ export const SlideShell = ({
 }: Props) => {
   return (
     <main
-      className={`h-full w-full relative overflow-hidden ${toneBg[tone]} flex ${
-        align === "center" ? "items-center" : "items-start pt-12"
-      } px-8 py-10 animate-fade-in ${className}`}
+      className={`min-h-full w-full relative overflow-y-auto ${toneBg[tone]} flex ${
+        align === "center" ? "items-center" : "items-start pt-8"
+      } px-8 py-6 md:py-8 animate-fade-in ${className}`}
       aria-label={ariaLabel}
     >
       <section className="max-w-7xl mx-auto w-full">{children}</section>
