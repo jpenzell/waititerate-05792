@@ -22,7 +22,13 @@ import { seedPollsForSession } from "@/utils/pollSeeder";
 export default function Facilitator() {
   const navigate = useNavigate();
   const { user, loading, userRole, displayName, signOut } = useAuth();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(() => {
+    if (typeof window === "undefined") return 0;
+    const id = window.location.hash.replace(/^#/, "");
+    if (!id) return 0;
+    const idx = screens.findIndex((s) => s.id === id);
+    return idx >= 0 ? idx : 0;
+  });
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [sessionCode, setSessionCode] = useState<string | null>(null);
   const [showControls, setShowControls] = useState(true);
