@@ -1,5 +1,6 @@
-import { Users, ShieldAlert, GitBranch } from "lucide-react";
+import { Users, ShieldAlert, GitBranch, Layers } from "lucide-react";
 import { SlideShell, StatBlock, PullQuote } from "@/components/slide";
+import { Card } from "@/components/ui/card";
 
 export const DisclosureGapScreen = () => {
   return (
@@ -41,7 +42,28 @@ export const DisclosureGapScreen = () => {
           />
         </div>
 
-        <PullQuote variant="primary" attribution="Purdue institutional data · NCES 2019–20 · Doyle 2020">
+        <Card className="p-6 md:p-8 bg-card/70 border-l-8 border-l-primary/60 grid md:grid-cols-2 gap-6 items-center">
+          <div className="flex items-start gap-4">
+            <Layers className="h-10 w-10 text-primary shrink-0" aria-hidden="true" />
+            <div>
+              <p className="text-3xl md:text-4xl font-black text-foreground leading-none">21% → 43%</p>
+              <p className="text-base md:text-lg text-muted-foreground mt-2 leading-snug">
+                NCES says 21% of US undergrads report a disability. When the National Disability Center asked about <em>disabling conditions</em> instead of formal registration: <strong className="text-foreground">43%</strong>.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start gap-4">
+            <GitBranch className="h-10 w-10 text-accent shrink-0" aria-hidden="true" />
+            <div>
+              <p className="text-3xl md:text-4xl font-black text-foreground leading-none">&gt; 50%</p>
+              <p className="text-base md:text-lg text-muted-foreground mt-2 leading-snug">
+                of disabled college students report <strong className="text-foreground">more than one</strong> disability. Real students don't fit a single-condition model.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <PullQuote variant="primary" attribution="Purdue · NCES 2019–20 · National Disability Center 2025 · Doyle 2020">
           AI is the accommodation
           <br />
           <span className="text-primary">they never asked for.</span>
