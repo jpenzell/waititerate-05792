@@ -117,9 +117,9 @@ export const screens: ScreenDef[] = [
 
   { id: "LD1.6", title: "Warm-up — Cast Call", component: OneWordStoryIntroScreen, duration: 2, notes: "Improv warm-up. Ask for 3 volunteers; demo animation explains the one-word story format." },
   { id: "LD1.7", title: "Warm-up — One-Word Story", component: OneWordStoryLiveScreen, duration: 4, notes: "Live-type one-word story. Type each word as the volunteers shout it. Enter locks. Backspace on empty undoes." },
+  { id: "LD1.92", title: "How AI Predicts — Word by Word", component: LLMExplainerScreen, duration: 3, notes: "Auto-playing visualization: 'The sun set over the vineyard…' Top-4 candidates per step with probabilities. Press P to pause." },
   { id: "LD1.8", title: "Warm-up — Answer Together", component: ElephantQuestionScreen, duration: 4, notes: "Same mechanic, real question: how many elephants fit in the Charlotte Convention Center? Sets up the AI estimation thread later." },
   { id: "LD1.85", title: "Live Estimate — Audience + AI", component: ElephantEstimateScreen, duration: 5, notes: "Type guesses from the room as people shout numbers. AI models (Gemini Flash/Pro, GPT-5 Mini/Nano) stream their estimates in parallel. Number-line shows the spread; big numbers land on the wall in audience teal vs AI primary." },
-  { id: "LD1.92", title: "How AI Predicts — Word by Word", component: LLMExplainerScreen, duration: 3, notes: "Auto-playing visualization: 'The sun set over the vineyard…' Top-4 candidates per step with probabilities. Press P to pause." },
   { id: "LD1.95", title: "LLMs Predict, They Don't Know — Anthropic", component: ProbabilisticExplainerScreen, duration: 4, notes: "Anthropic's explainer video on probabilistic AI. Embedded YouTube. Closes with: treat outputs as drafts to coach, not finished truth." },
 
   // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
