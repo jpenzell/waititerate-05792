@@ -124,9 +124,6 @@ export const screens: ScreenDef[] = [
 
   // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
-  { id: "LD3.1", title: "Photo Exercise — Upload", component: PhotoCollectionScreen, duration: 4, notes: "Step 1: How you learn best.", requiresSession: true },
-  { id: "LD3.2", title: "Photo Exercise — What You See", component: HumanPatternsScreen, duration: 4, notes: "Step 2: Different observers, different patterns.", requiresSession: true },
-  { id: "LD3.3", title: "Photo Exercise — AI as Observer", component: AIPatternsScreen, duration: 4, notes: "Step 3: AI is one observer among many.", requiresSession: true },
   { id: "LD3.4", title: "Mental Imagery", component: MentalImageryScreen, duration: 6, notes: "Aphantasia reveal." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
