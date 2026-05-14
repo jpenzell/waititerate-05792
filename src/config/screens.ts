@@ -7,6 +7,9 @@ import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScr
 import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
 import { RCCCContextScreen } from "@/components/screens/RCCCContextScreen";
 import { AboutMeScreen } from "@/components/screens/AboutMeScreen";
+import { OneWordStoryIntroScreen } from "@/components/screens/OneWordStoryIntroScreen";
+import { OneWordStoryLiveScreen } from "@/components/screens/OneWordStoryLiveScreen";
+import { ElephantQuestionScreen } from "@/components/screens/ElephantQuestionScreen";
 
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
@@ -90,6 +93,9 @@ export const screens: ScreenDef[] = [
   { id: "LD1.3", title: "The Templates Can't Keep Up", component: WorldChangingScreen, duration: 3, notes: "Meta-frame: this is a rehearsal, not a deck. Built in a weekend with AI." },
   { id: "LD1.4", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 5, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
   { id: "LD1.5", title: "About Me — Josh Penzell", component: AboutMeScreen, duration: 2, notes: "Quick intro: who I am and the path that got me here. Drag the logos." },
+  { id: "LD1.6", title: "Warm-up — Cast Call", component: OneWordStoryIntroScreen, duration: 2, notes: "Improv warm-up. Ask for 3 volunteers; demo animation explains the one-word story format." },
+  { id: "LD1.7", title: "Warm-up — One-Word Story", component: OneWordStoryLiveScreen, duration: 4, notes: "Live-type one-word story. Type each word as the volunteers shout it. Enter locks. Backspace on empty undoes." },
+  { id: "LD1.8", title: "Warm-up — Answer Together", component: ElephantQuestionScreen, duration: 4, notes: "Same mechanic, real question: how many elephants fit in the Charlotte Convention Center? Sets up the AI estimation thread later." },
 
   // ═══ ACT 2 — The Hidden Vanguard (6 slides · ~20 min) ═══
   { id: "LD2.0", title: "Chapter — The Hidden Vanguard", component: HiddenVanguardChapterScreen, duration: 1, notes: "Chapter card." },
