@@ -23,6 +23,7 @@ import { ProbabilityWordsPollScreen } from "@/components/screens/ProbabilityWord
 import { CIASpreadScreen } from "@/components/screens/CIASpreadScreen";
 import { LanguageShapesThoughtScreen } from "@/components/screens/LanguageShapesThoughtScreen";
 import { RussianBluesDemoScreen } from "@/components/screens/RussianBluesDemoScreen";
+import { CulturalTendenciesScreen } from "@/components/screens/CulturalTendenciesScreen";
 
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
@@ -127,6 +128,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.62", title: "Annie Duke — Same Words, Different Meanings", component: AnnieDukeStudyScreen, duration: 5, notes: "Probability words like 'serious possibility' or 'rarely' mean wildly different things to different people — and to different AI models. Words are not numbers.", requiresSession: true },
   { id: "LD3.63", title: "Language Shapes Thought", component: LanguageShapesThoughtScreen, duration: 2, notes: "Sapir-Whorf in one breath. Language doesn't just describe what you think — it shapes how you think." },
   { id: "LD3.64", title: "Russian Blues — Demo", component: RussianBluesDemoScreen, duration: 3, notes: "Winawer/Boroditsky 2007. Two basic words for blue → 124ms faster discrimination. Measurable proof language conditions perception." },
+  { id: "LD3.645", title: "Cultural Tendencies — Same Model, Different Language", component: CulturalTendenciesScreen, duration: 4, notes: "Lu, Song & Zhang (Nature Human Behaviour 2025). Same LLM answers the 'should I take this job?' question individualist in English, collectivist in Chinese. Language doesn't just translate — it switches values." },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
   // ═══ ACT 4 — No Two AIs Are Alike (warm-ups + AI explainer) ═══

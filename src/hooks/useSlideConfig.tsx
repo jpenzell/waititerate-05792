@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v72'; // Add LD3.617 CIA 50-point spread after LD3.615
+const STORAGE_KEY = 'presentation-slide-config-atdld-v73'; // Add LD3.645 Cultural Tendencies (Chinese vs English) after LD3.64
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
