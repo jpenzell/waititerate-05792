@@ -47,6 +47,11 @@ import { MeetJoshLieScreen } from "@/components/screens/MeetJoshLieScreen";
 import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
 import { InjusticeSensitivityScreen } from "@/components/screens/InjusticeSensitivityScreen";
 import { AIvsManagerScreen } from "@/components/screens/AIvsManagerScreen";
+import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
+import { ShadowAccommodationScreen } from "@/components/screens/ShadowAccommodationScreen";
+import { DetectorBiasScreen } from "@/components/screens/DetectorBiasScreen";
+import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScreen";
+import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
 import {
   Chapter02Screen,
   Chapter03Screen,
@@ -77,6 +82,7 @@ export const screens: ScreenDef[] = [
   { id: "LD1.2b", title: "Neurodiversity + AI = Innovation", component: NeurodiversityInnovationScreen, duration: 2, notes: "Meta-point: I thought backwards. Thinking differently + AI flexibility = innovation. This site is the proof." },
   { id: "LD1.2c", title: "Meet Josh — Spot the Lie", component: MeetJoshLieScreen, duration: 4, notes: "Two truths and a lie about Josh. Audience votes on phones; press → to reveal which statement was the lie. Edit JOSH_STATEMENTS in MeetJoshLieScreen.tsx.", pollQuestion: "Which one is the lie?", pollOptions: ["Statement #1", "Statement #2", "Statement #3"] },
   { id: "LD1.3", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 4, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
+  { id: "LD1.3b", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 3, notes: "~36% identify as ND vs 6–7% registered with DSO. Purdue institutional + NCES + Doyle." },
   { id: "LD1.4", title: "What This Is NOT", component: WhatThisIsNotScreen, duration: 3, notes: "Disarm faculty skepticism early." },
   // 2.x — Why neurodiversity matters
   { id: "LD2.0a", title: "Chapter 02 — Why difference matters", component: Chapter02Screen, duration: 1, notes: "Cinematic chapter divider." },
@@ -100,6 +106,7 @@ export const screens: ScreenDef[] = [
   { id: "LD4.3", title: "Sensory Processing Simulator", component: SensoryProcessingScreen, duration: 6, notes: "Sensory overload." },
   { id: "LD4.3b", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Rejection Sensitive Dysphoria — why a single comment can derail a week. Stats are placeholders, confirm before delivery." },
   { id: "LD4.3c", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "Heightened response to unfairness — what looks like overreaction vs what's actually happening." },
+  { id: "LD4.3d", title: "Humanize My Words", component: HumanizeMyWordsScreen, duration: 4, notes: "Ma et al. 2026 — 3,984 autistic posts. Four affordances + three risks. Masking-as-a-service tension." },
   { id: "LD4.4", title: "Cognitive Reflection", component: CognitiveReflectionScreen, duration: 8, notes: "Reflection prompts." },
   { id: "LD4.5", title: "Research Foundations", component: ResearchFoundationsScreen, duration: 5, notes: "Academic grounding." },
   { id: "LD4.6", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared wall." },
@@ -118,15 +125,18 @@ export const screens: ScreenDef[] = [
   { id: "LD6.0a", title: "Chapter 06 — AI as accommodation", component: Chapter06Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD6.0", title: "AI as Cognitive Prosthetic", component: AICognitiveProtheticScreen, duration: 6, notes: "Real examples." },
   { id: "LD6.0b", title: "People Prefer AI to Their Manager", component: AIvsManagerScreen, duration: 3, notes: "Workplace Intelligence × Oracle 2024 stat. Ties feedback/injustice sensitivity (Ch.4) to why AI is a safer tutor. Confirm exact stat before delivery." },
+  { id: "LD6.0c", title: "Shadow Accommodation", component: ShadowAccommodationScreen, duration: 4, notes: "Atcheson et al. CHI 2025 — 25/62 students say AI does what the institution doesn't. P10 quote on bypassing bureaucracy. Political punch of the talk." },
   { id: "LD6.1", title: "Structured Freedom Framework", component: StructuredFreedomScreen, duration: 7, notes: "Balance between guidance and autonomy.", pollQuestion: "Which design approach best describes your current training?", pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"] },
   { id: "LD6.2", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 5, notes: "JAMA 2024." },
   { id: "LD6.3", title: "But Isn't This Just Cheating?", component: AcademicIntegrityScreen, duration: 5, notes: "Reframe academic integrity." },
+  { id: "LD6.3b", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English. Bloomberg autistic-student-flagged-100% case." },
   { id: "LD6.4", title: "AI as Cognitive Accommodation", component: AIAccommodationScreen, duration: 5, notes: "Six archetypes." },
   // 7.x — Workshop
   { id: "LD7.0a", title: "Chapter 07 — Make something", component: Chapter07Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD7.0", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop." },
   { id: "LD7.1", title: "Peer Talk: Redesign", component: PeerTalkScreen, duration: 3, props: { prompt: "Show your neighbor what you redesigned.", subPrompt: "What changed? What did the AI catch that you wouldn't have? 90 seconds each way.", seconds: 180 }, notes: "Pair share." },
   { id: "LD7.2", title: "This Is Retention Strategy", component: RetentionEquityScreen, duration: 4, notes: "Equity / Title III / SACSCOC hook." },
+  { id: "LD7.2b", title: "The Free-Tier Divide", component: FreeTierDivideScreen, duration: 3, notes: "Zhao et al. 2025 — 91% of disabled students locked into free tiers. Equity argument for institutional AI access via DSO." },
   { id: "LD7.3", title: "AI Student: You're the Teacher", component: AIStudentScreen, duration: 8, notes: "Learning by teaching." },
   { id: "LD7.4", title: "Cognitive Load in Action", component: CognitiveLoadScreen, duration: 4, notes: "Working memory limits." },
   { id: "LD7.5", title: "UDL in Action", component: UDLInActionScreen, duration: 4, notes: "Universal Design for Learning." },
