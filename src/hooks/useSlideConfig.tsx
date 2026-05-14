@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v68'; // Move LD3.61 to end
+const STORAGE_KEY = 'presentation-slide-config-atdld-v69'; // Add Annie Duke (LD1.96) after LD1.95
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
