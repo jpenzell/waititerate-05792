@@ -56,7 +56,6 @@ export const PresentationLayout = ({
   const showChrome = !cleanView;
 
   const isInteractiveSlide = INTERACTIVE_SLIDE_IDS.has(currentScreen);
-  const showJoinOverlay = isInteractiveSlide && !!sessionCode && !!sessionId && !blankScreen;
   const joinOrigin = typeof window !== "undefined" ? window.location.origin : "https://ai4all.joshpenzell.com";
   const joinUrl = sessionCode ? `${joinOrigin}/participate?code=${sessionCode}` : "";
   const joinHostLabel = joinUrl ? joinUrl.replace(/^https?:\/\//, "").split("?")[0] : "";
