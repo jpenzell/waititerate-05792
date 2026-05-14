@@ -122,7 +122,6 @@ export const screens: ScreenDef[] = [
   { id: "LD3.62", title: "Annie Duke — Same Words, Different Meanings", component: AnnieDukeStudyScreen, duration: 5, notes: "Probability words like 'serious possibility' or 'rarely' mean wildly different things to different people — and to different AI models. Words are not numbers.", requiresSession: true },
   { id: "LD3.63", title: "Language Shapes Thought", component: LanguageShapesThoughtScreen, duration: 2, notes: "Sapir-Whorf in one breath. Language doesn't just describe what you think — it shapes how you think." },
   { id: "LD3.64", title: "Russian Blues — Demo", component: RussianBluesDemoScreen, duration: 3, notes: "Winawer/Boroditsky 2007. Two basic words for blue → 124ms faster discrimination. Measurable proof language conditions perception." },
-  { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
   // ═══ ACT 4 — No Two AIs Are Alike (warm-ups + AI explainer) ═══
@@ -157,6 +156,7 @@ export const screens: ScreenDef[] = [
 
   // ═══ ACT 7 — Make Something (9 slides · ~50 min) ═══
   { id: "LD6.0", title: "Chapter — Make Something", component: MakeSomethingChapterScreen, duration: 1, notes: "Chapter card." },
+  { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
   { id: "LD6.2", title: "Cognitive Load + UDL", component: CognitiveLoadUDLScreen, duration: 5, notes: "Two principles for the next 30 minutes." },
   { id: "LD6.3", title: "AI Student: Setup", component: AIStudentSetupScreen, duration: 3, notes: "You are now the teacher. Three rounds." },
   { id: "LD6.4", title: "AI Student: Round 1 — Teach", component: AIStudentScreen, duration: 8, notes: "Teach the AI a concept; watch where it misunderstands.", requiresSession: true, props: { round: 1 } },
