@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v40'; // Added LD3.78, LD4.45, LD4.47, LD6.75 research slides
+const STORAGE_KEY = 'presentation-slide-config-atdld-v41'; // Added LD1.92 LLMExplainer + LD1.95 Anthropic video
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {

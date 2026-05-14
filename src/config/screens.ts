@@ -13,6 +13,8 @@ import { OneWordStoryLiveScreen } from "@/components/screens/OneWordStoryLiveScr
 import { ElephantQuestionScreen } from "@/components/screens/ElephantQuestionScreen";
 import { ElephantEstimateScreen } from "@/components/screens/ElephantEstimateScreen";
 import { AIStoryDemoScreen } from "@/components/screens/AIStoryDemoScreen";
+import { LLMExplainerScreen } from "@/components/screens/LLMExplainerScreen";
+import { ProbabilisticExplainerScreen } from "@/components/screens/ProbabilisticExplainerScreen";
 
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
@@ -107,6 +109,8 @@ export const screens: ScreenDef[] = [
   { id: "LD1.8", title: "Warm-up — Answer Together", component: ElephantQuestionScreen, duration: 4, notes: "Same mechanic, real question: how many elephants fit in the Charlotte Convention Center? Sets up the AI estimation thread later." },
   { id: "LD1.85", title: "Live Estimate — Audience + AI", component: ElephantEstimateScreen, duration: 5, notes: "Type guesses from the room as people shout numbers. AI models (Gemini Flash/Pro, GPT-5 Mini/Nano) stream their estimates in parallel. Number-line shows the spread; big numbers land on the wall in audience teal vs AI primary." },
   { id: "LD1.9", title: "How AI Does It — Story Demo", component: AIStoryDemoScreen, duration: 4, notes: "Same prompt, watch the words appear one at a time. Sets up the next-token-prediction conversation. Pick the model live (Gemini, GPT-5)." },
+  { id: "LD1.92", title: "How AI Predicts — Word by Word", component: LLMExplainerScreen, duration: 3, notes: "Auto-playing visualization: 'The sun set over the vineyard…' Top-4 candidates per step with probabilities. Press P to pause." },
+  { id: "LD1.95", title: "LLMs Predict, They Don't Know — Anthropic", component: ProbabilisticExplainerScreen, duration: 4, notes: "Anthropic's explainer video on probabilistic AI. Embedded YouTube. Closes with: treat outputs as drafts to coach, not finished truth." },
 
   // ═══ ACT 2 — The Hidden Vanguard (6 slides · ~20 min) ═══
   { id: "LD2.0", title: "Chapter — The Hidden Vanguard", component: HiddenVanguardChapterScreen, duration: 1, notes: "Chapter card." },
