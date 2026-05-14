@@ -115,6 +115,7 @@ export const screens: ScreenDef[] = [
   { id: "LD2.2", title: "1 in 5 Adults Self-ID as ND", component: YouGovSelfIDScreen, duration: 3, notes: "YouGov 2023 — 19% of US adults self-identify as neurodivergent." },
   { id: "LD2.3", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 4, notes: "~36% identify vs 6–7% registered. Purdue + NCES + Doyle." },
   { id: "LD2.4", title: "The Cost of Masking", component: CostOfMaskingScreen, duration: 4, notes: "What the system has been taking. Cage 2018, Cassidy 2018, Huang 2020." },
+  { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
   { id: "LD2.5", title: "The Thesis Named", component: ThesisNamedScreen, duration: 2, notes: "ND minds aren't behind. They've been ahead, waiting for systems that could meet them." },
 
   // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
@@ -178,7 +179,6 @@ export const screens: ScreenDef[] = [
   // LD7.3 removed (peer accountability — Zoom delivery)
   { id: "LD7.4", title: "Identity Move — Prototyping the Future", component: IdentityMoveScreen, duration: 2, notes: "I'm not accommodating. I'm prototyping the future." },
   { id: "LD7.5", title: "Take It With You", component: OnePagerDownloadScreen, duration: 2, notes: "Faculty one-pager. Footnote, not climax." },
-  { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
   { id: "LD5.6", title: "The Institutional Case", component: RetentionEquityScreen, duration: 4, notes: "Retention / Title III / SACSCOC hook." },
 ];
 
