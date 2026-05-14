@@ -11,7 +11,7 @@ serve(async (req) => {
   }
 
   try {
-    const { prompt, context } = await req.json();
+    const { prompt, context, model } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
 
     if (!LOVABLE_API_KEY) {
@@ -27,7 +27,7 @@ serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
+        model: model || "google/gemini-2.5-flash",
         messages: [
           {
             role: "system",
@@ -56,7 +56,7 @@ serve(async (req) => {
     const aiResponse = data.choices[0].message.content;
 
     return new Response(
-      JSON.stringify({ response: aiResponse, success: true }),
+      JSON.stringify({ response: aiResponse, model: model || "google/gemini-2.5-flash", success: true }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
