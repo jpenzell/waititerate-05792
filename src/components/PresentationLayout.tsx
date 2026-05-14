@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { RevealProvider, tryRevealNext, tryRevealPrev } from "@/contexts/RevealContext";
-import { INTERACTIVE_SLIDE_IDS } from "@/config/screens";
 import {
   Sheet,
   SheetContent,
@@ -55,7 +54,6 @@ export const PresentationLayout = ({
   const isParticipant = mode === "participant";
   const showChrome = !cleanView;
 
-  const isInteractiveSlide = INTERACTIVE_SLIDE_IDS.has(currentScreen);
   const joinOrigin = typeof window !== "undefined" ? window.location.origin : "https://ai4all.joshpenzell.com";
   const joinUrl = sessionCode ? `${joinOrigin}/participate?code=${sessionCode}` : "";
   const joinHostLabel = joinUrl ? joinUrl.replace(/^https?:\/\//, "").split("?")[0] : "";
