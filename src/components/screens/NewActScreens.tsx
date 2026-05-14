@@ -83,10 +83,11 @@ export const PersonalDisclosureScreen = () => (
         <Card className="p-7 bg-card/70 border-t-4 border-t-secondary space-y-3">
           <Users className="h-9 w-9 text-secondary-foreground" aria-hidden="true" />
           <p className="text-2xl font-bold text-foreground">
-            Birkman Social Energy: <span className="text-primary">1/99</span>
+            Birkman Social Energy
           </p>
-          <p className="text-base text-muted-foreground leading-snug">
-            Officially the lowest social-energy score on the assessment. Crowds drain me fast — yet here I am, on your screen.
+          <p className="text-base text-foreground leading-snug">
+            <span className="font-semibold text-primary">Usual 84</span> · <span className="font-semibold text-accent">Needs 27</span>
+            <span className="block text-muted-foreground mt-1">A 57-point reversal: I look outgoing, but I recharge in silence.</span>
           </p>
         </Card>
       </div>
