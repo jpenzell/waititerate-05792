@@ -22,7 +22,13 @@ import { seedPollsForSession } from "@/utils/pollSeeder";
 export default function Facilitator() {
   const navigate = useNavigate();
   const { user, loading, userRole, displayName, signOut } = useAuth();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(() => {
+    if (typeof window === "undefined") return 0;
+    const id = window.location.hash.replace(/^#/, "");
+    if (!id) return 0;
+    const idx = screens.findIndex((s) => s.id === id);
+    return idx >= 0 ? idx : 0;
+  });
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [sessionCode, setSessionCode] = useState<string | null>(null);
   const [showControls, setShowControls] = useState(true);
@@ -114,6 +120,20 @@ export default function Facilitator() {
       window.location.hash = visibleScreens[currentIndex].id;
     }
   }, [currentIndex, visibleScreens]);
+
+  // Hash → slide deep-linking. Read hash on mount and on hashchange so URLs
+  // like /facilitator#LD4.3 jump to that slide.
+  useEffect(() => {
+    const syncFromHash = () => {
+      const id = window.location.hash.replace(/^#/, "");
+      if (!id) return;
+      const idx = visibleScreens.findIndex((s) => s.id === id);
+      if (idx >= 0 && idx !== currentIndex) setCurrentIndex(idx);
+    };
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, [visibleScreens]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Ensure polls exist for active sessions (handles restored/previous sessions)
   useEffect(() => {
