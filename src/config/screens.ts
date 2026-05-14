@@ -1,4 +1,4 @@
-// ─── 7-Act outline. 54 slides. AI for All Minds. ───
+// ─── 8-Act outline. 63 slides. AI for All Minds. ───
 // Through-line: ND minds aren't behind. They've been ahead, waiting for systems
 // that could meet them. AI is the first system that doesn't require the bending.
 
@@ -98,7 +98,7 @@ export interface ScreenDef {
 }
 
 export const screens: ScreenDef[] = [
-  // ═══ ACT 1 — The Future Demands Different Thinking (5 slides · ~15 min) ═══
+  // ═══ ACT 1 — The Future Demands Different Thinking (9 slides · ~20 min) ═══
   { id: "LD1.0", title: "Title — AI for All Minds", component: LDTitleScreen, duration: 2, notes: "Set the stage. Opening energy." },
   { id: "LD1.02", title: "Opener — Ball on a Table (Prompt)", component: BallOnTablePromptScreen, duration: 2, notes: "Have everyone close their eyes. Describe the ball: color, size, texture, lighting, the table it sits on. Take your time. Then ask: 'What did you see?'" },
   { id: "LD1.03", title: "Opener — The Imagery Spectrum", component: MentalImagerySpectrumScreen, duration: 3, notes: "Five cards from no-image → photo-real. Walk the room through each one and let people locate themselves. Pause for the gasps." },
@@ -109,7 +109,7 @@ export const screens: ScreenDef[] = [
   { id: "LD1.3", title: "The Templates Can't Keep Up", component: WorldChangingScreen, duration: 3, notes: "Meta-frame: this is a rehearsal, not a deck. Built in a weekend with AI." },
   { id: "LD1.4", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 5, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
 
-  // ═══ ACT 2 — The Hidden Vanguard (moved up: comes right after LD1.4) ═══
+  // ═══ ACT 2 — The Hidden Vanguard (7 slides · ~20 min) ═══
   { id: "LD2.0", title: "Chapter — The Hidden Vanguard", component: HiddenVanguardChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD2.15", title: "The Value of ND Talent", component: NDValueScreen, duration: 4, notes: "~85% of autistic adults un/underemployed; ND unemployment 30–40%. In the right roles, ND employees are 90–140% more productive (JPMorgan Autism at Work, SAP, EY, Microsoft). The gap is the system, not the talent." },
   { id: "LD2.2", title: "1 in 5 Adults Self-ID as ND", component: YouGovSelfIDScreen, duration: 3, notes: "YouGov 2023 — 19% of US adults self-identify as neurodivergent." },
@@ -118,7 +118,7 @@ export const screens: ScreenDef[] = [
   { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
   { id: "LD2.5", title: "The Thesis Named", component: ThesisNamedScreen, duration: 2, notes: "ND minds aren't behind. They've been ahead, waiting for systems that could meet them." },
 
-  // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
+  // ═══ ACT 3 — Feel It (10 slides · ~40 min) ═══
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD3.61", title: "Duck or Rabbit?", component: PatternRecognitionScreen, duration: 4, notes: "Same image, two interpretations. Pattern recognition is subjective — what you see depends on what your brain expects." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
@@ -130,7 +130,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.645", title: "Cultural Tendencies — Same Model, Different Language", component: CulturalTendenciesScreen, duration: 4, notes: "Lu, Song & Zhang (Nature Human Behaviour 2025). Same LLM answers the 'should I take this job?' question individualist in English, collectivist in Chinese. Language doesn't just translate — it switches values." },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
-  // ═══ ACT 4 — No Two AIs Are Alike (warm-ups + AI explainer) ═══
+  // ═══ ACT 4 — No Two AIs Are Alike (9 slides · ~30 min) ═══
   { id: "LD4.00", title: "Chapter — No Two AIs Are Alike", component: NoTwoAIsAlikeChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD1.6", title: "Warm-up — Cast Call", component: OneWordStoryIntroScreen, duration: 2, notes: "Improv warm-up. Ask for 3 volunteers; demo animation explains the one-word story format." },
   { id: "LD1.7", title: "Warm-up — One-Word Story", component: OneWordStoryLiveScreen, duration: 4, notes: "Live-type one-word story. Type each word as the volunteers shout it. Enter locks. Backspace on empty undoes." },
@@ -152,7 +152,7 @@ export const screens: ScreenDef[] = [
   { id: "LD4.5", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 4, notes: "JAMA 2024." },
   { id: "LD4.8", title: "AI Clears Friction So Thinking Can Happen", component: AIClarificationScreen, duration: 3, notes: "AI isn't replacing thinking. It clears friction so ND minds can do the thinking the future needs." },
 
-  // ═══ ACT 6 — Design for the Vanguard, Win for Everyone (8 slides · ~25 min) ═══
+  // ═══ ACT 6 — Design for the Vanguard, Win for Everyone (9 slides · ~25 min) ═══
   { id: "LD5.0", title: "Chapter — Design for the Vanguard", component: DesignForVanguardChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD5.1", title: "The Curb-Cut Effect — Introduction", component: CurbCutIntroScreen, duration: 3, notes: "Curb-cut effect intro." },
   { id: "LD5.2", title: "Quiz Q1: Closed Captions", component: CurbCutQuizScreen, duration: 3, notes: "Q1 with reveal-on-arrow.", pollQuestion: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?", pollOptions: ["20%", "45%", "71%", "85%"] },
@@ -163,7 +163,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.75", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "ND brains often register unfairness — to self and others — as a whole-body alarm. Easily mislabeled as defiance or inflexibility." },
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
 
-  // ═══ ACT 7 — Make Something (9 slides · ~50 min) ═══
+  // ═══ ACT 7 — Make Something (6 slides · ~25 min) ═══
   { id: "LD6.0", title: "Chapter — Make Something", component: MakeSomethingChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD6.75", title: "Special Olympics — The Inclusion Gap", component: SpecialOlympicsGapScreen, duration: 3, notes: "Stratalys × Special Olympics 2024. 77% of parents and 64% of educators see AI as a mechanism for inclusion — but only 35% think developers account for IDD students. Tim Shriver / Nathan Cook close." },
   { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
@@ -172,7 +172,7 @@ export const screens: ScreenDef[] = [
   { id: "LD7.1", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Accessible curriculum → AT → AI → human judgment." },
   // LD6.8 removed (peer talk — Zoom delivery)
 
-  // ═══ ACT 8 — Close With the Callback (6 slides · ~15 min) ═══
+  // ═══ ACT 8 — Close With the Callback (4 slides · ~10 min) ═══
   { id: "LD7.0", title: "Zoox Callback — Your Windshield Wiper", component: ZooxCallbackScreen, duration: 3, notes: "Callback to the opening question. What's the windshield wiper in your syllabus?" },
   { id: "LD7.2", title: "Commitment Moment", component: CommitmentMomentScreen, duration: 3, notes: "Name one change for fall. Write it down." },
   // LD7.3 removed (peer accountability — Zoom delivery)
