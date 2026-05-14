@@ -10,6 +10,7 @@ import Participate from "./pages/Participate";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import Landing from "./pages/Landing";
+import TimePerception from "./pages/TimePerception";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/facilitator-setup" element={<FacilitatorSetup />} />
             <Route path="/participate" element={<Participate />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/time-perception" element={<TimePerception />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
