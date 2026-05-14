@@ -152,7 +152,6 @@ export const screens: ScreenDef[] = [
   { id: "LD5.4", title: "Quiz Q3: Multiple Formats", component: CurbCutQuizScreen, duration: 3, notes: "Q3 with reveal-on-arrow.", pollQuestion: "What share of learners prefer having content in multiple formats (text + audio + visual)?", pollOptions: ["35%", "55%", "70%", "80%+"] },
   { id: "LD5.5", title: "The Free-Tier Divide", component: FreeTierDivideScreen, duration: 3, notes: "Zhao et al. 2025 — 91% of disabled students locked into free tiers." },
   { id: "LD4.6", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English." },
-  { id: "LD5.6", title: "The Institutional Case", component: RetentionEquityScreen, duration: 4, notes: "Retention / Title III / SACSCOC hook." },
   { id: "LD5.7", title: "Learning Design Curb Cuts", component: CurbCutExamplesScreen, duration: 4, notes: "Real examples." },
 
   // ═══ ACT 7 — Make Something (9 slides · ~50 min) ═══
@@ -177,6 +176,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.75", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "ND brains often register unfairness — to self and others — as a whole-body alarm. Easily mislabeled as defiance or inflexibility." },
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
   { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
+  { id: "LD5.6", title: "The Institutional Case", component: RetentionEquityScreen, duration: 4, notes: "Retention / Title III / SACSCOC hook." },
 ];
 
 // Slide IDs that accept (isFacilitator, sessionId, userId) interactive props
