@@ -109,16 +109,21 @@ export const AboutMeScreen = () => (
               — actual feedback I've gotten
             </p>
           </div>
-          <DraggableLogo src={logoNorthwestern} alt="Northwestern" initialX={90}  initialY={70}  height="h-12" />
-          <DraggableLogo src={logoBrooklyn}    alt="Brooklyn College" initialX={280} initialY={40} height="h-12" />
-          <DraggableLogo src={logoUIUC}        alt="UIUC"        initialX={420} initialY={80}  height="h-12" />
-          <DraggableLogo src={logoAmazon}      alt="Amazon"      initialX={70}  initialY={210} height="h-10" />
-          <DraggableLogo src={logoAlexa}       alt="Alexa"       initialX={70}  initialY={310} height="h-10" />
-          <DraggableLogo src={logoZillow}      alt="Zillow"      initialX={550} initialY={210} height="h-10" />
-          <DraggableLogo src={logoSkillsoft}   alt="Skillsoft"   initialX={550} initialY={130} height="h-10" />
-          <DraggableLogo src={logoSdc}         alt="SDC"         initialX={180} initialY={370} height="h-10" />
-          <DraggableLogo src={logoOffBroadway} alt="Off-Broadway" initialX={400} initialY={380} height="h-10" />
-          <DraggableLogo src={logoZoox}        alt="Zoox"        initialX={530} initialY={300} height="h-10" />
+          {/* Logos arranged around (not under) the centered quote card */}
+          {/* Top row */}
+          <DraggableLogo src={logoNorthwestern} alt="Northwestern"     initialX={110} initialY={55}  height="h-11" />
+          <DraggableLogo src={logoBrooklyn}    alt="Brooklyn College"  initialX={290} initialY={45}  height="h-11" />
+          <DraggableLogo src={logoUIUC}        alt="UIUC"              initialX={470} initialY={55}  height="h-11" />
+          {/* Left side */}
+          <DraggableLogo src={logoAmazon}      alt="Amazon"            initialX={55}  initialY={170} height="h-10" />
+          <DraggableLogo src={logoSkillsoft}   alt="Skillsoft"         initialX={55}  initialY={260} height="h-10" />
+          {/* Right side */}
+          <DraggableLogo src={logoZillow}      alt="Zillow"            initialX={530} initialY={170} height="h-10" />
+          <DraggableLogo src={logoAlexa}       alt="Alexa"             initialX={530} initialY={260} height="h-10" />
+          {/* Bottom row */}
+          <DraggableLogo src={logoSdc}         alt="SDC"               initialX={140} initialY={375} height="h-10" />
+          <DraggableLogo src={logoOffBroadway} alt="Off-Broadway"      initialX={300} initialY={385} height="h-10" />
+          <DraggableLogo src={logoZoox}        alt="Zoox"              initialX={460} initialY={375} height="h-10" />
         </div>
       </div>
     </div>
