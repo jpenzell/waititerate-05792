@@ -43,7 +43,6 @@ import { WhatThisIsNotScreen } from "@/components/screens/WhatThisIsNotScreen";
 import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScreen";
 import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
 import { NeurodiversityInnovationScreen } from "@/components/screens/NeurodiversityInnovationScreen";
-import { MeetJoshLieScreen } from "@/components/screens/MeetJoshLieScreen";
 import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
 import { InjusticeSensitivityScreen } from "@/components/screens/InjusticeSensitivityScreen";
 import { AIvsManagerScreen } from "@/components/screens/AIvsManagerScreen";
@@ -82,7 +81,6 @@ export const screens: ScreenDef[] = [
   { id: "LD1.1b", title: "Reveal: Zoox", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },
   { id: "LD1.2", title: "My Own Reframe", component: ZooxReframeScreen, duration: 2, notes: "Personal proof of the Zoox reframe — this isn't a deck, it's a live website." },
   { id: "LD1.2b", title: "Neurodiversity + AI = Innovation", component: NeurodiversityInnovationScreen, duration: 2, notes: "Meta-point: I thought backwards. Thinking differently + AI flexibility = innovation. This site is the proof." },
-  { id: "LD1.2c", title: "Meet Josh — Spot the Lie", component: MeetJoshLieScreen, duration: 4, notes: "Two truths and a lie about Josh. Audience votes on phones; press → to reveal which statement was the lie. Edit JOSH_STATEMENTS in MeetJoshLieScreen.tsx.", pollQuestion: "Which one is the lie?", pollOptions: ["Statement #1", "Statement #2", "Statement #3"] },
   { id: "LD1.3", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 4, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
   { id: "LD1.3b", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 3, notes: "~36% identify as ND vs 6–7% registered with DSO. Purdue institutional + NCES + Doyle." },
   { id: "LD1.4", title: "What This Is NOT", component: WhatThisIsNotScreen, duration: 3, notes: "Disarm faculty skepticism early." },
@@ -154,7 +152,6 @@ export const screens: ScreenDef[] = [
 // Slide IDs that accept (isFacilitator, sessionId, userId) interactive props
 export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD1.1",   // Windshield wipers poll
-  "LD1.2c",  // Meet Josh — spot the lie
   "LD2.0",   // Pattern recognition poll
   "LD2.1",   // Neurodiversity quiz
   "LD2.2",   // Probability words
