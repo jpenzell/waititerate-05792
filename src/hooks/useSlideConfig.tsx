@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v67'; // Add probability words poll LD3.615
+const STORAGE_KEY = 'presentation-slide-config-atdld-v68'; // Move LD3.61 to end
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
