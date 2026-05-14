@@ -464,6 +464,33 @@ export type Database = {
         }
         Relationships: []
       }
+      probability_word_responses: {
+        Row: {
+          created_at: string
+          id: string
+          percentage: number
+          session_id: string
+          user_id: string
+          word: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          percentage: number
+          session_id: string
+          user_id: string
+          word: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          percentage?: number
+          session_id?: string
+          user_id?: string
+          word?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
