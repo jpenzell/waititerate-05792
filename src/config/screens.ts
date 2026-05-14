@@ -106,7 +106,7 @@ export const screens: ScreenDef[] = [
   { id: "LD1.07", title: "About Me — Josh Penzell", component: AboutMeScreen, duration: 2, notes: "Quick intro: who I am and the path that got me here. Drag the logos." },
   { id: "LD1.1", title: "Zoox Question — Windshield Wipers", component: WindshieldWipersScreen, duration: 4, notes: "Does a self-driving car need windshield wipers? Show of hands or live poll.", pollQuestion: "Does a self-driving car need windshield wipers?", pollOptions: ["Yes", "No", "Who knows anymore?"] },
   { id: "LD1.2", title: "Zoox Reveal", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },
-  { id: "LD1.3", title: "The Templates Can't Keep Up", component: WorldChangingScreen, duration: 3, notes: "Meta-frame: this is a rehearsal, not a deck. Built in a weekend with AI." },
+  { id: "LD1.3", title: "AI for All Minds", component: WorldChangingScreen, duration: 3, notes: "Frame for the day: every brain learns differently — tools should meet them there. Meta: this is a rehearsal, built in a weekend with AI." },
   { id: "LD1.4", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 5, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
 
   // ═══ ACT 2 — The Hidden Vanguard (7 slides · ~20 min) ═══
