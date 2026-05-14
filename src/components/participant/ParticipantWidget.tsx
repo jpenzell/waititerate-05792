@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card";
 import { PollWidget } from "@/components/PollWidget";
 import { screens } from "@/config/screens";
 
-import { ParkingLotIntroScreen } from "@/components/screens/ParkingLotIntroScreen";
 import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
 import { NumericEstimateScreen } from "@/components/screens/NumericEstimateScreen";
@@ -38,7 +37,6 @@ const widgets: Record<
   "LD1.1": ({ sessionId, userId }) => (
     <PollSection slideId="LD1.1" sessionId={sessionId} userId={userId} />
   ),
-  "LD1.5": ({ sessionId }) => <ParkingLotIntroScreen sessionId={sessionId} />,
 
   // 2.x
   "LD2.0": ({ sessionId, userId }) => (
