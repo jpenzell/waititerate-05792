@@ -9,18 +9,20 @@ import {
    ACT 1
    ════════════════════════════════════════════════════════════════ */
 
-/** 1.3 — The world is changing faster than the templates + meta-frame. */
+/** 1.3 — AI for All Minds frame + meta-frame. */
 export const WorldChangingScreen = () => (
-  <SlideShell tone="indigo" align="center" ariaLabel="The world is changing faster than the templates">
+  <SlideShell tone="indigo" align="center" ariaLabel="AI for all minds">
     <div className="space-y-12">
       <header className="text-center space-y-6">
         <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
           The frame for today
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
-          The world is changing faster than the
-          <span className="text-primary"> templates can be replaced.</span>
+          AI for <span className="text-primary">all minds.</span>
         </h1>
+        <p className="text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto leading-snug">
+          Every brain in the room learns differently. The tools we use should meet them there.
+        </p>
       </header>
 
       <Card className="p-8 md:p-10 bg-card/70 border-l-8 border-l-primary/60 max-w-4xl mx-auto space-y-4">
@@ -31,8 +33,7 @@ export const WorldChangingScreen = () => (
               This isn't a deck. It's a rehearsal.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-snug">
-              I built this site in a weekend with AI. It's the same move I'm asking you to make
-              in your classroom — start with the question, not the template.
+              I built this site in a weekend with AI — same move I'm inviting you to make in your classroom.
             </p>
           </div>
         </div>
