@@ -3,8 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { Brain, Send, CheckCircle, XCircle } from "lucide-react";
+import { Brain, Send, CheckCircle, XCircle, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 interface AIStudentScreenProps {
   isFacilitator?: boolean;
@@ -18,47 +19,56 @@ export const AIStudentScreen = ({
   const [teachingInput, setTeachingInput] = useState("");
   const [conversation, setConversation] = useState<Array<{role: 'teacher' | 'student', text: string}>>([]);
   const [quizStarted, setQuizStarted] = useState(false);
-  const [quizResults, setQuizResults] = useState<{correct: number, total: number} | null>(null);
+  const [quizResults, setQuizResults] = useState<{correct: number, total: number, questions?: Array<{q: string; a: string; correct: boolean; explanation?: string}>} | null>(null);
+  const [isReplying, setIsReplying] = useState(false);
 
-  const handleTeach = () => {
-    if (!teachingInput.trim()) return;
-    
-    setConversation(prev => [...prev, {
-      role: 'teacher',
-      text: teachingInput
-    }]);
-
-    // Simulate AI student response
-    setTimeout(() => {
-      const responses = [
-        "I think I understand! So you're saying...",
-        "Can you explain that part again?",
-        "That makes sense! What about...",
-        "I'm getting it now. Let me try to explain it back...",
-      ];
-      setConversation(prev => [...prev, {
-        role: 'student',
-        text: responses[Math.floor(Math.random() * responses.length)]
-      }]);
-    }, 1000);
-
+  const handleTeach = async () => {
+    const message = teachingInput.trim();
+    if (!message || isReplying) return;
+    const nextConvo = [...conversation, { role: 'teacher' as const, text: message }];
+    setConversation(nextConvo);
     setTeachingInput("");
+    setIsReplying(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('ai-student', {
+        body: { mode: 'teach', conversation, userMessage: message },
+      });
+      if (error) throw error;
+      const reply = (data?.response as string)?.trim() || "Sorry, I lost my train of thought. Can you say that again?";
+      setConversation((prev) => [...prev, { role: 'student', text: reply }]);
+    } catch (err) {
+      console.error('AI Student error', err);
+      toast.error("AI student couldn't reply. Try again.");
+    } finally {
+      setIsReplying(false);
+    }
   };
 
-  const handleQuiz = () => {
+  const handleQuiz = async () => {
     setQuizStarted(true);
-    
-    // Simulate quiz results after teaching
-    setTimeout(() => {
-      const correctAnswers = Math.floor(Math.random() * 3) + (conversation.length > 4 ? 3 : 1);
-      setQuizResults({ correct: correctAnswers, total: 5 });
-      
-      if (correctAnswers >= 4) {
-        toast.success("Your AI student passed! Great teaching!");
+    try {
+      const { data, error } = await supabase.functions.invoke('ai-student', {
+        body: { mode: 'quiz', conversation },
+      });
+      if (error) throw error;
+      const result = {
+        correct: data?.correct ?? 0,
+        total: data?.total ?? 0,
+        questions: data?.questions ?? [],
+      };
+      setQuizResults(result);
+      if (result.total === 0) {
+        toast.error("AI student couldn't generate a quiz from that lesson — try teaching a bit more.");
+      } else if (result.correct >= Math.ceil(result.total * 0.8)) {
+        toast.success(`Your AI student passed (${result.correct}/${result.total})!`);
       } else {
-        toast.info("Your AI student needs more guidance. Try teaching more concepts!");
+        toast.info(`AI student got ${result.correct}/${result.total}. Teach more — they're close.`);
       }
-    }, 2000);
+    } catch (err) {
+      console.error('AI Student quiz error', err);
+      toast.error("Couldn't grade the quiz. Try again.");
+      setQuizStarted(false);
+    }
   };
 
   return (
@@ -117,10 +127,10 @@ export const AIStudentScreen = ({
                 <Button 
                   onClick={handleTeach}
                   className="flex-1"
-                  disabled={quizStarted || !teachingInput.trim()}
+                  disabled={quizStarted || isReplying || !teachingInput.trim()}
                 >
-                  <Send className="w-4 h-4 mr-2" />
-                  Teach
+                  {isReplying ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
+                  {isReplying ? "Student thinking…" : "Teach"}
                 </Button>
                 <Button 
                   onClick={handleQuiz}
