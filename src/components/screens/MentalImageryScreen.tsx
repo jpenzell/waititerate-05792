@@ -3,9 +3,10 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
-import { Eye, EyeOff, Sparkles, Brain } from "lucide-react";
+import { Eye, EyeOff, Sparkles, Brain, Apple } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 interface MentalImageryScreenProps {
   isFacilitator?: boolean;
@@ -17,6 +18,9 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
   const [vividness, setVividness] = useState<number>(5);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [step, setStep] = useState<"intro" | "test">("intro");
+  // Facilitator reveal: 0 = distribution, 1 = aphantasia ~4% + Josh's hook
+  useRegisterReveals(1);
+  const { step: revealStep } = useReveal();
 
   useEffect(() => {
     if (!sessionId) return;
@@ -135,11 +139,28 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
           </Card>
         </section>
 
-        <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center" role="article">
-          <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
-            We can't see inside each other's minds.
-          </p>
-        </Card>
+        {revealStep < 1 ? (
+          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex flex-col items-center justify-center gap-4" role="article">
+            <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+              We can't see inside each other's minds.
+            </p>
+            <p className="text-sm text-muted-foreground italic">Press → for the science.</p>
+          </Card>
+        ) : (
+          <Card className="p-8 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-6 animate-fade-in" role="article">
+            <Apple className="h-14 w-14 text-primary" aria-hidden="true" />
+            <p className="text-2xl md:text-3xl font-semibold text-foreground text-center leading-snug max-w-4xl">
+              <span className="text-primary font-bold">~4%</span> of people have aphantasia — no mind's eye at all.
+            </p>
+            <p className="text-xl md:text-2xl text-foreground/85 italic text-center leading-snug max-w-4xl">
+              "For 39 years I couldn't see a red apple when I closed my eyes.
+              Then ChatGPT could draw it."
+            </p>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              Aphantasia Network · Hollis Robbins · ~4% prevalence
+            </p>
+          </Card>
+        )}
       </main>
     );
   }

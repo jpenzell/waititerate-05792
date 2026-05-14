@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Sparkles, TrendingUp, Users, Briefcase } from "lucide-react";
+import { Sparkles, DollarSign, Users, GraduationCap } from "lucide-react";
 import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -128,9 +128,13 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
   // FACILITATOR VIEW
   if (isFacilitator) {
     const averages = getAverages();
-    const actualUnemployment = 85;
-    const actualProductivity = 30;
-    const actualPopulation = 20;
+    // Numbers grounded in the two research PDFs (public/research/):
+    //  - 36% Purdue institutional ND self-ID rate
+    //  - 91% Zhao et al. 2025: disabled UK students locked into free-tier AI
+    //  - 88% HEPI Policy Note 61 (Feb 2025): UK undergrads using AI for assessments
+    const actualUnemployment = 36; // % self-identifying as ND (Purdue)
+    const actualProductivity = 91; // % disabled students on free tier only (Zhao 2025)
+    const actualPopulation = 88;   // % UK undergrads using AI for assessments (HEPI 2025)
     const showResults = revealStep >= 1;
 
     return (
@@ -149,18 +153,18 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
           <>
             <div className="grid md:grid-cols-3 gap-4 mb-6">
               <Card className="p-5 bg-gradient-to-br from-primary/10 to-accent/5 text-center">
-                <Briefcase className="h-10 w-10 text-primary mx-auto mb-2" />
-                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · Unemployment</p>
+                <Users className="h-10 w-10 text-primary mx-auto mb-2" />
+                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · ND self-ID</p>
                 <div className="text-5xl font-bold text-primary">{averages.unemployment}%</div>
               </Card>
               <Card className="p-5 bg-gradient-to-br from-accent/10 to-primary/5 text-center">
-                <TrendingUp className="h-10 w-10 text-accent mx-auto mb-2" />
-                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · Productivity</p>
+                <DollarSign className="h-10 w-10 text-accent mx-auto mb-2" />
+                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · Free-tier only</p>
                 <div className="text-5xl font-bold text-accent">{averages.productivity}%</div>
               </Card>
               <Card className="p-5 bg-gradient-to-br from-foreground/10 to-foreground/5 text-center">
-                <Users className="h-10 w-10 text-foreground mx-auto mb-2" />
-                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · Population %</p>
+                <GraduationCap className="h-10 w-10 text-foreground mx-auto mb-2" />
+                <p className="text-xs text-muted-foreground mb-1">Avg. Guess · UK use for assessments</p>
                 <div className="text-5xl font-bold text-foreground">{averages.population}%</div>
               </Card>
             </div>
@@ -172,41 +176,41 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
         ) : (
           <div className="space-y-4 animate-fade-in max-w-7xl mx-auto w-full">
             <div className="grid md:grid-cols-3 gap-4">
-              {/* Unemployment */}
-              <Card className="p-6 bg-gradient-to-br from-red-500/10 to-orange-500/10 border-2 border-red-500/30 text-center space-y-2">
-                <Briefcase className="h-10 w-10 text-red-500 mx-auto" />
-                <p className="text-xs text-muted-foreground">Unemployed despite degrees</p>
+              {/* ND self-identification */}
+              <Card className="p-6 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 text-center space-y-2">
+                <Users className="h-10 w-10 text-primary mx-auto" />
+                <p className="text-xs text-muted-foreground">Self-identify as ND</p>
                 <div className="text-xs text-muted-foreground">
                   guess <span className="line-through">{averages.unemployment}%</span>
                 </div>
-                <div className="text-6xl font-bold text-red-500">{actualUnemployment}%</div>
-                <p className="text-xs text-muted-foreground italic">Autistic adults w/ degrees</p>
+                <div className="text-6xl font-bold text-primary">{actualUnemployment}%</div>
+                <p className="text-xs text-muted-foreground italic">Purdue incoming students · only ~7% register w/ DRC</p>
               </Card>
-              {/* Productivity */}
-              <Card className="p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-2 border-green-500/30 text-center space-y-2">
-                <TrendingUp className="h-10 w-10 text-green-500 mx-auto" />
-                <p className="text-xs text-muted-foreground">More productive, right role</p>
+              {/* Free-tier divide */}
+              <Card className="p-6 bg-gradient-to-br from-red-500/10 to-orange-500/10 border-2 border-red-500/30 text-center space-y-2">
+                <DollarSign className="h-10 w-10 text-red-500 mx-auto" />
+                <p className="text-xs text-muted-foreground">Disabled students · free tier only</p>
                 <div className="text-xs text-muted-foreground">
                   guess <span className="line-through">{averages.productivity}%</span>
                 </div>
-                <div className="text-6xl font-bold text-green-500">{actualProductivity}%+</div>
-                <p className="text-xs text-muted-foreground italic">JPMorgan Autism at Work</p>
+                <div className="text-6xl font-bold text-red-500">{actualProductivity}%</div>
+                <p className="text-xs text-muted-foreground italic">Zhao, Cox &amp; Chen · Internet &amp; Higher Ed, 2025</p>
               </Card>
-              {/* Population */}
-              <Card className="p-6 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 text-center space-y-2">
-                <Users className="h-10 w-10 text-primary mx-auto" />
-                <p className="text-xs text-muted-foreground">Are neurodivergent</p>
+              {/* HEPI use */}
+              <Card className="p-6 bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-2 border-green-500/30 text-center space-y-2">
+                <GraduationCap className="h-10 w-10 text-green-500 mx-auto" />
+                <p className="text-xs text-muted-foreground">Undergrads using AI for assessments</p>
                 <div className="text-xs text-muted-foreground">
                   guess <span className="line-through">{averages.population}%</span>
                 </div>
-                <div className="text-6xl font-bold text-primary">{actualPopulation}%</div>
-                <p className="text-xs text-muted-foreground italic">1 in 5 people</p>
+                <div className="text-6xl font-bold text-green-500">{actualPopulation}%</div>
+                <p className="text-xs text-muted-foreground italic">HEPI Policy Note 61 · Feb 2025 · n=1,041</p>
               </Card>
             </div>
 
             <Card className="p-6 bg-gradient-to-r from-accent/20 to-primary/20 border-2 border-accent/40 text-center">
               <p className="text-2xl md:text-3xl font-bold text-foreground">
-                The problem isn't talent. <span className="text-primary">The problem is our systems.</span>
+                Students aren't waiting. <span className="text-primary">They're already accommodating themselves.</span>
               </p>
             </Card>
           </div>
@@ -261,10 +265,10 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
               {currentQuestion === 1 && (
                 <div className="space-y-4 animate-fade-in">
                   <div className="flex items-start gap-3">
-                    <Briefcase className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
+                    <Users className="h-8 w-8 text-primary mt-1 flex-shrink-0" />
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-foreground mb-4">
-                        What % of autistic adults with college degrees are unemployed or underemployed?
+                        What % of incoming college students self-identify as neurodivergent?
                       </h3>
                       <div className="flex items-center gap-3">
                         <label htmlFor="unemployment-guess" className="sr-only">Unemployment percentage guess</label>
@@ -290,10 +294,10 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
               {currentQuestion === 2 && (
                 <div className="space-y-4 animate-fade-in">
                   <div className="flex items-start gap-3">
-                    <TrendingUp className="h-8 w-8 text-accent mt-1 flex-shrink-0" />
+                    <DollarSign className="h-8 w-8 text-accent mt-1 flex-shrink-0" />
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-foreground mb-4">
-                        How much MORE productive are neurodivergent employees in the right roles?
+                        What % of disabled university students can ONLY access free-tier AI tools?
                       </h3>
                       <div className="flex items-center gap-3">
                         <label htmlFor="productivity-guess" className="sr-only">Productivity increase percentage guess</label>
@@ -319,13 +323,13 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
               {currentQuestion === 3 && (
                 <div className="space-y-4 animate-fade-in">
                   <div className="flex items-start gap-3">
-                    <Users className="h-8 w-8 text-foreground mt-1 flex-shrink-0" />
+                    <GraduationCap className="h-8 w-8 text-foreground mt-1 flex-shrink-0" />
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-foreground mb-2">
-                        What % of the global population is neurodivergent?
+                        What % of UK undergraduates use AI for their assessments?
                       </h3>
                       <p className="text-sm text-muted-foreground mb-4">
-                        (Including ADHD, autism, dyslexia, etc.)
+                        (HEPI 2025 nationally representative sample)
                       </p>
                       <div className="flex items-center gap-3">
                         <label htmlFor="population-guess" className="sr-only">Neurodivergent population percentage guess</label>

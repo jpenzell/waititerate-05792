@@ -20,9 +20,9 @@ export const FeedbackSensitivityScreen = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           <StatBlock
-            value="~99%"
-            label="of adults with ADHD"
-            note="report emotional sensitivity to perceived rejection or criticism"
+            value="Near-universal"
+            label="among adults with ADHD"
+            note="Rejection sensitivity is reported as near-universal in clinical observation (Dodson, 2017)."
             icon={Heart}
             accent="destructive"
           />

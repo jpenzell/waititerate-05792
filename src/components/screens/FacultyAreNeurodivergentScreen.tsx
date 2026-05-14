@@ -2,9 +2,9 @@ import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 import { SlideShell, SlideTitle, StatBlock, PullQuote } from "@/components/slide";
 
 const stats = [
-  { value: "5–10%",  label: "ADHD" },
-  { value: "10–15%", label: "Dyslexia" },
-  { value: "2–4%",   label: "Autism spectrum" },
+  { value: "15–20%", label: "of the global population is neurodivergent (Doyle, 2020)" },
+  { value: "19%",    label: "of Americans self-identify as ND (YouGov, 2024)" },
+  { value: "10.2%",  label: "of Duke students self-identified as ND (DUCkI sample)" },
 ];
 
 export const FacultyAreNeurodivergentScreen = () => {

@@ -6,6 +6,7 @@ import { Slider } from "@/components/ui/slider";
 import { Eye, Volume2, Sun, Sparkles, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 interface SensoryProcessingScreenProps {
   isFacilitator?: boolean;
@@ -19,6 +20,9 @@ export const SensoryProcessingScreen = ({ isFacilitator = false, sessionId }: Se
   const [brightness, setBrightness] = useState(5);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [step, setStep] = useState<"intro" | "test">("intro");
+  // Facilitator reveal: 0 = distribution, 1 = research-grounded framing
+  useRegisterReveals(1);
+  const { step: revealStep } = useReveal();
 
   const totalLoad = visualIntensity + soundLevel + brightness;
 
@@ -138,13 +142,29 @@ export const SensoryProcessingScreen = ({ isFacilitator = false, sessionId }: Se
           </div>
         </Card>
 
-        <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center">
-          <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
-            Overwhelmed brains can't learn.
-            <br />
-            <span className="text-primary">Reduce clutter. Give control.</span>
-          </p>
-        </Card>
+        {revealStep < 1 ? (
+          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex flex-col items-center justify-center gap-3">
+            <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+              Overwhelmed brains can't learn.
+              <br />
+              <span className="text-primary">Reduce clutter. Give control.</span>
+            </p>
+            <p className="text-sm text-muted-foreground italic">Press → for the AI angle.</p>
+          </Card>
+        ) : (
+          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-4 animate-fade-in">
+            <p className="text-2xl md:text-3xl font-semibold text-foreground text-center leading-snug max-w-4xl">
+              AI emotion-recognition and "engagement" tools are
+              <br /><span className="text-primary">poorly trained on autistic and sensory-different presentations</span>.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground text-center leading-snug max-w-3xl">
+              The same accommodation that protects sensory-sensitive students — control, predictability, lower stimulus — should drive the procurement question for any "AI-enabled" classroom tool.
+            </p>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              ChatGPT meta-review · differential-impacts table · 2026
+            </p>
+          </Card>
+        )}
       </div>
     );
   }
@@ -159,11 +179,11 @@ export const SensoryProcessingScreen = ({ isFacilitator = false, sessionId }: Se
               <Eye className="h-4 w-4 mr-2" />
               Sensory Processing Test
             </Badge>
-            <h1 className="text-4xl font-bold text-foreground">
+          <h1 className="text-4xl font-bold text-foreground">
               The Sensory Overload Simulator
             </h1>
             <p className="text-lg text-muted-foreground">
-              About 1 in 6 people experience sensory input as overwhelming
+              Sensory thresholds vary widely across autism, ADHD, SPD, and TBI profiles.
             </p>
           </div>
 
