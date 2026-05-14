@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v84'; // Delete LD3.62
+const STORAGE_KEY = 'presentation-slide-config-atdld-v85'; // LD7.5 multi-QR (LinkedIn, site, slides, email)
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
