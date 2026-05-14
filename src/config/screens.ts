@@ -40,7 +40,6 @@ import { WilliamsIdentityScreen } from "@/components/screens/WilliamsIdentityScr
 
 import { CurbCutIntroScreen } from "@/components/screens/CurbCutIntroScreen";
 import { CurbCutQuizScreen } from "@/components/screens/CurbCutQuizScreen";
-import { CurbCutExamplesScreen } from "@/components/screens/CurbCutExamplesScreen";
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
 import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
 
@@ -152,7 +151,6 @@ export const screens: ScreenDef[] = [
   { id: "LD5.4", title: "Quiz Q3: Multiple Formats", component: CurbCutQuizScreen, duration: 3, notes: "Q3 with reveal-on-arrow.", pollQuestion: "What share of learners prefer having content in multiple formats (text + audio + visual)?", pollOptions: ["35%", "55%", "70%", "80%+"] },
   { id: "LD5.5", title: "The Free-Tier Divide", component: FreeTierDivideScreen, duration: 3, notes: "Zhao et al. 2025 — 91% of disabled students locked into free tiers." },
   { id: "LD4.6", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English." },
-  { id: "LD5.7", title: "Learning Design Curb Cuts", component: CurbCutExamplesScreen, duration: 4, notes: "Real examples." },
 
   // ═══ ACT 7 — Make Something (9 slides · ~50 min) ═══
   { id: "LD6.0", title: "Chapter — Make Something", component: MakeSomethingChapterScreen, duration: 1, notes: "Chapter card." },
