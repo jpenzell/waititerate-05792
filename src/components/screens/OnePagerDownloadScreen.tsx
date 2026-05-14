@@ -1,4 +1,4 @@
-import { Linkedin, Globe, Presentation, Mail } from "lucide-react";
+import { Linkedin, Presentation, Mail } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { SlideShell, SlideTitle } from "@/components/slide";
 
@@ -31,7 +31,7 @@ export const OnePagerDownloadScreen = () => (
         Josh Penzell · Imagination Applied
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 max-w-5xl mx-auto">
         {links.map((link) => (
           <a
             key={link.label}
