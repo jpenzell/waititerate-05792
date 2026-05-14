@@ -17,7 +17,8 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [step, setStep] = useState<"intro" | "test">("intro");
   // Facilitator reveal: 0 = distribution, 1 = research framing
-  useRegisterReveals(1);
+  // Reveal step shows poll results — only meaningful with an active session.
+  useRegisterReveals(sessionId ? 1 : 0);
   const { step: revealStep } = useReveal();
 
   useEffect(() => {
