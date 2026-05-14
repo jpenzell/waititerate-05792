@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v20'; // Renumbered LD1.x–LD8.x narrative
+const STORAGE_KEY = 'presentation-slide-config-atdld-v30'; // 7-act outline rebuild — 54 slides
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
