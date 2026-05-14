@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { LogOut, Smartphone } from "lucide-react";
 import { useRealtimeSession } from "@/hooks/useRealtimeSession";
