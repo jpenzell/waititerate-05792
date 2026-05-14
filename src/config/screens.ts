@@ -169,7 +169,6 @@ export const screens: ScreenDef[] = [
   { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
   { id: "LD3.612", title: "Cognitive Diversity in Action", component: CognitiveDiversityScreen, duration: 3, notes: "Payoff for the duck/rabbit. Bottom-up vs top-down processing. Neither is better — they're complementary." },
   { id: "LD6.7", title: "Co-Design With ND Students", component: CoDesignScreen, duration: 4, notes: "Special Olympics co-design model. Nothing about us without us." },
-  { id: "LD6.2", title: "Cognitive Load + UDL", component: CognitiveLoadUDLScreen, duration: 5, notes: "Two principles for the next 30 minutes." },
   { id: "LD7.1", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Accessible curriculum → AT → AI → human judgment." },
   // LD6.8 removed (peer talk — Zoom delivery)
 
