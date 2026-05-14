@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v63'; // Add language subjectivity slides after LD3.61
+const STORAGE_KEY = 'presentation-slide-config-atdld-v64'; // Move LD3.78 before LD6.2
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
