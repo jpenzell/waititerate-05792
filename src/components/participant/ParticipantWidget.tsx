@@ -38,6 +38,9 @@ const widgets: Record<
   "LD1.1": ({ sessionId, userId }) => (
     <PollSection slideId="LD1.1" sessionId={sessionId} userId={userId} />
   ),
+  "LD1.2c": ({ sessionId, userId }) => (
+    <PollSection slideId="LD1.2c" sessionId={sessionId} userId={userId} />
+  ),
 
   // 2.x
   "LD2.0": ({ sessionId, userId }) => (
