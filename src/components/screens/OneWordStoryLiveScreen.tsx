@@ -57,7 +57,7 @@ export const OneWordStoryLiveScreen = () => {
             </span>
           </div>
           <p className="text-xl text-muted-foreground">
-            Volunteers shout one word each. I type. <kbd className="px-2 py-1 bg-muted rounded text-sm">Enter</kbd> locks it.
+            Volunteers type one word each. <kbd className="px-2 py-1 bg-muted rounded text-sm">Enter</kbd> locks it.
           </p>
         </div>
 
