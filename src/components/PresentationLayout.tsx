@@ -197,10 +197,10 @@ export const PresentationLayout = ({
                 {sessionId && (
                   <>
                     <span className="text-xs text-muted-foreground">
-                      ai4all.joshpenzell.com/participate?code={sessionCode}
+                      {joinHostLabel}?code={sessionCode}
                     </span>
                     <img 
-                      src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=${encodeURIComponent(joinUrl)}`}
                       alt="Join Session QR Code"
                       className="h-12 w-12 border border-border rounded"
                     />
@@ -431,7 +431,7 @@ export const PresentationLayout = ({
           />
           <div className="flex flex-col leading-tight">
             <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Join to participate</span>
-            <span className="text-sm font-mono text-foreground">ai4all.joshpenzell.com/participate</span>
+            <span className="text-sm font-mono text-foreground">{joinHostLabel}</span>
             <span className="text-base text-foreground mt-1">
               Code <span className="font-mono font-bold text-primary">{sessionCode}</span>
             </span>
