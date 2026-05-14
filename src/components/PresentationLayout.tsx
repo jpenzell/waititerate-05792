@@ -54,6 +54,13 @@ export const PresentationLayout = ({
   const isParticipant = mode === "participant";
   const showChrome = !cleanView;
 
+  // Expose cleanView to outer chrome (e.g. Facilitator overlays) via body attr
+  useEffect(() => {
+    if (cleanView) document.body.setAttribute("data-clean-view", "true");
+    else document.body.removeAttribute("data-clean-view");
+    return () => document.body.removeAttribute("data-clean-view");
+  }, [cleanView]);
+
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
     if (isRunning) {
