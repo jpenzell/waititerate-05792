@@ -177,7 +177,6 @@ export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD1.1",   // Windshield wipers poll
   "LD2.3",   // (was disclosure gap — kept here in case poll-style props passed)
   "LD3.5",   // Inner voice
-  "LD3.6",   // Time perception
   "LD3.7",   // Feedback sensitivity
   "LD3.8",   // Discovery wall
   "LD5.2",   // Curb-cut quiz Q1
