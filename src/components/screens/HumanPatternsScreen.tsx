@@ -203,7 +203,7 @@ export const HumanPatternsScreen = ({ isFacilitator = false, sessionId }: HumanP
           ))}
         </div>
         {photos.length > 9 && (
-          <p className="text-sm text-center text-muted-foreground mb-4">
+          <p className="text-lg text-center text-muted-foreground mb-4">
             ...and {photos.length - 9} more photos on the main screen
           </p>
         )}
@@ -236,7 +236,7 @@ export const HumanPatternsScreen = ({ isFacilitator = false, sessionId }: HumanP
             <Send className="mr-2 h-5 w-5" aria-hidden="true" />
             {isSubmitting ? 'Submitting...' : 'Submit Pattern'}
           </Button>
-          <p className="text-xs text-center text-muted-foreground">
+          <p className="text-base text-center text-muted-foreground">
             Tip: Submit as many patterns as you see! Press Ctrl+Enter or click Submit.
           </p>
         </div>

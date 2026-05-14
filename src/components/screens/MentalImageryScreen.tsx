@@ -112,29 +112,29 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
           <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5">
             <div className="text-center">
               <div className="text-4xl font-bold text-primary">{((dist.aphantasia / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-sm text-muted-foreground mt-2">Aphantasia (0-1)</div>
-              <div className="text-xs text-muted-foreground">{dist.aphantasia} people</div>
+              <div className="text-lg text-muted-foreground mt-2">Aphantasia (0-1)</div>
+              <div className="text-base text-muted-foreground">{dist.aphantasia} people</div>
             </div>
           </Card>
           <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5">
             <div className="text-center">
               <div className="text-4xl font-bold text-accent">{((dist.low / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-sm text-muted-foreground mt-2">Low Imagery (2-4)</div>
-              <div className="text-xs text-muted-foreground">{dist.low} people</div>
+              <div className="text-lg text-muted-foreground mt-2">Low Imagery (2-4)</div>
+              <div className="text-base text-muted-foreground">{dist.low} people</div>
             </div>
           </Card>
           <Card className="p-6 bg-gradient-to-br from-foreground/10 to-foreground/5">
             <div className="text-center">
               <div className="text-4xl font-bold text-foreground">{((dist.typical / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-sm text-muted-foreground mt-2">Typical (5-7)</div>
-              <div className="text-xs text-muted-foreground">{dist.typical} people</div>
+              <div className="text-lg text-muted-foreground mt-2">Typical (5-7)</div>
+              <div className="text-base text-muted-foreground">{dist.typical} people</div>
             </div>
           </Card>
           <Card className="p-6 bg-gradient-to-br from-accent/10 to-primary/5">
             <div className="text-center">
               <div className="text-4xl font-bold text-accent">{((dist.hyper / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-sm text-muted-foreground mt-2">Hyperphantasia (8-10)</div>
-              <div className="text-xs text-muted-foreground">{dist.hyper} people</div>
+              <div className="text-lg text-muted-foreground mt-2">Hyperphantasia (8-10)</div>
+              <div className="text-base text-muted-foreground">{dist.hyper} people</div>
             </div>
           </Card>
         </section>
@@ -144,7 +144,7 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
             <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
               We can't see inside each other's minds.
             </p>
-            <p className="text-sm text-muted-foreground italic">Press → for the science.</p>
+            <p className="text-lg text-muted-foreground italic">Press → for the science.</p>
           </Card>
         ) : (
           <Card className="p-8 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-6 animate-fade-in" role="article">
@@ -156,7 +156,7 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
               "For 39 years I couldn't see a red apple when I closed my eyes.
               Then ChatGPT could draw it."
             </p>
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+            <p className="text-base font-mono uppercase tracking-widest text-muted-foreground">
               Aphantasia Network · Hollis Robbins · ~4% prevalence
             </p>
           </Card>
@@ -192,10 +192,10 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
                   <p className="text-muted-foreground mb-3">
                     Close your eyes. Picture a red apple sitting on a white plate.
                   </p>
-                  <p className="text-muted-foreground text-sm mb-3">
+                  <p className="text-muted-foreground text-lg mb-3">
                     Try to "see" it: the shine, the shadow, maybe a stem.
                   </p>
-                  <p className="text-sm text-amber-500 font-semibold">
+                  <p className="text-lg text-amber-500 font-semibold">
                     Can you actually SEE it in your mind?
                   </p>
                 </div>
@@ -226,7 +226,7 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
 
           <Card className="p-8 bg-gradient-to-br from-background to-accent/5">
             <div className="space-y-6">
-              <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+              <div className="flex items-center justify-between text-lg text-muted-foreground mb-4">
                 <div className="flex items-center gap-2">
                   <EyeOff className="h-4 w-4" />
                   <span>No image</span>
@@ -249,10 +249,10 @@ export const MentalImageryScreen = ({ isFacilitator = false, sessionId }: Mental
 
               <div className="text-center">
                 <div className="text-6xl font-bold text-primary mb-2">{vividness}</div>
-                <p className="text-sm text-muted-foreground">out of 10</p>
+                <p className="text-lg text-muted-foreground">out of 10</p>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 text-xs">
+              <div className="grid grid-cols-3 gap-3 text-base">
                 <div className="p-3 bg-primary/5 rounded border border-primary/20">
                   <p className="font-semibold text-primary">0-1: No Image</p>
                   <p className="text-muted-foreground">Nothing at all</p>

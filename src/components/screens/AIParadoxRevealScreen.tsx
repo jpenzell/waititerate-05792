@@ -55,7 +55,7 @@ export const AIParadoxRevealScreen = () => {
               <p className="text-xl md:text-2xl text-muted-foreground">
                 Which group diagnosed complex cases <span className="text-primary font-semibold">best</span>?
               </p>
-              <p className="text-sm text-muted-foreground mt-2 italic">JAMA Network Open · 2024</p>
+              <p className="text-lg text-muted-foreground mt-2 italic">JAMA Network Open · 2024</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -134,7 +134,7 @@ export const AIParadoxRevealScreen = () => {
             <div key={s} className={`w-3 h-3 rounded-full transition-all ${s === stage ? "bg-primary scale-125" : s < stage ? "bg-primary/50" : "bg-muted-foreground/30"}`} />
           ))}
         </div>
-        <p className="text-center text-sm text-muted-foreground mt-3">
+        <p className="text-center text-lg text-muted-foreground mt-3">
           {stage === 1 ? "Click an answer" : "Press Space or → to continue"}
         </p>
       </div>

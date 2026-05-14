@@ -58,7 +58,7 @@ export const RCCCContextScreen = () => {
                   note={s.note}
                   accent="accent"
                 />
-                <p className="mt-2 text-xs font-mono uppercase tracking-widest text-muted-foreground/80 text-center">
+                <p className="mt-2 text-base font-mono uppercase tracking-widest text-muted-foreground/80 text-center">
                   {s.cite}
                 </p>
               </div>

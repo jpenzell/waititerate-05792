@@ -174,7 +174,7 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
                   alt={`Learning preference photo ${index + 1} submitted by ${photo.profiles?.display_name || 'a participant'}`} 
                   className="w-full h-32 object-cover rounded mb-2" 
                 />
-                <p className="text-xs text-center text-muted-foreground truncate">
+                <p className="text-base text-center text-muted-foreground truncate">
                   {photo.profiles?.display_name || 'Anonymous'}
                 </p>
               </Card>
@@ -251,7 +251,7 @@ export const PhotoCollectionScreen = ({ isFacilitator = false, sessionId }: Phot
                 {isSubmitting && uploadProgress > 0 && (
                   <div className="space-y-2" role="status" aria-live="polite" aria-label={`Upload progress: ${uploadProgress}%`}>
                     <Progress value={uploadProgress} className="w-full" />
-                    <p className="text-sm text-center text-muted-foreground">
+                    <p className="text-lg text-center text-muted-foreground">
                       {uploadProgress < 40 ? 'Compressing...' : uploadProgress < 80 ? 'Uploading...' : 'Finishing...'}
                     </p>
                   </div>

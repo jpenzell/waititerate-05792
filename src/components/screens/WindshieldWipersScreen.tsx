@@ -52,7 +52,7 @@ export const WindshieldWipersScreen = ({
                 <QRCodeSVG value={joinUrl} size={320} />
               </div>
               <div className="space-y-2">
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                <p className="text-base uppercase tracking-widest text-muted-foreground">
                   Or go to ai4all.joshpenzell.com/participate
                 </p>
                 <p className="text-6xl font-mono font-bold text-primary tracking-widest">
@@ -97,13 +97,13 @@ export const WindshieldWipersScreen = ({
 
             {sessionCode && (
               <Card className="p-6 bg-card/60 backdrop-blur flex flex-col items-center gap-2">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                <p className="text-base uppercase tracking-wider text-muted-foreground">
                   Join code
                 </p>
                 <p className="text-4xl font-mono font-bold text-primary">
                   {sessionCode}
                 </p>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   ai4all.joshpenzell.com/participate
                 </p>
               </Card>

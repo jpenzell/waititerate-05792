@@ -66,7 +66,7 @@ export const InclusiveSupportStackScreen = () => {
                 <div className="flex items-start gap-4">
                   <Icon className={`h-12 w-12 ${l.text} shrink-0`} aria-hidden="true" />
                   <div className="space-y-2">
-                    <p className={`text-sm font-mono uppercase tracking-widest ${l.text}`}>Layer {l.step}</p>
+                    <p className={`text-lg font-mono uppercase tracking-widest ${l.text}`}>Layer {l.step}</p>
                     <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">{l.title}</h3>
                     <p className="text-base md:text-lg text-muted-foreground leading-snug">{l.body}</p>
                   </div>

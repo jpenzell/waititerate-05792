@@ -68,7 +68,7 @@ export const DiscoveryWallScreen = ({ sessionId }: Props) => {
     <main className="min-h-screen px-8 py-10 animate-fade-in">
       <section className="max-w-7xl mx-auto space-y-8">
         <div className="text-center space-y-3">
-          <Badge variant="secondary" className="text-sm">Discovery Wall</Badge>
+          <Badge variant="secondary" className="text-lg">Discovery Wall</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">
             Until today, I assumed everyone…
           </h1>
@@ -80,7 +80,7 @@ export const DiscoveryWallScreen = ({ sessionId }: Props) => {
 
         <div className="grid lg:grid-cols-[1fr_2fr] gap-6">
           <Card className="p-6 space-y-4 border-l-4 border-l-accent h-fit sticky top-4">
-            <p className="text-sm uppercase tracking-wider text-accent font-mono">Your turn</p>
+            <p className="text-lg uppercase tracking-wider text-accent font-mono">Your turn</p>
             <p className="text-lg font-semibold text-foreground">{PROMPT}</p>
             <Textarea
               value={text}
@@ -90,7 +90,7 @@ export const DiscoveryWallScreen = ({ sessionId }: Props) => {
               rows={3}
               aria-label="Your discovery"
             />
-            <div className="flex items-center justify-between text-xs text-muted-foreground">
+            <div className="flex items-center justify-between text-base text-muted-foreground">
               <span>{text.length}/280</span>
               {submitted && <span className="text-primary">Submitted ✓</span>}
             </div>
@@ -102,17 +102,17 @@ export const DiscoveryWallScreen = ({ sessionId }: Props) => {
           <div>
             <div className="flex items-center gap-2 mb-3 text-muted-foreground">
               <Sparkles className="h-4 w-4 text-accent" />
-              <span className="text-sm font-mono">{rows.length} discoveries · live</span>
+              <span className="text-lg font-mono">{rows.length} discoveries · live</span>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {rows.map((r) => (
-                <Card key={r.id} className="p-4 text-sm leading-relaxed bg-card/60 border-border/60 animate-fade-in">
+                <Card key={r.id} className="p-4 text-lg leading-relaxed bg-card/60 border-border/60 animate-fade-in">
                   <span className="text-muted-foreground italic">{PROMPT}</span>{" "}
                   <span className="text-foreground">{r.response}</span>
                 </Card>
               ))}
               {rows.length === 0 && (
-                <p className="text-sm text-muted-foreground italic col-span-full">
+                <p className="text-lg text-muted-foreground italic col-span-full">
                   Be the first to add a discovery.
                 </p>
               )}

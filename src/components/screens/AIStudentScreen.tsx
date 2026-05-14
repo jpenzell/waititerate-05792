@@ -112,7 +112,7 @@ export const AIStudentScreen = ({
                       : 'bg-accent/20 mr-8'
                   }`}
                 >
-                  <div className="text-sm font-semibold mb-1">
+                  <div className="text-lg font-semibold mb-1">
                     {msg.role === 'teacher' ? 'You:' : 'AI Student:'}
                   </div>
                   <div className="text-foreground">{msg.text}</div>
@@ -191,8 +191,8 @@ export const AIStudentScreen = ({
                     that make effective learners.
                   </p>
                   <div className="p-4 bg-primary/5 rounded-lg mt-4">
-                    <p className="text-sm font-semibold text-primary mb-2">Learning by Teaching</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-lg font-semibold text-primary mb-2">Learning by Teaching</p>
+                    <p className="text-lg text-muted-foreground">
                       This reverses the typical AI tutoring model. Instead of AI teaching humans, 
                       humans teach AI—creating a low-stakes space to practice explanation and build mastery.
                     </p>

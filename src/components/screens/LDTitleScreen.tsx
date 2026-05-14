@@ -19,7 +19,7 @@ export const LDTitleScreen = () => {
 
       {/* Top tag */}
       <div className="absolute top-10 left-0 right-0 flex justify-center animate-fade-in">
-        <span className="text-xs md:text-sm font-mono uppercase tracking-[0.4em] text-accent/90">
+        <span className="text-base md:text-lg font-mono uppercase tracking-[0.4em] text-accent/90">
           Rowan-Cabarrus Summer Institute · 2026
         </span>
       </div>
@@ -44,7 +44,7 @@ export const LDTitleScreen = () => {
           <p className="text-base md:text-lg font-semibold tracking-wider text-foreground">
             JOSH PENZELL
           </p>
-          <p className="text-xs md:text-sm text-muted-foreground/80 tracking-wide">
+          <p className="text-base md:text-lg text-muted-foreground/80 tracking-wide">
             Founder & CEO · Imagination Applied
           </p>
         </div>
