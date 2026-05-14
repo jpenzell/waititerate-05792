@@ -43,6 +43,7 @@ import { FacultyAreNeurodivergentScreen } from "@/components/screens/FacultyAreN
 import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
 import { WhatThisIsNotScreen } from "@/components/screens/WhatThisIsNotScreen";
 import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScreen";
+import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
 
 export interface ScreenDef {
   id: string;
@@ -60,6 +61,7 @@ export const screens: ScreenDef[] = [
   // 1.x — Opening
   { id: "LD1.0", title: "Title - AI for All Minds", component: LDTitleScreen, duration: 2, notes: "Set the stage for neurodiversity-focused learning design. Opening energy." },
   { id: "LD1.1", title: "First Principles: Windshield Wipers", component: WindshieldWipersScreen, duration: 5, notes: "Does a self-driving car need windshield wipers? Interactive poll revealing first-principles thinking.", pollQuestion: "Does a self-driving car need windshield wipers?", pollOptions: ["Yes", "No", "Who knows anymore?"] },
+  { id: "LD1.1b", title: "Reveal: Zoox", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },
   { id: "LD1.2", title: "My Own Reframe", component: ZooxReframeScreen, duration: 2, notes: "Personal proof of the Zoox reframe — this isn't a deck, it's a live website." },
   { id: "LD1.3", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 4, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
   { id: "LD1.4", title: "What This Is NOT", component: WhatThisIsNotScreen, duration: 3, notes: "Disarm faculty skepticism early." },
