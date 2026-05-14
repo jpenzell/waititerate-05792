@@ -28,7 +28,6 @@ import { WilliamsIdentityScreen } from "@/components/screens/WilliamsIdentityScr
 
 import { CurbCutIntroScreen } from "@/components/screens/CurbCutIntroScreen";
 import { CurbCutQuizScreen } from "@/components/screens/CurbCutQuizScreen";
-import { CurbCutResultsScreen } from "@/components/screens/CurbCutResultsScreen";
 import { CurbCutExamplesScreen } from "@/components/screens/CurbCutExamplesScreen";
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
 import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
@@ -126,7 +125,7 @@ export const screens: ScreenDef[] = [
   { id: "LD5.1", title: "The Curb-Cut Effect — Introduction", component: CurbCutIntroScreen, duration: 3, notes: "Curb-cut effect intro." },
   { id: "LD5.2", title: "Quiz Q1: Closed Captions", component: CurbCutQuizScreen, duration: 3, notes: "Q1 with reveal-on-arrow.", pollQuestion: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?", pollOptions: ["20%", "45%", "71%", "85%"] },
   { id: "LD5.3", title: "Quiz Q2: Chunked Content", component: CurbCutQuizScreen, duration: 3, notes: "Q2 with reveal-on-arrow.", pollQuestion: "How much does chunked content improve completion rates for everyone?", pollOptions: ["10%", "30%", "50%", "75%"] },
-  { id: "LD5.4", title: "Built for 15%. Used by 80%+", component: CurbCutResultsScreen, duration: 4, notes: "Reveal stats." },
+  { id: "LD5.4", title: "Quiz Q3: Multiple Formats", component: CurbCutQuizScreen, duration: 3, notes: "Q3 with reveal-on-arrow.", pollQuestion: "What share of learners prefer having content in multiple formats (text + audio + visual)?", pollOptions: ["35%", "55%", "70%", "80%+"] },
   { id: "LD5.5", title: "The Free-Tier Divide", component: FreeTierDivideScreen, duration: 3, notes: "Zhao et al. 2025 — 91% of disabled students locked into free tiers." },
   { id: "LD5.6", title: "The Institutional Case", component: RetentionEquityScreen, duration: 4, notes: "Retention / Title III / SACSCOC hook." },
   { id: "LD5.7", title: "Learning Design Curb Cuts", component: CurbCutExamplesScreen, duration: 4, notes: "Real examples." },

@@ -13,17 +13,17 @@ interface CurbCutQuizScreenProps {
 // Correct answer + the curb-cut takeaway for each quiz slide.
 // Press → after asking the question to reveal.
 const ANSWER_KEY: Record<string, { answer: string; takeaway: string; source: string }> = {
-  "LD5.1": {
+  "LD5.2": {
     answer: "71%",
     takeaway: "Built for deaf viewers. Used by everyone — on the train, in bed, in noisy classrooms.",
     source: "Verizon Media / Publicis Media, 2019",
   },
-  "LD5.2": {
+  "LD5.3": {
     answer: "30%",
     takeaway: "Chunked content was built for cognitive load. It lifts completion for every learner.",
     source: "Mayer, Multimedia Learning, 2009 · eLearning Industry meta-analyses",
   },
-  "LD5.3": {
+  "LD5.4": {
     answer: "80%+",
     takeaway: "Multiple formats started as an accessibility mandate. It's now what most learners prefer.",
     source: "EDUCAUSE Student Tech Survey · UDL on Campus",
