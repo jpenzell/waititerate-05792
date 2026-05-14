@@ -158,6 +158,13 @@ export const ElephantEstimateScreen = () => {
           onKeyDown={(e) => {
             if (e.key === "Enter") submit();
             if (e.key === " " || e.key === "Enter") e.stopPropagation();
+            // Forward arrow keys to the global slide-nav handler — the
+            // input is auto-focused, which would otherwise swallow them.
+            if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+              e.preventDefault();
+              inputRef.current?.blur();
+              window.dispatchEvent(new KeyboardEvent("keydown", { key: e.key, bubbles: true }));
+            }
           }}
           placeholder="Type a guess from the room…"
           inputMode="numeric"
