@@ -43,7 +43,6 @@ import { CurbCutQuizScreen } from "@/components/screens/CurbCutQuizScreen";
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
 import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
 
-import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
 import { CoDesignScreen } from "@/components/screens/CoDesignScreen";
 import { SpecialOlympicsGapScreen } from "@/components/screens/SpecialOlympicsGapScreen";
@@ -154,7 +153,6 @@ export const screens: ScreenDef[] = [
 
   // ═══ ACT 7 — Make Something (9 slides · ~50 min) ═══
   { id: "LD6.0", title: "Chapter — Make Something", component: MakeSomethingChapterScreen, duration: 1, notes: "Chapter card." },
-  { id: "LD6.1", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop.", requiresSession: true },
   { id: "LD6.2", title: "Cognitive Load + UDL", component: CognitiveLoadUDLScreen, duration: 5, notes: "Two principles for the next 30 minutes." },
   { id: "LD6.3", title: "AI Student: Setup", component: AIStudentSetupScreen, duration: 3, notes: "You are now the teacher. Three rounds." },
   { id: "LD6.4", title: "AI Student: Round 1 — Teach", component: AIStudentScreen, duration: 8, notes: "Teach the AI a concept; watch where it misunderstands.", requiresSession: true, props: { round: 1 } },
@@ -185,7 +183,6 @@ export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD3.7",   // Feedback sensitivity
   "LD5.2",   // Curb-cut quiz Q1
   "LD5.3",   // Curb-cut quiz Q2
-  "LD6.1",   // Redesign workshop
   "LD6.4",   // AI student R1
   "LD6.5",   // AI student R2
   "LD6.6",   // AI student R3
