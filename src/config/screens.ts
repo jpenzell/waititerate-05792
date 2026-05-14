@@ -121,7 +121,6 @@ export const screens: ScreenDef[] = [
   // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD3.61", title: "Duck or Rabbit?", component: PatternRecognitionScreen, duration: 4, notes: "Same image, two interpretations. Pattern recognition is subjective — what you see depends on what your brain expects." },
-  { id: "LD3.612", title: "Cognitive Diversity in Action", component: CognitiveDiversityScreen, duration: 3, notes: "Payoff for the duck/rabbit. Bottom-up vs top-down processing. Neither is better — they're complementary." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD3.615", title: "Probability Words — Poll", component: ProbabilityWordsPollScreen, duration: 3, notes: "Live gut check before Annie Duke lands. Slam dunk? Serious possibility? Rarely? Never?" },
@@ -168,6 +167,7 @@ export const screens: ScreenDef[] = [
   { id: "LD6.0", title: "Chapter — Make Something", component: MakeSomethingChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD6.75", title: "Special Olympics — The Inclusion Gap", component: SpecialOlympicsGapScreen, duration: 3, notes: "Stratalys × Special Olympics 2024. 77% of parents and 64% of educators see AI as a mechanism for inclusion — but only 35% think developers account for IDD students. Tim Shriver / Nathan Cook close." },
   { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
+  { id: "LD3.612", title: "Cognitive Diversity in Action", component: CognitiveDiversityScreen, duration: 3, notes: "Payoff for the duck/rabbit. Bottom-up vs top-down processing. Neither is better — they're complementary." },
   { id: "LD6.7", title: "Co-Design With ND Students", component: CoDesignScreen, duration: 4, notes: "Special Olympics co-design model. Nothing about us without us." },
   { id: "LD6.2", title: "Cognitive Load + UDL", component: CognitiveLoadUDLScreen, duration: 5, notes: "Two principles for the next 30 minutes." },
   { id: "LD7.1", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Accessible curriculum → AT → AI → human judgment." },
