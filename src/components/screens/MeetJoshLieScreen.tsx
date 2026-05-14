@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { PollWidget } from "@/components/PollWidget";
-import { QRCodeSVG } from "qrcode.react";
 import { Sparkles, CheckCircle2, XCircle } from "lucide-react";
 import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 
@@ -40,10 +39,6 @@ export const MeetJoshLieScreen = ({
   useRegisterReveals(1);
   const { step } = useReveal();
 
-  const joinUrl = sessionCode
-    ? `${window.location.origin}/participate?code=${sessionCode}`
-    : "";
-
   const lieIndex = JOSH_STATEMENTS.findIndex((s) => s.isLie);
 
   return (
@@ -63,9 +58,14 @@ export const MeetJoshLieScreen = ({
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
             {step < 1 ? "Which one is the lie?" : "Here's the lie."}
           </h1>
-          {step < 1 && (
+          {step < 1 && sessionCode && (
             <p className="text-xl md:text-2xl text-muted-foreground">
               Vote on your phone.
+            </p>
+          )}
+          {step < 1 && !sessionCode && (
+            <p className="text-xl md:text-2xl text-muted-foreground italic">
+              Call out your guess.
             </p>
           )}
         </div>
@@ -118,14 +118,10 @@ export const MeetJoshLieScreen = ({
             {sessionCode && step < 1 && (
               <Card className="p-5 bg-card/60 backdrop-blur flex flex-col items-center gap-2">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Join to vote
+                  Join code
                 </p>
-                <p className="text-2xl font-mono font-bold text-primary">{sessionCode}</p>
-                {joinUrl && (
-                  <div className="bg-white p-2 rounded-lg">
-                    <QRCodeSVG value={joinUrl} size={120} />
-                  </div>
-                )}
+                <p className="text-3xl font-mono font-bold text-primary">{sessionCode}</p>
+                <p className="text-xs text-muted-foreground">ai4all.joshpenzell.com/participate</p>
               </Card>
             )}
           </div>

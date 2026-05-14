@@ -1,10 +1,9 @@
 import { ReactNode, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Clock, Info, ZoomIn, ZoomOut, Maximize2, Users, Eye, EyeOff } from "lucide-react";
+import { ChevronLeft, ChevronRight, Info, ZoomIn, ZoomOut, Maximize2, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { RevealProvider, tryRevealNext, tryRevealPrev } from "@/contexts/RevealContext";
-import { INTERACTIVE_SLIDE_IDS } from "@/config/screens";
 import {
   Sheet,
   SheetContent,
@@ -53,8 +52,6 @@ export const PresentationLayout = ({
   const isPresenter = mode === "presenter";
   const isPresent = mode === "present";
   const isParticipant = mode === "participant";
-  const isInteractiveSlide = INTERACTIVE_SLIDE_IDS.has(currentScreen);
-  const showJoinOverlay = (isPresenter || isPresent) && isInteractiveSlide && !!sessionCode && !cleanView;
   const showChrome = !cleanView;
 
   useEffect(() => {
@@ -173,28 +170,6 @@ export const PresentationLayout = ({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex flex-col">
-      {/* Session Info Header - visible in present mode when session is active */}
-      {isPresent && sessionCode && showChrome && (
-        <header className="fixed top-0 left-0 right-0 z-50 border-b bg-card/95 backdrop-blur-md px-6 py-2 flex items-center justify-center gap-4 shadow-lg">
-          <Badge variant="outline" className="text-sm">
-            <Users className="w-3 h-3 mr-1" />
-            Join Code: <span className="font-mono font-bold ml-1">{sessionCode}</span>
-          </Badge>
-          {sessionId && (
-            <>
-              <span className="text-xs text-muted-foreground hidden sm:block">
-                ai4all.joshpenzell.com/participate?code={sessionCode}
-              </span>
-              <img 
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
-                alt="Join Session QR Code"
-                className="h-14 w-14 border-2 border-border rounded"
-              />
-            </>
-          )}
-        </header>
-      )}
-
       {/* Header - hidden in present mode */}
       {!isPresent && showChrome && (
         <header className="border-b bg-card/80 backdrop-blur-sm px-6 py-3 flex items-center justify-between shadow-sm">
@@ -335,27 +310,8 @@ export const PresentationLayout = ({
       {/* Main Content with Zoom — locked to viewport, no scroll */}
       <main
         className="flex-1 min-h-0 overflow-hidden relative"
-        style={{ paddingTop: isPresent && sessionCode && showChrome ? '70px' : '0' }}
+        style={{ paddingTop: '0' }}
       >
-        {/* Persistent Join overlay on interactive slides — visible when facilitator is mirroring */}
-        {showJoinOverlay && (
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 z-40 pointer-events-none">
-            <div className="pointer-events-auto inline-flex items-center gap-4 rounded-2xl border-2 border-primary/30 bg-card/95 backdrop-blur-md px-5 py-3 shadow-xl">
-              <div className="flex flex-col">
-                <span className="text-xs uppercase tracking-wider text-muted-foreground">Join Now</span>
-                <span className="font-mono text-2xl font-bold text-primary leading-tight">{sessionCode}</span>
-                <span className="text-xs text-muted-foreground">ai4all.joshpenzell.com/participate</span>
-              </div>
-              {sessionId && (
-                <img
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=96x96&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
-                  alt="Join Session QR Code"
-                  className="h-14 w-14 rounded border-2 border-border"
-                />
-              )}
-            </div>
-          </div>
-        )}
         <div
           className="absolute inset-0 transition-transform duration-300 origin-center"
           style={{ transform: `scale(${zoom / 100})` }}

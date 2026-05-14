@@ -24,8 +24,9 @@ export const WindshieldWipersScreen = ({
     ? `${window.location.origin}/participate?code=${sessionCode}`
     : "";
 
-  // STEP 0 — Join first (facilitator only)
-  if (step < 1 && isFacilitator) {
+  // STEP 0 — Join first (facilitator only, AND only when a session is live).
+  // Without an active session this slide is a verbal hand-raise question, so skip the join screen.
+  if (step < 1 && isFacilitator && sessionCode) {
     return (
       <main
         className="h-full flex items-center justify-center p-8 animate-fade-in"
@@ -92,27 +93,26 @@ export const WindshieldWipersScreen = ({
             />
 
             {sessionCode && (
-              <Card className="p-6 bg-card/60 backdrop-blur flex flex-col items-center gap-3">
+              <Card className="p-6 bg-card/60 backdrop-blur flex flex-col items-center gap-2">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Join to vote
+                  Join code
                 </p>
-                <p className="text-3xl font-mono font-bold text-primary">
+                <p className="text-4xl font-mono font-bold text-primary">
                   {sessionCode}
                 </p>
-                {joinUrl && (
-                  <div className="bg-white p-3 rounded-lg">
-                    <QRCodeSVG value={joinUrl} size={150} />
-                  </div>
-                )}
                 <p className="text-xs text-muted-foreground">
                   ai4all.joshpenzell.com/participate
                 </p>
               </Card>
             )}
           </div>
-        ) : (
+        ) : sessionCode ? (
           <p className="text-xl text-muted-foreground text-center">
             Answer on your device
+          </p>
+        ) : (
+          <p className="text-xl text-muted-foreground text-center italic">
+            Take a guess — show of hands.
           </p>
         )}
       </section>
