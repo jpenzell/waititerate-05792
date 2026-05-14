@@ -24,6 +24,7 @@ import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
 import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
+import { InjusticeSensitivityScreen } from "@/components/screens/InjusticeSensitivityScreen";
 import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
 
 import { StudentsAlreadyUsingAIScreen } from "@/components/screens/StudentsAlreadyUsingAIScreen";
@@ -119,6 +120,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
+  { id: "LD3.75", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "ND brains often register unfairness — to self and others — as a whole-body alarm. Easily mislabeled as defiance or inflexibility." },
   { id: "LD3.8", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared cognitive reflection.", requiresSession: true },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
