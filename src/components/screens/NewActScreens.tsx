@@ -9,19 +9,20 @@ import {
    ACT 1
    ════════════════════════════════════════════════════════════════ */
 
-/** 1.3 — AI for All Minds frame + meta-frame. */
+/** 1.3 — Think outside the box → lifts everyone, accommodates those who need it. */
 export const WorldChangingScreen = () => (
-  <SlideShell tone="indigo" align="center" ariaLabel="AI for all minds">
+  <SlideShell tone="indigo" align="center" ariaLabel="Thinking outside the box">
     <div className="space-y-12">
       <header className="text-center space-y-6">
         <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
           The frame for today
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
-          AI for <span className="text-primary">all minds.</span>
+          Think outside the box —
+          <span className="text-primary"> and the box gets bigger for everyone.</span>
         </h1>
         <p className="text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto leading-snug">
-          Every brain in the room learns differently. The tools we use should meet them there.
+          The same moves that lift every learner are the ones that finally meet the students who needed them all along.
         </p>
       </header>
 
@@ -33,7 +34,7 @@ export const WorldChangingScreen = () => (
               This isn't a deck. It's a rehearsal.
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-snug">
-              I built this site in a weekend with AI — same move I'm inviting you to make in your classroom.
+              I built this site in a weekend with AI — same move I'm inviting you to make in your classroom. Start with the question, not the template.
             </p>
           </div>
         </div>
