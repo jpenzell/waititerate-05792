@@ -28,18 +28,76 @@ const STUDY_DATA: Record<
 };
 
 export const AnnieDukeStudyScreen = ({ isFacilitator = false, sessionId, userId }: Props) => {
-  // Participant view → just the slider widget
-  if (!isFacilitator) {
-    if (!sessionId || !userId) {
-      return (
-        <div className="p-8 text-center text-muted-foreground">
-          Waiting for the session to start…
-        </div>
-      );
-    }
+  // Participant view (phone) → just the slider widget
+  if (!isFacilitator && sessionId && userId) {
     return (
       <div className="max-w-2xl mx-auto p-4">
         <ProbabilityWordsWidget sessionId={sessionId} userId={userId} />
+      </div>
+    );
+  }
+
+  // No active session → render the study + AI table statically (no room columns,
+  // no reveal gating). This is what the user sees during a screenshare-only run.
+  if (!sessionId) {
+    return (
+      <div className="flex-1 flex flex-col animate-fade-in min-h-0 overflow-hidden p-6">
+        <div className="text-center mb-3">
+          <div className="flex items-center justify-center gap-3 mb-1">
+            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+              <TrendingUp className="h-5 w-5 text-primary-foreground" />
+            </div>
+            <h1 className="text-2xl md:text-4xl font-bold text-foreground">
+              Same Words, Different Meanings
+            </h1>
+          </div>
+          <p className="text-base text-muted-foreground font-light">
+            Sherman Kent / Annie Duke study — humans vs AI on the same probability words
+          </p>
+        </div>
+
+        <div className="flex-1 flex items-center justify-center px-4 min-h-0 overflow-hidden">
+          <div className="max-w-5xl mx-auto w-full space-y-3 flex flex-col min-h-0">
+            <div className="bg-primary/15 border-2 border-primary rounded-2xl px-5 py-3 shadow-lg max-w-3xl mx-auto">
+              <p className="text-base text-foreground font-medium text-center">
+                <strong className="text-primary">Even AI models disagree.</strong>{" "}
+                "Serious possibility": ChatGPT says <span className="font-bold">70%</span>, Gemini says <span className="font-bold">50%</span>.
+              </p>
+            </div>
+
+            <div className="bg-card/80 border-2 border-border rounded-2xl overflow-hidden shadow-lg">
+              <Table>
+                <TableHeader className="bg-primary/20">
+                  <TableRow>
+                    <TableHead className="text-foreground font-bold text-base py-2">Word</TableHead>
+                    <TableHead className="text-center text-foreground font-bold text-base py-2">Human Avg</TableHead>
+                    <TableHead className="text-center text-foreground font-bold text-base py-2">Human Range</TableHead>
+                    <TableHead className="text-center text-foreground font-bold text-base py-2">ChatGPT</TableHead>
+                    <TableHead className="text-center text-foreground font-bold text-base py-2">Gemini</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {PROBABILITY_WORDS.map((word) => {
+                    const study = STUDY_DATA[word];
+                    return (
+                      <TableRow key={word} className={study.highlight ? "bg-primary/20" : ""}>
+                        <TableCell className="font-semibold text-foreground text-base py-2">{word}</TableCell>
+                        <TableCell className="text-center text-foreground text-base py-2 tabular-nums">{study.humanAvg}%</TableCell>
+                        <TableCell className="text-center text-foreground text-base py-2 tabular-nums">{study.humanRange}</TableCell>
+                        <TableCell className={`text-center text-base py-2 tabular-nums ${study.highlight ? "font-bold text-lg text-primary" : "text-foreground"}`}>{study.chatgpt}%</TableCell>
+                        <TableCell className={`text-center text-base py-2 tabular-nums ${study.highlight ? "font-bold text-lg text-primary" : "text-foreground"}`}>{study.gemini}%</TableCell>
+                      </TableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </div>
+
+            <p className="text-xs text-center text-muted-foreground tracking-widest uppercase pt-2">
+              Sherman Kent (CIA, 1964) · Mauboussin / Annie Duke replication
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
