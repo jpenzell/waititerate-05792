@@ -46,7 +46,7 @@ export const OnePagerDownloadScreen = ({ sessionCode }: Props) => {
             width={260}
             height={260}
           />
-          <p className="text-lg md:text-base font-mono uppercase tracking-[0.3em] text-white/70">
+          <p className="text-lg md:text-xl font-mono uppercase tracking-[0.3em] text-white/70">
             Scan to revisit
           </p>
         </div>

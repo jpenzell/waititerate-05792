@@ -6,7 +6,7 @@ export const FeedbackSensitivityScreen = () => {
     <SlideShell tone="rose" align="center" ariaLabel="Feedback sensitivity">
       <div className="space-y-10">
         <header className="text-center space-y-4">
-          <p className="text-lg md:text-base font-mono uppercase tracking-[0.3em] text-muted-foreground">
+          <p className="text-lg md:text-xl font-mono uppercase tracking-[0.3em] text-muted-foreground">
             Chapter 04 · Inside the mind
           </p>
           <h1 className="text-5xl md:text-7xl font-black text-foreground leading-tight">

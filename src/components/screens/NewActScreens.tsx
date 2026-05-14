@@ -14,7 +14,7 @@ export const WorldChangingScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="The world is changing faster than the templates">
     <div className="space-y-12">
       <header className="text-center space-y-6">
-        <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
           The frame for today
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -50,7 +50,7 @@ export const PersonalDisclosureScreen = () => (
   <SlideShell tone="rose" align="center" ariaLabel="Personal disclosure">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-muted-foreground">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-muted-foreground">
           Before we go further
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -94,7 +94,7 @@ export const CostOfMaskingScreen = () => (
   <SlideShell tone="slate" align="center" ariaLabel="The cost of masking">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-destructive">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-destructive">
           What the system has been taking
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -154,7 +154,7 @@ export const ThesisNamedScreen = () => (
 export const TheRevealScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="The reveal">
     <div className="space-y-10 text-center">
-      <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+      <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
         Stop. Look around the room.
       </p>
       <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05] max-w-5xl mx-auto">
@@ -181,7 +181,7 @@ export const YouProbablyDoTooScreen = () => (
   <SlideShell tone="amber" align="center" ariaLabel="You probably use AI too">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-accent">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-accent">
           Be honest with yourself
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -227,7 +227,7 @@ export const AIClarificationScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="AI clears friction so thinking can happen">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
           Let's name what AI is — and isn't — doing
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -269,7 +269,7 @@ export const CognitiveLoadUDLScreen = () => (
   <SlideShell tone="emerald" align="center" ariaLabel="Cognitive load and UDL">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-accent">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-accent">
           Two principles for the next 30 minutes
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -312,7 +312,7 @@ export const AIStudentSetupScreen = () => (
   <SlideShell tone="amber" align="center" ariaLabel="AI Student setup">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
           Flip the script
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -353,7 +353,7 @@ export const AIStudentSetupScreen = () => (
 export const ZooxCallbackScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="Zoox callback">
     <div className="space-y-12 text-center">
-      <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+      <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
         Three hours ago I asked you a question
       </p>
       <h1 className="text-6xl md:text-8xl font-black text-foreground leading-[1.0]">
@@ -374,7 +374,7 @@ export const CommitmentMomentScreen = () => (
   <SlideShell tone="emerald" align="center" ariaLabel="Commitment moment">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-lg md:text-base font-mono uppercase tracking-[0.4em] text-accent">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-accent">
           Right now. Not later.
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
