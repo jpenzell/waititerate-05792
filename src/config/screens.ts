@@ -7,6 +7,7 @@ import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScr
 import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
 import { RCCCContextScreen } from "@/components/screens/RCCCContextScreen";
 import { AboutMeScreen } from "@/components/screens/AboutMeScreen";
+import { HairstyleScreen } from "@/components/screens/HairstyleScreen";
 import { OneWordStoryIntroScreen } from "@/components/screens/OneWordStoryIntroScreen";
 import { OneWordStoryLiveScreen } from "@/components/screens/OneWordStoryLiveScreen";
 import { ElephantQuestionScreen } from "@/components/screens/ElephantQuestionScreen";
@@ -88,11 +89,12 @@ export interface ScreenDef {
 export const screens: ScreenDef[] = [
   // ═══ ACT 1 — The Future Demands Different Thinking (5 slides · ~15 min) ═══
   { id: "LD1.0", title: "Title — AI for All Minds", component: LDTitleScreen, duration: 2, notes: "Set the stage. Opening energy." },
+  { id: "LD1.05", title: "About Me — Josh Penzell", component: AboutMeScreen, duration: 2, notes: "Quick intro: who I am and the path that got me here. Drag the logos." },
+  { id: "LD1.07", title: "Warm-up — Hairstyle", component: HairstyleScreen, duration: 2, notes: "What hairstyle are you today? 90s timer. Take 5–8 responses. Land it: one word → 30+ mental pictures. Sets up the language/perception thread." },
   { id: "LD1.1", title: "Zoox Question — Windshield Wipers", component: WindshieldWipersScreen, duration: 4, notes: "Does a self-driving car need windshield wipers? Show of hands or live poll.", pollQuestion: "Does a self-driving car need windshield wipers?", pollOptions: ["Yes", "No", "Who knows anymore?"] },
   { id: "LD1.2", title: "Zoox Reveal", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },
   { id: "LD1.3", title: "The Templates Can't Keep Up", component: WorldChangingScreen, duration: 3, notes: "Meta-frame: this is a rehearsal, not a deck. Built in a weekend with AI." },
   { id: "LD1.4", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 5, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
-  { id: "LD1.5", title: "About Me — Josh Penzell", component: AboutMeScreen, duration: 2, notes: "Quick intro: who I am and the path that got me here. Drag the logos." },
   { id: "LD1.6", title: "Warm-up — Cast Call", component: OneWordStoryIntroScreen, duration: 2, notes: "Improv warm-up. Ask for 3 volunteers; demo animation explains the one-word story format." },
   { id: "LD1.7", title: "Warm-up — One-Word Story", component: OneWordStoryLiveScreen, duration: 4, notes: "Live-type one-word story. Type each word as the volunteers shout it. Enter locks. Backspace on empty undoes." },
   { id: "LD1.8", title: "Warm-up — Answer Together", component: ElephantQuestionScreen, duration: 4, notes: "Same mechanic, real question: how many elephants fit in the Charlotte Convention Center? Sets up the AI estimation thread later." },
