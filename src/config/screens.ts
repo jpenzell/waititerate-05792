@@ -20,9 +20,6 @@ import { ProbabilisticExplainerScreen } from "@/components/screens/Probabilistic
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
 
-import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
-import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
-import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
 import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
@@ -124,9 +121,6 @@ export const screens: ScreenDef[] = [
 
   // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
-  { id: "LD3.1", title: "Photo Exercise — Upload", component: PhotoCollectionScreen, duration: 4, notes: "Step 1: How you learn best.", requiresSession: true },
-  { id: "LD3.2", title: "Photo Exercise — What You See", component: HumanPatternsScreen, duration: 4, notes: "Step 2: Different observers, different patterns.", requiresSession: true },
-  { id: "LD3.3", title: "Photo Exercise — AI as Observer", component: AIPatternsScreen, duration: 4, notes: "Step 3: AI is one observer among many.", requiresSession: true },
   { id: "LD3.4", title: "Mental Imagery", component: MentalImageryScreen, duration: 6, notes: "Aphantasia reveal." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
@@ -184,9 +178,6 @@ export const screens: ScreenDef[] = [
 export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD1.1",   // Windshield wipers poll
   "LD2.3",   // (was disclosure gap — kept here in case poll-style props passed)
-  "LD3.1",   // Photo collection
-  "LD3.2",   // Human patterns
-  "LD3.3",   // AI patterns
   "LD3.4",   // Mental imagery
   "LD3.5",   // Inner voice
   "LD3.6",   // Time perception
