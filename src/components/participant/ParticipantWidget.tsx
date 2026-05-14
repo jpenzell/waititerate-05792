@@ -6,7 +6,6 @@ import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScree
 import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
-import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
 import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
 import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
@@ -43,9 +42,6 @@ const widgets: Record<string, (p: Props) => JSX.Element> = {
   ),
   "LD3.6": ({ sessionId }) => (
     <TimePerceptionScreen isFacilitator={false} sessionId={sessionId} />
-  ),
-  "LD3.7": ({ sessionId }) => (
-    <FeedbackSensitivityScreen isFacilitator={false} sessionId={sessionId} />
   ),
   "LD3.8": ({ sessionId }) => <DiscoveryWallScreen sessionId={sessionId} />,
 
