@@ -3,8 +3,8 @@ import { PollWidget } from "@/components/PollWidget";
 import { screens } from "@/config/screens";
 
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
-import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
+import { ProbabilityWordsWidget } from "@/components/participant/widgets/ProbabilityWordsWidget";
 
 interface Props {
   slideId: string;
@@ -30,6 +30,9 @@ const widgets: Record<string, (p: Props) => JSX.Element> = {
   "LD3.5": ({ sessionId }) => (
     <InnerVoiceScreen isFacilitator={false} sessionId={sessionId} />
   ),
+  "LD3.62": ({ sessionId, userId }) => (
+    <ProbabilityWordsWidget sessionId={sessionId} userId={userId} />
+  ),
 
   // ─── Act 5 — Curb-cut quiz
   "LD5.2": ({ sessionId, userId }) => (
@@ -40,7 +43,6 @@ const widgets: Record<string, (p: Props) => JSX.Element> = {
   ),
 
   // ─── Act 6 — Workshop
-  "LD6.1": () => <RedesignWorkshopScreen />,
   "LD6.4": ({ sessionId, userId }) => (
     <AIStudentScreen isFacilitator={false} sessionId={sessionId} userId={userId} />
   ),
