@@ -165,18 +165,18 @@ export const TheRevealScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="The reveal">
     <div className="space-y-10 text-center">
       <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
-        Stop. Look around the room.
+        The takeaway.
       </p>
       <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05] max-w-5xl mx-auto">
-        Several of you in this room
+        Everyone thinks differently
         <br />
-        <span className="text-primary">are these people.</span>
+        <span className="text-primary">and interacts with the world differently.</span>
       </h1>
       <h2 className="text-3xl md:text-5xl font-bold text-muted-foreground leading-snug max-w-5xl mx-auto">
-        The rest of you teach them <span className="text-foreground">every day.</span>
+        Your students do too — <span className="text-foreground">every one of them.</span>
       </h2>
       <p className="text-lg md:text-xl text-muted-foreground italic max-w-3xl mx-auto pt-4">
-        That's why this matters. Not as theory. As a person two seats over.
+        That's why this matters. Not as theory. As the room you actually teach.
       </p>
     </div>
   </SlideShell>
