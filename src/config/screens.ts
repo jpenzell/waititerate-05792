@@ -7,7 +7,6 @@ import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScr
 import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
 import { RCCCContextScreen } from "@/components/screens/RCCCContextScreen";
 import { AboutMeScreen } from "@/components/screens/AboutMeScreen";
-import { HairstyleScreen } from "@/components/screens/HairstyleScreen";
 import { BallOnTablePromptScreen } from "@/components/screens/BallOnTablePromptScreen";
 import { MentalImagerySpectrumScreen } from "@/components/screens/MentalImagerySpectrumScreen";
 import { AphantasiaStatsScreen } from "@/components/screens/AphantasiaStatsScreen";
@@ -104,7 +103,6 @@ export const screens: ScreenDef[] = [
   { id: "LD1.02", title: "Opener — Ball on a Table (Prompt)", component: BallOnTablePromptScreen, duration: 2, notes: "Have everyone close their eyes. Describe the ball: color, size, texture, lighting, the table it sits on. Take your time. Then ask: 'What did you see?'" },
   { id: "LD1.03", title: "Opener — The Imagery Spectrum", component: MentalImagerySpectrumScreen, duration: 3, notes: "Five cards from no-image → photo-real. Walk the room through each one and let people locate themselves. Pause for the gasps." },
   { id: "LD1.04", title: "Opener — Aphantasia Stats", component: AphantasiaStatsScreen, duration: 3, notes: "~4% aphantasia · ~3% hyperphantasia. Land it: people in this room think differently — and they didn't know that about themselves OR each other. Sets up the entire 'feel it' thread." },
-  { id: "LD1.05", title: "Warm-up — Hairstyle", component: HairstyleScreen, duration: 2, notes: "What hairstyle are you today? 90s timer. Take 5–8 responses. Land it: one word → 30+ mental pictures. Sets up the language/perception thread." },
   { id: "LD1.07", title: "About Me — Josh Penzell", component: AboutMeScreen, duration: 2, notes: "Quick intro: who I am and the path that got me here. Drag the logos." },
   { id: "LD1.1", title: "Zoox Question — Windshield Wipers", component: WindshieldWipersScreen, duration: 4, notes: "Does a self-driving car need windshield wipers? Show of hands or live poll.", pollQuestion: "Does a self-driving car need windshield wipers?", pollOptions: ["Yes", "No", "Who knows anymore?"] },
   { id: "LD1.2", title: "Zoox Reveal", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },

@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v42'; // Aphantasia opener (LD1.02-1.04)
+const STORAGE_KEY = 'presentation-slide-config-atdld-v43'; // Removed LD1.05 hairstyle
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
