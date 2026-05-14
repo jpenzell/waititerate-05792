@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v36'; // Moved About Me after LD1.0; added Hairstyle warm-up
+const STORAGE_KEY = 'presentation-slide-config-atdld-v37'; // Swapped order: Hairstyle then About Me
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
