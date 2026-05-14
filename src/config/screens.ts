@@ -18,7 +18,6 @@ import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
 import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
 import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
-import { PeerTalkScreen } from "@/components/screens/PeerTalkScreen";
 
 import { StudentsAlreadyUsingAIScreen } from "@/components/screens/StudentsAlreadyUsingAIScreen";
 import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScreen";
@@ -109,8 +108,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
   { id: "LD3.8", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared cognitive reflection.", requiresSession: true },
-  { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you in this room are these people. The rest of you teach them every day." },
-  { id: "LD3.10", title: "Peer Talk: Discovery", component: PeerTalkScreen, duration: 3, props: { prompt: "What did you just discover that you'd never noticed before?", subPrompt: "Pick one thing. 90 seconds with the person next to you.", seconds: 90 }, notes: "Structured peer talk." },
+  { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
   // ═══ ACT 4 — The Accommodation That Already Happened (9 slides · ~30 min) ═══
   { id: "LD4.0", title: "Chapter — The Accommodation That Already Happened", component: AccommodationChapterScreen, duration: 1, notes: "Chapter card." },
@@ -142,13 +140,13 @@ export const screens: ScreenDef[] = [
   { id: "LD6.5", title: "AI Student: Round 2 — Redesign", component: AIStudentScreen, duration: 6, notes: "Re-teach using UDL + cognitive load.", requiresSession: true, props: { round: 2 } },
   { id: "LD6.6", title: "AI Student: Round 3 — Iterate", component: AIStudentScreen, duration: 5, notes: "Watch the score improve. Iteration doubles quality.", requiresSession: true, props: { round: 3 } },
   { id: "LD6.7", title: "Co-Design With ND Students", component: CoDesignScreen, duration: 4, notes: "Special Olympics co-design model. Nothing about us without us." },
-  { id: "LD6.8", title: "Peer Talk: What You'll Change Monday", component: PeerTalkScreen, duration: 3, props: { prompt: "What will you change Monday?", subPrompt: "One concrete shift. 90 seconds each way.", seconds: 180 }, notes: "Pair share." },
+  // LD6.8 removed (peer talk — Zoom delivery)
 
   // ═══ ACT 7 — Close With the Callback (6 slides · ~15 min) ═══
   { id: "LD7.0", title: "Zoox Callback — Your Windshield Wiper", component: ZooxCallbackScreen, duration: 3, notes: "Callback to the opening question. What's the windshield wiper in your syllabus?" },
   { id: "LD7.1", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Accessible curriculum → AT → AI → human judgment." },
   { id: "LD7.2", title: "Commitment Moment", component: CommitmentMomentScreen, duration: 3, notes: "Name one change for fall. Write it down." },
-  { id: "LD7.3", title: "Peer Accountability", component: PeerTalkScreen, duration: 3, props: { prompt: "Tell the person next to you what you committed to.", subPrompt: "They are now your accountability partner. 60 seconds each.", seconds: 120 }, notes: "Pair accountability." },
+  // LD7.3 removed (peer accountability — Zoom delivery)
   { id: "LD7.4", title: "Identity Move — Prototyping the Future", component: IdentityMoveScreen, duration: 2, notes: "I'm not accommodating. I'm prototyping the future." },
   { id: "LD7.5", title: "Take It With You", component: OnePagerDownloadScreen, duration: 2, notes: "Faculty one-pager. Footnote, not climax." },
 ];
