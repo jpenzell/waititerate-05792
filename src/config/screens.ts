@@ -57,6 +57,7 @@ import {
   DesignForVanguardChapterScreen,
   MakeSomethingChapterScreen,
   CloseChapterScreen,
+  NoTwoAIsAlikeChapterScreen,
 } from "@/components/screens/ChapterScreens";
 
 import {
@@ -121,7 +122,8 @@ export const screens: ScreenDef[] = [
   { id: "LD3.8", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared cognitive reflection.", requiresSession: true },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
-  // ═══ ACT 4 — How AI Thinks (warm-ups + AI explainer) ═══
+  // ═══ ACT 4 — No Two AIs Are Alike (warm-ups + AI explainer) ═══
+  { id: "LD4.00", title: "Chapter — No Two AIs Are Alike", component: NoTwoAIsAlikeChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD1.6", title: "Warm-up — Cast Call", component: OneWordStoryIntroScreen, duration: 2, notes: "Improv warm-up. Ask for 3 volunteers; demo animation explains the one-word story format." },
   { id: "LD1.7", title: "Warm-up — One-Word Story", component: OneWordStoryLiveScreen, duration: 4, notes: "Live-type one-word story. Type each word as the volunteers shout it. Enter locks. Backspace on empty undoes." },
   { id: "LD1.92", title: "How AI Predicts — Word by Word", component: LLMExplainerScreen, duration: 3, notes: "Auto-playing visualization: 'The sun set over the vineyard…' Top-4 candidates per step with probabilities. Press P to pause." },

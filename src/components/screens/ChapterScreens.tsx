@@ -91,7 +91,7 @@ export const FeelItChapterScreen = () => (
 
 export const AccommodationChapterScreen = () => (
   <ChapterDivider
-    number="04"
+    number="05"
     kicker="The accommodation that already happened"
     title="They didn't wait for permission. Neither did the tools."
     image={glasses}
@@ -101,7 +101,7 @@ export const AccommodationChapterScreen = () => (
 
 export const DesignForVanguardChapterScreen = () => (
   <ChapterDivider
-    number="05"
+    number="06"
     kicker="Design for the vanguard"
     title="Build for the edges. Win for everyone."
     image={curbCut}
@@ -111,7 +111,7 @@ export const DesignForVanguardChapterScreen = () => (
 
 export const MakeSomethingChapterScreen = () => (
   <ChapterDivider
-    number="06"
+    number="07"
     kicker="Make something"
     title="Stop talking about it. Build it."
     image={workshop}
@@ -121,10 +121,20 @@ export const MakeSomethingChapterScreen = () => (
 
 export const CloseChapterScreen = () => (
   <ChapterDivider
-    number="07"
+    number="08"
     kicker="The callback"
     title="So — what's the windshield wiper in your syllabus?"
     image={horizon}
     alt="Open horizon at dusk"
+  />
+);
+
+export const NoTwoAIsAlikeChapterScreen = () => (
+  <ChapterDivider
+    number="04"
+    kicker="How AI thinks"
+    title="No two AIs are alike."
+    image={neural}
+    alt="Glowing purple and cyan neural pathways"
   />
 );

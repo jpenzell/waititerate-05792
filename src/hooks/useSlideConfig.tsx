@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v52'; // Moved LD4.6 after LD5.5
+const STORAGE_KEY = 'presentation-slide-config-atdld-v53'; // New chapter card LD4.00 "No Two AIs Are Alike"
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
