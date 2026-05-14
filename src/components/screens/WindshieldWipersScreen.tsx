@@ -17,7 +17,10 @@ export const WindshieldWipersScreen = ({
   sessionCode,
 }: WindshieldWipersScreenProps) => {
   // Step 0: big "Join the room" QR. Step 1: question + poll + small QR.
-  useRegisterReveals(1);
+  // Only register the reveal when there's actually a session — otherwise the
+  // join-screen step is skipped and the arrow shouldn't be silently consumed.
+  const hasSession = isFacilitator && !!sessionCode;
+  useRegisterReveals(hasSession ? 1 : 0);
   const { step } = useReveal();
 
   const joinUrl = sessionCode
