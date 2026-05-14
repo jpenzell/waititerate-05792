@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v38'; // Added LD1.85 audience+AI estimate and LD1.9 AI story demo
+const STORAGE_KEY = 'presentation-slide-config-atdld-v39'; // Added LD3.75 Injustice Sensitivity
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
