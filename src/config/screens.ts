@@ -89,8 +89,8 @@ export interface ScreenDef {
 export const screens: ScreenDef[] = [
   // ═══ ACT 1 — The Future Demands Different Thinking (5 slides · ~15 min) ═══
   { id: "LD1.0", title: "Title — AI for All Minds", component: LDTitleScreen, duration: 2, notes: "Set the stage. Opening energy." },
-  { id: "LD1.05", title: "About Me — Josh Penzell", component: AboutMeScreen, duration: 2, notes: "Quick intro: who I am and the path that got me here. Drag the logos." },
-  { id: "LD1.07", title: "Warm-up — Hairstyle", component: HairstyleScreen, duration: 2, notes: "What hairstyle are you today? 90s timer. Take 5–8 responses. Land it: one word → 30+ mental pictures. Sets up the language/perception thread." },
+  { id: "LD1.05", title: "Warm-up — Hairstyle", component: HairstyleScreen, duration: 2, notes: "What hairstyle are you today? 90s timer. Take 5–8 responses. Land it: one word → 30+ mental pictures. Sets up the language/perception thread." },
+  { id: "LD1.07", title: "About Me — Josh Penzell", component: AboutMeScreen, duration: 2, notes: "Quick intro: who I am and the path that got me here. Drag the logos." },
   { id: "LD1.1", title: "Zoox Question — Windshield Wipers", component: WindshieldWipersScreen, duration: 4, notes: "Does a self-driving car need windshield wipers? Show of hands or live poll.", pollQuestion: "Does a self-driving car need windshield wipers?", pollOptions: ["Yes", "No", "Who knows anymore?"] },
   { id: "LD1.2", title: "Zoox Reveal", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },
   { id: "LD1.3", title: "The Templates Can't Keep Up", component: WorldChangingScreen, duration: 3, notes: "Meta-frame: this is a rehearsal, not a deck. Built in a weekend with AI." },
