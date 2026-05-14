@@ -279,9 +279,6 @@ export const CognitiveLoadUDLScreen = () => (
   <SlideShell tone="emerald" align="center" ariaLabel="Cognitive load and UDL">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-accent">
-          Two principles for the next 30 minutes
-        </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
           Lower the load. <span className="text-primary">Widen the doors.</span>
         </h1>
@@ -310,9 +307,6 @@ export const CognitiveLoadUDLScreen = () => (
         </Card>
       </div>
 
-      <p className="text-center text-xl md:text-2xl text-foreground font-semibold max-w-4xl mx-auto">
-        Apply both to the slide you brought.
-      </p>
     </div>
   </SlideShell>
 );
