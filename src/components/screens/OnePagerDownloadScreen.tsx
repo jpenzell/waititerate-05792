@@ -1,56 +1,63 @@
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
-import { SlideHero } from "@/components/slide";
-import horizon from "@/assets/slides/horizon.jpg";
+import { Linkedin, Globe, Presentation, Mail } from "lucide-react";
+import { QRCodeSVG } from "qrcode.react";
+import { SlideShell, SlideTitle } from "@/components/slide";
 
-interface Props { sessionCode?: string }
+const links = [
+  {
+    icon: Linkedin,
+    label: "Connect on LinkedIn",
+    href: "https://www.linkedin.com/in/josh-penzell/",
+  },
+  {
+    icon: Globe,
+    label: "joshpenzell.com",
+    href: "https://joshpenzell.com",
+  },
+  {
+    icon: Presentation,
+    label: "Slides live within a week",
+    href: "https://ai4all.joshpenzell.com",
+  },
+  {
+    icon: Mail,
+    label: "Email Josh",
+    href: "mailto:josh@imaginationapplied.com",
+  },
+];
 
-export const OnePagerDownloadScreen = ({ sessionCode }: Props) => {
-  const shareUrl = typeof window !== "undefined"
-    ? `${window.location.origin}${sessionCode ? `/participate?code=${sessionCode}` : "/"}`
-    : "https://ai4all.joshpenzell.com";
-  const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(shareUrl)}`;
+export const OnePagerDownloadScreen = () => (
+  <SlideShell tone="indigo" align="center" ariaLabel="Take it with you">
+    <div className="space-y-10 max-w-7xl mx-auto w-full text-center">
+      <SlideTitle kicker="Take it with you">
+        Now go <span className="text-primary">rehearse the future.</span>
+      </SlideTitle>
 
-  return (
-    <SlideHero
-      image={horizon}
-      alt="Soft pink and amber dawn over rolling hills"
-      position="left"
-      scrim="left"
-      ariaLabel="Take it with you"
-    >
-      <div className="grid md:grid-cols-[1.6fr_1fr] gap-12 items-center w-full max-w-6xl">
-        <div className="space-y-8">
-          <p className="text-base md:text-xl uppercase tracking-[0.4em] text-white/70">
-            Take it with you
-          </p>
-          <h1 className="text-5xl md:text-7xl font-bold leading-[1.05]">
-            One page.
-            <br />
-            <span className="text-accent">One Monday at a time.</span>
-          </h1>
-          <Button asChild size="lg" className="text-xl py-8 px-8">
-            <a href="/downloads/ai-for-all-minds-faculty-onepager.pdf" download>
-              <Download className="h-6 w-6 mr-3" /> Download the faculty one-pager
-            </a>
-          </Button>
-          <p className="text-2xl md:text-3xl text-white/90 font-mono">
-            josh@imaginationapplied.com
-          </p>
-        </div>
-        <div className="flex flex-col items-center gap-4">
-          <img
-            src={qrSrc}
-            alt="QR code to revisit the session"
-            className="rounded-md bg-white p-3"
-            width={260}
-            height={260}
-          />
-          <p className="text-lg md:text-xl font-mono uppercase tracking-[0.3em] text-white/70">
-            Scan to revisit
-          </p>
-        </div>
+      <p className="text-2xl md:text-3xl text-muted-foreground">
+        Josh Penzell · Imagination Applied
+      </p>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-4">
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-4 p-5 rounded-2xl border-2 border-border/50 hover:border-primary/60 hover:bg-primary/5 transition-colors"
+          >
+            <div className="bg-white p-3 rounded-xl">
+              <QRCodeSVG value={link.href} size={150} level="M" />
+            </div>
+            <link.icon className="w-7 h-7 text-primary" aria-hidden="true" />
+            <span className="text-lg md:text-xl font-bold text-foreground leading-tight text-center">
+              {link.label}
+            </span>
+            <span className="text-xs md:text-sm text-muted-foreground break-all text-center">
+              {link.href.replace(/^https?:\/\//, "").replace(/^mailto:/, "")}
+            </span>
+          </a>
+        ))}
       </div>
-    </SlideHero>
-  );
-};
+    </div>
+  </SlideShell>
+);
