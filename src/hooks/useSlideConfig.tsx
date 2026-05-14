@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v66'; // Remove LD6.4-LD6.6 AI Student rounds
+const STORAGE_KEY = 'presentation-slide-config-atdld-v67'; // Add probability words poll LD3.615
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
