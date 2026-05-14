@@ -25,6 +25,7 @@ import { RussianBluesDemoScreen } from "@/components/screens/RussianBluesDemoScr
 
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
+import { NDValueScreen } from "@/components/screens/NDValueScreen";
 
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
@@ -109,6 +110,7 @@ export const screens: ScreenDef[] = [
 
   // ═══ ACT 2 — The Hidden Vanguard (moved up: comes right after LD1.4) ═══
   { id: "LD2.0", title: "Chapter — The Hidden Vanguard", component: HiddenVanguardChapterScreen, duration: 1, notes: "Chapter card." },
+  { id: "LD2.15", title: "The Value of ND Talent", component: NDValueScreen, duration: 4, notes: "~85% of autistic adults un/underemployed; ND unemployment 30–40%. In the right roles, ND employees are 90–140% more productive (JPMorgan Autism at Work, SAP, EY, Microsoft). The gap is the system, not the talent." },
   { id: "LD2.2", title: "1 in 5 Adults Self-ID as ND", component: YouGovSelfIDScreen, duration: 3, notes: "YouGov 2023 — 19% of US adults self-identify as neurodivergent." },
   { id: "LD2.3", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 4, notes: "~36% identify vs 6–7% registered. Purdue + NCES + Doyle." },
   { id: "LD2.4", title: "The Cost of Masking", component: CostOfMaskingScreen, duration: 4, notes: "What the system has been taking. Cage 2018, Cassidy 2018, Huang 2020." },
