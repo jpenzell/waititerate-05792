@@ -5,6 +5,7 @@ import { screens } from "@/config/screens";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
+import { ProbabilityWordsWidget } from "@/components/participant/widgets/ProbabilityWordsWidget";
 
 interface Props {
   slideId: string;
@@ -29,6 +30,9 @@ const widgets: Record<string, (p: Props) => JSX.Element> = {
   // ─── Act 3 — Feel It
   "LD3.5": ({ sessionId }) => (
     <InnerVoiceScreen isFacilitator={false} sessionId={sessionId} />
+  ),
+  "LD3.62": ({ sessionId, userId }) => (
+    <ProbabilityWordsWidget sessionId={sessionId} userId={userId} />
   ),
 
   // ─── Act 5 — Curb-cut quiz
