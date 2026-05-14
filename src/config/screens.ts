@@ -20,7 +20,6 @@ import { ProbabilisticExplainerScreen } from "@/components/screens/Probabilistic
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
 
-import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
 import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
@@ -121,7 +120,6 @@ export const screens: ScreenDef[] = [
 
   // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
-  { id: "LD3.4", title: "Mental Imagery", component: MentalImageryScreen, duration: 6, notes: "Aphantasia reveal." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
@@ -178,7 +176,6 @@ export const screens: ScreenDef[] = [
 export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD1.1",   // Windshield wipers poll
   "LD2.3",   // (was disclosure gap — kept here in case poll-style props passed)
-  "LD3.4",   // Mental imagery
   "LD3.5",   // Inner voice
   "LD3.6",   // Time perception
   "LD3.7",   // Feedback sensitivity
