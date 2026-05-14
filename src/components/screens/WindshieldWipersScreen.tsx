@@ -24,8 +24,9 @@ export const WindshieldWipersScreen = ({
     ? `${window.location.origin}/participate?code=${sessionCode}`
     : "";
 
-  // STEP 0 — Join first (facilitator only)
-  if (step < 1 && isFacilitator) {
+  // STEP 0 — Join first (facilitator only, AND only when a session is live).
+  // Without an active session this slide is a verbal hand-raise question, so skip the join screen.
+  if (step < 1 && isFacilitator && sessionCode) {
     return (
       <main
         className="h-full flex items-center justify-center p-8 animate-fade-in"
