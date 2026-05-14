@@ -89,17 +89,6 @@ export const AboutMeScreen = () => (
             <p className="text-base text-muted-foreground/80 italic mt-2 max-w-sm">
               Aphantasic, autistic, ADHD — and an AI advisor who thinks the next decade belongs to ND minds.
             </p>
-            <div className="mt-4 max-w-sm space-y-2 text-left">
-              <p className="text-sm md:text-base text-foreground/80 italic leading-snug border-l-2 border-primary/40 pl-3">
-                "…you over-index on big thinking…"
-              </p>
-              <p className="text-sm md:text-base text-foreground/80 italic leading-snug border-l-2 border-accent/40 pl-3">
-                "…you're on a jet ski and the rest of the team is on a barge…"
-              </p>
-              <p className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground/70 pl-3">
-                — actual feedback I've gotten
-              </p>
-            </div>
           </div>
         </div>
 
@@ -108,15 +97,27 @@ export const AboutMeScreen = () => (
           <p className="absolute top-0 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-muted-foreground/70 font-mono">
             Drag the logos around
           </p>
+          {/* Center quote card — logos arranged around it */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] max-w-[340px] w-[80%] bg-card/90 backdrop-blur border border-border/60 rounded-2xl shadow-xl p-5 space-y-2 pointer-events-none">
+            <p className="text-sm md:text-base text-foreground/90 italic leading-snug border-l-2 border-primary/50 pl-3">
+              "…you over-index on big thinking…"
+            </p>
+            <p className="text-sm md:text-base text-foreground/90 italic leading-snug border-l-2 border-accent/50 pl-3">
+              "…you're on a jet ski and the rest of the team is on a barge…"
+            </p>
+            <p className="text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground/70 pl-3 pt-1">
+              — actual feedback I've gotten
+            </p>
+          </div>
           <DraggableLogo src={logoNorthwestern} alt="Northwestern" initialX={90}  initialY={70}  height="h-12" />
-          <DraggableLogo src={logoBrooklyn}    alt="Brooklyn College" initialX={260} initialY={60} height="h-12" />
+          <DraggableLogo src={logoBrooklyn}    alt="Brooklyn College" initialX={280} initialY={40} height="h-12" />
           <DraggableLogo src={logoUIUC}        alt="UIUC"        initialX={420} initialY={80}  height="h-12" />
-          <DraggableLogo src={logoAmazon}      alt="Amazon"      initialX={130} initialY={170} height="h-10" />
-          <DraggableLogo src={logoAlexa}       alt="Alexa"       initialX={310} initialY={180} height="h-10" />
-          <DraggableLogo src={logoZillow}      alt="Zillow"      initialX={470} initialY={190} height="h-10" />
-          <DraggableLogo src={logoSkillsoft}   alt="Skillsoft"   initialX={100} initialY={290} height="h-10" />
-          <DraggableLogo src={logoSdc}         alt="SDC"         initialX={250} initialY={300} height="h-10" />
-          <DraggableLogo src={logoOffBroadway} alt="Off-Broadway" initialX={400} initialY={310} height="h-10" />
+          <DraggableLogo src={logoAmazon}      alt="Amazon"      initialX={70}  initialY={210} height="h-10" />
+          <DraggableLogo src={logoAlexa}       alt="Alexa"       initialX={70}  initialY={310} height="h-10" />
+          <DraggableLogo src={logoZillow}      alt="Zillow"      initialX={550} initialY={210} height="h-10" />
+          <DraggableLogo src={logoSkillsoft}   alt="Skillsoft"   initialX={550} initialY={130} height="h-10" />
+          <DraggableLogo src={logoSdc}         alt="SDC"         initialX={180} initialY={370} height="h-10" />
+          <DraggableLogo src={logoOffBroadway} alt="Off-Broadway" initialX={400} initialY={380} height="h-10" />
           <DraggableLogo src={logoZoox}        alt="Zoox"        initialX={530} initialY={300} height="h-10" />
         </div>
       </div>
