@@ -3,17 +3,20 @@ import zooxVehicle from "@/assets/zoox-vehicle.jpg";
 export const WindshieldWipersRevealScreen = () => {
   return (
     <main
-      className="h-full w-full relative overflow-hidden bg-black animate-fade-in"
+      className="h-full w-full relative overflow-hidden"
       role="main"
       aria-label="Zoox vehicle reveal"
+      style={{
+        backgroundImage: `url(${zooxVehicle})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
+      {/* Hidden img kept for screen-reader alt text */}
       <img
         src={zooxVehicle}
         alt="Zoox autonomous vehicle — bidirectional, no traditional windshield, passengers face each other"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="eager"
-        decoding="sync"
-        fetchPriority="high"
+        className="sr-only"
       />
       {/* Bottom gradient for caption legibility */}
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
