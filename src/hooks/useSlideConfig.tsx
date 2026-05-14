@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v32'; // Zoom delivery — peer-talk slides removed
+const STORAGE_KEY = 'presentation-slide-config-atdld-v33'; // Added LD1.5 About Me intro slide
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
