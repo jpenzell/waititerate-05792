@@ -76,6 +76,13 @@ export interface ScreenDef {
   pollQuestion?: string;
   pollOptions?: string[];
   props?: Record<string, any>;
+  /**
+   * If true, this slide requires an active participant session to be
+   * meaningful (e.g. live photo upload, live workshop submission). When
+   * no session is started, it's filtered out of the deck so arrows skip
+   * past it cleanly.
+   */
+  requiresSession?: boolean;
 }
 
 export const screens: ScreenDef[] = [
@@ -95,14 +102,14 @@ export const screens: ScreenDef[] = [
   { id: "LD2.1", title: "Why Neurodiversity Matters: The Data", component: NeurodiversityDataQuizScreen, duration: 8, notes: "Interactive data quiz." },
   { id: "LD2.2", title: "Same Words, Different Meanings", component: AnnieDukeStudyScreen, duration: 5, notes: "Annie Duke / Sherman Kent." },
   // 3.x — Photo exercise
-  { id: "LD3.0a", title: "Chapter 03 — Patterns we miss", component: Chapter03Screen, duration: 1, notes: "Cinematic chapter divider." },
-  { id: "LD3.0", title: "Step 1: How You Learn Best", component: PhotoCollectionScreen, duration: 2, notes: "Photo collection." },
-  { id: "LD3.1", title: "Step 2: What Patterns Do You See?", component: HumanPatternsScreen, duration: 2, notes: "Pattern spotting." },
-  { id: "LD3.2", title: "Step 3: AI Pattern Analysis", component: AIPatternsScreen, duration: 2, notes: "AI reveals patterns." },
-  { id: "LD3.3", title: "Step 4: What Are We Missing?", component: BlindSpotsScreen, duration: 4, notes: "Reveal blind spots." },
-  { id: "LD3.4", title: "Step 5: How Many Interpretations?", component: NumericEstimateScreen, duration: 2, notes: "Estimates." },
-  { id: "LD3.5", title: "Step 6: Abundance Reveal", component: AIDatapointsScreen, duration: 2, notes: "AI datapoints." },
-  { id: "LD3.6", title: "Transition: From AI to Human Cognition", component: CognitiveTransitionScreen, duration: 1, notes: "Bridge slide." },
+  { id: "LD3.0a", title: "Chapter 03 — Patterns we miss", component: Chapter03Screen, duration: 1, notes: "Cinematic chapter divider.", requiresSession: true },
+  { id: "LD3.0", title: "Step 1: How You Learn Best", component: PhotoCollectionScreen, duration: 2, notes: "Photo collection.", requiresSession: true },
+  { id: "LD3.1", title: "Step 2: What Patterns Do You See?", component: HumanPatternsScreen, duration: 2, notes: "Pattern spotting.", requiresSession: true },
+  { id: "LD3.2", title: "Step 3: AI Pattern Analysis", component: AIPatternsScreen, duration: 2, notes: "AI reveals patterns.", requiresSession: true },
+  { id: "LD3.3", title: "Step 4: What Are We Missing?", component: BlindSpotsScreen, duration: 4, notes: "Reveal blind spots.", requiresSession: true },
+  { id: "LD3.4", title: "Step 5: How Many Interpretations?", component: NumericEstimateScreen, duration: 2, notes: "Estimates.", requiresSession: true },
+  { id: "LD3.5", title: "Step 6: Abundance Reveal", component: AIDatapointsScreen, duration: 2, notes: "AI datapoints.", requiresSession: true },
+  { id: "LD3.6", title: "Transition: From AI to Human Cognition", component: CognitiveTransitionScreen, duration: 1, notes: "Bridge slide.", requiresSession: true },
   // 4.x — Cognitive discovery
   { id: "LD4.0a", title: "Chapter 04 — Inside the mind", component: Chapter04Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD4.0", title: "Mental Imagery Discovery", component: MentalImageryScreen, duration: 7, notes: "Aphantasia reveal." },
@@ -114,7 +121,7 @@ export const screens: ScreenDef[] = [
   { id: "LD4.3d", title: "Humanize My Words", component: HumanizeMyWordsScreen, duration: 4, notes: "Ma et al. 2026 — 3,984 autistic posts. Four affordances + three risks. Masking-as-a-service tension." },
   { id: "LD4.4", title: "Cognitive Reflection", component: CognitiveReflectionScreen, duration: 8, notes: "Reflection prompts." },
   { id: "LD4.5", title: "Research Foundations", component: ResearchFoundationsScreen, duration: 5, notes: "Academic grounding." },
-  { id: "LD4.6", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared wall." },
+  { id: "LD4.6", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared wall.", requiresSession: true },
   { id: "LD4.7", title: "What This Means For Your Students", component: FacultyTranslationScreen, duration: 5, notes: "Bridge to teaching practice." },
   { id: "LD4.8", title: "You Are Not Alone (Faculty)", component: FacultyAreNeurodivergentScreen, duration: 3, notes: "Permission slide." },
   { id: "LD4.9", title: "Peer Talk: Discovery", component: PeerTalkScreen, duration: 3, props: { prompt: "What did you just discover that you'd never noticed before?", subPrompt: "Pick one thing. 90 seconds with the person next to you.", seconds: 90 }, notes: "Structured peer talk." },
@@ -141,11 +148,11 @@ export const screens: ScreenDef[] = [
   { id: "LD6.5", title: "AI Evidence Map — Trust, but Verify", component: AIEvidenceMapScreen, duration: 4, notes: "Strong/Mixed/Thin evidence tiers. LLMs strong, AT mixed, predictive analytics thin. Procurement guardrail." },
   // 7.x — Workshop
   { id: "LD7.0a", title: "Chapter 07 — Make something", component: Chapter07Screen, duration: 1, notes: "Cinematic chapter divider." },
-  { id: "LD7.0", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop." },
+  { id: "LD7.0", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop.", requiresSession: true },
   { id: "LD7.1", title: "Peer Talk: Redesign", component: PeerTalkScreen, duration: 3, props: { prompt: "Show your neighbor what you redesigned.", subPrompt: "What changed? What did the AI catch that you wouldn't have? 90 seconds each way.", seconds: 180 }, notes: "Pair share." },
   { id: "LD7.2", title: "This Is Retention Strategy", component: RetentionEquityScreen, duration: 4, notes: "Equity / Title III / SACSCOC hook." },
   { id: "LD7.2b", title: "The Free-Tier Divide", component: FreeTierDivideScreen, duration: 3, notes: "Zhao et al. 2025 — 91% of disabled students locked into free tiers. Equity argument for institutional AI access via DSO." },
-  { id: "LD7.3", title: "AI Student: You're the Teacher", component: AIStudentScreen, duration: 8, notes: "Learning by teaching." },
+  { id: "LD7.3", title: "AI Student: You're the Teacher", component: AIStudentScreen, duration: 8, notes: "Learning by teaching.", requiresSession: true },
   { id: "LD7.4", title: "Cognitive Load in Action", component: CognitiveLoadScreen, duration: 4, notes: "Working memory limits." },
   { id: "LD7.5", title: "UDL in Action", component: UDLInActionScreen, duration: 4, notes: "Universal Design for Learning." },
   { id: "LD7.6", title: "Iteration Doubles Quality", component: AnthropicIterationScreen, duration: 3, notes: "Anthropic AI Fluency Index 2026." },
