@@ -16,9 +16,9 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
   const [responses, setResponses] = useState<any[]>([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [step, setStep] = useState<"intro" | "test">("intro");
-  // Facilitator reveal: 0 = distribution, 1 = research framing
-  // Reveal step shows poll results — only meaningful with an active session.
-  useRegisterReveals(sessionId ? 1 : 0);
+  // One reveal step: prompt → implication. Always available so the slide
+  // works as a pure presentation regardless of session/participation.
+  useRegisterReveals(1);
   const { step: revealStep } = useReveal();
 
   useEffect(() => {
@@ -88,60 +88,49 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
 
   // FACILITATOR VIEW
   if (isFacilitator) {
-    const dist = getDistribution();
-    
     return (
-      <div className="h-screen flex flex-col py-6 px-4 animate-fade-in">
-        <div className="text-center mb-6">
+      <div className="h-screen flex flex-col py-10 px-8 animate-fade-in">
+        <div className="text-center mb-10">
           <Badge className="mb-4">
             <MessageSquare className="h-4 w-4 mr-2" />
-            Inner Voice Discovery
+            Inner Voice
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            Do You Hear a Voice When You Read?
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight">
+            Do you hear a voice when you read?
           </h1>
-          <p className="text-lg text-muted-foreground">
-            Responses: <span className="font-bold text-primary">{responses.length}</span>
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <Card className="p-8 bg-gradient-to-br from-primary/10 to-accent/5">
-            <div className="text-center">
-              <Volume2 className="h-16 w-16 text-primary mx-auto mb-4" />
-              <div className="text-5xl font-bold text-primary mb-2">{((dist.withVoice / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-lg font-semibold text-foreground mb-2">With Inner Voice</div>
-              <div className="text-lg text-muted-foreground">{dist.withVoice} people hear narration</div>
-            </div>
+        <div className="grid md:grid-cols-2 gap-8 mb-10">
+          <Card className="p-10 bg-gradient-to-br from-primary/10 to-accent/5 flex flex-col items-center text-center gap-3">
+            <Volume2 className="h-20 w-20 text-primary" aria-hidden />
+            <div className="text-2xl font-bold text-foreground">Inner narration</div>
+            <p className="text-lg text-muted-foreground">Words sound out, line by line, like an audiobook in your head.</p>
           </Card>
-          <Card className="p-8 bg-gradient-to-br from-accent/10 to-primary/5">
-            <div className="text-center">
-              <VolumeX className="h-16 w-16 text-accent mx-auto mb-4" />
-              <div className="text-5xl font-bold text-accent mb-2">{((dist.withoutVoice / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-lg font-semibold text-foreground mb-2">Silent Reading</div>
-              <div className="text-lg text-muted-foreground">{dist.withoutVoice} people read silently</div>
-            </div>
+          <Card className="p-10 bg-gradient-to-br from-accent/10 to-primary/5 flex flex-col items-center text-center gap-3">
+            <VolumeX className="h-20 w-20 text-accent" aria-hidden />
+            <div className="text-2xl font-bold text-foreground">Silent reading</div>
+            <p className="text-lg text-muted-foreground">Meaning lands directly. No voice, no sound — just understanding.</p>
           </Card>
         </div>
 
         {revealStep < 1 ? (
-          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex flex-col items-center justify-center gap-3">
-            <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+          <Card className="p-12 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex flex-col items-center justify-center gap-4">
+            <p className="text-4xl md:text-5xl font-semibold text-foreground text-center leading-snug">
               Same words. Different brains.
             </p>
-            <p className="text-lg text-muted-foreground italic">Press → for the implication.</p>
+            <p className="text-xl text-muted-foreground italic">Press → for the implication.</p>
           </Card>
         ) : (
-          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-4 animate-fade-in">
-            <p className="text-2xl md:text-3xl font-semibold text-foreground text-center leading-snug max-w-4xl">
-              Many of your students experience reading <span className="text-primary">without inner narration</span> at all
-              — and many experience it <span className="text-primary">narrated word-for-word</span>.
+          <Card className="p-12 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-5 animate-fade-in">
+            <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug max-w-5xl">
+              Many of your students read <span className="text-primary">without inner narration</span> —
+              and many read it <span className="text-primary">narrated word-for-word</span>.
             </p>
-            <p className="text-xl md:text-2xl text-foreground/85 text-center leading-snug max-w-4xl italic">
+            <p className="text-2xl md:text-3xl text-foreground/85 text-center leading-snug max-w-5xl italic">
               The same lecture lands as text, voice, image, or silence.
               <br />Pair every spoken cue with a written one.
             </p>
-            <p className="text-base font-mono uppercase tracking-widest text-muted-foreground">
+            <p className="text-base font-mono uppercase tracking-widest text-muted-foreground mt-2">
               Inner-speech variation · Hurlburt et al., descriptive experience sampling
             </p>
           </Card>
