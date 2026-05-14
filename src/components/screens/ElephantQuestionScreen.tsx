@@ -31,6 +31,13 @@ export const ElephantQuestionScreen = () => {
       e.preventDefault();
       setWords((prev) => prev.slice(0, -1));
     }
+    // Forward arrow keys to the global slide-nav handler. The presenter's
+    // input is auto-focused, which would otherwise swallow ArrowLeft/Right.
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      inputRef.current?.blur();
+      window.dispatchEvent(new KeyboardEvent("keydown", { key: e.key, bubbles: true }));
+    }
   };
 
   const reset = () => {
