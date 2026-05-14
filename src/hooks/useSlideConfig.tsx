@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v49'; // LD3.6 screenshare-only; removed join QR overlay
+const STORAGE_KEY = 'presentation-slide-config-atdld-v50'; // Moved AI warm-ups to new Act 4 after LD3.9
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
