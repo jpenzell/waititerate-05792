@@ -36,13 +36,12 @@ export const RevealProvider = ({ slideId, children }: ProviderProps) => {
   useEffect(() => { stepRef.current = step; }, [step]);
   useEffect(() => { totalRef.current = total; }, [total]);
 
-  // Reset on slide change
-  useEffect(() => {
-    setStep(0);
-    setTotal(0);
-    stepRef.current = 0;
-    totalRef.current = 0;
-  }, [slideId]);
+  // NOTE: We intentionally do NOT reset state on slideId change here.
+  // Resetting in a parent effect runs AFTER child effects (React commit order),
+  // which would clobber the child slide's useRegisterReveals(N) call and leave
+  // total stuck at 0 — making the right-arrow eat the keypress incorrectly or,
+  // worse, skip slides. Instead, the consumer (PresentationLayout) keys this
+  // provider by slideId so it remounts fresh per slide.
 
   const registerTotal = useCallback((n: number) => {
     setTotal((prev) => (n > prev ? n : prev));
