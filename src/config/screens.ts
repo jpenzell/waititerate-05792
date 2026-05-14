@@ -44,6 +44,7 @@ import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScree
 import { WhatThisIsNotScreen } from "@/components/screens/WhatThisIsNotScreen";
 import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScreen";
 import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
+import { NeurodiversityInnovationScreen } from "@/components/screens/NeurodiversityInnovationScreen";
 
 export interface ScreenDef {
   id: string;
@@ -63,6 +64,7 @@ export const screens: ScreenDef[] = [
   { id: "LD1.1", title: "First Principles: Windshield Wipers", component: WindshieldWipersScreen, duration: 5, notes: "Does a self-driving car need windshield wipers? Interactive poll revealing first-principles thinking.", pollQuestion: "Does a self-driving car need windshield wipers?", pollOptions: ["Yes", "No", "Who knows anymore?"] },
   { id: "LD1.1b", title: "Reveal: Zoox", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },
   { id: "LD1.2", title: "My Own Reframe", component: ZooxReframeScreen, duration: 2, notes: "Personal proof of the Zoox reframe — this isn't a deck, it's a live website." },
+  { id: "LD1.2b", title: "Neurodiversity + AI = Innovation", component: NeurodiversityInnovationScreen, duration: 2, notes: "Meta-point: I thought backwards. Thinking differently + AI flexibility = innovation. This site is the proof." },
   { id: "LD1.3", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 4, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
   { id: "LD1.4", title: "What This Is NOT", component: WhatThisIsNotScreen, duration: 3, notes: "Disarm faculty skepticism early." },
   { id: "LD1.5", title: "Parking Lot: Your Questions", component: ParkingLotIntroScreen, duration: 3, notes: "Capture each participant's biggest AI question." },
