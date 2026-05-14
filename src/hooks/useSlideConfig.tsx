@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v41'; // Added LD1.92 LLMExplainer + LD1.95 Anthropic video
+const STORAGE_KEY = 'presentation-slide-config-atdld-v42'; // Aphantasia opener (LD1.02-1.04)
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
