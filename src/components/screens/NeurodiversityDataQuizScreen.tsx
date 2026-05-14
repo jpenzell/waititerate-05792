@@ -36,6 +36,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
   const [productivityGuess, setProductivityGuess] = useState("");
   const [populationGuess, setPopulationGuess] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  // Reveal arrow (→) flips facilitator view from guesses to actuals.
+  useRegisterReveals(1);
+  const { step: revealStep } = useReveal();
 
   useEffect(() => {
     if (!sessionId) return;
@@ -128,11 +131,7 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
     const actualUnemployment = 85;
     const actualProductivity = 30;
     const actualPopulation = 20;
-
-    // Use the global reveal arrow (→) to flip from "guesses" to "actuals".
-    useRegisterReveals(1);
-    const { step } = useReveal();
-    const showResults = step >= 1;
+    const showResults = revealStep >= 1;
 
     return (
       <main className="min-h-screen flex flex-col justify-center py-4 px-4 animate-fade-in" role="main" aria-label="Neurodiversity data quiz results">
