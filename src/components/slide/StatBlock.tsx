@@ -23,10 +23,10 @@ const accentText: Record<NonNullable<Props["accent"]>, string> = {
 
 /** Large stat card. Used wherever the deck shows value + label. */
 export const StatBlock = ({ value, label, note, icon: Icon, accent = "primary" }: Props) => (
-  <Card className={`p-8 border-l-8 ${accentRing[accent]} h-full text-center space-y-3 bg-card/80 backdrop-blur`}>
-    {Icon && <Icon className={`h-12 w-12 mx-auto ${accentText[accent]}`} aria-hidden="true" />}
-    <div className={`text-6xl md:text-7xl font-black ${accentText[accent]} leading-none`}>{value}</div>
-    <div className="text-xl md:text-2xl font-semibold text-foreground/90">{label}</div>
-    {note && <p className="text-base md:text-lg text-muted-foreground leading-snug">{note}</p>}
+  <Card className={`p-5 md:p-6 border-l-8 ${accentRing[accent]} h-full text-center space-y-3 bg-card/80 backdrop-blur`}>
+    {Icon && <Icon className={`h-10 w-10 md:h-12 md:w-12 mx-auto ${accentText[accent]}`} aria-hidden="true" />}
+    <div className={`text-5xl md:text-6xl xl:text-7xl font-black ${accentText[accent]} leading-none break-words hyphens-auto`}>{value}</div>
+    <div className="text-lg md:text-xl xl:text-2xl font-semibold text-foreground/90 break-words hyphens-auto leading-snug">{label}</div>
+    {note && <p className="text-sm md:text-base xl:text-lg text-muted-foreground leading-snug break-words hyphens-auto">{note}</p>}
   </Card>
 );
