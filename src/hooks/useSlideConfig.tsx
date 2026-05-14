@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v73'; // Add LD3.645 Cultural Tendencies (Chinese vs English) after LD3.64
+const STORAGE_KEY = 'presentation-slide-config-atdld-v74'; // AnnieDuke renders static table when no session active
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
