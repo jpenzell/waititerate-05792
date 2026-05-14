@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v71'; // Add LD2.15 ND value/employment slide before LD2.2
+const STORAGE_KEY = 'presentation-slide-config-atdld-v72'; // Add LD3.617 CIA 50-point spread after LD3.615
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
