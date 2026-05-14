@@ -320,7 +320,7 @@ export const PresentationLayout = ({
             className="w-full h-full overflow-y-auto
               [&_.min-h-screen]:!min-h-full [&_.h-screen]:!h-full"
           >
-            <RevealProvider slideId={currentScreen}>{children}</RevealProvider>
+            <RevealProvider key={currentScreen} slideId={currentScreen}>{children}</RevealProvider>
           </div>
         </div>
       </main>
