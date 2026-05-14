@@ -133,6 +133,7 @@ export const screens: ScreenDef[] = [
   { id: "LD1.85", title: "Live Estimate — Audience + AI", component: ElephantEstimateScreen, duration: 5, notes: "Type guesses from the room as people shout numbers. AI models (Gemini Flash/Pro, GPT-5 Mini/Nano) stream their estimates in parallel. Number-line shows the spread; big numbers land on the wall in audience teal vs AI primary." },
   { id: "LD1.87", title: "AI Always Hallucinates", component: HallucinationScreen, duration: 3, notes: "Even the best models predict, they don't retrieve truth. Confidence ≠ correctness. Bigger models hallucinate more confidently, not less often. Treat every output as a draft to verify." },
   { id: "LD1.95", title: "LLMs Predict, They Don't Know — Anthropic", component: ProbabilisticExplainerScreen, duration: 4, notes: "Anthropic's explainer video on probabilistic AI. Embedded YouTube. Closes with: treat outputs as drafts to coach, not finished truth." },
+  { id: "LD1.96", title: "Annie Duke — AI vs Humans on Probability Words", component: AnnieDukeStudyScreen, duration: 5, notes: "Same words, different meanings. Humans range 30-80% on 'serious possibility'; ChatGPT says 70%, Gemini says 50%. Even AI models disagree with each other.", requiresSession: true },
 
   // ═══ ACT 5 — The Accommodation That Already Happened (9 slides · ~30 min) ═══
   { id: "LD4.0", title: "Chapter — The Accommodation That Already Happened", component: AccommodationChapterScreen, duration: 1, notes: "Chapter card." },

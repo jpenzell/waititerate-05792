@@ -33,6 +33,9 @@ const widgets: Record<string, (p: Props) => JSX.Element> = {
   "LD3.62": ({ sessionId, userId }) => (
     <ProbabilityWordsWidget sessionId={sessionId} userId={userId} />
   ),
+  "LD1.96": ({ sessionId, userId }) => (
+    <ProbabilityWordsWidget sessionId={sessionId} userId={userId} />
+  ),
 
   // ─── Act 5 — Curb-cut quiz
   "LD5.2": ({ sessionId, userId }) => (
