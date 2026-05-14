@@ -1,6 +1,5 @@
 import { MessageCircle, Users, Clock } from "lucide-react";
 import { SlideShell, StatBlock } from "@/components/slide";
-import { Card } from "@/components/ui/card";
 
 /**
  * LD4.45 — Open University "Taylor" assistant. The proof-of-concept for
@@ -45,12 +44,6 @@ export const OpenUniversityTaylorScreen = () => {
             accent="accent"
           />
         </div>
-
-        <Card className="p-6 md:p-8 bg-card/70 border-l-8 border-l-accent/60 max-w-5xl mx-auto">
-          <p className="text-xl md:text-2xl text-foreground leading-snug">
-            The model your DSO can ship in <span className="text-accent font-bold">one semester</span>: AI handles the form, the FAQ, and the first conversation. Humans take over the moment a real decision needs a human.
-          </p>
-        </Card>
       </div>
     </SlideShell>
   );
