@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { PollWidget } from "@/components/PollWidget";
 import { QRCodeSVG } from "qrcode.react";
 import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 

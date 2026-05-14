@@ -1,4 +1,3 @@
-import { PollWidget } from "@/components/PollWidget";
 import { SlideShell } from "@/components/slide";
 import { screens } from "@/config/screens";
 import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
