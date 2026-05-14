@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Keyboard } from "lucide-react";
@@ -11,41 +10,10 @@ interface KeyboardShortcutsProps {
 
 export const KeyboardShortcuts = ({ 
   visible, 
-  onNavigate, 
-  onToggleFullscreen 
 }: KeyboardShortcutsProps) => {
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      // Don't trigger if user is typing in an input
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        return;
-      }
-
-      switch (e.key) {
-        case "ArrowLeft":
-          onNavigate?.("prev");
-          break;
-        case "ArrowRight":
-        case " ": // Space bar
-          e.preventDefault();
-          onNavigate?.("next");
-          break;
-        case "f":
-        case "F":
-          onToggleFullscreen?.();
-          break;
-        case "Escape":
-          if (document.fullscreenElement) {
-            document.exitFullscreen();
-          }
-          break;
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyPress);
-    return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [onNavigate, onToggleFullscreen]);
-
+  // Keyboard handling lives in PresentationLayout so it can correctly
+  // route through Reveal builds before advancing slides. This component
+  // is now only the visual hint card.
   if (!visible) return null;
 
   return (
