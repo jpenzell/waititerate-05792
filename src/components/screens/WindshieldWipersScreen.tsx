@@ -110,9 +110,13 @@ export const WindshieldWipersScreen = ({
               </Card>
             )}
           </div>
-        ) : (
+        ) : sessionCode ? (
           <p className="text-xl text-muted-foreground text-center">
             Answer on your device
+          </p>
+        ) : (
+          <p className="text-xl text-muted-foreground text-center italic">
+            Take a guess — show of hands.
           </p>
         )}
       </section>
