@@ -415,7 +415,7 @@ export const IdentityMoveScreen = () => (
         I'm prototyping the future.
       </h2>
       <p className="text-xl md:text-2xl text-muted-foreground italic max-w-3xl mx-auto pt-4">
-        Say it once out loud. That's the identity that gets you through October.
+        Say it once out loud. That's the identity that gets you through the semester.
       </p>
     </div>
   </SlideShell>
