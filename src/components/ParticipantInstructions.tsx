@@ -17,6 +17,7 @@ const slideInstructions: Record<string, { text: string; type: "info" | "action" 
   "LD1.5": { text: "Submit your biggest question about AI in the classroom. We'll come back to these at the end.", type: "action" },
   "LD2.0": { text: "What did you see first—duck or rabbit? Vote on your device.", type: "action" },
   "LD2.1": { text: "Guess three statistics about neurodiversity. Most people are way off—prepare to be surprised.", type: "action" },
+  "LD2.2": { text: "Drag each slider to set what percentage you think these words mean. We'll compare your answers to the CIA / Annie Duke study.", type: "action" },
   "LD3.0": { text: "Take a photo of something that represents how YOU learn best. There's no wrong answer.", type: "action" },
   "LD3.1": { text: "Look at everyone's photos. What patterns do YOU notice? What themes emerge?", type: "info" },
   "LD3.3": { text: "Reflect: what learning differences can't be photographed? Think about invisible cognitive variations.", type: "info" },
