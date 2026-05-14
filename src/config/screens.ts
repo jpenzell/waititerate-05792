@@ -18,6 +18,7 @@ import { LLMExplainerScreen } from "@/components/screens/LLMExplainerScreen";
 import { ProbabilisticExplainerScreen } from "@/components/screens/ProbabilisticExplainerScreen";
 import { HallucinationScreen } from "@/components/screens/HallucinationScreen";
 import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
+import { CognitiveDiversityScreen } from "@/components/screens/CognitiveDiversityScreen";
 import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
 import { ProbabilityWordsPollScreen } from "@/components/screens/ProbabilityWordsPollScreen";
 import { CIASpreadScreen } from "@/components/screens/CIASpreadScreen";
@@ -120,6 +121,7 @@ export const screens: ScreenDef[] = [
   // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD3.61", title: "Duck or Rabbit?", component: PatternRecognitionScreen, duration: 4, notes: "Same image, two interpretations. Pattern recognition is subjective — what you see depends on what your brain expects." },
+  { id: "LD3.612", title: "Cognitive Diversity in Action", component: CognitiveDiversityScreen, duration: 3, notes: "Payoff for the duck/rabbit. Bottom-up vs top-down processing. Neither is better — they're complementary." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD3.615", title: "Probability Words — Poll", component: ProbabilityWordsPollScreen, duration: 3, notes: "Live gut check before Annie Duke lands. Slam dunk? Serious possibility? Rarely? Never?" },
