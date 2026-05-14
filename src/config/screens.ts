@@ -27,7 +27,6 @@ import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen"
 import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
 import { InjusticeSensitivityScreen } from "@/components/screens/InjusticeSensitivityScreen";
 import { DifferentialByConditionScreen } from "@/components/screens/DifferentialByConditionScreen";
-import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
 
 import { StudentsAlreadyUsingAIScreen } from "@/components/screens/StudentsAlreadyUsingAIScreen";
 import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScreen";
@@ -123,7 +122,6 @@ export const screens: ScreenDef[] = [
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
   { id: "LD3.75", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "ND brains often register unfairness — to self and others — as a whole-body alarm. Easily mislabeled as defiance or inflexibility." },
   { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
-  { id: "LD3.8", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared cognitive reflection.", requiresSession: true },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
   // ═══ ACT 4 — No Two AIs Are Alike (warm-ups + AI explainer) ═══
@@ -185,7 +183,6 @@ export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD2.3",   // (was disclosure gap — kept here in case poll-style props passed)
   "LD3.5",   // Inner voice
   "LD3.7",   // Feedback sensitivity
-  "LD3.8",   // Discovery wall
   "LD5.2",   // Curb-cut quiz Q1
   "LD5.3",   // Curb-cut quiz Q2
   "LD6.1",   // Redesign workshop

@@ -3,7 +3,6 @@ import { PollWidget } from "@/components/PollWidget";
 import { screens } from "@/config/screens";
 
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
-import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
 import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
 
@@ -31,7 +30,6 @@ const widgets: Record<string, (p: Props) => JSX.Element> = {
   "LD3.5": ({ sessionId }) => (
     <InnerVoiceScreen isFacilitator={false} sessionId={sessionId} />
   ),
-  "LD3.8": ({ sessionId }) => <DiscoveryWallScreen sessionId={sessionId} />,
 
   // ─── Act 5 — Curb-cut quiz
   "LD5.2": ({ sessionId, userId }) => (
