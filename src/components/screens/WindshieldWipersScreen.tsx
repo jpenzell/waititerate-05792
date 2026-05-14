@@ -86,7 +86,7 @@ export const WindshieldWipersScreen = ({
         </h1>
 
         <p className="text-2xl text-muted-foreground text-center italic">
-          Take a moment. Think about it. Press → for the reveal.
+          Take a moment. Think about it.
         </p>
       </section>
     </main>
