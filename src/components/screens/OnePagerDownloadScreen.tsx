@@ -1,4 +1,4 @@
-import { Linkedin, Globe, Presentation, Mail } from "lucide-react";
+import { Linkedin, Presentation, Mail } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { SlideShell, SlideTitle } from "@/components/slide";
 
@@ -9,19 +9,14 @@ const links = [
     href: "https://www.linkedin.com/in/josh-penzell/",
   },
   {
-    icon: Globe,
-    label: "joshpenzell.com",
-    href: "https://joshpenzell.com",
-  },
-  {
     icon: Presentation,
     label: "Slides live within a week",
-    href: "https://ai4all.joshpenzell.com",
+    href: "https://www.joshpenzell.com",
   },
   {
     icon: Mail,
     label: "Email Josh",
-    href: "mailto:josh@imaginationapplied.com",
+    href: "mailto:josh@joshpenzell.com",
   },
 ];
 
@@ -36,7 +31,7 @@ export const OnePagerDownloadScreen = () => (
         Josh Penzell · Imagination Applied
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 max-w-5xl mx-auto">
         {links.map((link) => (
           <a
             key={link.label}
