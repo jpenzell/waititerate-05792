@@ -47,7 +47,6 @@ import { WilliamsIdentityScreen } from "@/components/screens/WilliamsIdentityScr
 import { CurbCutIntroScreen } from "@/components/screens/CurbCutIntroScreen";
 import { CurbCutQuizScreen } from "@/components/screens/CurbCutQuizScreen";
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
-import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
 
 import { CoDesignScreen } from "@/components/screens/CoDesignScreen";
 import { SpecialOlympicsGapScreen } from "@/components/screens/SpecialOlympicsGapScreen";
@@ -179,7 +178,6 @@ export const screens: ScreenDef[] = [
   // LD7.3 removed (peer accountability — Zoom delivery)
   { id: "LD7.4", title: "Identity Move — Prototyping the Future", component: IdentityMoveScreen, duration: 2, notes: "I'm not accommodating. I'm prototyping the future." },
   { id: "LD7.5", title: "Take It With You", component: OnePagerDownloadScreen, duration: 2, notes: "Faculty one-pager. Footnote, not climax." },
-  { id: "LD5.6", title: "The Institutional Case", component: RetentionEquityScreen, duration: 4, notes: "Retention / Title III / SACSCOC hook." },
 ];
 
 // Slide IDs that accept (isFacilitator, sessionId, userId) interactive props
