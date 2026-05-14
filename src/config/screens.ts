@@ -45,7 +45,6 @@ import { CurbCutQuizScreen } from "@/components/screens/CurbCutQuizScreen";
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
 import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
 
-import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
 import { CoDesignScreen } from "@/components/screens/CoDesignScreen";
 import { SpecialOlympicsGapScreen } from "@/components/screens/SpecialOlympicsGapScreen";
 
@@ -160,9 +159,6 @@ export const screens: ScreenDef[] = [
   { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
   { id: "LD6.2", title: "Cognitive Load + UDL", component: CognitiveLoadUDLScreen, duration: 5, notes: "Two principles for the next 30 minutes." },
   { id: "LD6.3", title: "AI Student: Setup", component: AIStudentSetupScreen, duration: 3, notes: "You are now the teacher. Three rounds." },
-  { id: "LD6.4", title: "AI Student: Round 1 — Teach", component: AIStudentScreen, duration: 8, notes: "Teach the AI a concept; watch where it misunderstands.", requiresSession: true, props: { round: 1 } },
-  { id: "LD6.5", title: "AI Student: Round 2 — Redesign", component: AIStudentScreen, duration: 6, notes: "Re-teach using UDL + cognitive load.", requiresSession: true, props: { round: 2 } },
-  { id: "LD6.6", title: "AI Student: Round 3 — Iterate", component: AIStudentScreen, duration: 5, notes: "Watch the score improve. Iteration doubles quality.", requiresSession: true, props: { round: 3 } },
   { id: "LD6.7", title: "Co-Design With ND Students", component: CoDesignScreen, duration: 4, notes: "Special Olympics co-design model. Nothing about us without us." },
   // LD6.8 removed (peer talk — Zoom delivery)
 
@@ -187,7 +183,4 @@ export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD3.7",   // Feedback sensitivity
   "LD5.2",   // Curb-cut quiz Q1
   "LD5.3",   // Curb-cut quiz Q2
-  "LD6.4",   // AI student R1
-  "LD6.5",   // AI student R2
-  "LD6.6",   // AI student R3
 ]);
