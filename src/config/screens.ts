@@ -44,6 +44,14 @@ import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScr
 import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
 import { NeurodiversityInnovationScreen } from "@/components/screens/NeurodiversityInnovationScreen";
 import { MeetJoshLieScreen } from "@/components/screens/MeetJoshLieScreen";
+import {
+  Chapter02Screen,
+  Chapter03Screen,
+  Chapter04Screen,
+  Chapter05Screen,
+  Chapter06Screen,
+  Chapter07Screen,
+} from "@/components/screens/ChapterScreens";
 
 export interface ScreenDef {
   id: string;
@@ -68,10 +76,12 @@ export const screens: ScreenDef[] = [
   { id: "LD1.3", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 4, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
   { id: "LD1.4", title: "What This Is NOT", component: WhatThisIsNotScreen, duration: 3, notes: "Disarm faculty skepticism early." },
   // 2.x — Why neurodiversity matters
+  { id: "LD2.0a", title: "Chapter 02 — Why difference matters", component: Chapter02Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD2.0", title: "Pattern Recognition & Perspective", component: PatternRecognitionScreen, duration: 6, notes: "Autistic detail focus vs neurotypical gestalt processing.", pollQuestion: "What did you see first?", pollOptions: ["Duck (facing right)", "Rabbit (facing left)", "Both at the same time", "Neither/Unsure"] },
   { id: "LD2.1", title: "Why Neurodiversity Matters: The Data", component: NeurodiversityDataQuizScreen, duration: 8, notes: "Interactive data quiz." },
   { id: "LD2.2", title: "Same Words, Different Meanings", component: AnnieDukeStudyScreen, duration: 5, notes: "Annie Duke / Sherman Kent." },
   // 3.x — Photo exercise
+  { id: "LD3.0a", title: "Chapter 03 — Patterns we miss", component: Chapter03Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD3.0", title: "Step 1: How You Learn Best", component: PhotoCollectionScreen, duration: 2, notes: "Photo collection." },
   { id: "LD3.1", title: "Step 2: What Patterns Do You See?", component: HumanPatternsScreen, duration: 2, notes: "Pattern spotting." },
   { id: "LD3.2", title: "Step 3: AI Pattern Analysis", component: AIPatternsScreen, duration: 2, notes: "AI reveals patterns." },
@@ -80,6 +90,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.5", title: "Step 6: Abundance Reveal", component: AIDatapointsScreen, duration: 2, notes: "AI datapoints." },
   { id: "LD3.6", title: "Transition: From AI to Human Cognition", component: CognitiveTransitionScreen, duration: 1, notes: "Bridge slide." },
   // 4.x — Cognitive discovery
+  { id: "LD4.0a", title: "Chapter 04 — Inside the mind", component: Chapter04Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD4.0", title: "Mental Imagery Discovery", component: MentalImageryScreen, duration: 7, notes: "Aphantasia reveal." },
   { id: "LD4.1", title: "Inner Voice Discovery", component: InnerVoiceScreen, duration: 6, notes: "Reading voice." },
   { id: "LD4.2", title: "Time Perception Challenge", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
@@ -91,6 +102,7 @@ export const screens: ScreenDef[] = [
   { id: "LD4.8", title: "You Are Not Alone (Faculty)", component: FacultyAreNeurodivergentScreen, duration: 3, notes: "Permission slide." },
   { id: "LD4.9", title: "Peer Talk: Discovery", component: PeerTalkScreen, duration: 3, props: { prompt: "What did you just discover that you'd never noticed before?", subPrompt: "Pick one thing. 90 seconds with the person next to you.", seconds: 90 }, notes: "Structured peer talk." },
   // 5.x — Curb-cut effect
+  { id: "LD5.0a", title: "Chapter 05 — The curb-cut effect", component: Chapter05Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD5.0", title: "The Curb-Cut Effect: Introduction", component: CurbCutIntroScreen, duration: 3, notes: "Curb-cut effect intro." },
   { id: "LD5.1", title: "Quiz Q1: Closed Captions", component: CurbCutQuizScreen, duration: 1, notes: "Q1.", pollQuestion: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?", pollOptions: ["20%", "45%", "71%", "85%"] },
   { id: "LD5.2", title: "Quiz Q2: Chunked Content", component: CurbCutQuizScreen, duration: 1, notes: "Q2.", pollQuestion: "How much does chunked content improve completion rates for everyone?", pollOptions: ["10%", "30%", "50%", "75%"] },
@@ -98,12 +110,14 @@ export const screens: ScreenDef[] = [
   { id: "LD5.4", title: "The Curb-Cut Effect: Results", component: CurbCutResultsScreen, duration: 5, notes: "Reveal stats." },
   { id: "LD5.5", title: "Learning Design Curb Cuts", component: CurbCutExamplesScreen, duration: 3, notes: "Real examples." },
   // 6.x — AI for accommodation
+  { id: "LD6.0a", title: "Chapter 06 — AI as accommodation", component: Chapter06Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD6.0", title: "AI as Cognitive Prosthetic", component: AICognitiveProtheticScreen, duration: 6, notes: "Real examples." },
   { id: "LD6.1", title: "Structured Freedom Framework", component: StructuredFreedomScreen, duration: 7, notes: "Balance between guidance and autonomy.", pollQuestion: "Which design approach best describes your current training?", pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"] },
   { id: "LD6.2", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 5, notes: "JAMA 2024." },
   { id: "LD6.3", title: "But Isn't This Just Cheating?", component: AcademicIntegrityScreen, duration: 5, notes: "Reframe academic integrity." },
   { id: "LD6.4", title: "AI as Cognitive Accommodation", component: AIAccommodationScreen, duration: 5, notes: "Six archetypes." },
   // 7.x — Workshop
+  { id: "LD7.0a", title: "Chapter 07 — Make something", component: Chapter07Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD7.0", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop." },
   { id: "LD7.1", title: "Peer Talk: Redesign", component: PeerTalkScreen, duration: 3, props: { prompt: "Show your neighbor what you redesigned.", subPrompt: "What changed? What did the AI catch that you wouldn't have? 90 seconds each way.", seconds: 180 }, notes: "Pair share." },
   { id: "LD7.2", title: "This Is Retention Strategy", component: RetentionEquityScreen, duration: 4, notes: "Equity / Title III / SACSCOC hook." },
