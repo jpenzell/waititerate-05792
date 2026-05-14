@@ -25,11 +25,14 @@ import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
 import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
 import { InjusticeSensitivityScreen } from "@/components/screens/InjusticeSensitivityScreen";
+import { DifferentialByConditionScreen } from "@/components/screens/DifferentialByConditionScreen";
 import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
 
 import { StudentsAlreadyUsingAIScreen } from "@/components/screens/StudentsAlreadyUsingAIScreen";
 import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScreen";
+import { WorkaroundForGatekeepingScreen } from "@/components/screens/WorkaroundForGatekeepingScreen";
 import { ShadowAccommodationScreen } from "@/components/screens/ShadowAccommodationScreen";
+import { OpenUniversityTaylorScreen } from "@/components/screens/OpenUniversityTaylorScreen";
 import { AIParadoxRevealScreen } from "@/components/screens/AIParadoxRevealScreen";
 import { DetectorBiasScreen } from "@/components/screens/DetectorBiasScreen";
 import { WilliamsIdentityScreen } from "@/components/screens/WilliamsIdentityScreen";
@@ -43,6 +46,7 @@ import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScree
 import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
 import { CoDesignScreen } from "@/components/screens/CoDesignScreen";
+import { SpecialOlympicsGapScreen } from "@/components/screens/SpecialOlympicsGapScreen";
 
 import { InclusiveSupportStackScreen } from "@/components/screens/InclusiveSupportStackScreen";
 import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScreen";
@@ -121,6 +125,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
   { id: "LD3.75", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "ND brains often register unfairness — to self and others — as a whole-body alarm. Easily mislabeled as defiance or inflexibility." },
+  { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
   { id: "LD3.8", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared cognitive reflection.", requiresSession: true },
   { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you on this call are these people. The rest of you teach them every day." },
 
@@ -130,6 +135,8 @@ export const screens: ScreenDef[] = [
   { id: "LD4.2", title: "You Probably Do Too", component: YouProbablyDoTooScreen, duration: 3, notes: "Faculty already use AI for the same accommodations students want." },
   { id: "LD4.3", title: "Humanize My Words", component: HumanizeMyWordsScreen, duration: 4, notes: "Ma et al. 2026 — masking-as-a-service." },
   { id: "LD4.4", title: "Shadow Accommodation", component: ShadowAccommodationScreen, duration: 4, notes: "Atcheson et al. CHI 2025 — AI does what the institution doesn't." },
+  { id: "LD4.45", title: "Workaround for Gatekeeping", component: WorkaroundForGatekeepingScreen, duration: 4, notes: "Atcheson et al. CHI 2025 — 25 of 62 students said GenAI supports them in ways the university doesn't. Two student quotes (P10, P31)." },
+  { id: "LD4.47", title: "Open University 'Taylor'", component: OpenUniversityTaylorScreen, duration: 3, notes: "Co-designed digital assistant at the front door of disability services. AI handles intake, humans handle judgment." },
   { id: "LD4.5", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 4, notes: "JAMA 2024." },
   { id: "LD4.6", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English." },
   { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
@@ -154,6 +161,7 @@ export const screens: ScreenDef[] = [
   { id: "LD6.5", title: "AI Student: Round 2 — Redesign", component: AIStudentScreen, duration: 6, notes: "Re-teach using UDL + cognitive load.", requiresSession: true, props: { round: 2 } },
   { id: "LD6.6", title: "AI Student: Round 3 — Iterate", component: AIStudentScreen, duration: 5, notes: "Watch the score improve. Iteration doubles quality.", requiresSession: true, props: { round: 3 } },
   { id: "LD6.7", title: "Co-Design With ND Students", component: CoDesignScreen, duration: 4, notes: "Special Olympics co-design model. Nothing about us without us." },
+  { id: "LD6.75", title: "Special Olympics — The Inclusion Gap", component: SpecialOlympicsGapScreen, duration: 3, notes: "Stratalys × Special Olympics 2024. 77% of parents and 64% of educators see AI as a mechanism for inclusion — but only 35% think developers account for IDD students. Tim Shriver / Nathan Cook close." },
   // LD6.8 removed (peer talk — Zoom delivery)
 
   // ═══ ACT 7 — Close With the Callback (6 slides · ~15 min) ═══
