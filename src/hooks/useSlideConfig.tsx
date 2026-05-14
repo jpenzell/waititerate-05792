@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v60'; // Remove LD5.7 (duplicate)
+const STORAGE_KEY = 'presentation-slide-config-atdld-v61'; // Remove LD6.1 workshop
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
