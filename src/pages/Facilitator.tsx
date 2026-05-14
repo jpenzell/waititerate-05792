@@ -317,15 +317,17 @@ export default function Facilitator() {
     <>
       {!hideParticles && <ParticleBackground />}
       
-      {/* Accessibility Controls */}
-      <AccessibilityControls 
-        onSettingsChange={(settings) => {
-          setKeyboardHintsVisible(settings.keyboardHintsVisible);
-          setHideParticles(settings.hideParticles);
-        }}
-      />
+      {/* Accessibility Controls — hidden in Clean View */}
+      <div className="[body[data-clean-view]_&]:hidden">
+        <AccessibilityControls 
+          onSettingsChange={(settings) => {
+            setKeyboardHintsVisible(settings.keyboardHintsVisible);
+            setHideParticles(settings.hideParticles);
+          }}
+        />
+      </div>
       
-      {/* Keyboard Shortcuts */}
+      {/* Keyboard Shortcuts — hidden in Clean View */}
       <KeyboardShortcuts 
         visible={keyboardHintsVisible}
         onNavigate={(direction) => {
@@ -344,9 +346,9 @@ export default function Facilitator() {
         }}
       />
       
-      {/* Always-visible control toggle button */}
+      {/* Show Session Controls toggle — hidden in Clean View */}
       {!showControls && (
-        <div className="fixed top-4 right-4 z-50">
+        <div className="fixed top-4 right-4 z-50 [body[data-clean-view]_&]:hidden">
           <Button
             onClick={() => setShowControls(true)}
             size="sm"
@@ -358,9 +360,9 @@ export default function Facilitator() {
         </div>
       )}
       
-      {/* Minimal Controls Toggle */}
+      {/* Session Control panel — hidden in Clean View */}
       {showControls && (
-        <div className="fixed top-4 right-4 z-50 space-y-2">
+        <div className="fixed top-4 right-4 z-50 space-y-2 [body[data-clean-view]_&]:hidden">
           <SessionControl
             onSessionChange={handleSessionChange}
             userId={user.id}
