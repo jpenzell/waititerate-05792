@@ -1,50 +1,119 @@
-## Goal
+# Presentation Overhaul Plan — Zoox-level treatment, deck-wide
 
-The deck is screenshared on Zoom/Teams. Participants never read slides on their devices — their phone/laptop is purely an input remote that wakes up only when the current slide needs them. Everything else should be calm and dark so they look at the shared screen.
+## What I audited
 
-## What changes
+I read the slide registry plus a representative sample of 14 slides covering every layout pattern in the deck (title, transition, stat-grid, two-column, quiz, reveal, list, takeaway, downloads). The deck is technically solid but visually monotonous — almost every information slide uses the same template (centered H1 + 3-or-4 `Card` grid with icon + value + label + a closing gradient quote card). The Zoox slide stands out because it's a full-bleed photograph with cinematic typography. To bring every slide closer to that energy I need to (a) build a small set of reusable "presentation primitives" so styling stops being copy-pasted, (b) introduce hero imagery on the slides where a held image actually earns the second of silence, and (c) add chapter dividers so the audience can feel the deck breathe.
 
-### 1. New participant experience: `StandbyView`
+## Audit findings
 
-Replace the current `Participate.tsx` rendering of `<PresentationLayout> + <SlideRenderer>` with a dedicated, single-purpose view that watches `currentSlideId` from realtime and switches between two states:
+**Strong already:** `LDTitleScreen`, `WindshieldWipersRevealScreen` (Zoox), `AnnieDukeStudyScreen`, `AnthropicIterationScreen` (giant 2×).
 
-- **Interactive slide** (id is in `INTERACTIVE_SLIDE_IDS`): render only the interaction widget for that slide — poll, photo upload, numeric estimate, prompt input, parking-lot input, etc. No slide narrative, no headings beyond "Your turn", no decorative imagery.
-- **Non-interactive slide** (everything else): render a calm standby screen — dark background, a small pulsing dot, the line "Eyes on the shared screen", their display name, the session code, and a "Leave session" link. No content from the slide.
+**Visually thin / repetitive:**
+- `CurbCutQuizScreen` — small "Test the Principle" badge, plain centered card. Looks like a form, not a question on stage.
+- `RCCCContextScreen`, `FacultyAreNeurodivergentScreen`, `RetentionEquityScreen`, `AIAccommodationScreen`, `LDTakeawaysScreen`, `MondayPromptsScreen`, `FacultyTranslationScreen`, `WhatThisIsNotScreen`, `AcademicIntegrityScreen` — same icon-card-grid template, varying only icon and copy.
+- `ResearchFoundationsScreen` — collapsible chevron-expand UX is web-app behaviour, not stage behaviour. Too dense; should split.
+- `CognitiveTransitionScreen`, `CurbCutIntroScreen`, `OnePagerDownloadScreen` — pure-text / single-icon. Read flat next to Zoox.
+- Section transitions 2.x → 3.x → 4.x → 5.x → 6.x → 7.x → 8.x have no visual reset; the room never gets a "we're starting a new chapter" moment.
 
-Strip from the participant view: `ParticleBackground`, `AccessibilityControls`, `ProgressIndicator`, the per-slide `<PresentationLayout>` chrome, the `Reveal` build system, and the join overlay (they're already in).
+**Inconsistencies:**
+- Reveal API: most slides use `useRegisterReveals` + `<Reveal>`; `AnthropicIterationScreen` and `LDTitleScreen` skip it and reveal everything at once.
+- Background treatment: ~6 different gradient combinations, no chapter colour identity.
+- Type ramp: H1 ranges from `text-5xl md:text-7xl` to `text-6xl md:text-8xl` with no logic.
 
-### 2. Interaction registry
+## Approach (one PR)
 
-Create a small map `participantWidgets: Record<SlideId, ReactNode>` so the standby view knows exactly which widget to mount per interactive slide. Sources already exist inside each slide component; extract just the participant-facing portion (the `!isFacilitator` branch) into a shared `widgets/` folder so the standby view can import without pulling slide layout/narrative.
+### Step 1 — Foundations (new files)
 
-Slides covered (from `INTERACTIVE_SLIDE_IDS`): LD1.1, LD1.5, LD2.0, LD2.1, LD3.0–LD3.6, LD4.0–LD4.4, LD4.6, LD5.1–LD5.3, LD6.1, LD7.0, LD7.3, LD8.2.
+`src/components/slide/` primitives (every existing slide is rewritten on top of these):
 
-### 3. Presenter-side polish for Zoom/Teams screenshare
+| Component | Use |
+|---|---|
+| `SlideShell` | Standard padded full-height container. Replaces the repeated `min-h-screen flex items-center px-8 py-10 animate-fade-in` boilerplate. Accepts `chapter` prop for accent colour. |
+| `SlideHero` | Full-bleed image background + gradient scrim + foreground content slot. The Zoox pattern, generalised. |
+| `ChapterDivider` | Cinematic chapter marker — large chapter number, theme word, optional hero image, single accent rule. |
+| `StatBlock` | Large value + label, optional icon, optional source line. Replaces ~30 hand-rolled stat cards. |
+| `QuoteSlide` / `PullQuote` | The recurring closing quote card ("Design the margins. Improve the center.") becomes one component with variants. |
+| `TwoColumnContrast` | The recurring "fear vs reframe", "NOT this vs THIS" pattern. |
+| `IconRow` | The "glasses → mobility aid → AI" sequencer. |
 
-- Audit every slide's interactive cue: when a slide expects audience input, the shared screen must clearly say "Respond on your phone" with the join code/QR, so screenshare viewers know to pick up their device. The persistent join overlay handles latecomers; add a slide-level "Your turn" banner only on interactive slides.
-- Confirm no slide instructs participants to read content on their phone (e.g. "scroll down on your device"). Rewrite any such copy.
-- Verify Clean View (M) and Blank (B/W) work on every slide.
-- Remove participant-only affordances that were leaking into the shared view (e.g. "tap here" hints visible to facilitator).
+`src/styles/slide-tokens.css` — adds:
+- 6 chapter accent HSL tokens (`--chapter-1` … `--chapter-6`) drawn from existing palette so each section has its own quiet hue.
+- Refined type ramp variables (`--display-xl`, `--display-l`, `--display-m`, `--body-xl`, `--body-l`) so every slide pulls from the same scale.
+- Standard reveal-build duration / easing.
 
-### 4. Mobile chrome cleanup
+`src/components/slide/useStandardReveals.ts` — wraps `useRegisterReveals` + `<Reveal>` so slides declare reveals as `reveals(['intro','grid','closer'])` instead of counting steps by hand. Also auto-handles the "everything visible for facilitator preview / thumbnail" case.
 
-On the participant device, kill all desktop-only UI (particles, progress bar, accessibility panel are already gated by `isMobile`, but the standby view should not depend on those gates — it just doesn't render them at all). Sign-out becomes a small icon in a corner.
+### Step 2 — Hero imagery
 
-## Technical notes
+Generate ~9 new full-bleed images via `imagegen--generate_image` (premium tier where text appears, fast tier otherwise). All saved to `src/assets/slides/`, registered in `preloadImages.ts` so they paint on the first frame just like Zoox.
 
-- Keep `useRealtimeSession` as the single source of truth for `currentSlideId`.
-- New file: `src/components/participant/StandbyView.tsx` — owns layout, standby state, and slide-id → widget switch.
-- New folder: `src/components/participant/widgets/` — one tiny component per interactive slide, each accepting `{ sessionId, userId, sessionCode }`. Reuse existing widgets (`PollWidget`, photo upload, `NumericEstimateScreen`'s input subtree, etc.) where they already isolate the participant UI.
-- `Participate.tsx` shrinks to: auth + auto-join + render `<StandbyView />`. No `PresentationLayout`, no `SlideRenderer` for participants.
-- Slides themselves are unchanged for facilitator rendering. We only stop using their participant branch from `Participate.tsx`.
-- For slides that previously rendered a participant fallback inline (e.g. "📱 Vote on your device"), keep them — they're shown on the shared screen as an audience cue.
+| Slide | Image direction |
+|---|---|
+| LD1.0 Title | Optional subtle abstract — keep current gradient if it reads well, otherwise a generated cinematic background. |
+| LD1.4 What This Is NOT | Single muted classroom photo, scrim. |
+| LD2.0 Pattern Recognition | Already has the duck/rabbit; keep but tighten frame. |
+| LD3.0 Photo Collection chapter beat | Hero photo of mixed learning surfaces. |
+| LD4.x chapter divider | Hero brain/abstract neural texture. |
+| LD5.0 Curb-Cut Intro | Real curb-cut photograph, low contrast, scrim. |
+| LD5.4 Curb-Cut Results | Same image carried through, now with the stats overlaid. |
+| LD6.0 AI as Cognitive Prosthetic | Hero shot — glasses on a desk, soft focus, scrim. |
+| LD6.3 Academic Integrity | Calculator-on-paper shot, scrim. |
+| LD7.5 UDL in Action | Three-window architectural photo (representation/engagement/expression). |
+| LD8.0 Takeaways | Sunrise / horizon photo, scrim, type-led. |
+
+### Step 3 — Six chapter divider slides
+
+Inserted into `src/config/screens.ts` between sections, each a `ChapterDivider` instance with chapter number, theme line, image, and the section colour token:
+
+| New ID | Before | Theme |
+|---|---|---|
+| LD2.0a | Before LD2.0 | "02 · Why difference matters" |
+| LD3.0a | Before LD3.0 | "03 · Patterns we miss" |
+| LD4.0a | Before LD4.0 | "04 · Inside the mind" |
+| LD5.0a | Before LD5.0 | "05 · The curb-cut effect" |
+| LD6.0a | Before LD6.0 | "06 · AI as accommodation" |
+| LD7.0a | Before LD7.0 | "07 · Make something" |
+
+Chapter dividers are non-interactive, ~3 seconds, no reveals, designed to give you a beat to set up the next section verbally.
+
+### Step 4 — Slide-by-slide rebuild (47 screens)
+
+Every existing screen file gets rewritten to:
+1. Use `SlideShell` (or `SlideHero` / `ChapterDivider` where appropriate).
+2. Pull type from the new ramp tokens — no more arbitrary `text-5xl md:text-7xl` per slide.
+3. Use the shared primitives (`StatBlock`, `TwoColumnContrast`, `IconRow`, `QuoteSlide`) instead of hand-rolled `Card` grids.
+4. Standardise reveal pacing via `useStandardReveals`.
+5. Carry its chapter accent colour (each section has a quiet hue, not just primary everywhere).
+
+Specific structural changes worth calling out (not just restyles):
+
+- `CurbCutQuizScreen` — promote to `SlideHero` with the question itself as 7xl headline, options spaced like a stage poll. The PollWidget chrome shrinks; the *question* becomes the slide.
+- `ResearchFoundationsScreen` — drop the chevron-expand interaction. Show the four areas as four large cards with the headline finding only. The full citations move into the Faculty One-Pager PDF (where they belong).
+- `OnePagerDownloadScreen` — full-bleed close, type-led, big QR + email. Removes the two-card layout.
+- `MondayPromptsScreen` — currently four prompt cards on one slide. Split into a chapter card + four reveal-paced prompt cards so each prompt gets a screenshare moment.
+- `LDTitleScreen` and `AnthropicIterationScreen` — keep their identity but route through `SlideShell` for consistency.
+- Zoox (`WindshieldWipersRevealScreen`) — untouched; it's the reference.
+
+### Step 5 — Verification
+
+After the rebuild, I'll page through every slide ID via the preview to confirm:
+- No clipped content at 1015×802 (current preview viewport).
+- Reveals advance/reset cleanly.
+- Hero images paint without the load flash (same preload pattern as Zoox).
+- Participant widgets still wire up correctly (no `slideId` regressions).
+- Memory rules respected: large typography, screenshare-first, phones input-only, semantic HTML/ARIA preserved.
 
 ## Out of scope
 
-- No changes to slide content/copy beyond removing any "look at your phone for the next slide" style instructions.
-- No new interactive slide types.
-- No captioning/audio work (Zoom/Teams handles it).
+- Participant phone widgets — untouched unless a slide-shell change forces a prop tweak.
+- Backend / DB / RLS — no changes.
+- The 1.x slides you've explicitly dialled in recently (`WindshieldWipersScreen` join step, `MeetJoshLieScreen`) get the primitive treatment but no structural change.
 
-## Open question
+## Risk & rollback
 
-Do you want the standby screen to show the **current slide title** as a tiny label (so a participant glancing at their phone knows where the group is), or stay completely blank-message ("Eyes on the shared screen") with no slide context at all?
+This is a wide change touching ~50 files. Risks:
+- Reveal counts could drift if I miscount steps — mitigated by `useStandardReveals` returning a typed list.
+- Image preload list grows; should still be under 5 MB total. I'll keep individual hero images ≤ 400 KB after generation.
+- If a slide regresses, each file is self-contained — easy to revert per-screen.
+
+If you approve, I'll execute the entire pass in one go and walk you through the new look section by section at the end.
