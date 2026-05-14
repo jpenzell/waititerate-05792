@@ -19,6 +19,7 @@ import { ProbabilisticExplainerScreen } from "@/components/screens/Probabilistic
 import { HallucinationScreen } from "@/components/screens/HallucinationScreen";
 import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
 import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
+import { ProbabilityWordsPollScreen } from "@/components/screens/ProbabilityWordsPollScreen";
 import { LanguageShapesThoughtScreen } from "@/components/screens/LanguageShapesThoughtScreen";
 import { RussianBluesDemoScreen } from "@/components/screens/RussianBluesDemoScreen";
 
@@ -118,6 +119,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD3.61", title: "Duck or Rabbit?", component: PatternRecognitionScreen, duration: 4, notes: "Same image, two interpretations. Pattern recognition is subjective — what you see depends on what your brain expects." },
+  { id: "LD3.615", title: "Probability Words — Poll", component: ProbabilityWordsPollScreen, duration: 3, notes: "Live gut check before Annie Duke lands. Slam dunk? Serious possibility? Rarely? Never?" },
   { id: "LD3.62", title: "Annie Duke — Same Words, Different Meanings", component: AnnieDukeStudyScreen, duration: 5, notes: "Probability words like 'serious possibility' or 'rarely' mean wildly different things to different people — and to different AI models. Words are not numbers.", requiresSession: true },
   { id: "LD3.63", title: "Language Shapes Thought", component: LanguageShapesThoughtScreen, duration: 2, notes: "Sapir-Whorf in one breath. Language doesn't just describe what you think — it shapes how you think." },
   { id: "LD3.64", title: "Russian Blues — Demo", component: RussianBluesDemoScreen, duration: 3, notes: "Winawer/Boroditsky 2007. Two basic words for blue → 124ms faster discrimination. Measurable proof language conditions perception." },
