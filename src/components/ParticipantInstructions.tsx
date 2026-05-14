@@ -12,29 +12,22 @@ interface ParticipantInstructionsProps {
   duration?: number;
 }
 
+// IDs match the rebuilt 7-act outline (see config/screens.ts).
 const slideInstructions: Record<string, { text: string; type: "info" | "action" | "success" }> = {
-  "LD1.1": { text: "Does a self-driving car need windshield wipers? Vote on your device—this is about questioning assumptions.", type: "action" },
-  "LD1.5": { text: "Submit your biggest question about AI in the classroom. We'll come back to these at the end.", type: "action" },
-  "LD2.0": { text: "What did you see first—duck or rabbit? Vote on your device.", type: "action" },
-  "LD2.1": { text: "Guess three statistics about neurodiversity. Most people are way off—prepare to be surprised.", type: "action" },
-  "LD2.2": { text: "Drag each slider to set what percentage you think these words mean. We'll compare your answers to the CIA / Annie Duke study.", type: "action" },
-  "LD3.0": { text: "Take a photo of something that represents how YOU learn best. There's no wrong answer.", type: "action" },
-  "LD3.1": { text: "Look at everyone's photos. What patterns do YOU notice? What themes emerge?", type: "info" },
-  "LD3.3": { text: "Reflect: what learning differences can't be photographed? Think about invisible cognitive variations.", type: "info" },
-  "LD3.4": { text: "How many distinct interpretations do you think AI could draw from these photos? Submit your estimate.", type: "action" },
-  "LD4.0": { text: "Close your eyes and picture a red apple on a white plate. How vivid is your mental image?", type: "action" },
-  "LD4.1": { text: "Read the sentence on screen SILENTLY. Do you hear a voice reading it to you?", type: "action" },
-  "LD4.2": { text: "Press START, then—without counting—press STOP when you think 10 seconds have passed.", type: "action" },
-  "LD4.3": { text: "Adjust the sensory sliders until it feels OVERWHELMING. Everyone's threshold is different.", type: "action" },
-  "LD4.4": { text: "Reflect on what surprised you. What did you learn about cognitive diversity?", type: "action" },
-  "LD4.6": { text: "Add your discovery to the wall. What did you notice about your own mind today?", type: "action" },
-  "LD5.1": { text: "Closed-caption usage: what percentage of ALL viewers use them? Vote on your device.", type: "action" },
-  "LD5.2": { text: "How much does chunking improve completion for everyone? Vote on your device.", type: "action" },
-  "LD5.3": { text: "What percentage of learners prefer multiple formats? Vote on your device.", type: "action" },
-  "LD6.1": { text: "Which best describes your current training design—rigid, chaotic, or balanced? Vote on your device.", type: "action" },
-  "LD7.0": { text: "Pick one of your own slides and redesign it for cognitive accessibility. AI will help.", type: "action" },
-  "LD7.3": { text: "You're the teacher. Explain neurodiversity to the AI student—learning by teaching.", type: "action" },
-  "LD8.2": { text: "Your parking-lot questions are now displayed. Upvote any you'd like answered.", type: "info" },
+  "LD1.1": { text: "Does a self-driving car need windshield wipers? Vote on your device.", type: "action" },
+  "LD3.1": { text: "Take a photo of something that represents how YOU learn best. There's no wrong answer.", type: "action" },
+  "LD3.2": { text: "Look at everyone's photos. What patterns do YOU notice?", type: "info" },
+  "LD3.4": { text: "Close your eyes and picture a red apple on a white plate. How vivid is the image?", type: "action" },
+  "LD3.5": { text: "Read the sentence silently. Do you hear a voice reading it to you?", type: "action" },
+  "LD3.6": { text: "Press START, then — without counting — press STOP when you think 10 seconds have passed.", type: "action" },
+  "LD3.7": { text: "How does feedback land for you? Move the slider.", type: "action" },
+  "LD3.8": { text: "Add your discovery to the wall. What did you notice about your own mind today?", type: "action" },
+  "LD5.2": { text: "Closed-caption usage: what percentage of ALL viewers use them? Vote on your device.", type: "action" },
+  "LD5.3": { text: "How much does chunking improve completion for everyone? Vote on your device.", type: "action" },
+  "LD6.1": { text: "Pick a slide of your own and redesign it for cognitive accessibility. AI will help.", type: "action" },
+  "LD6.4": { text: "Round 1 — teach the AI student a concept. Watch where it misunderstands.", type: "action" },
+  "LD6.5": { text: "Round 2 — redesign your explanation using UDL + cognitive load.", type: "action" },
+  "LD6.6": { text: "Round 3 — iterate. Watch the score climb.", type: "action" },
 };
 
 export const ParticipantInstructions = ({ 
