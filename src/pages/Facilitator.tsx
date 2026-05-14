@@ -50,11 +50,18 @@ export default function Facilitator() {
 
   const visibleScreens = useMemo(() => {
     const sortedConfig = [...config].sort((a, b) => a.order - b.order);
-    return sortedConfig
+    const base = sortedConfig
       .filter(c => c.visible)
       .map(c => screens.find(s => s.id === c.id))
       .filter(Boolean) as typeof screens;
-  }, [config]);
+    // When no participant session is active, drop slides that only make
+    // sense with live audience input (photo exercise, discovery wall,
+    // redesign workshop, AI student). Forward/back arrows skip them cleanly.
+    if (!sessionId) {
+      return base.filter(s => !s.requiresSession);
+    }
+    return base;
+  }, [config, sessionId]);
 
   // Restore session from localStorage or check for active session
   useEffect(() => {
