@@ -141,36 +141,36 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
           <Card className="p-6 bg-gradient-to-br from-primary/10 to-primary/5">
             <div className="text-center">
               <div className="text-4xl font-bold text-primary">{((dist.excellent / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-sm text-muted-foreground mt-2">Excellent</div>
-              <div className="text-xs text-muted-foreground">&lt;1s difference</div>
+              <div className="text-lg text-muted-foreground mt-2">Excellent</div>
+              <div className="text-base text-muted-foreground">&lt;1s difference</div>
             </div>
           </Card>
           <Card className="p-6 bg-gradient-to-br from-accent/10 to-accent/5">
             <div className="text-center">
               <div className="text-4xl font-bold text-accent">{((dist.good / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-sm text-muted-foreground mt-2">Good</div>
-              <div className="text-xs text-muted-foreground">1-2s difference</div>
+              <div className="text-lg text-muted-foreground mt-2">Good</div>
+              <div className="text-base text-muted-foreground">1-2s difference</div>
             </div>
           </Card>
           <Card className="p-6 bg-gradient-to-br from-foreground/10 to-foreground/5">
             <div className="text-center">
               <div className="text-4xl font-bold text-foreground">{((dist.moderate / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-sm text-muted-foreground mt-2">Moderate</div>
-              <div className="text-xs text-muted-foreground">2-4s difference</div>
+              <div className="text-lg text-muted-foreground mt-2">Moderate</div>
+              <div className="text-base text-muted-foreground">2-4s difference</div>
             </div>
           </Card>
           <Card className="p-6 bg-gradient-to-br from-muted/20 to-muted/10">
             <div className="text-center">
               <div className="text-4xl font-bold text-muted-foreground">{((dist.timeBlind / dist.total) * 100).toFixed(0)}%</div>
-              <div className="text-sm text-muted-foreground mt-2">Time Blindness</div>
-              <div className="text-xs text-muted-foreground">&gt;4s difference</div>
+              <div className="text-lg text-muted-foreground mt-2">Time Blindness</div>
+              <div className="text-base text-muted-foreground">&gt;4s difference</div>
             </div>
           </Card>
         </div>
 
         <Card className="p-8 mb-4 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-2">Average Difference</p>
+            <p className="text-lg text-muted-foreground mb-2">Average Difference</p>
             <p className="text-5xl font-bold text-primary">{dist.avgDiff.toFixed(1)}s</p>
           </div>
         </Card>
@@ -182,7 +182,7 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
               <br />
               <span className="text-primary">Build checkpoints, not just deadlines.</span>
             </p>
-            <p className="text-sm text-muted-foreground italic">Press → for what students told us.</p>
+            <p className="text-lg text-muted-foreground italic">Press → for what students told us.</p>
           </Card>
         ) : (
           <Card className="p-10 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-4 animate-fade-in">
@@ -193,7 +193,7 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
             <p className="text-base md:text-lg text-muted-foreground text-center leading-snug max-w-3xl">
               ADHD students in the Atcheson CHI 2025 study repeatedly named follow-through — not planning — as the real executive-function gap.
             </p>
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+            <p className="text-base font-mono uppercase tracking-widest text-muted-foreground">
               Atcheson, Khan, Siemann, Jain &amp; Karahalios · CHI 2025
             </p>
           </Card>
@@ -229,7 +229,7 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
                   <p className="text-muted-foreground mb-3">
                     Press START, then—without counting—press STOP when you think exactly 10 seconds have passed.
                   </p>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="text-muted-foreground text-lg">
                     No tricks. Just your internal sense of time.
                   </p>
                 </div>
@@ -296,7 +296,7 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
           <p className="text-muted-foreground mb-4">
             You stopped at: <span className="font-bold text-primary">{(elapsedTime / 1000).toFixed(1)}s</span>
           </p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-lg">
             The facilitator will reveal the results shortly.
           </p>
         </Card>

@@ -44,7 +44,7 @@ export const RedesignWorkshopScreen = () => {
     <main className="min-h-screen px-8 py-10 animate-fade-in">
       <section className="max-w-6xl mx-auto space-y-6">
         <div className="text-center space-y-3">
-          <Badge variant="secondary" className="text-sm">Workshop · 10 minutes</Badge>
+          <Badge variant="secondary" className="text-lg">Workshop · 10 minutes</Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">
             Redesign one of YOUR slides
           </h1>
@@ -56,7 +56,7 @@ export const RedesignWorkshopScreen = () => {
         </div>
 
         <Card className="p-5 space-y-3 border-l-4 border-l-accent">
-          <label htmlFor="redesign-input" className="text-sm font-semibold text-foreground">
+          <label htmlFor="redesign-input" className="text-lg font-semibold text-foreground">
             Your content
           </label>
           <Textarea
@@ -68,7 +68,7 @@ export const RedesignWorkshopScreen = () => {
             maxLength={4000}
           />
           <div className="flex items-center justify-between">
-            <span className="text-xs text-muted-foreground">{input.length}/4000</span>
+            <span className="text-base text-muted-foreground">{input.length}/4000</span>
             <Button onClick={run} disabled={loading || input.trim().length < 20}>
               {loading ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Wand2 className="h-4 w-4 mr-2" />}
               {loading ? "Rewriting…" : "Show me 3 versions"}
@@ -82,9 +82,9 @@ export const RedesignWorkshopScreen = () => {
               <Card key={i} className="p-5 flex flex-col gap-3 border-l-4 border-l-primary/70">
                 <div>
                   <h3 className="text-lg font-bold text-foreground">{r.label}</h3>
-                  <p className="text-xs text-muted-foreground italic mt-1">{r.why}</p>
+                  <p className="text-base text-muted-foreground italic mt-1">{r.why}</p>
                 </div>
-                <div className="text-sm text-foreground/90 leading-relaxed bg-muted/30 rounded p-3 whitespace-pre-wrap min-h-[140px]">
+                <div className="text-lg text-foreground/90 leading-relaxed bg-muted/30 rounded p-3 whitespace-pre-wrap min-h-[140px]">
                   {r.content}
                 </div>
                 <Button size="sm" variant="outline" onClick={() => copy(r.content)} className="self-start">
@@ -96,7 +96,7 @@ export const RedesignWorkshopScreen = () => {
         )}
 
         {rewrites.length === 0 && !loading && (
-          <p className="text-center text-sm text-muted-foreground italic">
+          <p className="text-center text-lg text-muted-foreground italic">
             Tip: try a learning outcome, an assignment description, or your hardest-to-explain paragraph.
           </p>
         )}

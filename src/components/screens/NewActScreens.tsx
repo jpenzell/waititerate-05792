@@ -14,7 +14,7 @@ export const WorldChangingScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="The world is changing faster than the templates">
     <div className="space-y-12">
       <header className="text-center space-y-6">
-        <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
           The frame for today
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -50,7 +50,7 @@ export const PersonalDisclosureScreen = () => (
   <SlideShell tone="rose" align="center" ariaLabel="Personal disclosure">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-muted-foreground">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-muted-foreground">
           Before we go further
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -94,7 +94,7 @@ export const CostOfMaskingScreen = () => (
   <SlideShell tone="slate" align="center" ariaLabel="The cost of masking">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-destructive">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-destructive">
           What the system has been taking
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -154,7 +154,7 @@ export const ThesisNamedScreen = () => (
 export const TheRevealScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="The reveal">
     <div className="space-y-10 text-center">
-      <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+      <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
         Stop. Look around the room.
       </p>
       <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05] max-w-5xl mx-auto">
@@ -181,7 +181,7 @@ export const YouProbablyDoTooScreen = () => (
   <SlideShell tone="amber" align="center" ariaLabel="You probably use AI too">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-accent">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-accent">
           Be honest with yourself
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -227,7 +227,7 @@ export const AIClarificationScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="AI clears friction so thinking can happen">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
           Let's name what AI is — and isn't — doing
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -244,15 +244,15 @@ export const AIClarificationScreen = () => (
 
       <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto text-center">
         <div className="p-5 bg-card/50 rounded-lg">
-          <p className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Friction removed</p>
+          <p className="text-lg uppercase tracking-wider text-muted-foreground mb-1">Friction removed</p>
           <p className="text-lg font-bold text-foreground">Spelling, structure, formatting, recall</p>
         </div>
         <div className="p-5 bg-card/50 rounded-lg">
-          <p className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Thinking preserved</p>
+          <p className="text-lg uppercase tracking-wider text-muted-foreground mb-1">Thinking preserved</p>
           <p className="text-lg font-bold text-foreground">Pattern, judgment, synthesis, ethics</p>
         </div>
         <div className="p-5 bg-card/50 rounded-lg">
-          <p className="text-sm uppercase tracking-wider text-muted-foreground mb-1">What you assess</p>
+          <p className="text-lg uppercase tracking-wider text-muted-foreground mb-1">What you assess</p>
           <p className="text-lg font-bold text-foreground">The thinking. Always the thinking.</p>
         </div>
       </div>
@@ -269,7 +269,7 @@ export const CognitiveLoadUDLScreen = () => (
   <SlideShell tone="emerald" align="center" ariaLabel="Cognitive load and UDL">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-accent">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-accent">
           Two principles for the next 30 minutes
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -279,7 +279,7 @@ export const CognitiveLoadUDLScreen = () => (
 
       <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
         <Card className="p-8 bg-card/70 border-l-8 border-l-primary space-y-4">
-          <p className="text-sm font-mono uppercase tracking-wider text-primary">Cognitive load</p>
+          <p className="text-lg font-mono uppercase tracking-wider text-primary">Cognitive load</p>
           <p className="text-3xl md:text-4xl font-black text-foreground leading-tight">
             Working memory holds <span className="text-primary">~4 items.</span>
           </p>
@@ -289,7 +289,7 @@ export const CognitiveLoadUDLScreen = () => (
           </p>
         </Card>
         <Card className="p-8 bg-card/70 border-l-8 border-l-accent space-y-4">
-          <p className="text-sm font-mono uppercase tracking-wider text-accent">UDL</p>
+          <p className="text-lg font-mono uppercase tracking-wider text-accent">UDL</p>
           <p className="text-3xl md:text-4xl font-black text-foreground leading-tight">
             Multiple means of <span className="text-accent">representation, action, engagement.</span>
           </p>
@@ -312,7 +312,7 @@ export const AIStudentSetupScreen = () => (
   <SlideShell tone="amber" align="center" ariaLabel="AI Student setup">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
           Flip the script
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -331,7 +331,7 @@ export const AIStudentSetupScreen = () => (
           { round: "Round 3", title: "Iterate", body: "Watch the score improve. Iteration doubles quality." },
         ].map((r, i) => (
           <Card key={i} className="p-6 bg-card/70 border-t-4 border-t-primary text-center space-y-2">
-            <p className="text-sm font-mono uppercase tracking-wider text-primary">{r.round}</p>
+            <p className="text-lg font-mono uppercase tracking-wider text-primary">{r.round}</p>
             <p className="text-2xl font-bold text-foreground">{r.title}</p>
             <p className="text-base text-muted-foreground leading-snug">{r.body}</p>
           </Card>
@@ -353,7 +353,7 @@ export const AIStudentSetupScreen = () => (
 export const ZooxCallbackScreen = () => (
   <SlideShell tone="indigo" align="center" ariaLabel="Zoox callback">
     <div className="space-y-12 text-center">
-      <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-primary">
+      <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-primary">
         Three hours ago I asked you a question
       </p>
       <h1 className="text-6xl md:text-8xl font-black text-foreground leading-[1.0]">
@@ -374,7 +374,7 @@ export const CommitmentMomentScreen = () => (
   <SlideShell tone="emerald" align="center" ariaLabel="Commitment moment">
     <div className="space-y-10">
       <header className="text-center space-y-4">
-        <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-accent">
+        <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-accent">
           Right now. Not later.
         </p>
         <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.05]">
@@ -383,7 +383,7 @@ export const CommitmentMomentScreen = () => (
       </header>
 
       <Card className="p-8 md:p-10 bg-card/70 border-2 border-accent/40 max-w-4xl mx-auto space-y-5">
-        <p className="text-sm font-mono uppercase tracking-wider text-accent">Pick one</p>
+        <p className="text-lg font-mono uppercase tracking-wider text-accent">Pick one</p>
         <ul className="space-y-3 text-xl md:text-2xl text-foreground">
           <li className="flex items-start gap-3"><Target className="h-7 w-7 text-accent shrink-0 mt-1" aria-hidden="true" />Rewrite the AI policy on one syllabus.</li>
           <li className="flex items-start gap-3"><Target className="h-7 w-7 text-accent shrink-0 mt-1" aria-hidden="true" />Redesign one assignment for multiple means of expression.</li>

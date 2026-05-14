@@ -111,7 +111,7 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
               <Volume2 className="h-16 w-16 text-primary mx-auto mb-4" />
               <div className="text-5xl font-bold text-primary mb-2">{((dist.withVoice / dist.total) * 100).toFixed(0)}%</div>
               <div className="text-lg font-semibold text-foreground mb-2">With Inner Voice</div>
-              <div className="text-sm text-muted-foreground">{dist.withVoice} people hear narration</div>
+              <div className="text-lg text-muted-foreground">{dist.withVoice} people hear narration</div>
             </div>
           </Card>
           <Card className="p-8 bg-gradient-to-br from-accent/10 to-primary/5">
@@ -119,7 +119,7 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
               <VolumeX className="h-16 w-16 text-accent mx-auto mb-4" />
               <div className="text-5xl font-bold text-accent mb-2">{((dist.withoutVoice / dist.total) * 100).toFixed(0)}%</div>
               <div className="text-lg font-semibold text-foreground mb-2">Silent Reading</div>
-              <div className="text-sm text-muted-foreground">{dist.withoutVoice} people read silently</div>
+              <div className="text-lg text-muted-foreground">{dist.withoutVoice} people read silently</div>
             </div>
           </Card>
         </div>
@@ -129,7 +129,7 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
             <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
               Same words. Different brains.
             </p>
-            <p className="text-sm text-muted-foreground italic">Press → for the implication.</p>
+            <p className="text-lg text-muted-foreground italic">Press → for the implication.</p>
           </Card>
         ) : (
           <Card className="p-10 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-4 animate-fade-in">
@@ -141,7 +141,7 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
               The same lecture lands as text, voice, image, or silence.
               <br />Pair every spoken cue with a written one.
             </p>
-            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+            <p className="text-base font-mono uppercase tracking-widest text-muted-foreground">
               Inner-speech variation · Hurlburt et al., descriptive experience sampling
             </p>
           </Card>
@@ -211,7 +211,7 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
                   <Volume2 className="h-10 w-10 text-primary" />
                   <h3 className="text-xl font-bold text-foreground">Yes, I Hear a Voice</h3>
                 </div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-lg">
                   I heard the words narrated in my head—like an audiobook. There was definitely <strong>sound</strong>.
                 </p>
               </div>
@@ -226,7 +226,7 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
                   <VolumeX className="h-10 w-10 text-accent" />
                   <h3 className="text-xl font-bold text-foreground">No, Silent Reading</h3>
                 </div>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-lg">
                   I just <strong>understood</strong> the meaning directly—no narration, no voice.
                 </p>
               </div>

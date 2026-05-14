@@ -174,7 +174,7 @@ export const AIPatternsScreen = ({ isFacilitator = false, sessionId }: AIPattern
                           {pattern.photoIndices?.length || 0} photos
                         </Badge>
                       </div>
-                      <p className="text-sm text-muted-foreground">{pattern.description}</p>
+                      <p className="text-lg text-muted-foreground">{pattern.description}</p>
                     </div>
                   </div>
                   {pattern.photoIndices && pattern.photoIndices.length > 0 && (
@@ -190,7 +190,7 @@ export const AIPatternsScreen = ({ isFacilitator = false, sessionId }: AIPattern
                         )
                       ))}
                       {pattern.photoIndices.length > 6 && (
-                        <div className="w-12 h-12 flex items-center justify-center bg-muted rounded text-xs font-semibold">
+                        <div className="w-12 h-12 flex items-center justify-center bg-muted rounded text-base font-semibold">
                           +{pattern.photoIndices.length - 6}
                         </div>
                       )}
@@ -219,7 +219,7 @@ export const AIPatternsScreen = ({ isFacilitator = false, sessionId }: AIPattern
         </p>
         {aiPatterns.length > 0 && (
           <div className="mt-6 p-4 bg-primary/10 rounded-lg">
-            <p className="text-sm font-semibold text-primary">
+            <p className="text-lg font-semibold text-primary">
               AI found {aiPatterns.length} distinct patterns
             </p>
           </div>

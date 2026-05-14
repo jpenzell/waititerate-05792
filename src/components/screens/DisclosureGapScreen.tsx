@@ -11,7 +11,7 @@ export const DisclosureGapScreen = () => {
     <SlideShell tone="indigo" align="center" ariaLabel="The disclosure gap">
       <div className="space-y-12">
         <header className="text-center space-y-4">
-          <p className="text-sm md:text-base font-mono uppercase tracking-[0.3em] text-muted-foreground">
+          <p className="text-lg md:text-xl font-mono uppercase tracking-[0.3em] text-muted-foreground">
             Chapter 01 · The data gap
           </p>
           <h1 className="text-5xl md:text-7xl font-black text-foreground leading-tight">
@@ -46,7 +46,7 @@ export const DisclosureGapScreen = () => {
           />
         </div>
 
-        <p className="text-center text-sm md:text-base font-mono uppercase tracking-[0.25em] text-muted-foreground">
+        <p className="text-center text-lg md:text-xl font-mono uppercase tracking-[0.25em] text-muted-foreground">
           Sources · Purdue institutional study · NCES 2019–20 · Doyle 2020
         </p>
       </div>
@@ -63,7 +63,7 @@ export const DisclosureGapDetailScreen = () => {
     <SlideShell tone="indigo" align="center" ariaLabel="Disclosure gap — what we miss">
       <div className="space-y-10">
         <header className="text-center space-y-4">
-          <p className="text-sm md:text-base font-mono uppercase tracking-[0.3em] text-muted-foreground">
+          <p className="text-lg md:text-xl font-mono uppercase tracking-[0.3em] text-muted-foreground">
             Chapter 01 · The data gap
           </p>
           <h2 className="text-4xl md:text-6xl font-black text-foreground leading-tight">
@@ -95,7 +95,7 @@ export const DisclosureGapDetailScreen = () => {
           </Card>
         </div>
 
-        <p className="text-center text-sm md:text-base font-mono uppercase tracking-[0.25em] text-muted-foreground">
+        <p className="text-center text-lg md:text-xl font-mono uppercase tracking-[0.25em] text-muted-foreground">
           Sources · NCES 2019–20 · National Disability Center 2025
         </p>
       </div>

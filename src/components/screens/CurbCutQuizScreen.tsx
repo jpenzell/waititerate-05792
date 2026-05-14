@@ -52,7 +52,7 @@ export const CurbCutQuizScreen = ({
     <SlideShell tone="teal" ariaLabel={`Curb-cut quiz ${qNum}`}>
       <div className="space-y-10">
         <header className="text-center space-y-4">
-          <p className="text-sm md:text-base font-mono uppercase tracking-[0.4em] text-accent">
+          <p className="text-lg md:text-xl font-mono uppercase tracking-[0.4em] text-accent">
             Test the principle · {qNum}
           </p>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-[1.1] max-w-5xl mx-auto">
@@ -68,7 +68,7 @@ export const CurbCutQuizScreen = ({
           >
             <div className="flex items-center justify-center gap-3 text-accent mb-4">
               <Sparkles className="h-6 w-6" aria-hidden="true" />
-              <p className="text-sm md:text-base font-mono uppercase tracking-[0.3em]">
+              <p className="text-lg md:text-xl font-mono uppercase tracking-[0.3em]">
                 The answer
               </p>
             </div>
@@ -78,7 +78,7 @@ export const CurbCutQuizScreen = ({
             <p className="text-2xl md:text-3xl text-foreground font-semibold mt-6 max-w-4xl mx-auto leading-snug">
               {reveal.takeaway}
             </p>
-            <p className="text-sm md:text-base text-muted-foreground italic mt-4">
+            <p className="text-lg md:text-xl text-muted-foreground italic mt-4">
               {reveal.source}
             </p>
           </div>
