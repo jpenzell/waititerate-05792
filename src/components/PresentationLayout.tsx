@@ -316,7 +316,11 @@ export const PresentationLayout = ({
           className="absolute inset-0 transition-transform duration-300 origin-center"
           style={{ transform: `scale(${zoom / 100})` }}
         >
-          <div className="w-full h-full overflow-hidden [&>main]:!min-h-0 [&>main]:h-full [&>div]:h-full">
+          <div
+            className="w-full h-full overflow-y-auto
+              [&_main]:!min-h-0 [&_main]:!h-auto
+              [&_.min-h-screen]:!min-h-0 [&_.h-screen]:!h-auto"
+          >
             <RevealProvider slideId={currentScreen}>{children}</RevealProvider>
           </div>
         </div>
