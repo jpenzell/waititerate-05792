@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v82'; // LD3.62 humans-only (hideAI prop)
+const STORAGE_KEY = 'presentation-slide-config-atdld-v83'; // Split LD3.61: duck/rabbit only; new LD3.612 cognitive diversity
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
