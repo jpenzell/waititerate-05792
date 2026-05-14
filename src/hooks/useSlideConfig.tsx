@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v48'; // Removed LD3.4 Mental Imagery
+const STORAGE_KEY = 'presentation-slide-config-atdld-v49'; // LD3.6 screenshare-only; removed join QR overlay
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {

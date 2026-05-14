@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { RevealProvider, tryRevealNext, tryRevealPrev } from "@/contexts/RevealContext";
-import { INTERACTIVE_SLIDE_IDS } from "@/config/screens";
 import {
   Sheet,
   SheetContent,
@@ -55,8 +54,6 @@ export const PresentationLayout = ({
   const isParticipant = mode === "participant";
   const showChrome = !cleanView;
 
-  const isInteractiveSlide = INTERACTIVE_SLIDE_IDS.has(currentScreen);
-  const showJoinOverlay = isInteractiveSlide && !!sessionCode && !!sessionId && !blankScreen;
   const joinOrigin = typeof window !== "undefined" ? window.location.origin : "https://ai4all.joshpenzell.com";
   const joinUrl = sessionCode ? `${joinOrigin}/participate?code=${sessionCode}` : "";
   const joinHostLabel = joinUrl ? joinUrl.replace(/^https?:\/\//, "").split("?")[0] : "";
@@ -418,26 +415,6 @@ export const PresentationLayout = ({
         />
       )}
 
-      {/* Persistent join overlay — visible on every interactive slide so screenshare viewers can scan to participate */}
-      {showJoinOverlay && (
-        <div
-          className="fixed bottom-4 left-4 z-40 flex items-center gap-3 bg-card/95 backdrop-blur-sm border-2 border-primary/40 rounded-xl px-4 py-3 shadow-2xl"
-          aria-label="Join this session"
-        >
-          <img
-            src={`https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(joinUrl)}`}
-            alt="Scan to join session"
-            className="h-24 w-24 rounded bg-white p-1"
-          />
-          <div className="flex flex-col leading-tight">
-            <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Join to participate</span>
-            <span className="text-sm font-mono text-foreground">{joinHostLabel}</span>
-            <span className="text-base text-foreground mt-1">
-              Code <span className="font-mono font-bold text-primary">{sessionCode}</span>
-            </span>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

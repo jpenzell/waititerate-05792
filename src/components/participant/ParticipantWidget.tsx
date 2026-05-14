@@ -2,10 +2,7 @@ import { Card } from "@/components/ui/card";
 import { PollWidget } from "@/components/PollWidget";
 import { screens } from "@/config/screens";
 
-import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
-import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
-import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
 import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
 import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
@@ -31,17 +28,8 @@ const widgets: Record<string, (p: Props) => JSX.Element> = {
   ),
 
   // ─── Act 3 — Feel It
-  "LD3.1": ({ sessionId }) => (
-    <PhotoCollectionScreen isFacilitator={false} sessionId={sessionId} />
-  ),
-  "LD3.4": ({ sessionId }) => (
-    <MentalImageryScreen isFacilitator={false} sessionId={sessionId} />
-  ),
   "LD3.5": ({ sessionId }) => (
     <InnerVoiceScreen isFacilitator={false} sessionId={sessionId} />
-  ),
-  "LD3.6": ({ sessionId }) => (
-    <TimePerceptionScreen isFacilitator={false} sessionId={sessionId} />
   ),
   "LD3.8": ({ sessionId }) => <DiscoveryWallScreen sessionId={sessionId} />,
 
