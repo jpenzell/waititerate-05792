@@ -328,6 +328,7 @@ export default function Facilitator() {
       </div>
       
       {/* Keyboard Shortcuts — hidden in Clean View */}
+      <div className="[body[data-clean-view]_&]:hidden">
       <KeyboardShortcuts 
         visible={keyboardHintsVisible}
         onNavigate={(direction) => {
@@ -345,6 +346,7 @@ export default function Facilitator() {
           }
         }}
       />
+      </div>
       
       {/* Show Session Controls toggle — hidden in Clean View */}
       {!showControls && (
