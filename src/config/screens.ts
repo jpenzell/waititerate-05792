@@ -152,7 +152,7 @@ export const screens: ScreenDef[] = [
   { id: "LD5.6", title: "The Institutional Case", component: RetentionEquityScreen, duration: 4, notes: "Retention / Title III / SACSCOC hook." },
   { id: "LD5.7", title: "Learning Design Curb Cuts", component: CurbCutExamplesScreen, duration: 4, notes: "Real examples." },
 
-  // ═══ ACT 6 — Make Something (9 slides · ~50 min) ═══
+  // ═══ ACT 7 — Make Something (9 slides · ~50 min) ═══
   { id: "LD6.0", title: "Chapter — Make Something", component: MakeSomethingChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD6.1", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop.", requiresSession: true },
   { id: "LD6.2", title: "Cognitive Load + UDL", component: CognitiveLoadUDLScreen, duration: 5, notes: "Two principles for the next 30 minutes." },
@@ -164,7 +164,7 @@ export const screens: ScreenDef[] = [
   { id: "LD6.75", title: "Special Olympics — The Inclusion Gap", component: SpecialOlympicsGapScreen, duration: 3, notes: "Stratalys × Special Olympics 2024. 77% of parents and 64% of educators see AI as a mechanism for inclusion — but only 35% think developers account for IDD students. Tim Shriver / Nathan Cook close." },
   // LD6.8 removed (peer talk — Zoom delivery)
 
-  // ═══ ACT 7 — Close With the Callback (6 slides · ~15 min) ═══
+  // ═══ ACT 8 — Close With the Callback (6 slides · ~15 min) ═══
   { id: "LD7.0", title: "Zoox Callback — Your Windshield Wiper", component: ZooxCallbackScreen, duration: 3, notes: "Callback to the opening question. What's the windshield wiper in your syllabus?" },
   { id: "LD7.1", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Accessible curriculum → AT → AI → human judgment." },
   { id: "LD7.2", title: "Commitment Moment", component: CommitmentMomentScreen, duration: 3, notes: "Name one change for fall. Write it down." },
