@@ -18,6 +18,7 @@ import { LLMExplainerScreen } from "@/components/screens/LLMExplainerScreen";
 import { ProbabilisticExplainerScreen } from "@/components/screens/ProbabilisticExplainerScreen";
 import { HallucinationScreen } from "@/components/screens/HallucinationScreen";
 import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
+import { CognitiveDiversityScreen } from "@/components/screens/CognitiveDiversityScreen";
 import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
 import { ProbabilityWordsPollScreen } from "@/components/screens/ProbabilityWordsPollScreen";
 import { CIASpreadScreen } from "@/components/screens/CIASpreadScreen";
