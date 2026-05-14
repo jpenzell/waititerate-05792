@@ -134,8 +134,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
     const showResults = revealStep >= 1;
 
     return (
-      <main className="min-h-screen flex flex-col justify-center py-4 px-4 animate-fade-in" role="main" aria-label="Neurodiversity data quiz results">
-        <header className="text-center mb-4">
+      <main className="h-full w-full overflow-y-auto py-6 px-6 animate-fade-in" role="main" aria-label="Neurodiversity data quiz results">
+       <div className="max-w-7xl mx-auto w-full">
+        <header className="text-center mb-6">
           <h1 className="text-3xl md:text-5xl font-bold text-foreground">
             The data might surprise you
           </h1>
@@ -210,6 +211,7 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
             </Card>
           </div>
         )}
+       </div>
       </main>
     );
   }
