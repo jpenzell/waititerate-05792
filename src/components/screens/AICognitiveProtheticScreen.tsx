@@ -1,48 +1,40 @@
-import { Card } from "@/components/ui/card";
-import { Brain, Glasses, Accessibility, ArrowRight } from "lucide-react";
+import { SlideHero } from "@/components/slide";
 import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
+import glasses from "@/assets/slides/glasses.jpg";
 
 export const AICognitiveProtheticScreen = () => {
   useRegisterReveals(2);
   return (
-    <main className="min-h-screen flex items-center px-8 py-10 animate-fade-in">
-      <section className="max-w-7xl mx-auto w-full space-y-12">
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground text-center leading-tight">
-          AI as <span className="text-primary">cognitive prosthetic</span>
+    <SlideHero
+      image={glasses}
+      alt="Round glasses resting on an open notebook by a window"
+      position="right"
+      scrim="right"
+      ariaLabel="AI as cognitive prosthetic"
+    >
+      <div className="space-y-10 max-w-2xl">
+        <p className="text-base md:text-xl uppercase tracking-[0.3em] text-white/70">
+          The cognitive prosthetic
+        </p>
+        <h1 className="text-5xl md:text-7xl font-bold leading-[1.05]">
+          Glasses sharpen vision.
+          <br />
+          <span className="text-accent">AI sharpens cognition.</span>
         </h1>
-
         <Reveal step={1}>
-        <div className="grid md:grid-cols-5 gap-4 items-center">
-          <Card className="p-8 text-center border-2 border-primary/30 col-span-1 md:col-span-1">
-            <Glasses className="h-16 w-16 mx-auto text-primary mb-3" />
-            <p className="text-2xl font-bold">Glasses</p>
-            <p className="text-lg text-muted-foreground">→ vision</p>
-          </Card>
-          <ArrowRight className="hidden md:block h-10 w-10 text-accent mx-auto" />
-          <Card className="p-8 text-center border-2 border-primary/30">
-            <Accessibility className="h-16 w-16 mx-auto text-primary mb-3" />
-            <p className="text-2xl font-bold">Mobility aid</p>
-            <p className="text-lg text-muted-foreground">→ movement</p>
-          </Card>
-          <ArrowRight className="hidden md:block h-10 w-10 text-accent mx-auto" />
-          <Card className="p-10 text-center bg-gradient-to-br from-primary/15 to-accent/15 border-4 border-primary">
-            <Brain className="h-20 w-20 mx-auto text-primary mb-3" />
-            <p className="text-3xl font-bold">AI</p>
-            <p className="text-xl text-foreground">→ cognition</p>
-          </Card>
-        </div>
-        </Reveal>
-
-        <Reveal step={2}>
-        <Card className="p-12 bg-gradient-to-r from-primary/10 to-accent/10 border-2 border-primary/30 text-center">
-          <p className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
-            Personalization at scale.
+          <p className="text-2xl md:text-3xl text-white/85 leading-snug">
+            One quietly amplifies an eye.
             <br />
-            <span className="text-primary">For every learner.</span>
+            The other quietly amplifies a mind.
           </p>
-        </Card>
         </Reveal>
-      </section>
-    </main>
+        <Reveal step={2}>
+          <p className="text-3xl md:text-4xl font-semibold leading-snug">
+            Personalisation at scale.{" "}
+            <span className="text-accent">For every learner.</span>
+          </p>
+        </Reveal>
+      </div>
+    </SlideHero>
   );
 };

@@ -1,53 +1,42 @@
-import { Card } from "@/components/ui/card";
-import { ShieldAlert, Lightbulb } from "lucide-react";
+import { SlideHero } from "@/components/slide";
 import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
-
-const fears = [
-  "Students skip the thinking",
-  "I can't tell what's theirs",
-  "Detectors punish ESL students",
-];
-const reframes = [
-  "Calculators raised math's floor",
-  "Design what AI can't shortcut",
-  "Teach WITH AI, not against it",
-];
+import calculator from "@/assets/slides/calculator.jpg";
 
 export const AcademicIntegrityScreen = () => {
-  useRegisterReveals(2);
+  useRegisterReveals(3);
   return (
-    <main className="min-h-screen flex items-center px-8 py-10 animate-fade-in">
-      <section className="max-w-7xl mx-auto w-full space-y-10">
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground text-center">
-          "Isn't this just cheating?"
+    <SlideHero
+      image={calculator}
+      alt="A scientific calculator resting on a page of handwritten math"
+      position="right"
+      scrim="right"
+      ariaLabel="But isn't this just cheating?"
+    >
+      <div className="space-y-8 max-w-2xl">
+        <p className="text-base md:text-xl uppercase tracking-[0.3em] text-white/70">
+          1972 · The calculator panic
+        </p>
+        <h1 className="text-5xl md:text-7xl font-bold leading-[1.05]">
+          "Isn't this just <span className="text-accent">cheating</span>?"
         </h1>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <Reveal step={1}>
-          <Card className="p-10 border-l-8 border-l-destructive/60 space-y-6 h-full">
-            <div className="flex items-center gap-4">
-              <ShieldAlert className="h-12 w-12 text-destructive" />
-              <h3 className="text-3xl md:text-4xl font-bold">The fear</h3>
-            </div>
-            <ul className="space-y-4 text-2xl md:text-3xl text-foreground/90 leading-snug">
-              {fears.map((f, i) => <li key={i}>• {f}</li>)}
-            </ul>
-          </Card>
-          </Reveal>
-
-          <Reveal step={2}>
-          <Card className="p-10 border-l-8 border-l-primary space-y-6 h-full">
-            <div className="flex items-center gap-4">
-              <Lightbulb className="h-12 w-12 text-primary" />
-              <h3 className="text-3xl md:text-4xl font-bold">The reframe</h3>
-            </div>
-            <ul className="space-y-4 text-2xl md:text-3xl text-foreground/90 leading-snug">
-              {reframes.map((r, i) => <li key={i}>• {r}</li>)}
-            </ul>
-          </Card>
-          </Reveal>
-        </div>
-      </section>
-    </main>
+        <Reveal step={1}>
+          <p className="text-2xl md:text-3xl text-white/85 leading-snug">
+            Schools said calculators would end math.
+            <br />They didn't. They <span className="text-accent">raised the floor</span>.
+          </p>
+        </Reveal>
+        <Reveal step={2}>
+          <p className="text-2xl md:text-3xl text-white/90 leading-snug">
+            Design what AI <span className="text-accent">can't shortcut</span>.
+            <br />Teach <span className="text-accent">with</span> it, not against it.
+          </p>
+        </Reveal>
+        <Reveal step={3}>
+          <p className="text-3xl md:text-4xl font-bold leading-snug">
+            Same panic. New tool. <span className="text-accent">Same answer.</span>
+          </p>
+        </Reveal>
+      </div>
+    </SlideHero>
   );
 };

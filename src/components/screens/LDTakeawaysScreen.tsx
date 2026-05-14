@@ -1,46 +1,56 @@
-import { Card } from "@/components/ui/card";
-import { Target, Activity, Rocket, RefreshCw } from "lucide-react";
+import { SlideHero } from "@/components/slide";
 import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
+import horizon from "@/assets/slides/horizon.jpg";
 
 const shifts = [
-  { icon: Target, n: "1", title: "Audit for cognitive load" },
-  { icon: Activity, n: "2", title: "Add one new format" },
-  { icon: Rocket, n: "3", title: "Try structured freedom" },
-  { icon: RefreshCw, n: "4", title: "Test with diverse learners" },
+  { n: "01", title: "Audit for cognitive load" },
+  { n: "02", title: "Add one new format" },
+  { n: "03", title: "Try structured freedom" },
+  { n: "04", title: "Test with diverse learners" },
 ];
 
 export const LDTakeawaysScreen = () => {
-  // 4 cards revealed one at a time (steps 1-4), then closing quote (step 5)
   useRegisterReveals(5);
   return (
-    <main className="min-h-screen flex items-center px-8 py-10 animate-fade-in">
-      <section className="max-w-7xl mx-auto w-full space-y-12">
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground text-center leading-tight">
-          Your action plan
-        </h1>
+    <SlideHero
+      image={horizon}
+      alt="Soft pink and amber dawn over rolling hills"
+      position="bottom"
+      scrim="full"
+      ariaLabel="Your action plan"
+    >
+      <div className="w-full max-w-7xl mx-auto space-y-12 self-center -mt-4">
+        <header className="text-center space-y-3">
+          <p className="text-base md:text-xl uppercase tracking-[0.4em] text-white/70">
+            Your action plan
+          </p>
+          <h1 className="text-5xl md:text-7xl font-bold leading-[1.05]">
+            Four shifts. Pick <span className="text-accent">one</span>.
+          </h1>
+        </header>
 
         <div className="grid md:grid-cols-2 gap-6">
           {shifts.map((s, i) => (
             <Reveal key={s.n} step={i + 1}>
-              <Card className="p-10 border-l-8 border-l-primary flex items-center gap-6">
-                <div className="text-7xl font-bold text-primary/40">{s.n}</div>
-                <div className="flex-1">
-                  <s.icon className="h-12 w-12 text-primary mb-3" />
-                  <h3 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">{s.title}</h3>
+              <div className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-md p-8 flex items-center gap-6">
+                <div className="font-mono text-6xl md:text-7xl font-black text-accent leading-none">
+                  {s.n}
                 </div>
-              </Card>
+                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+                  {s.title}
+                </h3>
+              </div>
             </Reveal>
           ))}
         </div>
 
         <Reveal step={5}>
-          <Card className="p-10 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-primary/20 text-center">
-            <p className="text-3xl md:text-5xl font-bold italic text-foreground leading-snug">
-              "Design the margins.<br />Improve the center."
-            </p>
-          </Card>
+          <p className="text-3xl md:text-5xl font-bold italic text-center leading-snug">
+            "Design the margins.{" "}
+            <span className="text-accent">Improve the center.</span>"
+          </p>
         </Reveal>
-      </section>
-    </main>
+      </div>
+    </SlideHero>
   );
 };

@@ -11,7 +11,7 @@
  *     paints on the very first frame.
  */
 const modules = import.meta.glob(
-  "/src/assets/*.{jpg,jpeg,png,webp,avif,svg}",
+  "/src/assets/**/*.{jpg,jpeg,png,webp,avif,svg}",
   { eager: true, import: "default" }
 );
 

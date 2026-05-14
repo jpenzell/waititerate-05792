@@ -1,22 +1,26 @@
-import { Accessibility } from "lucide-react";
+import { SlideHero } from "@/components/slide";
+import curbCut from "@/assets/slides/curb-cut.jpg";
 
-export const CurbCutIntroScreen = () => {
-  return (
-    <main className="min-h-screen flex items-center justify-center px-8 py-10 animate-fade-in">
-      <section className="max-w-6xl text-center space-y-10">
-        <Accessibility className="h-20 w-20 mx-auto text-primary" />
-        <h1 className="text-6xl md:text-8xl font-bold text-foreground leading-tight">
-          The Curb-Cut Effect
-        </h1>
-        <p className="text-3xl md:text-4xl text-foreground/90 leading-snug max-w-5xl mx-auto">
-          Built for wheelchairs.
-          <br />
-          Used by <span className="text-primary font-bold">everyone</span>.
-        </p>
-        <p className="text-2xl md:text-3xl text-muted-foreground italic">
-          Strollers · luggage · cyclists · delivery · the elderly
-        </p>
-      </section>
-    </main>
-  );
-};
+export const CurbCutIntroScreen = () => (
+  <SlideHero
+    image={curbCut}
+    alt="Concrete curb cut at a city street corner in golden afternoon light"
+    position="bottom"
+    scrim="bottom"
+    ariaLabel="The curb-cut effect introduction"
+  >
+    <div className="space-y-6 max-w-5xl">
+      <p className="text-base md:text-xl uppercase tracking-[0.3em] text-white/70">
+        The Curb-Cut Effect
+      </p>
+      <h1 className="text-5xl md:text-7xl font-bold leading-[1.05]">
+        Built for wheelchairs.
+        <br />
+        Used by <span className="text-accent">everyone</span>.
+      </h1>
+      <p className="text-xl md:text-2xl text-white/80 italic">
+        Strollers · luggage · cyclists · delivery · the elderly
+      </p>
+    </div>
+  </SlideHero>
+);
