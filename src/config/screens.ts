@@ -11,6 +11,8 @@ import { HairstyleScreen } from "@/components/screens/HairstyleScreen";
 import { OneWordStoryIntroScreen } from "@/components/screens/OneWordStoryIntroScreen";
 import { OneWordStoryLiveScreen } from "@/components/screens/OneWordStoryLiveScreen";
 import { ElephantQuestionScreen } from "@/components/screens/ElephantQuestionScreen";
+import { ElephantEstimateScreen } from "@/components/screens/ElephantEstimateScreen";
+import { AIStoryDemoScreen } from "@/components/screens/AIStoryDemoScreen";
 
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
@@ -98,6 +100,8 @@ export const screens: ScreenDef[] = [
   { id: "LD1.6", title: "Warm-up — Cast Call", component: OneWordStoryIntroScreen, duration: 2, notes: "Improv warm-up. Ask for 3 volunteers; demo animation explains the one-word story format." },
   { id: "LD1.7", title: "Warm-up — One-Word Story", component: OneWordStoryLiveScreen, duration: 4, notes: "Live-type one-word story. Type each word as the volunteers shout it. Enter locks. Backspace on empty undoes." },
   { id: "LD1.8", title: "Warm-up — Answer Together", component: ElephantQuestionScreen, duration: 4, notes: "Same mechanic, real question: how many elephants fit in the Charlotte Convention Center? Sets up the AI estimation thread later." },
+  { id: "LD1.85", title: "Live Estimate — Audience + AI", component: ElephantEstimateScreen, duration: 5, notes: "Type guesses from the room as people shout numbers. AI models (Gemini Flash/Pro, GPT-5 Mini/Nano) stream their estimates in parallel. Number-line shows the spread; big numbers land on the wall in audience teal vs AI primary." },
+  { id: "LD1.9", title: "How AI Does It — Story Demo", component: AIStoryDemoScreen, duration: 4, notes: "Same prompt, watch the words appear one at a time. Sets up the next-token-prediction conversation. Pick the model live (Gemini, GPT-5)." },
 
   // ═══ ACT 2 — The Hidden Vanguard (6 slides · ~20 min) ═══
   { id: "LD2.0", title: "Chapter — The Hidden Vanguard", component: HiddenVanguardChapterScreen, duration: 1, notes: "Chapter card." },
