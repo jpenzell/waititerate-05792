@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, KeyboardEvent } from "react";
+import { useState, useRef, useEffect, type KeyboardEvent } from "react";
 import { RotateCcw, MessageSquare } from "lucide-react";
 
 /**
@@ -30,6 +30,13 @@ export const ElephantQuestionScreen = () => {
     if (e.key === "Backspace" && draft === "" && words.length > 0) {
       e.preventDefault();
       setWords((prev) => prev.slice(0, -1));
+    }
+    // Forward arrow keys to the global slide-nav handler. The presenter's
+    // input is auto-focused, which would otherwise swallow ArrowLeft/Right.
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      inputRef.current?.blur();
+      window.dispatchEvent(new KeyboardEvent("keydown", { key: e.key, bubbles: true }));
     }
   };
 
