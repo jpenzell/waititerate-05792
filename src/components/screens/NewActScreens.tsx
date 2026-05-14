@@ -58,7 +58,7 @@ export const PersonalDisclosureScreen = () => (
         </h1>
       </header>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         <Card className="p-7 bg-card/70 border-t-4 border-t-primary space-y-3">
           <Eye className="h-9 w-9 text-primary" aria-hidden="true" />
           <p className="text-2xl font-bold text-foreground">Aphantasia</p>
@@ -78,6 +78,15 @@ export const PersonalDisclosureScreen = () => (
           <p className="text-2xl font-bold text-foreground">Masking, for years</p>
           <p className="text-base text-muted-foreground leading-snug">
             Performing "normal" eats the energy that should have gone to the actual work.
+          </p>
+        </Card>
+        <Card className="p-7 bg-card/70 border-t-4 border-t-secondary space-y-3">
+          <Users className="h-9 w-9 text-secondary-foreground" aria-hidden="true" />
+          <p className="text-2xl font-bold text-foreground">
+            Birkman Social Energy: <span className="text-primary">1/99</span>
+          </p>
+          <p className="text-base text-muted-foreground leading-snug">
+            Officially the lowest social-energy score on the assessment. Crowds drain me fast — yet here I am, on your screen.
           </p>
         </Card>
       </div>
