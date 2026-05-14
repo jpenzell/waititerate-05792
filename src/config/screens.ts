@@ -28,7 +28,6 @@ import { WilliamsIdentityScreen } from "@/components/screens/WilliamsIdentityScr
 
 import { CurbCutIntroScreen } from "@/components/screens/CurbCutIntroScreen";
 import { CurbCutQuizScreen } from "@/components/screens/CurbCutQuizScreen";
-import { CurbCutResultsScreen } from "@/components/screens/CurbCutResultsScreen";
 import { CurbCutExamplesScreen } from "@/components/screens/CurbCutExamplesScreen";
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
 import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
