@@ -93,18 +93,13 @@ export const WindshieldWipersScreen = ({
             />
 
             {sessionCode && (
-              <Card className="p-6 bg-card/60 backdrop-blur flex flex-col items-center gap-3">
+              <Card className="p-6 bg-card/60 backdrop-blur flex flex-col items-center gap-2">
                 <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Join to vote
+                  Join code
                 </p>
-                <p className="text-3xl font-mono font-bold text-primary">
+                <p className="text-4xl font-mono font-bold text-primary">
                   {sessionCode}
                 </p>
-                {joinUrl && (
-                  <div className="bg-white p-3 rounded-lg">
-                    <QRCodeSVG value={joinUrl} size={150} />
-                  </div>
-                )}
                 <p className="text-xs text-muted-foreground">
                   ai4all.joshpenzell.com/participate
                 </p>
