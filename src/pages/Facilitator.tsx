@@ -115,6 +115,20 @@ export default function Facilitator() {
     }
   }, [currentIndex, visibleScreens]);
 
+  // Hash → slide deep-linking. Read hash on mount and on hashchange so URLs
+  // like /facilitator#LD4.3 jump to that slide.
+  useEffect(() => {
+    const syncFromHash = () => {
+      const id = window.location.hash.replace(/^#/, "");
+      if (!id) return;
+      const idx = visibleScreens.findIndex((s) => s.id === id);
+      if (idx >= 0 && idx !== currentIndex) setCurrentIndex(idx);
+    };
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, [visibleScreens]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Ensure polls exist for active sessions (handles restored/previous sessions)
   useEffect(() => {
     const runSeeding = async () => {
