@@ -57,7 +57,9 @@ export const PresentationLayout = ({
 
   const isInteractiveSlide = INTERACTIVE_SLIDE_IDS.has(currentScreen);
   const showJoinOverlay = isInteractiveSlide && !!sessionCode && !!sessionId && !blankScreen;
-  const joinUrl = sessionCode ? `https://ai4all.joshpenzell.com/participate?code=${sessionCode}` : "";
+  const joinOrigin = typeof window !== "undefined" ? window.location.origin : "https://ai4all.joshpenzell.com";
+  const joinUrl = sessionCode ? `${joinOrigin}/participate?code=${sessionCode}` : "";
+  const joinHostLabel = joinUrl ? joinUrl.replace(/^https?:\/\//, "").split("?")[0] : "";
 
   // Expose cleanView to outer chrome (e.g. Facilitator overlays) via body attr
   useEffect(() => {
