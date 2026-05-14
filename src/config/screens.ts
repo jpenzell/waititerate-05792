@@ -16,6 +16,8 @@ import { ElephantQuestionScreen } from "@/components/screens/ElephantQuestionScr
 import { ElephantEstimateScreen } from "@/components/screens/ElephantEstimateScreen";
 import { LLMExplainerScreen } from "@/components/screens/LLMExplainerScreen";
 import { ProbabilisticExplainerScreen } from "@/components/screens/ProbabilisticExplainerScreen";
+import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
+import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
 
 import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
 import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
@@ -116,6 +118,8 @@ export const screens: ScreenDef[] = [
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
+  { id: "LD3.61", title: "Duck or Rabbit?", component: PatternRecognitionScreen, duration: 4, notes: "Same image, two interpretations. Pattern recognition is subjective — what you see depends on what your brain expects." },
+  { id: "LD3.62", title: "Language Subjectivity — Annie Duke", component: AnnieDukeStudyScreen, duration: 5, notes: "Probability words like 'serious possibility' or 'rarely' mean wildly different things to different people — and to different AI models. Words are not numbers." },
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
   { id: "LD3.75", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "ND brains often register unfairness — to self and others — as a whole-body alarm. Easily mislabeled as defiance or inflexibility." },
   { id: "LD3.78", title: "Differential by Condition", component: DifferentialByConditionScreen, duration: 4, notes: "ADHD / Autism / Dyslexia / TBI — AI helps each group differently. Synthesized from Atcheson 2025, Pierrès 2024, Zhao 2025, Ma 2026." },
