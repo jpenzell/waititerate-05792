@@ -57,7 +57,9 @@ export const PresentationLayout = ({
 
   const isInteractiveSlide = INTERACTIVE_SLIDE_IDS.has(currentScreen);
   const showJoinOverlay = isInteractiveSlide && !!sessionCode && !!sessionId && !blankScreen;
-  const joinUrl = sessionCode ? `https://ai4all.joshpenzell.com/participate?code=${sessionCode}` : "";
+  const joinOrigin = typeof window !== "undefined" ? window.location.origin : "https://ai4all.joshpenzell.com";
+  const joinUrl = sessionCode ? `${joinOrigin}/participate?code=${sessionCode}` : "";
+  const joinHostLabel = joinUrl ? joinUrl.replace(/^https?:\/\//, "").split("?")[0] : "";
 
   // Expose cleanView to outer chrome (e.g. Facilitator overlays) via body attr
   useEffect(() => {
@@ -195,10 +197,10 @@ export const PresentationLayout = ({
                 {sessionId && (
                   <>
                     <span className="text-xs text-muted-foreground">
-                      ai4all.joshpenzell.com/participate?code={sessionCode}
+                      {joinHostLabel}?code={sessionCode}
                     </span>
                     <img 
-                      src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=${encodeURIComponent(`https://ai4all.joshpenzell.com/participate?code=${sessionCode}`)}`}
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=${encodeURIComponent(joinUrl)}`}
                       alt="Join Session QR Code"
                       className="h-12 w-12 border border-border rounded"
                     />
@@ -429,7 +431,7 @@ export const PresentationLayout = ({
           />
           <div className="flex flex-col leading-tight">
             <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">Join to participate</span>
-            <span className="text-sm font-mono text-foreground">ai4all.joshpenzell.com/participate</span>
+            <span className="text-sm font-mono text-foreground">{joinHostLabel}</span>
             <span className="text-base text-foreground mt-1">
               Code <span className="font-mono font-bold text-primary">{sessionCode}</span>
             </span>
