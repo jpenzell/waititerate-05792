@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v70'; // Move LD3.61 after LD3.0; LD1.96 no longer requires session
+const STORAGE_KEY = 'presentation-slide-config-atdld-v71'; // Add LD2.15 ND value/employment slide before LD2.2
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
