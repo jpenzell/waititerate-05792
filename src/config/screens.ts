@@ -138,9 +138,9 @@ export const screens: ScreenDef[] = [
   { id: "LD4.45", title: "Workaround for Gatekeeping", component: WorkaroundForGatekeepingScreen, duration: 4, notes: "Atcheson et al. CHI 2025 — 25 of 62 students said GenAI supports them in ways the university doesn't. Two student quotes (P10, P31)." },
   { id: "LD4.47", title: "Open University 'Taylor'", component: OpenUniversityTaylorScreen, duration: 3, notes: "Co-designed digital assistant at the front door of disability services. AI handles intake, humans handle judgment." },
   { id: "LD4.5", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 4, notes: "JAMA 2024." },
+  { id: "LD4.8", title: "AI Clears Friction So Thinking Can Happen", component: AIClarificationScreen, duration: 3, notes: "AI isn't replacing thinking. It clears friction so ND minds can do the thinking the future needs." },
   { id: "LD4.6", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English." },
   { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
-  { id: "LD4.8", title: "AI Clears Friction So Thinking Can Happen", component: AIClarificationScreen, duration: 3, notes: "AI isn't replacing thinking. It clears friction so ND minds can do the thinking the future needs." },
 
   // ═══ ACT 6 — Design for the Vanguard, Win for Everyone (8 slides · ~25 min) ═══
   { id: "LD5.0", title: "Chapter — Design for the Vanguard", component: DesignForVanguardChapterScreen, duration: 1, notes: "Chapter card." },
