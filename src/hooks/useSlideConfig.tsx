@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v81'; // Delete LD5.6
+const STORAGE_KEY = 'presentation-slide-config-atdld-v82'; // LD3.62 humans-only (hideAI prop)
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {

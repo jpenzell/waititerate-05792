@@ -14,6 +14,7 @@ interface Props {
   isFacilitator?: boolean;
   sessionId?: string;
   userId?: string;
+  hideAI?: boolean;
 }
 
 const STUDY_DATA: Record<
@@ -27,7 +28,7 @@ const STUDY_DATA: Record<
   "Never":               { humanAvg: 9,  humanRange: "0-50",   chatgpt: 0,   gemini: 0 },
 };
 
-export const AnnieDukeStudyScreen = ({ isFacilitator = false, sessionId, userId }: Props) => {
+export const AnnieDukeStudyScreen = ({ isFacilitator = false, sessionId, userId, hideAI = false }: Props) => {
   // Participant view (phone) → just the slider widget
   if (!isFacilitator && sessionId && userId) {
     return (
@@ -52,7 +53,9 @@ export const AnnieDukeStudyScreen = ({ isFacilitator = false, sessionId, userId 
             </h1>
           </div>
           <p className="text-base text-muted-foreground font-light">
-            Sherman Kent / Annie Duke study — humans vs AI on the same probability words
+            {hideAI
+              ? "Sherman Kent / Annie Duke study — how humans interpret the same probability words"
+              : "Sherman Kent / Annie Duke study — humans vs AI on the same probability words"}
           </p>
         </div>
 
@@ -60,8 +63,17 @@ export const AnnieDukeStudyScreen = ({ isFacilitator = false, sessionId, userId 
           <div className="max-w-5xl mx-auto w-full space-y-3 flex flex-col min-h-0">
             <div className="bg-primary/15 border-2 border-primary rounded-2xl px-5 py-3 shadow-lg max-w-3xl mx-auto">
               <p className="text-base text-foreground font-medium text-center">
-                <strong className="text-primary">Even AI models disagree.</strong>{" "}
-                "Serious possibility": ChatGPT says <span className="font-bold">70%</span>, Gemini says <span className="font-bold">50%</span>.
+                {hideAI ? (
+                  <>
+                    <strong className="text-primary">Humans vary wildly.</strong>{" "}
+                    "Serious possibility" ranged from <span className="font-bold">30%</span> to <span className="font-bold">80%</span> across people.
+                  </>
+                ) : (
+                  <>
+                    <strong className="text-primary">Even AI models disagree.</strong>{" "}
+                    "Serious possibility": ChatGPT says <span className="font-bold">70%</span>, Gemini says <span className="font-bold">50%</span>.
+                  </>
+                )}
               </p>
             </div>
 
@@ -72,8 +84,8 @@ export const AnnieDukeStudyScreen = ({ isFacilitator = false, sessionId, userId 
                     <TableHead className="text-foreground font-bold text-base py-2">Word</TableHead>
                     <TableHead className="text-center text-foreground font-bold text-base py-2">Human Avg</TableHead>
                     <TableHead className="text-center text-foreground font-bold text-base py-2">Human Range</TableHead>
-                    <TableHead className="text-center text-foreground font-bold text-base py-2">ChatGPT</TableHead>
-                    <TableHead className="text-center text-foreground font-bold text-base py-2">Gemini</TableHead>
+                    {!hideAI && <TableHead className="text-center text-foreground font-bold text-base py-2">ChatGPT</TableHead>}
+                    {!hideAI && <TableHead className="text-center text-foreground font-bold text-base py-2">Gemini</TableHead>}
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -84,8 +96,12 @@ export const AnnieDukeStudyScreen = ({ isFacilitator = false, sessionId, userId 
                         <TableCell className="font-semibold text-foreground text-base py-2">{word}</TableCell>
                         <TableCell className="text-center text-foreground text-base py-2 tabular-nums">{study.humanAvg}%</TableCell>
                         <TableCell className="text-center text-foreground text-base py-2 tabular-nums">{study.humanRange}</TableCell>
-                        <TableCell className={`text-center text-base py-2 tabular-nums ${study.highlight ? "font-bold text-lg text-primary" : "text-foreground"}`}>{study.chatgpt}%</TableCell>
-                        <TableCell className={`text-center text-base py-2 tabular-nums ${study.highlight ? "font-bold text-lg text-primary" : "text-foreground"}`}>{study.gemini}%</TableCell>
+                        {!hideAI && (
+                          <TableCell className={`text-center text-base py-2 tabular-nums ${study.highlight ? "font-bold text-lg text-primary" : "text-foreground"}`}>{study.chatgpt}%</TableCell>
+                        )}
+                        {!hideAI && (
+                          <TableCell className={`text-center text-base py-2 tabular-nums ${study.highlight ? "font-bold text-lg text-primary" : "text-foreground"}`}>{study.gemini}%</TableCell>
+                        )}
                       </TableRow>
                     );
                   })}
