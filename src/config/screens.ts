@@ -46,7 +46,7 @@ import { NeurodiversityInnovationScreen } from "@/components/screens/Neurodivers
 import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
 import { InjusticeSensitivityScreen } from "@/components/screens/InjusticeSensitivityScreen";
 import { AIvsManagerScreen } from "@/components/screens/AIvsManagerScreen";
-import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
+import { DisclosureGapScreen, DisclosureGapDetailScreen, DisclosureGapTakeawayScreen } from "@/components/screens/DisclosureGapScreen";
 import { ShadowAccommodationScreen } from "@/components/screens/ShadowAccommodationScreen";
 import { DetectorBiasScreen } from "@/components/screens/DetectorBiasScreen";
 import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScreen";
@@ -93,7 +93,9 @@ export const screens: ScreenDef[] = [
   { id: "LD1.2", title: "My Own Reframe", component: ZooxReframeScreen, duration: 2, notes: "Personal proof of the Zoox reframe — this isn't a deck, it's a live website." },
   { id: "LD1.2b", title: "Neurodiversity + AI = Innovation", component: NeurodiversityInnovationScreen, duration: 2, notes: "Meta-point: I thought backwards. Thinking differently + AI flexibility = innovation. This site is the proof." },
   { id: "LD1.3", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 4, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
-  { id: "LD1.3b", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 3, notes: "~36% identify as ND vs 6–7% registered with DSO. Purdue institutional + NCES + Doyle." },
+  { id: "LD1.3b", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 2, notes: "~36% identify as ND vs 6–7% registered with DSO. Three stat blocks. Purdue + NCES + Doyle." },
+  { id: "LD1.3b-ii", title: "Change the Question, Double the Answer", component: DisclosureGapDetailScreen, duration: 2, notes: "21%→43% reframe + >50% co-occurrence. NCES vs National Disability Center 2025." },
+  { id: "LD1.3b-iii", title: "AI Is the Accommodation They Never Asked For", component: DisclosureGapTakeawayScreen, duration: 1, notes: "Pull-quote takeaway closing the disclosure-gap arc." },
   { id: "LD1.3c", title: "1 in 5 Adults Self-ID as ND", component: YouGovSelfIDScreen, duration: 2, notes: "YouGov 2023 — 19% of US adults self-identify as neurodivergent. Self-ID outpacing diagnosis." },
   { id: "LD1.4", title: "What This Is NOT", component: WhatThisIsNotScreen, duration: 3, notes: "Disarm faculty skepticism early." },
   // 2.x — Why neurodiversity matters
