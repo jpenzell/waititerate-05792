@@ -2,18 +2,13 @@ import { Card } from "@/components/ui/card";
 import { PollWidget } from "@/components/PollWidget";
 import { screens } from "@/config/screens";
 
-import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
 import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
-import { NumericEstimateScreen } from "@/components/screens/NumericEstimateScreen";
 import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
 import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
 import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
-import { SensoryProcessingScreen } from "@/components/screens/SensoryProcessingScreen";
-import { CognitiveReflectionScreen } from "@/components/screens/CognitiveReflectionScreen";
 import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
 import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
-import { ProbabilityWordsWidget } from "@/components/participant/widgets/ProbabilityWordsWidget";
 
 interface Props {
   slideId: string;
@@ -27,58 +22,30 @@ interface Props {
  * full-screen on a participant device. Each entry returns just the input
  * widget; layout/headers/decoration come from StandbyView.
  *
- * If a slide is in INTERACTIVE_SLIDE_IDS but not registered here, the
- * participant sees the standby ("eyes on the shared screen") view.
+ * IDs match the rebuilt 7-act outline (see config/screens.ts).
  */
-const widgets: Record<
-  string,
-  (p: Props) => JSX.Element
-> = {
-  // 1.x
+const widgets: Record<string, (p: Props) => JSX.Element> = {
+  // ─── Act 1
   "LD1.1": ({ sessionId, userId }) => (
     <PollSection slideId="LD1.1" sessionId={sessionId} userId={userId} />
   ),
-  // 2.x
-  "LD2.0": ({ sessionId, userId }) => (
-    <PollSection slideId="LD2.0" sessionId={sessionId} userId={userId} />
-  ),
-  "LD2.1": ({ sessionId }) => (
-    <NeurodiversityDataQuizScreen isFacilitator={false} sessionId={sessionId} />
-  ),
-  "LD2.2": ({ sessionId, userId }) => (
-    <ProbabilityWordsWidget sessionId={sessionId} userId={userId} />
-  ),
 
-  // 3.x — only collection + estimate ask the audience for input
-  "LD3.0": ({ sessionId }) => (
+  // ─── Act 3 — Feel It
+  "LD3.1": ({ sessionId }) => (
     <PhotoCollectionScreen isFacilitator={false} sessionId={sessionId} />
   ),
   "LD3.4": ({ sessionId }) => (
-    <NumericEstimateScreen isFacilitator={false} sessionId={sessionId} />
-  ),
-
-  // 4.x — discoveries
-  "LD4.0": ({ sessionId }) => (
     <MentalImageryScreen isFacilitator={false} sessionId={sessionId} />
   ),
-  "LD4.1": ({ sessionId }) => (
+  "LD3.5": ({ sessionId }) => (
     <InnerVoiceScreen isFacilitator={false} sessionId={sessionId} />
   ),
-  "LD4.2": ({ sessionId }) => (
+  "LD3.6": ({ sessionId }) => (
     <TimePerceptionScreen isFacilitator={false} sessionId={sessionId} />
   ),
-  "LD4.3": ({ sessionId }) => (
-    <SensoryProcessingScreen isFacilitator={false} sessionId={sessionId} />
-  ),
-  "LD4.4": ({ sessionId }) => (
-    <CognitiveReflectionScreen isFacilitator={false} sessionId={sessionId} />
-  ),
-  "LD4.6": ({ sessionId }) => <DiscoveryWallScreen sessionId={sessionId} />,
+  "LD3.8": ({ sessionId }) => <DiscoveryWallScreen sessionId={sessionId} />,
 
-  // 5.x — curb-cut quiz
-  "LD5.1": ({ sessionId, userId }) => (
-    <PollSection slideId="LD5.1" sessionId={sessionId} userId={userId} />
-  ),
+  // ─── Act 5 — Curb-cut quiz
   "LD5.2": ({ sessionId, userId }) => (
     <PollSection slideId="LD5.2" sessionId={sessionId} userId={userId} />
   ),
@@ -86,19 +53,17 @@ const widgets: Record<
     <PollSection slideId="LD5.3" sessionId={sessionId} userId={userId} />
   ),
 
-  // 6.x
-  "LD6.1": ({ sessionId, userId }) => (
-    <PollSection slideId="LD6.1" sessionId={sessionId} userId={userId} />
-  ),
-
-  // 7.x — workshop interactions
-  "LD7.0": () => <RedesignWorkshopScreen />,
-  "LD7.3": ({ sessionId, userId }) => (
+  // ─── Act 6 — Workshop
+  "LD6.1": () => <RedesignWorkshopScreen />,
+  "LD6.4": ({ sessionId, userId }) => (
     <AIStudentScreen isFacilitator={false} sessionId={sessionId} userId={userId} />
   ),
-
-  // Display-only interactive slides (LD3.1, LD3.2, LD3.3, LD3.5, LD3.6, LD8.2)
-  // are intentionally NOT registered — participants see the standby view.
+  "LD6.5": ({ sessionId, userId }) => (
+    <AIStudentScreen isFacilitator={false} sessionId={sessionId} userId={userId} />
+  ),
+  "LD6.6": ({ sessionId, userId }) => (
+    <AIStudentScreen isFacilitator={false} sessionId={sessionId} userId={userId} />
+  ),
 };
 
 const PollSection = ({

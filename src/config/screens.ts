@@ -1,70 +1,69 @@
+// ─── 7-Act outline. 54 slides. AI for All Minds. ───
+// Through-line: ND minds aren't behind. They've been ahead, waiting for systems
+// that could meet them. AI is the first system that doesn't require the bending.
+
 import { LDTitleScreen } from "@/components/screens/LDTitleScreen";
 import { WindshieldWipersScreen } from "@/components/screens/WindshieldWipersScreen";
-import { NeurodiversityDataQuizScreen } from "@/components/screens/NeurodiversityDataQuizScreen";
+import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
+import { RCCCContextScreen } from "@/components/screens/RCCCContextScreen";
+
+import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
+import { DisclosureGapScreen } from "@/components/screens/DisclosureGapScreen";
+
+import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
+import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
+import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
+import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
+import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
+import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
+import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
+import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
+import { PeerTalkScreen } from "@/components/screens/PeerTalkScreen";
+
+import { StudentsAlreadyUsingAIScreen } from "@/components/screens/StudentsAlreadyUsingAIScreen";
+import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScreen";
+import { ShadowAccommodationScreen } from "@/components/screens/ShadowAccommodationScreen";
+import { AIParadoxRevealScreen } from "@/components/screens/AIParadoxRevealScreen";
+import { DetectorBiasScreen } from "@/components/screens/DetectorBiasScreen";
+import { WilliamsIdentityScreen } from "@/components/screens/WilliamsIdentityScreen";
+
 import { CurbCutIntroScreen } from "@/components/screens/CurbCutIntroScreen";
 import { CurbCutQuizScreen } from "@/components/screens/CurbCutQuizScreen";
 import { CurbCutResultsScreen } from "@/components/screens/CurbCutResultsScreen";
 import { CurbCutExamplesScreen } from "@/components/screens/CurbCutExamplesScreen";
-import { PhotoCollectionScreen } from "@/components/screens/PhotoCollectionScreen";
-import { HumanPatternsScreen } from "@/components/screens/HumanPatternsScreen";
-import { AIPatternsScreen } from "@/components/screens/AIPatternsScreen";
-import { BlindSpotsScreen } from "@/components/screens/BlindSpotsScreen";
-import { NumericEstimateScreen } from "@/components/screens/NumericEstimateScreen";
-import { AIDatapointsScreen } from "@/components/screens/AIDatapointsScreen";
-import { CognitiveTransitionScreen } from "@/components/screens/CognitiveTransitionScreen";
-import { CognitiveLoadScreen } from "@/components/screens/CognitiveLoadScreen";
-import { StructuredFreedomScreen } from "@/components/screens/StructuredFreedomScreen";
-import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
-import { ZooxReframeScreen } from "@/components/screens/ZooxReframeScreen";
-import { AnnieDukeStudyScreen } from "@/components/screens/AnnieDukeStudyScreen";
-import { AIParadoxRevealScreen } from "@/components/screens/AIParadoxRevealScreen";
-import { AnthropicIterationScreen } from "@/components/screens/AnthropicIterationScreen";
-import { MentalImageryScreen } from "@/components/screens/MentalImageryScreen";
-import { InnerVoiceScreen } from "@/components/screens/InnerVoiceScreen";
-import { TimePerceptionScreen } from "@/components/screens/TimePerceptionScreen";
-import { SensoryProcessingScreen } from "@/components/screens/SensoryProcessingScreen";
-import { CognitiveReflectionScreen } from "@/components/screens/CognitiveReflectionScreen";
-import { ResearchFoundationsScreen } from "@/components/screens/ResearchFoundationsScreen";
-import { PatternRecognitionScreen } from "@/components/screens/PatternRecognitionScreen";
-import { AICognitiveProtheticScreen } from "@/components/screens/AICognitiveProtheticScreen";
-import { UDLInActionScreen } from "@/components/screens/UDLInActionScreen";
-import { LDTakeawaysScreen } from "@/components/screens/LDTakeawaysScreen";
-import { RCCCContextScreen } from "@/components/screens/RCCCContextScreen";
-import { AcademicIntegrityScreen } from "@/components/screens/AcademicIntegrityScreen";
-import { MondayPromptsScreen } from "@/components/screens/MondayPromptsScreen";
-import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
-import { FacultyTranslationScreen } from "@/components/screens/FacultyTranslationScreen";
-import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
-import { PeerTalkScreen } from "@/components/screens/PeerTalkScreen";
-import { AIAccommodationScreen } from "@/components/screens/AIAccommodationScreen";
-import { FacultyAreNeurodivergentScreen } from "@/components/screens/FacultyAreNeurodivergentScreen";
-import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
-import { WhatThisIsNotScreen } from "@/components/screens/WhatThisIsNotScreen";
-import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScreen";
-import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
-import { NeurodiversityInnovationScreen } from "@/components/screens/NeurodiversityInnovationScreen";
-import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
-import { InjusticeSensitivityScreen } from "@/components/screens/InjusticeSensitivityScreen";
-import { AIvsManagerScreen } from "@/components/screens/AIvsManagerScreen";
-import { DisclosureGapScreen, DisclosureGapDetailScreen, DisclosureGapTakeawayScreen } from "@/components/screens/DisclosureGapScreen";
-import { ShadowAccommodationScreen } from "@/components/screens/ShadowAccommodationScreen";
-import { DetectorBiasScreen } from "@/components/screens/DetectorBiasScreen";
-import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScreen";
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
-import { AIEvidenceMapScreen } from "@/components/screens/AIEvidenceMapScreen";
-import { InclusiveSupportStackScreen } from "@/components/screens/InclusiveSupportStackScreen";
-import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
-import { StudentsAlreadyUsingAIScreen } from "@/components/screens/StudentsAlreadyUsingAIScreen";
-import { WilliamsIdentityScreen } from "@/components/screens/WilliamsIdentityScreen";
+import { RetentionEquityScreen } from "@/components/screens/RetentionEquityScreen";
+
+import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
+import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
 import { CoDesignScreen } from "@/components/screens/CoDesignScreen";
+
+import { InclusiveSupportStackScreen } from "@/components/screens/InclusiveSupportStackScreen";
+import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScreen";
+
 import {
-  Chapter02Screen,
-  Chapter03Screen,
-  Chapter04Screen,
-  Chapter05Screen,
-  Chapter06Screen,
-  Chapter07Screen,
+  HiddenVanguardChapterScreen,
+  FeelItChapterScreen,
+  AccommodationChapterScreen,
+  DesignForVanguardChapterScreen,
+  MakeSomethingChapterScreen,
+  CloseChapterScreen,
 } from "@/components/screens/ChapterScreens";
+
+import {
+  WorldChangingScreen,
+  PersonalDisclosureScreen,
+  CostOfMaskingScreen,
+  ThesisNamedScreen,
+  TheRevealScreen,
+  YouProbablyDoTooScreen,
+  AIClarificationScreen,
+  CognitiveLoadUDLScreen,
+  AIStudentSetupScreen,
+  ZooxCallbackScreen,
+  CommitmentMomentScreen,
+  IdentityMoveScreen,
+} from "@/components/screens/NewActScreens";
 
 export interface ScreenDef {
   id: string;
@@ -77,118 +76,99 @@ export interface ScreenDef {
   pollOptions?: string[];
   props?: Record<string, any>;
   /**
-   * If true, this slide requires an active participant session to be
-   * meaningful (e.g. live photo upload, live workshop submission). When
-   * no session is started, it's filtered out of the deck so arrows skip
-   * past it cleanly.
+   * Slides that only make sense with an active participant session
+   * (live photo upload, live workshop, etc.). Filtered from the deck
+   * when no session is started.
    */
   requiresSession?: boolean;
 }
 
 export const screens: ScreenDef[] = [
-  // 1.x — Opening
-  { id: "LD1.0", title: "Title - AI for All Minds", component: LDTitleScreen, duration: 2, notes: "Set the stage for neurodiversity-focused learning design. Opening energy." },
-  { id: "LD1.1", title: "First Principles: Windshield Wipers", component: WindshieldWipersScreen, duration: 5, notes: "Does a self-driving car need windshield wipers? Interactive poll revealing first-principles thinking.", pollQuestion: "Does a self-driving car need windshield wipers?", pollOptions: ["Yes", "No", "Who knows anymore?"] },
-  { id: "LD1.1b", title: "Reveal: Zoox", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },
-  { id: "LD1.2", title: "My Own Reframe", component: ZooxReframeScreen, duration: 2, notes: "Personal proof of the Zoox reframe — this isn't a deck, it's a live website." },
-  { id: "LD1.2b", title: "Neurodiversity + AI = Innovation", component: NeurodiversityInnovationScreen, duration: 2, notes: "Meta-point: I thought backwards. Thinking differently + AI flexibility = innovation. This site is the proof." },
-  { id: "LD1.3", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 4, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
-  { id: "LD1.3b", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 2, notes: "~36% identify as ND vs 6–7% registered with DSO. Three stat blocks. Purdue + NCES + Doyle." },
-  { id: "LD1.3b-ii", title: "Change the Question, Double the Answer", component: DisclosureGapDetailScreen, duration: 2, notes: "21%→43% reframe + >50% co-occurrence. NCES vs National Disability Center 2025." },
-  { id: "LD1.3b-iii", title: "AI Is the Accommodation They Never Asked For", component: DisclosureGapTakeawayScreen, duration: 1, notes: "Pull-quote takeaway closing the disclosure-gap arc." },
-  { id: "LD1.3c", title: "1 in 5 Adults Self-ID as ND", component: YouGovSelfIDScreen, duration: 2, notes: "YouGov 2023 — 19% of US adults self-identify as neurodivergent. Self-ID outpacing diagnosis." },
-  { id: "LD1.4", title: "What This Is NOT", component: WhatThisIsNotScreen, duration: 3, notes: "Disarm faculty skepticism early." },
-  // 2.x — Why neurodiversity matters
-  { id: "LD2.0a", title: "Chapter 02 — Why difference matters", component: Chapter02Screen, duration: 1, notes: "Cinematic chapter divider." },
-  { id: "LD2.0", title: "Pattern Recognition & Perspective", component: PatternRecognitionScreen, duration: 6, notes: "Autistic detail focus vs neurotypical gestalt processing.", pollQuestion: "What did you see first?", pollOptions: ["Duck (facing right)", "Rabbit (facing left)", "Both at the same time", "Neither/Unsure"] },
-  { id: "LD2.1", title: "Why Neurodiversity Matters: The Data", component: NeurodiversityDataQuizScreen, duration: 8, notes: "Interactive data quiz." },
-  { id: "LD2.2", title: "Same Words, Different Meanings", component: AnnieDukeStudyScreen, duration: 5, notes: "Annie Duke / Sherman Kent." },
-  // 3.x — Photo exercise
-  { id: "LD3.0a", title: "Chapter 03 — Patterns we miss", component: Chapter03Screen, duration: 1, notes: "Cinematic chapter divider.", requiresSession: true },
-  { id: "LD3.0", title: "Step 1: How You Learn Best", component: PhotoCollectionScreen, duration: 2, notes: "Photo collection.", requiresSession: true },
-  { id: "LD3.1", title: "Step 2: What Patterns Do You See?", component: HumanPatternsScreen, duration: 2, notes: "Pattern spotting.", requiresSession: true },
-  { id: "LD3.2", title: "Step 3: AI Pattern Analysis", component: AIPatternsScreen, duration: 2, notes: "AI reveals patterns.", requiresSession: true },
-  { id: "LD3.3", title: "Step 4: What Are We Missing?", component: BlindSpotsScreen, duration: 4, notes: "Reveal blind spots.", requiresSession: true },
-  { id: "LD3.4", title: "Step 5: How Many Interpretations?", component: NumericEstimateScreen, duration: 2, notes: "Estimates.", requiresSession: true },
-  { id: "LD3.5", title: "Step 6: Abundance Reveal", component: AIDatapointsScreen, duration: 2, notes: "AI datapoints.", requiresSession: true },
-  { id: "LD3.6", title: "Transition: From AI to Human Cognition", component: CognitiveTransitionScreen, duration: 1, notes: "Bridge slide.", requiresSession: true },
-  // 4.x — Cognitive discovery
-  { id: "LD4.0a", title: "Chapter 04 — Inside the mind", component: Chapter04Screen, duration: 1, notes: "Cinematic chapter divider." },
-  { id: "LD4.0", title: "Mental Imagery Discovery", component: MentalImageryScreen, duration: 7, notes: "Aphantasia reveal." },
-  { id: "LD4.1", title: "Inner Voice Discovery", component: InnerVoiceScreen, duration: 6, notes: "Reading voice." },
-  { id: "LD4.2", title: "Time Perception Challenge", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
-  { id: "LD4.3", title: "Sensory Processing Simulator", component: SensoryProcessingScreen, duration: 6, notes: "Sensory overload." },
-  { id: "LD4.3b", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Rejection Sensitive Dysphoria — why a single comment can derail a week. Stats are placeholders, confirm before delivery." },
-  { id: "LD4.3c", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "Heightened response to unfairness — what looks like overreaction vs what's actually happening." },
-  { id: "LD4.3d", title: "Humanize My Words", component: HumanizeMyWordsScreen, duration: 4, notes: "Ma et al. 2026 — 3,984 autistic posts. Four affordances + three risks. Masking-as-a-service tension." },
-  { id: "LD4.4", title: "Cognitive Reflection", component: CognitiveReflectionScreen, duration: 8, notes: "Reflection prompts." },
-  { id: "LD4.5", title: "Research Foundations", component: ResearchFoundationsScreen, duration: 5, notes: "Academic grounding." },
-  { id: "LD4.6", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared wall.", requiresSession: true },
-  { id: "LD4.7", title: "What This Means For Your Students", component: FacultyTranslationScreen, duration: 5, notes: "Bridge to teaching practice." },
-  { id: "LD4.8", title: "You Are Not Alone (Faculty)", component: FacultyAreNeurodivergentScreen, duration: 3, notes: "Permission slide." },
-  { id: "LD4.9", title: "Peer Talk: Discovery", component: PeerTalkScreen, duration: 3, props: { prompt: "What did you just discover that you'd never noticed before?", subPrompt: "Pick one thing. 90 seconds with the person next to you.", seconds: 90 }, notes: "Structured peer talk." },
-  // 5.x — Curb-cut effect
-  { id: "LD5.0a", title: "Chapter 05 — The curb-cut effect", component: Chapter05Screen, duration: 1, notes: "Cinematic chapter divider." },
-  { id: "LD5.0", title: "The Curb-Cut Effect: Introduction", component: CurbCutIntroScreen, duration: 3, notes: "Curb-cut effect intro." },
-  { id: "LD5.1", title: "Quiz Q1: Closed Captions", component: CurbCutQuizScreen, duration: 1, notes: "Q1.", pollQuestion: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?", pollOptions: ["20%", "45%", "71%", "85%"] },
-  { id: "LD5.2", title: "Quiz Q2: Chunked Content", component: CurbCutQuizScreen, duration: 1, notes: "Q2.", pollQuestion: "How much does chunked content improve completion rates for everyone?", pollOptions: ["10%", "30%", "50%", "75%"] },
-  { id: "LD5.3", title: "Quiz Q3: Multiple Formats", component: CurbCutQuizScreen, duration: 1, notes: "Q3.", pollQuestion: "What percentage of learners prefer multiple format options (text + audio + visual)?", pollOptions: ["40%", "60%", "80%+", "95%"] },
-  { id: "LD5.4", title: "The Curb-Cut Effect: Results", component: CurbCutResultsScreen, duration: 5, notes: "Reveal stats." },
-  { id: "LD5.5", title: "Learning Design Curb Cuts", component: CurbCutExamplesScreen, duration: 3, notes: "Real examples." },
-  // 6.x — AI for accommodation
-  { id: "LD6.0a", title: "Chapter 06 — AI as accommodation", component: Chapter06Screen, duration: 1, notes: "Cinematic chapter divider." },
-  { id: "LD6.0", title: "AI as Cognitive Prosthetic", component: AICognitiveProtheticScreen, duration: 6, notes: "Real examples." },
-  { id: "LD6.0b", title: "People Prefer AI to Their Manager", component: AIvsManagerScreen, duration: 3, notes: "Workplace Intelligence × Oracle 2024 stat. Ties feedback/injustice sensitivity (Ch.4) to why AI is a safer tutor. Confirm exact stat before delivery." },
-  { id: "LD6.0c", title: "Shadow Accommodation", component: ShadowAccommodationScreen, duration: 4, notes: "Atcheson et al. CHI 2025 — 25/62 students say AI does what the institution doesn't. P10 quote on bypassing bureaucracy. Political punch of the talk." },
-  { id: "LD6.0d", title: "Students Already Use AI", component: StudentsAlreadyUsingAIScreen, duration: 3, notes: "HEPI 2025 — 92% of UK undergrads use GenAI, 88% for assessments. The adoption already happened." },
-  { id: "LD6.1", title: "Structured Freedom Framework", component: StructuredFreedomScreen, duration: 7, notes: "Balance between guidance and autonomy.", pollQuestion: "Which design approach best describes your current training?", pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"] },
-  { id: "LD6.2", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 5, notes: "JAMA 2024." },
-  { id: "LD6.3", title: "But Isn't This Just Cheating?", component: AcademicIntegrityScreen, duration: 5, notes: "Reframe academic integrity." },
-  { id: "LD6.3b", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English. Bloomberg autistic-student-flagged-100% case." },
-  { id: "LD6.3c", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote. Person-first vs identity-first framing." },
-  { id: "LD6.4", title: "AI as Cognitive Accommodation", component: AIAccommodationScreen, duration: 5, notes: "Six archetypes." },
-  { id: "LD6.5", title: "AI Evidence Map — Trust, but Verify", component: AIEvidenceMapScreen, duration: 4, notes: "Strong/Mixed/Thin evidence tiers. LLMs strong, AT mixed, predictive analytics thin. Procurement guardrail." },
-  // 7.x — Workshop
-  { id: "LD7.0a", title: "Chapter 07 — Make something", component: Chapter07Screen, duration: 1, notes: "Cinematic chapter divider." },
-  { id: "LD7.0", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop.", requiresSession: true },
-  { id: "LD7.1", title: "Peer Talk: Redesign", component: PeerTalkScreen, duration: 3, props: { prompt: "Show your neighbor what you redesigned.", subPrompt: "What changed? What did the AI catch that you wouldn't have? 90 seconds each way.", seconds: 180 }, notes: "Pair share." },
-  { id: "LD7.2", title: "This Is Retention Strategy", component: RetentionEquityScreen, duration: 4, notes: "Equity / Title III / SACSCOC hook." },
-  { id: "LD7.2b", title: "The Free-Tier Divide", component: FreeTierDivideScreen, duration: 3, notes: "Zhao et al. 2025 — 91% of disabled students locked into free tiers. Equity argument for institutional AI access via DSO." },
-  { id: "LD7.3", title: "AI Student: You're the Teacher", component: AIStudentScreen, duration: 8, notes: "Learning by teaching.", requiresSession: true },
-  { id: "LD7.4", title: "Cognitive Load in Action", component: CognitiveLoadScreen, duration: 4, notes: "Working memory limits." },
-  { id: "LD7.5", title: "UDL in Action", component: UDLInActionScreen, duration: 4, notes: "Universal Design for Learning." },
-  { id: "LD7.6", title: "Iteration Doubles Quality", component: AnthropicIterationScreen, duration: 3, notes: "Anthropic AI Fluency Index 2026." },
-  // 8.x — Close
-  { id: "LD7.9", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Mental model: accessible curriculum → accommodations + AT → AI augmentation → human judgement. Sets up action plan." },
-  { id: "LD7.9b", title: "Co-Design With ND Students", component: CoDesignScreen, duration: 3, notes: "Special Olympics co-design model applied to syllabus design. Nothing about us without us." },
-  { id: "LD8.0", title: "Design with Difference: Your Action Plan", component: LDTakeawaysScreen, duration: 4, notes: "Four actionable shifts." },
-  { id: "LD8.1", title: "Monday-Morning Prompts", component: MondayPromptsScreen, duration: 5, notes: "Four copy-paste prompts." },
-  { id: "LD8.3", title: "Take It With You", component: OnePagerDownloadScreen, duration: 3, notes: "Download faculty one-pager." },
+  // ═══ ACT 1 — The Future Demands Different Thinking (5 slides · ~15 min) ═══
+  { id: "LD1.0", title: "Title — AI for All Minds", component: LDTitleScreen, duration: 2, notes: "Set the stage. Opening energy." },
+  { id: "LD1.1", title: "Zoox Question — Windshield Wipers", component: WindshieldWipersScreen, duration: 4, notes: "Does a self-driving car need windshield wipers? Show of hands or live poll.", pollQuestion: "Does a self-driving car need windshield wipers?", pollOptions: ["Yes", "No", "Who knows anymore?"] },
+  { id: "LD1.2", title: "Zoox Reveal", component: WindshieldWipersRevealScreen, duration: 1, notes: "Full-bleed Zoox image. No driver, no windshield, no wipers." },
+  { id: "LD1.3", title: "The Templates Can't Keep Up", component: WorldChangingScreen, duration: 3, notes: "Meta-frame: this is a rehearsal, not a deck. Built in a weekend with AI." },
+  { id: "LD1.4", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 5, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
+
+  // ═══ ACT 2 — The Hidden Vanguard (6 slides · ~20 min) ═══
+  { id: "LD2.0", title: "Chapter — The Hidden Vanguard", component: HiddenVanguardChapterScreen, duration: 1, notes: "Chapter card." },
+  { id: "LD2.1", title: "Personal Disclosure", component: PersonalDisclosureScreen, duration: 5, notes: "Aphantasia · autism + ADHD · masking. Personal anchor before the data." },
+  { id: "LD2.2", title: "1 in 5 Adults Self-ID as ND", component: YouGovSelfIDScreen, duration: 3, notes: "YouGov 2023 — 19% of US adults self-identify as neurodivergent." },
+  { id: "LD2.3", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 4, notes: "~36% identify vs 6–7% registered. Purdue + NCES + Doyle." },
+  { id: "LD2.4", title: "The Cost of Masking", component: CostOfMaskingScreen, duration: 4, notes: "What the system has been taking. Cage 2018, Cassidy 2018, Huang 2020." },
+  { id: "LD2.5", title: "The Thesis Named", component: ThesisNamedScreen, duration: 2, notes: "ND minds aren't behind. They've been ahead, waiting for systems that could meet them." },
+
+  // ═══ ACT 3 — Feel It (11 slides · ~45 min) ═══
+  { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
+  { id: "LD3.1", title: "Photo Exercise — Upload", component: PhotoCollectionScreen, duration: 4, notes: "Step 1: How you learn best.", requiresSession: true },
+  { id: "LD3.2", title: "Photo Exercise — What You See", component: HumanPatternsScreen, duration: 4, notes: "Step 2: Different observers, different patterns.", requiresSession: true },
+  { id: "LD3.3", title: "Photo Exercise — AI as Observer", component: AIPatternsScreen, duration: 4, notes: "Step 3: AI is one observer among many.", requiresSession: true },
+  { id: "LD3.4", title: "Mental Imagery", component: MentalImageryScreen, duration: 6, notes: "Aphantasia reveal." },
+  { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
+  { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
+  { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
+  { id: "LD3.8", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared cognitive reflection.", requiresSession: true },
+  { id: "LD3.9", title: "The Reveal — They're In This Room", component: TheRevealScreen, duration: 3, notes: "Several of you in this room are these people. The rest of you teach them every day." },
+  { id: "LD3.10", title: "Peer Talk: Discovery", component: PeerTalkScreen, duration: 3, props: { prompt: "What did you just discover that you'd never noticed before?", subPrompt: "Pick one thing. 90 seconds with the person next to you.", seconds: 90 }, notes: "Structured peer talk." },
+
+  // ═══ ACT 4 — The Accommodation That Already Happened (9 slides · ~30 min) ═══
+  { id: "LD4.0", title: "Chapter — The Accommodation That Already Happened", component: AccommodationChapterScreen, duration: 1, notes: "Chapter card." },
+  { id: "LD4.1", title: "Students Already Use AI", component: StudentsAlreadyUsingAIScreen, duration: 3, notes: "HEPI 2025 — 92% of UK undergrads use GenAI." },
+  { id: "LD4.2", title: "You Probably Do Too", component: YouProbablyDoTooScreen, duration: 3, notes: "Faculty already use AI for the same accommodations students want." },
+  { id: "LD4.3", title: "Humanize My Words", component: HumanizeMyWordsScreen, duration: 4, notes: "Ma et al. 2026 — masking-as-a-service." },
+  { id: "LD4.4", title: "Shadow Accommodation", component: ShadowAccommodationScreen, duration: 4, notes: "Atcheson et al. CHI 2025 — AI does what the institution doesn't." },
+  { id: "LD4.5", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 4, notes: "JAMA 2024." },
+  { id: "LD4.6", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English." },
+  { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
+  { id: "LD4.8", title: "AI Clears Friction So Thinking Can Happen", component: AIClarificationScreen, duration: 3, notes: "AI isn't replacing thinking. It clears friction so ND minds can do the thinking the future needs." },
+
+  // ═══ ACT 5 — Design for the Vanguard, Win for Everyone (8 slides · ~25 min) ═══
+  { id: "LD5.0", title: "Chapter — Design for the Vanguard", component: DesignForVanguardChapterScreen, duration: 1, notes: "Chapter card." },
+  { id: "LD5.1", title: "The Curb-Cut Effect — Introduction", component: CurbCutIntroScreen, duration: 3, notes: "Curb-cut effect intro." },
+  { id: "LD5.2", title: "Quiz Q1: Closed Captions", component: CurbCutQuizScreen, duration: 3, notes: "Q1 with reveal-on-arrow.", pollQuestion: "What percentage of ALL viewers use closed captions (not just deaf/hard-of-hearing)?", pollOptions: ["20%", "45%", "71%", "85%"] },
+  { id: "LD5.3", title: "Quiz Q2: Chunked Content", component: CurbCutQuizScreen, duration: 3, notes: "Q2 with reveal-on-arrow.", pollQuestion: "How much does chunked content improve completion rates for everyone?", pollOptions: ["10%", "30%", "50%", "75%"] },
+  { id: "LD5.4", title: "Built for 15%. Used by 80%+", component: CurbCutResultsScreen, duration: 4, notes: "Reveal stats." },
+  { id: "LD5.5", title: "The Free-Tier Divide", component: FreeTierDivideScreen, duration: 3, notes: "Zhao et al. 2025 — 91% of disabled students locked into free tiers." },
+  { id: "LD5.6", title: "The Institutional Case", component: RetentionEquityScreen, duration: 4, notes: "Retention / Title III / SACSCOC hook." },
+  { id: "LD5.7", title: "Learning Design Curb Cuts", component: CurbCutExamplesScreen, duration: 4, notes: "Real examples." },
+
+  // ═══ ACT 6 — Make Something (9 slides · ~50 min) ═══
+  { id: "LD6.0", title: "Chapter — Make Something", component: MakeSomethingChapterScreen, duration: 1, notes: "Chapter card." },
+  { id: "LD6.1", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop.", requiresSession: true },
+  { id: "LD6.2", title: "Cognitive Load + UDL", component: CognitiveLoadUDLScreen, duration: 5, notes: "Two principles for the next 30 minutes." },
+  { id: "LD6.3", title: "AI Student: Setup", component: AIStudentSetupScreen, duration: 3, notes: "You are now the teacher. Three rounds." },
+  { id: "LD6.4", title: "AI Student: Round 1 — Teach", component: AIStudentScreen, duration: 8, notes: "Teach the AI a concept; watch where it misunderstands.", requiresSession: true, props: { round: 1 } },
+  { id: "LD6.5", title: "AI Student: Round 2 — Redesign", component: AIStudentScreen, duration: 6, notes: "Re-teach using UDL + cognitive load.", requiresSession: true, props: { round: 2 } },
+  { id: "LD6.6", title: "AI Student: Round 3 — Iterate", component: AIStudentScreen, duration: 5, notes: "Watch the score improve. Iteration doubles quality.", requiresSession: true, props: { round: 3 } },
+  { id: "LD6.7", title: "Co-Design With ND Students", component: CoDesignScreen, duration: 4, notes: "Special Olympics co-design model. Nothing about us without us." },
+  { id: "LD6.8", title: "Peer Talk: What You'll Change Monday", component: PeerTalkScreen, duration: 3, props: { prompt: "What will you change Monday?", subPrompt: "One concrete shift. 90 seconds each way.", seconds: 180 }, notes: "Pair share." },
+
+  // ═══ ACT 7 — Close With the Callback (6 slides · ~15 min) ═══
+  { id: "LD7.0", title: "Zoox Callback — Your Windshield Wiper", component: ZooxCallbackScreen, duration: 3, notes: "Callback to the opening question. What's the windshield wiper in your syllabus?" },
+  { id: "LD7.1", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Accessible curriculum → AT → AI → human judgment." },
+  { id: "LD7.2", title: "Commitment Moment", component: CommitmentMomentScreen, duration: 3, notes: "Name one change for fall. Write it down." },
+  { id: "LD7.3", title: "Peer Accountability", component: PeerTalkScreen, duration: 3, props: { prompt: "Tell the person next to you what you committed to.", subPrompt: "They are now your accountability partner. 60 seconds each.", seconds: 120 }, notes: "Pair accountability." },
+  { id: "LD7.4", title: "Identity Move — Prototyping the Future", component: IdentityMoveScreen, duration: 2, notes: "I'm not accommodating. I'm prototyping the future." },
+  { id: "LD7.5", title: "Take It With You", component: OnePagerDownloadScreen, duration: 2, notes: "Faculty one-pager. Footnote, not climax." },
 ];
 
 // Slide IDs that accept (isFacilitator, sessionId, userId) interactive props
 export const INTERACTIVE_SLIDE_IDS = new Set<string>([
   "LD1.1",   // Windshield wipers poll
-  "LD2.0",   // Pattern recognition poll
-  "LD2.1",   // Neurodiversity quiz
-  "LD2.2",   // Probability words
-  "LD3.0",   // Photo collection
-  "LD3.1",   // Human patterns
-  "LD3.2",   // AI patterns
-  "LD3.3",   // Blind spots
-  "LD3.4",   // Numeric estimate
-  "LD3.5",   // AI datapoints
-  "LD3.6",   // Cognitive transition
-  "LD4.0",   // Mental imagery
-  "LD4.1",   // Inner voice
-  "LD4.2",   // Time perception
-  "LD4.3",   // Sensory processing
-  "LD4.4",   // Cognitive reflection
-  "LD4.6",   // Discovery wall
-  "LD5.1",   // Curb-cut quiz Q1
-  "LD5.2",   // Curb-cut quiz Q2
-  "LD5.3",   // Curb-cut quiz Q3
-  "LD6.1",   // Structured freedom poll
-  "LD7.0",   // Redesign workshop
-  "LD7.3",   // AI student
+  "LD2.3",   // (was disclosure gap — kept here in case poll-style props passed)
+  "LD3.1",   // Photo collection
+  "LD3.2",   // Human patterns
+  "LD3.3",   // AI patterns
+  "LD3.4",   // Mental imagery
+  "LD3.5",   // Inner voice
+  "LD3.6",   // Time perception
+  "LD3.7",   // Feedback sensitivity
+  "LD3.8",   // Discovery wall
+  "LD5.2",   // Curb-cut quiz Q1
+  "LD5.3",   // Curb-cut quiz Q2
+  "LD6.1",   // Redesign workshop
+  "LD6.4",   // AI student R1
+  "LD6.5",   // AI student R2
+  "LD6.6",   // AI student R3
 ]);

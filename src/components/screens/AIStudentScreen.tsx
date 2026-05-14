@@ -11,10 +11,13 @@ interface AIStudentScreenProps {
   isFacilitator?: boolean;
   sessionId?: string;
   userId?: string;
+  /** 1 = teach, 2 = redesign, 3 = iterate. Cosmetic — controls the badge label. */
+  round?: 1 | 2 | 3;
 }
 
 export const AIStudentScreen = ({ 
   isFacilitator = false,
+  round,
 }: AIStudentScreenProps) => {
   const [teachingInput, setTeachingInput] = useState("");
   const [conversation, setConversation] = useState<Array<{role: 'teacher' | 'student', text: string}>>([]);
@@ -77,7 +80,9 @@ export const AIStudentScreen = ({
         <div className="text-center mb-12 animate-fade-in">
           <Badge variant="secondary" className="mb-6 text-lg px-6 py-3">
             <Brain className="w-5 h-5 mr-2 inline" />
-            Flip the Script
+            {round
+              ? `Round ${round} — ${round === 1 ? "Teach" : round === 2 ? "Redesign" : "Iterate"}`
+              : "Flip the Script"}
           </Badge>
           <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
             You're the Teacher Now
