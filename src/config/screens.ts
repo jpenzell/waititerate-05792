@@ -118,7 +118,6 @@ export const screens: ScreenDef[] = [
   { id: "LD3.0", title: "Chapter — Feel It", component: FeelItChapterScreen, duration: 1, notes: "Chapter card." },
   { id: "LD3.5", title: "Inner Voice", component: InnerVoiceScreen, duration: 5, notes: "Reading voice." },
   { id: "LD3.6", title: "Time Perception", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
-  { id: "LD3.61", title: "Duck or Rabbit?", component: PatternRecognitionScreen, duration: 4, notes: "Same image, two interpretations. Pattern recognition is subjective — what you see depends on what your brain expects." },
   { id: "LD3.615", title: "Probability Words — Poll", component: ProbabilityWordsPollScreen, duration: 3, notes: "Live gut check before Annie Duke lands. Slam dunk? Serious possibility? Rarely? Never?" },
   { id: "LD3.62", title: "Annie Duke — Same Words, Different Meanings", component: AnnieDukeStudyScreen, duration: 5, notes: "Probability words like 'serious possibility' or 'rarely' mean wildly different things to different people — and to different AI models. Words are not numbers.", requiresSession: true },
   { id: "LD3.63", title: "Language Shapes Thought", component: LanguageShapesThoughtScreen, duration: 2, notes: "Sapir-Whorf in one breath. Language doesn't just describe what you think — it shapes how you think." },
@@ -175,6 +174,7 @@ export const screens: ScreenDef[] = [
   { id: "LD3.7", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Why a single comment can derail a week." },
   { id: "LD4.7", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote." },
   { id: "LD5.6", title: "The Institutional Case", component: RetentionEquityScreen, duration: 4, notes: "Retention / Title III / SACSCOC hook." },
+  { id: "LD3.61", title: "Duck or Rabbit?", component: PatternRecognitionScreen, duration: 4, notes: "Same image, two interpretations. Pattern recognition is subjective — what you see depends on what your brain expects." },
 ];
 
 // Slide IDs that accept (isFacilitator, sessionId, userId) interactive props
