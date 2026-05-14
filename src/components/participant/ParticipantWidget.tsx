@@ -13,6 +13,7 @@ import { CognitiveReflectionScreen } from "@/components/screens/CognitiveReflect
 import { DiscoveryWallScreen } from "@/components/screens/DiscoveryWallScreen";
 import { RedesignWorkshopScreen } from "@/components/screens/RedesignWorkshopScreen";
 import { AIStudentScreen } from "@/components/screens/AIStudentScreen";
+import { ProbabilityWordsWidget } from "@/components/participant/widgets/ProbabilityWordsWidget";
 
 interface Props {
   slideId: string;
@@ -44,6 +45,9 @@ const widgets: Record<
   ),
   "LD2.1": ({ sessionId }) => (
     <NeurodiversityDataQuizScreen isFacilitator={false} sessionId={sessionId} />
+  ),
+  "LD2.2": ({ sessionId, userId }) => (
+    <ProbabilityWordsWidget sessionId={sessionId} userId={userId} />
   ),
 
   // 3.x — only collection + estimate ask the audience for input
