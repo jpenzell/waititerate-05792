@@ -52,6 +52,8 @@ import { ShadowAccommodationScreen } from "@/components/screens/ShadowAccommodat
 import { DetectorBiasScreen } from "@/components/screens/DetectorBiasScreen";
 import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScreen";
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
+import { AIEvidenceMapScreen } from "@/components/screens/AIEvidenceMapScreen";
+import { InclusiveSupportStackScreen } from "@/components/screens/InclusiveSupportStackScreen";
 import {
   Chapter02Screen,
   Chapter03Screen,
@@ -131,6 +133,7 @@ export const screens: ScreenDef[] = [
   { id: "LD6.3", title: "But Isn't This Just Cheating?", component: AcademicIntegrityScreen, duration: 5, notes: "Reframe academic integrity." },
   { id: "LD6.3b", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English. Bloomberg autistic-student-flagged-100% case." },
   { id: "LD6.4", title: "AI as Cognitive Accommodation", component: AIAccommodationScreen, duration: 5, notes: "Six archetypes." },
+  { id: "LD6.5", title: "AI Evidence Map — Trust, but Verify", component: AIEvidenceMapScreen, duration: 4, notes: "Strong/Mixed/Thin evidence tiers. LLMs strong, AT mixed, predictive analytics thin. Procurement guardrail." },
   // 7.x — Workshop
   { id: "LD7.0a", title: "Chapter 07 — Make something", component: Chapter07Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD7.0", title: "Workshop: Redesign Your Slide", component: RedesignWorkshopScreen, duration: 12, notes: "Hands-on faculty workshop." },
@@ -142,6 +145,7 @@ export const screens: ScreenDef[] = [
   { id: "LD7.5", title: "UDL in Action", component: UDLInActionScreen, duration: 4, notes: "Universal Design for Learning." },
   { id: "LD7.6", title: "Iteration Doubles Quality", component: AnthropicIterationScreen, duration: 3, notes: "Anthropic AI Fluency Index 2026." },
   // 8.x — Close
+  { id: "LD7.9", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Mental model: accessible curriculum → accommodations + AT → AI augmentation → human judgement. Sets up action plan." },
   { id: "LD8.0", title: "Design with Difference: Your Action Plan", component: LDTakeawaysScreen, duration: 4, notes: "Four actionable shifts." },
   { id: "LD8.1", title: "Monday-Morning Prompts", component: MondayPromptsScreen, duration: 5, notes: "Four copy-paste prompts." },
   { id: "LD8.3", title: "Take It With You", component: OnePagerDownloadScreen, duration: 3, notes: "Download faculty one-pager." },
