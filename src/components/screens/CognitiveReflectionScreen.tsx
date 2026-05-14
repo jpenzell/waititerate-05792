@@ -306,7 +306,7 @@ export const CognitiveReflectionScreen = ({ isFacilitator = false, sessionId }: 
                 </p>
                 <div className="pt-4">
                   <p className="text-xs text-muted-foreground">
-                    Framework: CAST (2018) — Universal Design for Learning Guidelines version 2.2
+                    Framework: CAST — Universal Design for Learning Guidelines v3.0 (2024, AI-aware)
                   </p>
                 </div>
               </div>

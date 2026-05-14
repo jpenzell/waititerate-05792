@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Volume2, VolumeX, MessageSquare, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 interface InnerVoiceScreenProps {
   isFacilitator?: boolean;
@@ -15,6 +16,9 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
   const [responses, setResponses] = useState<any[]>([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [step, setStep] = useState<"intro" | "test">("intro");
+  // Facilitator reveal: 0 = distribution, 1 = research framing
+  useRegisterReveals(1);
+  const { step: revealStep } = useReveal();
 
   useEffect(() => {
     if (!sessionId) return;
@@ -119,11 +123,28 @@ export const InnerVoiceScreen = ({ isFacilitator = false, sessionId }: InnerVoic
           </Card>
         </div>
 
-        <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center">
-          <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
-            Same words. Different brains.
-          </p>
-        </Card>
+        {revealStep < 1 ? (
+          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex flex-col items-center justify-center gap-3">
+            <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+              Same words. Different brains.
+            </p>
+            <p className="text-sm text-muted-foreground italic">Press → for the implication.</p>
+          </Card>
+        ) : (
+          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-4 animate-fade-in">
+            <p className="text-2xl md:text-3xl font-semibold text-foreground text-center leading-snug max-w-4xl">
+              Many of your students experience reading <span className="text-primary">without inner narration</span> at all
+              — and many experience it <span className="text-primary">narrated word-for-word</span>.
+            </p>
+            <p className="text-xl md:text-2xl text-foreground/85 text-center leading-snug max-w-4xl italic">
+              The same lecture lands as text, voice, image, or silence.
+              <br />Pair every spoken cue with a written one.
+            </p>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              Inner-speech variation · Hurlburt et al., descriptive experience sampling
+            </p>
+          </Card>
+        )}
       </div>
     );
   }

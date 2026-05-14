@@ -1,12 +1,12 @@
-import { TrendingUp, GraduationCap, DollarSign, Award } from "lucide-react";
+import { GraduationCap, Building2, DollarSign, Award } from "lucide-react";
 import { Reveal, useRegisterReveals } from "@/contexts/RevealContext";
 import { SlideShell, SlideTitle, StatBlock, PullQuote } from "@/components/slide";
 
 const stats = [
-  { icon: TrendingUp,    value: "+30%",      label: "Completion" },
-  { icon: GraduationCap, value: "+18%",      label: "Dev-ed retention" },
+  { icon: GraduationCap, value: "58% vs 79%", label: "ND grad rate gap (UC Davis)" },
+  { icon: Building2,     value: "9.5% vs 28%", label: "Two-year vs four-year accommodation provision (PLOS One, 2025)" },
   { icon: DollarSign,    value: "Title III/V", label: "Grant fit" },
-  { icon: Award,         value: "SACSCOC",   label: "Accreditation" },
+  { icon: Award,         value: "SACSCOC",     label: "Accreditation" },
 ];
 
 export const RetentionEquityScreen = () => {

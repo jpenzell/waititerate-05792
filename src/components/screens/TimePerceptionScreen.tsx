@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, Play, Square, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 
 interface TimePerceptionScreenProps {
   isFacilitator?: boolean;
@@ -19,6 +20,9 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [step, setStep] = useState<"intro" | "test">("intro");
   const targetTime = 10;
+  // Facilitator reveal: 0 = distribution, 1 = research-grounded framing
+  useRegisterReveals(1);
+  const { step: revealStep } = useReveal();
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -171,13 +175,29 @@ export const TimePerceptionScreen = ({ isFacilitator = false, sessionId }: TimeP
           </div>
         </Card>
 
-        <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex items-center">
-          <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
-            Up to 80% of ADHD = time blindness.
-            <br />
-            <span className="text-primary">Build checkpoints, not just deadlines.</span>
-          </p>
-        </Card>
+        {revealStep < 1 ? (
+          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/5 to-accent/5 flex flex-col items-center justify-center gap-3">
+            <p className="text-3xl md:text-4xl font-semibold text-foreground text-center leading-snug w-full">
+              Time perception is wildly variable.
+              <br />
+              <span className="text-primary">Build checkpoints, not just deadlines.</span>
+            </p>
+            <p className="text-sm text-muted-foreground italic">Press → for what students told us.</p>
+          </Card>
+        ) : (
+          <Card className="p-10 flex-1 bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 flex flex-col items-center justify-center gap-4 animate-fade-in">
+            <p className="text-2xl md:text-3xl font-semibold text-foreground text-center italic leading-snug max-w-4xl">
+              "The challenge isn't <span className="text-primary">making</span> the plan.
+              <br />It's <span className="text-primary">sticking to it</span>."
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground text-center leading-snug max-w-3xl">
+              ADHD students in the Atcheson CHI 2025 study repeatedly named follow-through — not planning — as the real executive-function gap.
+            </p>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              Atcheson, Khan, Siemann, Jain &amp; Karahalios · CHI 2025
+            </p>
+          </Card>
+        )}
       </div>
     );
   }
