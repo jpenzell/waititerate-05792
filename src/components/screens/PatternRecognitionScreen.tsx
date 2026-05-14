@@ -1,6 +1,5 @@
 import { Card } from "@/components/ui/card";
 import { PollWidget } from "@/components/PollWidget";
-import { QRCodeSVG } from "qrcode.react";
 import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 import duckRabbitImage from "@/assets/duck-rabbit.png";
 
@@ -17,13 +16,9 @@ export const PatternRecognitionScreen = ({
   userId,
   sessionCode,
 }: PatternRecognitionScreenProps) => {
-  // Step 0: Join via QR. Step 1: Image + poll. Step 2: Explanation.
-  useRegisterReveals(2);
+  // Step 0: Image + poll. Step 1: Explanation.
+  useRegisterReveals(1);
   const { step } = useReveal();
-
-  const joinUrl = sessionCode
-    ? `${window.location.origin}/participate?code=${sessionCode}`
-    : "";
 
   // Always render the image off-screen so the browser fully decodes it before reveal.
   const Preloader = (
@@ -36,8 +31,8 @@ export const PatternRecognitionScreen = ({
     />
   );
 
-  // STEP 2 — Explanation
-  if (step >= 2) {
+  // STEP 1 — Explanation
+  if (step >= 1) {
     return (
       <main className="min-h-screen flex items-center justify-center p-4 md:p-8 animate-fade-in" role="main">
         {Preloader}
