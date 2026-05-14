@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v55'; // Removed LD3.8 Discovery Wall
+const STORAGE_KEY = 'presentation-slide-config-atdld-v56'; // Moved LD3.75/LD3.7 to end of deck
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
