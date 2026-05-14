@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v54'; // Inserted duck-rabbit + Annie Duke after LD3.6
+const STORAGE_KEY = 'presentation-slide-config-atdld-v55'; // Removed LD3.8 Discovery Wall
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
