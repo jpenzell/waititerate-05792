@@ -44,6 +44,9 @@ import { OnePagerDownloadScreen } from "@/components/screens/OnePagerDownloadScr
 import { WindshieldWipersRevealScreen } from "@/components/screens/WindshieldWipersRevealScreen";
 import { NeurodiversityInnovationScreen } from "@/components/screens/NeurodiversityInnovationScreen";
 import { MeetJoshLieScreen } from "@/components/screens/MeetJoshLieScreen";
+import { FeedbackSensitivityScreen } from "@/components/screens/FeedbackSensitivityScreen";
+import { InjusticeSensitivityScreen } from "@/components/screens/InjusticeSensitivityScreen";
+import { AIvsManagerScreen } from "@/components/screens/AIvsManagerScreen";
 import {
   Chapter02Screen,
   Chapter03Screen,
@@ -95,6 +98,8 @@ export const screens: ScreenDef[] = [
   { id: "LD4.1", title: "Inner Voice Discovery", component: InnerVoiceScreen, duration: 6, notes: "Reading voice." },
   { id: "LD4.2", title: "Time Perception Challenge", component: TimePerceptionScreen, duration: 5, notes: "Time blindness." },
   { id: "LD4.3", title: "Sensory Processing Simulator", component: SensoryProcessingScreen, duration: 6, notes: "Sensory overload." },
+  { id: "LD4.3b", title: "Feedback Sensitivity (RSD)", component: FeedbackSensitivityScreen, duration: 4, notes: "Rejection Sensitive Dysphoria — why a single comment can derail a week. Stats are placeholders, confirm before delivery." },
+  { id: "LD4.3c", title: "Injustice Sensitivity", component: InjusticeSensitivityScreen, duration: 4, notes: "Heightened response to unfairness — what looks like overreaction vs what's actually happening." },
   { id: "LD4.4", title: "Cognitive Reflection", component: CognitiveReflectionScreen, duration: 8, notes: "Reflection prompts." },
   { id: "LD4.5", title: "Research Foundations", component: ResearchFoundationsScreen, duration: 5, notes: "Academic grounding." },
   { id: "LD4.6", title: "Discovery Wall", component: DiscoveryWallScreen, duration: 5, notes: "Live shared wall." },
@@ -112,6 +117,7 @@ export const screens: ScreenDef[] = [
   // 6.x — AI for accommodation
   { id: "LD6.0a", title: "Chapter 06 — AI as accommodation", component: Chapter06Screen, duration: 1, notes: "Cinematic chapter divider." },
   { id: "LD6.0", title: "AI as Cognitive Prosthetic", component: AICognitiveProtheticScreen, duration: 6, notes: "Real examples." },
+  { id: "LD6.0b", title: "People Prefer AI to Their Manager", component: AIvsManagerScreen, duration: 3, notes: "Workplace Intelligence × Oracle 2024 stat. Ties feedback/injustice sensitivity (Ch.4) to why AI is a safer tutor. Confirm exact stat before delivery." },
   { id: "LD6.1", title: "Structured Freedom Framework", component: StructuredFreedomScreen, duration: 7, notes: "Balance between guidance and autonomy.", pollQuestion: "Which design approach best describes your current training?", pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"] },
   { id: "LD6.2", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 5, notes: "JAMA 2024." },
   { id: "LD6.3", title: "But Isn't This Just Cheating?", component: AcademicIntegrityScreen, duration: 5, notes: "Reframe academic integrity." },
