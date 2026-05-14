@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Sparkles, TrendingUp, Users, Briefcase } from "lucide-react";
+import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
@@ -35,7 +36,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
   const [productivityGuess, setProductivityGuess] = useState("");
   const [populationGuess, setPopulationGuess] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [showResults, setShowResults] = useState(false);
+  // Reveal arrow (→) flips facilitator view from guesses to actuals.
+  useRegisterReveals(1);
+  const { step: revealStep } = useReveal();
 
   useEffect(() => {
     if (!sessionId) return;
@@ -128,7 +131,8 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
     const actualUnemployment = 85;
     const actualProductivity = 30;
     const actualPopulation = 20;
-    
+    const showResults = revealStep >= 1;
+
     return (
       <main className="min-h-screen flex flex-col justify-center py-4 px-4 animate-fade-in" role="main" aria-label="Neurodiversity data quiz results">
         <header className="text-center mb-4">
@@ -160,17 +164,9 @@ export const NeurodiversityDataQuizScreen = ({ isFacilitator = false, sessionId 
               </Card>
             </div>
 
-            <div className="text-center">
-            <Button 
-                onClick={() => setShowResults(true)}
-                size="lg"
-                className="px-12"
-                aria-label="Reveal the actual neurodiversity statistics"
-              >
-                <Sparkles className="mr-2 h-5 w-5" aria-hidden="true" />
-                Reveal The Truth
-              </Button>
-            </div>
+            <p className="text-center text-sm text-muted-foreground italic">
+              Press → to reveal the actual numbers.
+            </p>
           </>
         ) : (
           <div className="space-y-4 animate-fade-in max-w-7xl mx-auto w-full">
