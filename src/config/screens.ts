@@ -53,6 +53,10 @@ import { HumanizeMyWordsScreen } from "@/components/screens/HumanizeMyWordsScree
 import { FreeTierDivideScreen } from "@/components/screens/FreeTierDivideScreen";
 import { AIEvidenceMapScreen } from "@/components/screens/AIEvidenceMapScreen";
 import { InclusiveSupportStackScreen } from "@/components/screens/InclusiveSupportStackScreen";
+import { YouGovSelfIDScreen } from "@/components/screens/YouGovSelfIDScreen";
+import { StudentsAlreadyUsingAIScreen } from "@/components/screens/StudentsAlreadyUsingAIScreen";
+import { WilliamsIdentityScreen } from "@/components/screens/WilliamsIdentityScreen";
+import { CoDesignScreen } from "@/components/screens/CoDesignScreen";
 import {
   Chapter02Screen,
   Chapter03Screen,
@@ -83,6 +87,7 @@ export const screens: ScreenDef[] = [
   { id: "LD1.2b", title: "Neurodiversity + AI = Innovation", component: NeurodiversityInnovationScreen, duration: 2, notes: "Meta-point: I thought backwards. Thinking differently + AI flexibility = innovation. This site is the proof." },
   { id: "LD1.3", title: "Who's in Your RCCC Classroom", component: RCCCContextScreen, duration: 4, notes: "Audience grounding for Rowan-Cabarrus Summer Institute." },
   { id: "LD1.3b", title: "The 5× Disclosure Gap", component: DisclosureGapScreen, duration: 3, notes: "~36% identify as ND vs 6–7% registered with DSO. Purdue institutional + NCES + Doyle." },
+  { id: "LD1.3c", title: "1 in 5 Adults Self-ID as ND", component: YouGovSelfIDScreen, duration: 2, notes: "YouGov 2023 — 19% of US adults self-identify as neurodivergent. Self-ID outpacing diagnosis." },
   { id: "LD1.4", title: "What This Is NOT", component: WhatThisIsNotScreen, duration: 3, notes: "Disarm faculty skepticism early." },
   // 2.x — Why neurodiversity matters
   { id: "LD2.0a", title: "Chapter 02 — Why difference matters", component: Chapter02Screen, duration: 1, notes: "Cinematic chapter divider." },
@@ -126,10 +131,12 @@ export const screens: ScreenDef[] = [
   { id: "LD6.0", title: "AI as Cognitive Prosthetic", component: AICognitiveProtheticScreen, duration: 6, notes: "Real examples." },
   { id: "LD6.0b", title: "People Prefer AI to Their Manager", component: AIvsManagerScreen, duration: 3, notes: "Workplace Intelligence × Oracle 2024 stat. Ties feedback/injustice sensitivity (Ch.4) to why AI is a safer tutor. Confirm exact stat before delivery." },
   { id: "LD6.0c", title: "Shadow Accommodation", component: ShadowAccommodationScreen, duration: 4, notes: "Atcheson et al. CHI 2025 — 25/62 students say AI does what the institution doesn't. P10 quote on bypassing bureaucracy. Political punch of the talk." },
+  { id: "LD6.0d", title: "Students Already Use AI", component: StudentsAlreadyUsingAIScreen, duration: 3, notes: "HEPI 2025 — 92% of UK undergrads use GenAI, 88% for assessments. The adoption already happened." },
   { id: "LD6.1", title: "Structured Freedom Framework", component: StructuredFreedomScreen, duration: 7, notes: "Balance between guidance and autonomy.", pollQuestion: "Which design approach best describes your current training?", pollOptions: ["Too rigid (all structure)", "Too chaotic (all freedom)", "Balanced (structured freedom)", "Not sure"] },
   { id: "LD6.2", title: "Doctor + AI Paradox", component: AIParadoxRevealScreen, duration: 5, notes: "JAMA 2024." },
   { id: "LD6.3", title: "But Isn't This Just Cheating?", component: AcademicIntegrityScreen, duration: 5, notes: "Reframe academic integrity." },
   { id: "LD6.3b", title: "The Detector Is the Cheater", component: DetectorBiasScreen, duration: 4, notes: "Liang et al. 2023 — 61% false-positive on non-native English. Bloomberg autistic-student-flagged-100% case." },
+  { id: "LD6.3c", title: "I'm Just Autistic", component: WilliamsIdentityScreen, duration: 3, notes: "Donna Williams identity-first language quote. Person-first vs identity-first framing." },
   { id: "LD6.4", title: "AI as Cognitive Accommodation", component: AIAccommodationScreen, duration: 5, notes: "Six archetypes." },
   { id: "LD6.5", title: "AI Evidence Map — Trust, but Verify", component: AIEvidenceMapScreen, duration: 4, notes: "Strong/Mixed/Thin evidence tiers. LLMs strong, AT mixed, predictive analytics thin. Procurement guardrail." },
   // 7.x — Workshop
@@ -144,6 +151,7 @@ export const screens: ScreenDef[] = [
   { id: "LD7.6", title: "Iteration Doubles Quality", component: AnthropicIterationScreen, duration: 3, notes: "Anthropic AI Fluency Index 2026." },
   // 8.x — Close
   { id: "LD7.9", title: "The Inclusive Support Stack", component: InclusiveSupportStackScreen, duration: 4, notes: "Mental model: accessible curriculum → accommodations + AT → AI augmentation → human judgement. Sets up action plan." },
+  { id: "LD7.9b", title: "Co-Design With ND Students", component: CoDesignScreen, duration: 3, notes: "Special Olympics co-design model applied to syllabus design. Nothing about us without us." },
   { id: "LD8.0", title: "Design with Difference: Your Action Plan", component: LDTakeawaysScreen, duration: 4, notes: "Four actionable shifts." },
   { id: "LD8.1", title: "Monday-Morning Prompts", component: MondayPromptsScreen, duration: 5, notes: "Four copy-paste prompts." },
   { id: "LD8.3", title: "Take It With You", component: OnePagerDownloadScreen, duration: 3, notes: "Download faculty one-pager." },
