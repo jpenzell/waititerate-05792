@@ -1,4 +1,3 @@
-import { PollWidget } from "@/components/PollWidget";
 import { SlideShell } from "@/components/slide";
 import { screens } from "@/config/screens";
 import { useReveal, useRegisterReveals } from "@/contexts/RevealContext";
@@ -82,18 +81,9 @@ export const CurbCutQuizScreen = ({
               {reveal.source}
             </p>
           </div>
-        ) : sessionId && userId ? (
-          <div className="rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-8 md:p-10 animate-scale-in">
-            <PollWidget
-              sessionId={sessionId}
-              slideId={id}
-              userId={userId}
-              isPresenter={isFacilitator}
-            />
-          </div>
         ) : (
           <p className="text-center text-xl text-muted-foreground italic">
-            Take a guess — show of hands. Press <kbd className="px-2 py-1 mx-1 rounded bg-muted text-foreground font-mono">→</kbd> to reveal.
+            Take a moment to consider. Press <kbd className="px-2 py-1 mx-1 rounded bg-muted text-foreground font-mono">→</kbd> to reveal the answer.
           </p>
         )}
       </div>
