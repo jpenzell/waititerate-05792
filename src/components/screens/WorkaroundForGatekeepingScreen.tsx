@@ -1,5 +1,5 @@
-import { Quote, FileX, MessageSquareQuote } from "lucide-react";
-import { SlideShell, StatBlock } from "@/components/slide";
+import { Quote } from "lucide-react";
+import { SlideShell } from "@/components/slide";
 import { Card } from "@/components/ui/card";
 
 /**
@@ -19,30 +19,6 @@ export const WorkaroundForGatekeepingScreen = () => {
             AI is the workaround <span className="text-primary">for gatekeeping.</span>
           </h1>
         </header>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          <StatBlock
-            value="25 / 62"
-            label="students said GenAI supports them"
-            note="…in important ways the university does not. Only 17 disagreed."
-            icon={FileX}
-            accent="primary"
-          />
-          <StatBlock
-            value="13 / 39"
-            label="changed an accommodation"
-            note="Students with formal accommodations who said GenAI changed how they use at least one of them."
-            icon={MessageSquareQuote}
-            accent="accent"
-          />
-          <StatBlock
-            value="2 unis"
-            label="62 surveyed · 21 interviewed"
-            note="Two large U.S. public universities. Atcheson, Khan, Siemann, Jain & Karahalios — CHI 2025."
-            icon={Quote}
-            accent="destructive"
-          />
-        </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           <Card className="p-6 md:p-8 bg-card/70 border-l-8 border-l-primary/60">
