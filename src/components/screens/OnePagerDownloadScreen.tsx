@@ -9,19 +9,14 @@ const links = [
     href: "https://www.linkedin.com/in/josh-penzell/",
   },
   {
-    icon: Globe,
-    label: "joshpenzell.com",
-    href: "https://joshpenzell.com",
-  },
-  {
     icon: Presentation,
     label: "Slides live within a week",
-    href: "https://ai4all.joshpenzell.com",
+    href: "https://www.joshpenzell.com",
   },
   {
     icon: Mail,
     label: "Email Josh",
-    href: "mailto:josh@imaginationapplied.com",
+    href: "mailto:josh@joshpenzell.com",
   },
 ];
 
