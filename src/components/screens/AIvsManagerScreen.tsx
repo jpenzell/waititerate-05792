@@ -1,49 +1,50 @@
-import { Bot, UserX, ShieldCheck } from "lucide-react";
-import { SlideShell, StatBlock, PullQuote } from "@/components/slide";
+import { Quote, ShieldCheck, MessageCircle } from "lucide-react";
+import { SlideShell, SlideTitle, StatBlock, PullQuote } from "@/components/slide";
+import { Card } from "@/components/ui/card";
 
 export const AIvsManagerScreen = () => {
   return (
-    <SlideShell tone="indigo" align="center" ariaLabel="People prefer AI to their manager">
+    <SlideShell tone="indigo" ariaLabel="AI is the safest person to ask">
       <div className="space-y-10">
-        <header className="text-center space-y-4">
-          <p className="text-sm md:text-base font-mono uppercase tracking-[0.3em] text-muted-foreground">
-            Chapter 06 · AI as accommodation
-          </p>
-          <h1 className="text-5xl md:text-7xl font-black text-foreground leading-tight">
-            People would rather talk to AI
-            <br />
-            <span className="text-primary">than their manager.</span>
-          </h1>
-        </header>
+        <SlideTitle kicker="Chapter 06 · AI as accommodation">
+          AI is the safest person
+          <br />
+          <span className="text-primary">to ask.</span>
+        </SlideTitle>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          <StatBlock
-            value="82%"
-            label="trust AI more"
-            note="than their own manager for career advice"
-            icon={Bot}
-            accent="primary"
-          />
-          <StatBlock
-            value="2 in 3"
-            label="would rather ask a bot"
-            note="than risk looking incompetent in front of a human"
-            icon={UserX}
-            accent="accent"
-          />
+        <div className="grid md:grid-cols-2 gap-6">
           <StatBlock
             value="0"
             label="judgment, ego, or grade"
-            note="AI doesn't sigh, frown, or remember last week's mistake"
+            note="No sigh. No frown. No memory of last week's mistake."
             icon={ShieldCheck}
             accent="primary"
           />
+          <StatBlock
+            value="24/7"
+            label="answering the dumb question"
+            note="The one a student would never raise their hand to ask"
+            icon={MessageCircle}
+            accent="accent"
+          />
         </div>
 
-        <PullQuote variant="primary" attribution="Workplace Intelligence × Oracle, 2024">
+        <Card className="p-10 md:p-12 border-2 border-primary/30 bg-card/80 space-y-4">
+          <Quote className="h-10 w-10 text-primary" aria-hidden="true" />
+          <p className="text-2xl md:text-4xl font-semibold text-foreground leading-snug italic">
+            "I have used ChatGPT to help me get accommodations through the university,
+            and also to help me communicate more directly and assertively with professors
+            about my accommodations and needs."
+          </p>
+          <p className="text-base md:text-lg font-mono uppercase tracking-[0.3em] text-muted-foreground">
+            — P31 · Atcheson et al., CHI 2025
+          </p>
+        </Card>
+
+        <PullQuote variant="soft">
           For a brain wired for feedback &amp; injustice sensitivity,
           <br />
-          <span className="text-primary">AI is the safest tutor in the room.</span>
+          <span className="text-primary">AI is the lowest-stakes tutor in the room.</span>
         </PullQuote>
       </div>
     </SlideShell>
