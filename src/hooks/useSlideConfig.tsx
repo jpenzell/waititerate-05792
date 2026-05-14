@@ -7,7 +7,7 @@ export interface SlideConfig {
   order: number;
 }
 
-const STORAGE_KEY = 'presentation-slide-config-atdld-v53'; // New chapter card LD4.00 "No Two AIs Are Alike"
+const STORAGE_KEY = 'presentation-slide-config-atdld-v54'; // Inserted duck-rabbit + Annie Duke after LD3.6
 
 export const useSlideConfig = (initialSlides: { id: string }[]) => {
   const [config, setConfig] = useState<SlideConfig[]>(() => {
